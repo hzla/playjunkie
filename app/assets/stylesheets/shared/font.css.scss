@@ -1,0 +1,23 @@
+
+@font-face {
+  font-family: 'Verlag';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/Verlag-Normal.ttf');
+}
+@font-face {
+  font-family: 'Verlag';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/Verlag-Black.ttf');
+}
+@font-face {
+  font-family: 'Verlag';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/Verlag-Bold.ttf');
+}
+
+* {
+  font-family: 'Verlag'
+}
