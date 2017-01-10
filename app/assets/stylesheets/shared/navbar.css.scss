@@ -1,0 +1,63 @@
+@import 'variables';
+@import 'mixins';
+
+
+header {
+	height: 44px;
+	background: white;
+	@include flexbox;
+	padding: 0px 10px;
+	@include justify-content(space-between);
+	@include align-content(center);
+	img:hover {
+		cursor: pointer;
+	}
+	#search-icon, #menu-icon {
+		width: 20px;
+		height: auto;
+	}
+
+	#logo {
+		width: 74px;
+	}
+	#nav-dropdown {
+		// display: none;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.7);
+		position: fixed;
+		padding-bottom: 15px;
+		.dropdown-content {
+			background: white;
+		}
+		li {
+			text-align: center;
+			font-size: 14px;
+			font-weight: 400;
+			height: 44px;
+			width: calc(100% - 120px);
+			margin: 0 auto;
+			border-bottom: 1px solid $light-outline;
+			line-height: 44px;
+		}
+		li.no-outline {
+			border-bottom: 0px;
+		}
+		li.bold {
+			font-weight: 600;
+		}
+		li.list-header{
+			color: $grey;
+			font-weight: 800;
+			background: $light-outline;
+			width: 100%;
+		}
+		.nav-categories {
+			background: $background-white;
+			margin-bottom: 15px;
+		}
+	}
+}
+
