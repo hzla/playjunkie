@@ -21,7 +21,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, input {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -82,6 +82,14 @@ p, div {
 	font-size: 12px;
 }
 
+.bold {
+	font-weight: 600;
+}
+
+.super-bold {
+	font-weight: 800;
+}
+
 @media (min-width: 769px) {
 	h1 {
 		font-size: 28px;
@@ -117,6 +125,21 @@ p, div {
 ////////////////////////////////// Margins //////////////////////////////////////
 
 
+////////////////////////////////// Buttons/Inputs /////////////////////////////////////////////
+.btn {
+ border-radius: 5px;
+ height: 44px;
+ line-height: 44px;
+ font-size: 14px;
+}
+
+@media (min-width: 1024px) {
+ .btn {
+ 		height: 40px;
+ 		line-height: 40px;
+ 		font-size: 16px; 
+ }
+}
 
 
 

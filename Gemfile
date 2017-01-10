@@ -42,6 +42,9 @@ gem 'sanitize'
 #JS Frontend
 gem 'react-rails', '~> 1.0'
 
+
+gem 'pry'
+
 #Testing
 group :development, :test do
   gem 'capybara'

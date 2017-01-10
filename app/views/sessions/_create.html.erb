@@ -1,0 +1,68 @@
+<div class="signin-container">
+	<div class="signin-content">
+		<h1 class="super-bold signin-header">Sign In</h1>
+		<%= link_to '/auth/facebook' do %>
+			<div class="fb-signin btn">
+				<%= image_tag 'facebook.svg', class: "fb-img" %>
+				<p class="super-bold">Connect with Facebook</p>
+			</div>
+		<% end %>
+		<p class="or">Or</p>
+		<%= form_tag :session do %>
+			<div class="signin-row">
+				<label>Email:</label>
+				<%= text_field_tag :email, nil, :class => "signin-field btn" %>
+			</div>
+			<div class="signin-row">
+				<label>Password:</label>
+				<%= text_field_tag :password, nil, :class => "signin-field btn" %>
+			</div>
+			<%= submit_tag "Sign In", id: "signin", :class => "btn" %>
+		<% end %>
+		<div id="forgot-pw">Forgot my password</div>
+		<div class="signup-text">
+			<p>Don't have an account?<p>
+			<p class="signup-link toggle-signup">Sign Up</p>
+		</div>
+	</div> 
+
+	<div class="signin-content signup-content">
+		<h1 class="super-bold signin-header">Sign Up</h1>
+		
+		<%= link_to '/auth/facebook' do %>
+			<div class="fb-signin btn">
+				<%= image_tag 'facebook.svg', class: "fb-img" %>
+				<p class="super-bold">Connect with Facebook</p>
+			</div>
+		<% end %>
+		<p class="or">Or</p>
+		<%= form_for User.new do |u| %>
+			<div class="signin-row">
+				<label>Full name</label>
+				<%= u.text_field :name, :class => "signin-field btn" %>
+			</div>
+			<div class="signin-row">
+				<label>Email:</label>
+				<%= u.text_field :email, :class => "signin-field btn" %>
+			</div>
+			<div class="signin-row">
+				<label>Password:</label>
+				<%= u.text_field :password, :class => "signin-field btn" %>
+			</div>
+			<div class="signin-row">
+				<label>Confirm Password:</label>
+				<%= u.text_field :password, :class => "signin-field btn" %>
+			</div>
+			<%= submit_tag "Sign In", id: "signin", :class => "btn" %>
+		<% end %>
+		<div id="signup-terms">By signing up, you agree to our terms and conditions and privacy policy</div>
+		<div class="signup-text">
+			<p>Already have an account?<p>
+			<p class="signup-link toggle-signin">Sign In</p>
+		</div>
+	</div>
+</div>
+
+
+
+	

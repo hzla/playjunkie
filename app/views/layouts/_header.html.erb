@@ -19,6 +19,9 @@
 	<div id="nav-dropdown">
 		<div class="dropdown-content">
 			<%= image_tag 'close-x.svg', id: 'close-dropdown' %>
+			<% if signed_out? %>
+				<li class="bold signinup">Sign In/Up</li>
+			<% end %>
 			<li class="bold">Home</li>
 			<li class="bold no-outline">Trending</li>
 			<li class="list-header">Categories</li>

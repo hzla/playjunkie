@@ -1,0 +1,103 @@
+@import 'shared/variables';
+@import 'shared/mixins';
+
+.signin-container {
+	position: absolute;
+	display: none;
+	top: 44px;
+	left: 0px;
+	background: $background-white;
+	padding: 10px calc(50vw - 150px);
+	width: 100%;
+	height: calc(100vh - 44px);
+	.signin-content, .signup-content {
+		border-radius: 5px;
+		height: auto;
+		width: 300px;
+		background: white;
+		border: 1px solid $light-outline;
+		padding: 30px 10px;
+		text-align: center;
+	}
+	.signup-content {
+		display: none;
+	}
+	.fb-signin {
+		width: 280px;
+		img {
+			height: 20px;
+		}
+		padding: 0px 54px;
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(space-between);
+		background: #3B5998;
+		color: white;
+		margin-top: 20px;
+		p {
+			font-size: 14px;
+		}
+	}
+	.or {
+		text-align: center;
+		font-size: 14px;
+		margin-top: 20px;
+	}
+	form {
+		text-align: left;
+		.signin-row {
+			label {
+				display: block;
+				margin-top: 20px;
+				font-weight: 600;
+			}
+			input {
+				border: 1px solid $light-outline;
+				margin-top: 10px;
+				width: 100%;
+				padding: 0px 20px;
+			}
+		}
+		#signin {
+			background: $orange;
+			color: white;
+			width: 100%;
+			text-align: center;
+			font-size: 14px;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+		#signin:hover {
+			background: $hover-orange;
+		}
+	}
+	#forgot-pw {
+		color: $orange;
+		text-align: center;
+		font-size: 14px;
+		border-bottom: 1px solid $light-outline;
+		width: 100%;
+		margin-top: 20px;
+		padding-bottom: 10px;
+		cursor: pointer;
+	}
+	#signup-terms {
+		font-size: 10px;
+		margin-top: 20px;
+	}
+	.signup-text {
+		@include flexbox;
+		@include justify-content(space-between);
+		margin-top: 20px;
+		width: 200px;
+		margin: 20px auto 0px auto;
+		p {
+			font-size: 14px;
+		}
+		.signup-link {
+			margin-left: 10px;
+			color: $orange;
+			cursor: pointer;
+		}
+	}
+}
