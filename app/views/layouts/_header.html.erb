@@ -1,9 +1,24 @@
 <header>
 	<%= image_tag 'navbar/mobile-search', id: "search-icon" %>
-	<%= image_tag 'logo.svg', id: "logo" %>
+	<div id="navbar-links">
+		<%= image_tag 'logo.svg', id: "logo" %>
+		<div>Trending</div>
+		<div>Fun <%= image_tag "navbar/arrow-fun.svg", :class => "dropdown-arrow" %></div>
+		<%= text_field_tag :search, nil, :class => "search-input", placeholder: "Search" %>
+	</div>
 	<%= image_tag 'navbar/mobile-menu', id: 'menu-icon' %>
+
+	<div id='navbar-actions'>
+		<div>Sign In</div>
+		<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
+	</div>
+	
+	
+
+
 	<div id="nav-dropdown">
 		<div class="dropdown-content">
+			<%= image_tag 'close-x.svg', id: 'close-dropdown' %>
 			<li class="bold">Home</li>
 			<li class="bold no-outline">Trending</li>
 			<li class="list-header">Categories</li>

@@ -1,10 +1,12 @@
 Header =
 	init: ->
 		$('body').on 'click', '#menu-icon', @toggleMenuOnClick
+		$('body').on 'click', '#close-dropdown', @toggleMenuOnClick
 
 	toggleMenuOnClick: ->
-		$('#nav-dropdown').show()
-		$('body').addClass('dropdown-showing')
+		$('#nav-dropdown').toggle()
+
+
 		
 
 ready = ->
