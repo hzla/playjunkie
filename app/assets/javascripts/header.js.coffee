@@ -6,7 +6,7 @@ Header =
 		$('body').on 'click', '.signup-link', @toggleSigninSignUp
 
 	openSignIn: ->
-		Header.toggleMenuOnClick()
+		$('#nav-dropdown').hide()
 		$('.signin-container').show()
 		window.location = "##{$('.signin-header:visible').text()}"
 

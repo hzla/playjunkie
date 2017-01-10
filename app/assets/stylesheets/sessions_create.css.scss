@@ -18,6 +18,7 @@
 		border: 1px solid $light-outline;
 		padding: 30px 10px;
 		text-align: center;
+		margin-bottom: 10px;
 	}
 	.signup-content {
 		display: none;
@@ -98,6 +99,16 @@
 			margin-left: 10px;
 			color: $orange;
 			cursor: pointer;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.signin-container {
+		padding-top: 40px;
+		top: 60px;
+		.signin-content {
+			margin-bottom: 60px;
 		}
 	}
 }

@@ -8,14 +8,14 @@
 			</div>
 		<% end %>
 		<p class="or">Or</p>
-		<%= form_tag :session do %>
+		<%= form_tag '/session' do %>
 			<div class="signin-row">
 				<label>Email:</label>
-				<%= text_field_tag :email, nil, :class => "signin-field btn" %>
+				<%= text_field_tag :email, nil, :class => "signin-field btn", name: "session[email]" %>
 			</div>
 			<div class="signin-row">
 				<label>Password:</label>
-				<%= text_field_tag :password, nil, :class => "signin-field btn" %>
+				<%= password_field_tag :password, nil, :class => "signin-field btn", name: "session[password]" %>
 			</div>
 			<%= submit_tag "Sign In", id: "signin", :class => "btn" %>
 		<% end %>
@@ -47,11 +47,11 @@
 			</div>
 			<div class="signin-row">
 				<label>Password:</label>
-				<%= u.text_field :password, :class => "signin-field btn" %>
+				<%= u.password_field :password, :class => "signin-field btn" %>
 			</div>
 			<div class="signin-row">
 				<label>Confirm Password:</label>
-				<%= u.text_field :password, :class => "signin-field btn" %>
+				<%= u.password_field :password, :class => "signin-field btn" %>
 			</div>
 			<%= submit_tag "Sign In", id: "signin", :class => "btn" %>
 		<% end %>
