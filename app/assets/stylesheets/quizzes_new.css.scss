@@ -1,0 +1,58 @@
+@import 'shared/variables';
+@import 'shared/mixins';
+
+.quiz-form-container {
+	padding: 60px calc(50vw - 470px);
+
+	#quiz-main-info {
+		@include flexbox;
+		margin-top: 40px;
+		position: relative;
+		#quiz-image-input {
+			height: 130px;
+			width: 150px;
+			display: block;
+			opacity: 0;
+			z-index: 1;
+		}
+		#quiz-image-preview {
+			height: 130px;
+			width: 150px;
+			border-radius: 5px;
+			text-align: center;
+			line-height: 130px;
+			color: $grey;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+			z-index: 2;
+		}
+		.image-input-overlay {
+			height: 130px;
+			width: 150px;
+			border-radius: 5px;
+			border: 1px solid $dark-outline;
+			text-align: center;
+			line-height: 130px;
+			color: $grey;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#quiz-text-info {
+			margin-left: 10px;
+			width: 460px;
+			input, textarea {
+				width: 100%;
+				padding: 12px 10px;
+				font-size: 16px;
+				border: 1px solid $dark-outline;
+			}
+			textarea {
+				margin-top: 10px;
+				line-height: 16px;
+			}
+		}
+	}
+}

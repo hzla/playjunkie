@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   root to: "sessions#new"
   resources :users
 
+  resources :quizzes
+
 
   get '/auth/facebook/callback', to: 'users#facebook_create'
   get '/signout', to: 'sessions#destroy'

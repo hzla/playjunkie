@@ -145,7 +145,14 @@ p, div {
  display: block;
 }
 
+
+textarea.btn {
+	height: 88px;
+}
 @media (min-width: 1024px) {
+ textarea.btn {
+ 	height: 80px;
+ }
  .btn {
  		height: 40px;
  		line-height: 40px;

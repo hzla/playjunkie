@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109062456) do
+ActiveRecord::Schema.define(version: 20170112223713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,48 @@ ActiveRecord::Schema.define(version: 20170109062456) do
     t.string   "unique_id"
     t.index ["unique_id"], name: "index_authorizations_on_unique_id", using: :btree
     t.index ["user_id"], name: "index_authorizations_on_user_id", using: :btree
+  end
+
+  create_table "item_answers", force: :cascade do |t|
+    t.text     "answer_text"
+    t.string   "image_credit"
+    t.integer  "result_id"
+    t.integer  "question_id"
+    t.boolean  "correct?"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "image"
+  end
+
+  create_table "quiz_items", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image_credit"
+    t.string   "image_credit_back"
+    t.string   "color"
+    t.string   "color_back"
+    t.text     "item_text"
+    t.integer  "quiz_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "image"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "completion_message"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.text     "result_text"
+    t.string   "image_credit"
+    t.string   "range"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|

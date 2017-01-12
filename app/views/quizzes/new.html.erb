@@ -1,0 +1,40 @@
+<div class="content-container quiz-form-container">
+	<h1 class="super-bold">Create a New Trivia</h1>
+
+	<%= form_for Quiz.new do |f| %>
+
+		<div id="quiz-main-info">
+			<%= f.file_field :image, :id => "quiz-image-input", required: true %>
+			<div class="image-input-overlay">
+				Click to Add Image
+			</div>
+			<img id="quiz-image-preview" src="#" alt="preview failed to load" class="hidden" /> 
+			<div id="quiz-text-info">
+				<%= f.text_field :title, :class => "btn", placeholder: "Title", required: true %>
+				<%= f.text_area :description, :class => "btn", placeholder: "Description", required: true %>
+			</div>
+		</div>
+		
+
+	<% end %>
+</div>
+
+
+
+
+<script>
+	function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();  
+        reader.onload = function (e) {
+            $('#preview').show()
+            $('#preview').attr('src', e.target.result);
+        }   
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
+    
+  $("#imgInp").change(function(){
+      readURL(this);
+  });
+</script>
