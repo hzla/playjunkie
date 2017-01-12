@@ -132,10 +132,11 @@ header {
 				color: $red;
 				cursor: pointer;
 			}
-			#nav-profile-pic {
+			#nav-profile-pic, #nav-profile-pic img {
 				width: 30px;
 				height: 30px;
 				border-radius: 15px;
+				display: block;				
 			}
 			#create-btn {
 				height: 40px;

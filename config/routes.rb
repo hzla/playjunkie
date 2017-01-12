@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/sign_in', to: 'sessions#new', as: 'login'
   get '/sign_up', to: 'users#new', as: 'register'
 
-  root to: "sessions#new"
+  root to: "quizzes#index"
   resources :users
 
   resources :quizzes

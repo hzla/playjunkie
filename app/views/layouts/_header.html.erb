@@ -16,7 +16,9 @@
 				<div class="signinup">Sign In</div>
 			<% end %>
 		<% else %>
-			<%= image_tag current_user.profile_pic, id: "nav-profile-pic" %>
+			<%= link_to user_path(current_user), id: "nav-profile-pic" do %>
+				<%= image_tag current_user.profile_pic %>
+			<% end %>
 		<% end %>
 		<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
 	</div>
