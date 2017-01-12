@@ -1,0 +1,46 @@
+<div class="content-container user-forms-container">
+	<div class="signin-content signup">
+		<h1 class="super-bold signin-header">Sign Up</h1>
+		
+		<%= link_to '/auth/facebook' do %>
+			<div class="fb-signin btn">
+				<%= image_tag 'facebook.svg', class: "fb-img" %>
+				<p class="super-bold">Connect with Facebook</p>
+			</div>
+		<% end %>
+		<p class="or">Or</p>
+		<%= form_for User.new do |u| %>
+			<% if @error_message %>
+				<div class="signin-row">
+					<p class="error-message">    
+			      <%= @error_message %>
+			    </p>
+				</div>
+			<% end %>
+			<div class="signin-row">
+				<label>Full name</label>
+				<%= u.text_field :name, :class => "signin-field btn", required: true %>
+			</div>
+			<div class="signin-row">
+				<label>Email:</label>
+				<%= u.email_field :email, :class => "signin-field btn", required: true %>
+			</div>
+			<div class="signin-row">
+				<label>Password:</label>
+				<%= u.password_field :password, :class => "signin-field btn", required: true %>
+			</div>
+			<div class="signin-row">
+				<label>Confirm Password:</label>
+				<%= u.password_field :password, :class => "signin-field btn", required: true %>
+			</div>
+			<%= submit_tag "Sign In", id: "signin", :class => "btn" %>
+		<% end %>
+		<div id="signup-terms">By signing up, you agree to our terms and conditions and privacy policy</div>
+		<div class="signup-text">
+			<p>Already have an account?<p>
+			<%= link_to login_path, :class => "signup-link" do %>
+					Sign In
+			<% end %>
+		</div>
+	</div>
+</div>

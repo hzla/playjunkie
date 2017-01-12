@@ -1,0 +1,65 @@
+@import 'shared/variables';
+@import 'shared/mixins';
+
+.user-profile-container {
+	padding: 10px;
+}
+
+#profile-pic {
+	height: 80px;
+	width: 80px;
+	margin: 20px auto 0px auto;
+	border-radius: 40px;
+	display: block;
+}
+
+#user-name {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#user-description {
+	margin-top: 10px;
+	text-align: center;
+}
+
+#settings {
+	width: 300px;
+	background: $red;
+	color: white;
+	text-align: center;
+	margin: 30px auto 0px auto; 
+}
+
+#settings:hover {
+	background: $hover-red;
+}
+
+
+@media (min-width: 1024px) {
+	.user-profile-container {
+		padding: 60px 0px;
+		@include flexbox;
+	}
+	#user-info {
+		width: 220px;
+		margin-left: calc(50vw - 470px);
+	}
+	#profile-pic {
+		width: 140px;
+		height: 140px;
+		border-radius: 70px;
+		margin: 0;
+	}
+	#user-name {
+		margin-top: 40px;
+		text-align: left;
+	}
+	#user-description {
+		text-align: left;
+	}
+	#settings {
+		margin: 40px 0px 0px 0px;
+		width: 100px;
+	}
+}

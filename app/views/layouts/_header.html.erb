@@ -9,7 +9,9 @@
 	<%= image_tag 'navbar/mobile-menu', id: 'menu-icon' %>
 
 	<div id='navbar-actions'>
-		<div class="signinup">Sign In</div>
+		<%= link_to login_path do %>
+			<div class="signinup">Sign In</div>
+		<% end %>
 		<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
 	</div>
 	

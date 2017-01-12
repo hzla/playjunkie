@@ -1,15 +1,8 @@
 @import 'shared/variables';
 @import 'shared/mixins';
 
-.signin-container {
-	position: absolute;
-	display: none;
-	top: 44px;
-	left: 0px;
-	background: $background-white;
+.user-forms-container {
 	padding: 10px calc(50vw - 150px);
-	width: 100%;
-	height: calc(100vh - 44px);
 	.signin-content, .signup-content {
 		border-radius: 5px;
 		height: auto;
@@ -19,9 +12,6 @@
 		padding: 30px 10px;
 		text-align: center;
 		margin-bottom: 10px;
-	}
-	.signup-content {
-		display: none;
 	}
 	.fb-signin {
 		width: 280px;
@@ -101,14 +91,17 @@
 			cursor: pointer;
 		}
 	}
+	.error-message {
+		color: $red;
+	}
 }
 
 @media (min-width: 768px) {
-	.signin-container {
-		padding-top: 40px;
-		top: 60px;
-		.signin-content {
-			margin-bottom: 60px;
-		}
+.user-forms-container {
+	padding-top: 40px;
+	.signin-content {
+		margin-bottom: 60px;
 	}
+}
+
 }

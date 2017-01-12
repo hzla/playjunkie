@@ -1,0 +1,43 @@
+<div class="content-container user-forms-container">
+	<div class="signin-content signin">
+		<h1 class="super-bold signin-header">Sign In</h1>
+		<%= link_to '/auth/facebook' do %>
+			<div class="fb-signin btn">
+				<%= image_tag 'facebook.svg', class: "fb-img" %>
+				<p class="super-bold">Connect with Facebook</p>
+			</div>
+		<% end %>
+		<p class="or">Or</p>
+		<%= form_tag '/session' do %>
+			<% if @error_message %>
+				<div class="signin-row">
+					<p class="error-message">    
+			      <%= @error_message %>
+			    </p>
+				</div>
+			<% end %>
+			<div class="signin-row">
+			</div>
+			<div class="signin-row">
+				<label>Email:</label>
+				<%= email_field_tag :email, nil, :class => "signin-field btn", name: "session[email]", required: true %>
+			</div>
+			<div class="signin-row">
+				<label>Password:</label>
+				<%= password_field_tag :password, nil, :class => "signin-field btn", name: "session[password]", required: true %>
+			</div>
+			<%= submit_tag "Sign In", id: "signin", :class => "btn" %>
+		<% end %>
+		<div id="forgot-pw">Forgot my password</div>
+		<div class="signup-text">
+			<p>Don't have an account?<p>
+			<%= link_to register_path, :class => "signup-link" do %>
+				Sign Up
+			<% end %>
+		</div>
+	</div> 
+</div>
+
+
+
+	

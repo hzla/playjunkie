@@ -1,0 +1,19 @@
+@import 'mixins';
+@import 'variables';
+
+.content-container {
+	position: absolute;
+	top: 44px;
+	left: 0px;
+	background: $background-white;
+	width: 100%;
+	height: auto;
+}
+
+
+
+@media (min-width: 1024px) {
+	.content-container {
+		top: 60px;
+	}
+}

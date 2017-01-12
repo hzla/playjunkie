@@ -1,0 +1,17 @@
+<div class="content-container user-profile-container">
+	<div id="user-info">
+		<%= image_tag @user.profile_pic + "?type=large", id: "profile-pic" %>
+
+		<h2 id="user-name"><%= @user.name %></h2>
+
+		<p id="user-description"><%= @user.description %></p>
+
+		<%= link_to edit_user_path(@user), :class => "btn", id: "settings" do %>
+			Settings
+		<% end %>
+	</div>
+	<div id="user-quizzes">
+	</div>
+	
+</div>
+
