@@ -1,2 +1,7 @@
 no signout
 no sign in on mobile
+no profile picture upload
+
+
+
+

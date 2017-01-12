@@ -33,8 +33,10 @@ header {
 		display: none;
 	}
 
-	#logo {
-		width: 74px;
+	#logo, #logo img {
+		width: auto;
+		height: 22px;
+		display: block;
 	}
 	#nav-dropdown {
 		display: none;
@@ -88,6 +90,7 @@ header {
 @media (min-width: 1024px) {
 	header {
 		height: 60px;
+		padding: 0px calc(50vw - 470px); 
 		#search-icon, #menu-icon {
 			display: none;
 		}	
@@ -101,6 +104,10 @@ header {
 				line-height: 60px;
 				margin-left: 40px;
 				display: block;
+			}
+			#logo, #logo img {
+				width: auto;
+				height: 30px;
 			}
 			input {
 				width: 200px;
@@ -124,6 +131,11 @@ header {
 			div {
 				color: $red;
 				cursor: pointer;
+			}
+			#nav-profile-pic {
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
 			}
 			#create-btn {
 				height: 40px;

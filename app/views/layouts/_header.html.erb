@@ -1,7 +1,9 @@
 <header>
 	<%= image_tag 'navbar/mobile-search', id: "search-icon" %>
 	<div id="navbar-links">
-		<%= image_tag 'logo.svg', id: "logo" %>
+		<%= link_to root_path, id: "logo" do %>
+			<%= image_tag 'logo.svg' %>
+		<% end %>
 		<div>Trending</div>
 		<div>Fun <%= image_tag "navbar/arrow-fun.svg", :class => "dropdown-arrow" %></div>
 		<%= text_field_tag :search, nil, :class => "search-input", placeholder: "Search" %>
@@ -9,8 +11,12 @@
 	<%= image_tag 'navbar/mobile-menu', id: 'menu-icon' %>
 
 	<div id='navbar-actions'>
-		<%= link_to login_path do %>
-			<div class="signinup">Sign In</div>
+		<% if signed_out? %>
+			<%= link_to login_path do %>
+				<div class="signinup">Sign In</div>
+			<% end %>
+		<% else %>
+			<%= image_tag current_user.profile_pic, id: "nav-profile-pic" %>
 		<% end %>
 		<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
 	</div>

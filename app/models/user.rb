@@ -28,4 +28,8 @@ class User < ApplicationRecord
   def profile_pic
     profile_pic_url or '/assets/facebook.svg'
   end
+
+  def is_facebook_user?
+    !Authorization.where(user_id: id).empty?
+  end
 end

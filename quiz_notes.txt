@@ -1,0 +1,102 @@
+
+quiz attributes
+
+
+TRIVIA
+	image
+	title
+	description
+
+	TRIVIA QUESTION 
+		image
+		question-text
+		image-credit
+
+		QUESTION ANSWER
+			image
+			answer-text
+			image-credit
+			correct?
+
+	RESULTS
+		image
+		result-text
+		image-credit
+		range
+
+PERSONALITY
+	image
+	title description
+
+	PERSONALITY QUESTION
+		image
+		question-text
+		image-credit
+
+		QUESTION ANSWER
+			image
+			answer-text
+			image credit
+			result-id
+
+	RESULT
+		image
+		result-text
+		image-credit
+
+
+FLIP CARD
+	image
+	title
+	description
+	completion-message
+
+	QUESTION
+		title
+		image
+		image_back
+		image_credit
+		image_credit_back
+		color
+		color_back
+
+LIST
+	image
+	title
+	description
+	
+	QUESTION
+		title
+		image
+		image_credit
+		question-text
+
+===============================================================================
+Quiz
+	title
+	image
+	description
+	completion_message
+
+Quiz Item
+	title 
+	image
+	image_back
+	image_credit
+	image_credit_back
+	color
+	color_back
+	item_text
+
+Item Answer
+	image
+	answer_text
+	image_credit
+	result_id
+	correct?
+
+Result
+	image
+	result_text
+	image_credit
+	range
