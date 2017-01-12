@@ -19,6 +19,18 @@
 			<%= link_to user_path(current_user), id: "nav-profile-pic" do %>
 				<%= image_tag current_user.profile_pic %>
 			<% end %>
+			<div id="profile-dropdown">
+				<%= link_to user_path(current_user) do %>
+					<li>Profile</li>
+				<% end %>
+				<%= link_to edit_user_path(current_user) do %>
+					<li>Account Settings</li>
+				<% end %>
+				<div class="divider"></div>
+				<%= link_to '/signout' do %>
+					<li>Sign Out</li>
+				<% end %>
+			</div>
 		<% end %>
 		<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
 	</div>

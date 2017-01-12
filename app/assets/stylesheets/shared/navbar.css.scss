@@ -13,7 +13,7 @@ header {
 	left: 0;
 	top: 0;
 	width: 100%;
-	z-index: 1;
+	z-index: 5;
 	img:hover {
 		cursor: pointer;
 	}
@@ -128,9 +128,36 @@ header {
 			display: block;
 			@include flexbox;
 			@include align-items(center);
+			position: relative;
 			div {
 				color: $red;
 				cursor: pointer;
+			}
+			#profile-dropdown {
+				background: white;
+				height: 150px;
+				width: 180px;
+				border-radius: 5px;
+				padding: 20px;
+				z-index: 2;
+				position: absolute;
+				left: -150px;
+				bottom: -160px;
+				display: none;
+				li {
+					font-size: 16px;
+					margin-bottom: 20px;
+					color: $dark-grey;
+				}
+				.divider {
+					height: 2px;
+					background: $dark-outline;
+					width: 70px;
+					margin-bottom: 20px;
+				}
+				li:hover {
+					color: $red;
+				}
 			}
 			#nav-profile-pic, #nav-profile-pic img {
 				width: 30px;
