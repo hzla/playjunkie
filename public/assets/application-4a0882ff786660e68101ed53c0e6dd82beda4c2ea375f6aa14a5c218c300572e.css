@@ -1,0 +1,878 @@
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container {
+  padding: 60px calc(50vw - 470px);
+}
+/* line 7, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  position: relative;
+}
+/* line 11, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-image-input {
+  height: 130px;
+  width: 150px;
+  display: block;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+/* line 19, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-image-preview {
+  height: 130px;
+  width: 150px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 130px;
+  color: #ababab;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 2;
+  cursor: pointer;
+}
+/* line 33, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info .image-input-overlay {
+  height: 130px;
+  width: 150px;
+  border-radius: 5px;
+  border: 1px solid #d7d7d7;
+  text-align: center;
+  line-height: 130px;
+  color: #ababab;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 45, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-text-info {
+  margin-left: 10px;
+  width: 460px;
+}
+/* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-text-info input, .quiz-form-container #quiz-main-info #quiz-text-info textarea {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 16px;
+  border: 1px solid #d7d7d7;
+}
+/* line 54, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-text-info textarea {
+  margin-top: 10px;
+  line-height: 16px;
+}
+/* line 61, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container h2.content-title {
+  margin-top: 60px;
+}
+/* line 65, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box {
+  border: 1px solid #d7d7d7;
+  padding: 30px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+/* line 70, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box h3 {
+  color: red;
+  font-weight: 800;
+}
+/* line 74, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .divider {
+  background: #cfcfcf;
+  height: 1px;
+  width: 100%;
+  margin-top: 30px;
+}
+/* line 80, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box h3.answer-header {
+  color: #414141;
+  margin-top: 30px;
+}
+/* line 85, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background: white;
+  bottom: 0px;
+  left: 0px;
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container {
+  padding: 10px calc(50vw - 150px);
+}
+/* line 6, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .signin-content, .user-forms-container .signup-content {
+  border-radius: 5px;
+  height: auto;
+  width: 300px;
+  background: white;
+  border: 1px solid #ededed;
+  padding: 30px 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 16, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .fb-signin {
+  width: 280px;
+  padding: 0px 54px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  background: #3B5998;
+  color: white;
+  margin-top: 20px;
+}
+/* line 18, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .fb-signin img {
+  height: 20px;
+}
+/* line 28, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .fb-signin p {
+  font-size: 14px;
+  color: white;
+}
+/* line 33, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .or {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  height: 14px;
+}
+/* line 39, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form {
+  text-align: left;
+}
+/* line 42, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form .signin-row label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+/* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form .signin-row input {
+  border: 1px solid #ededed;
+  margin-top: 10px;
+  width: 100%;
+  padding: 0px 20px;
+}
+/* line 55, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form #signin {
+  background: #ff9c1d;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+/* line 64, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form #signin:hover {
+  background: #e88d19;
+}
+/* line 68, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container #forgot-pw {
+  color: #ff9c1d;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #ededed;
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+/* line 78, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container #signup-terms {
+  font-size: 10px;
+  margin-top: 20px;
+}
+/* line 82, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .signup-text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 200px;
+  margin: 20px auto 0px auto;
+}
+/* line 88, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .signup-text p {
+  font-size: 14px;
+}
+/* line 91, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .signup-text .signup-link {
+  margin-left: 10px;
+  color: #ff9c1d;
+  cursor: pointer;
+}
+/* line 97, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .error-message {
+  color: #ff491c;
+}
+
+@media (min-width: 768px) {
+  /* line 105, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container {
+    padding: 40px calc(50vw - 210px);
+  }
+  /* line 107, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .signin-content {
+    margin-bottom: 60px;
+    width: 420px;
+    padding: 60px;
+  }
+  /* line 114, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container form .signin-row label {
+    font-size: 16px;
+  }
+  /* line 118, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container form #signin {
+    font-size: 16px;
+  }
+  /* line 122, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .fb-signin {
+    width: 300px;
+  }
+  /* line 124, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .fb-signin p {
+    font-size: 16px;
+  }
+  /* line 128, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .or {
+    height: 16px;
+    font-size: 16px;
+  }
+  /* line 132, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container #forgot-pw, .user-forms-container .signup-text {
+    font-size: 16px;
+  }
+  /* line 134, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container #forgot-pw p, .user-forms-container .signup-text p {
+    font-size: 16px;
+  }
+  /* line 138, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .signup-text {
+    width: 210px;
+  }
+}
+/* line 21, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/font.css.scss */
+* {
+  font-family: "Verlag";
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/layouts.css.scss */
+.content-container {
+  position: absolute;
+  top: 44px;
+  left: 0px;
+  background: #f7f7f7;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  /* line 16, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/layouts.css.scss */
+  .content-container {
+    top: 60px;
+  }
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 12, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-family: 'verlag';
+  color: #414141;
+}
+
+/* line 36, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+li {
+  list-style: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 40, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 44, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+body {
+  line-height: 1.2;
+  background: #f7f7f7;
+}
+
+/* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 51, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 54, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 59, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 64, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 68, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* line 77, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+h1 {
+  font-size: 20px;
+}
+
+/* line 81, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+h2 {
+  font-size: 18px;
+}
+
+/* line 85, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+h3 {
+  font-size: 14px;
+}
+
+/* line 89, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+header p, header div, header a {
+  font-size: 14px;
+}
+
+/* line 93, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+p, div {
+  font-size: 14px;
+}
+
+/* line 97, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.bold {
+  font-weight: 600;
+}
+
+/* line 101, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.super-bold {
+  font-weight: 800;
+}
+
+@media (min-width: 769px) {
+  /* line 106, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  h1 {
+    font-size: 28px;
+  }
+
+  /* line 110, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  h2 {
+    font-size: 24px;
+  }
+
+  /* line 114, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  h2.content-title {
+    font-size: 18px;
+  }
+
+  /* line 118, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  h3 {
+    font-size: 16px;
+  }
+
+  /* line 122, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  header p, header div, header a {
+    font-size: 16px;
+  }
+
+  /* line 126, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  p, div {
+    font-size: 16px;
+  }
+}
+/* line 133, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+* {
+  transition-duration: 0.4s;
+}
+
+/* line 141, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.btn {
+  border-radius: 5px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  display: block;
+}
+
+/* line 150, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+textarea.btn {
+  height: 88px;
+}
+
+@media (min-width: 1024px) {
+  /* line 154, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  textarea.btn {
+    height: 80px;
+  }
+
+  /* line 157, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  .btn {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+  }
+}
+/* line 5, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header {
+  height: 44px;
+  background: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 10px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-content: center;
+  -moz-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+/* line 17, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header img:hover {
+  cursor: pointer;
+}
+/* line 20, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #search-icon, header #menu-icon {
+  width: 20px;
+  height: auto;
+}
+/* line 24, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #navbar-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+/* line 27, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #navbar-links div, header #navbar-links input {
+  display: none;
+}
+/* line 32, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #navbar-actions {
+  display: none;
+}
+/* line 36, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #logo, header #logo img {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+/* line 41, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 1;
+}
+/* line 50, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown #close-dropdown {
+  height: 14px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}
+/* line 57, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown .dropdown-content {
+  background: white;
+  padding-top: 15px;
+}
+/* line 61, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown li {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  height: 44px;
+  width: calc(100% - 120px);
+  margin: 0 auto;
+  border-bottom: 1px solid #ededed;
+  line-height: 44px;
+}
+/* line 71, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown li.no-outline {
+  border-bottom: 0px;
+}
+/* line 74, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown li.bold {
+  font-weight: 600;
+}
+/* line 77, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown li.list-header {
+  color: #ababab;
+  font-weight: 800;
+  background: #ededed;
+  width: 100%;
+}
+/* line 83, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown .nav-categories {
+  background: #f7f7f7;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 1024px) {
+  /* line 91, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header {
+    height: 60px;
+    padding: 0px calc(50vw - 470px);
+  }
+  /* line 94, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #search-icon, header #menu-icon {
+    display: none;
+  }
+  /* line 97, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header img.dropdown-arrow {
+    height: 8px;
+    width: 8px;
+    margin-left: 5px;
+  }
+  /* line 103, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-links div, header #navbar-links input {
+    line-height: 60px;
+    margin-left: 40px;
+    display: block;
+  }
+  /* line 108, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-links #logo, header #navbar-links #logo img {
+    width: auto;
+    height: 30px;
+  }
+  /* line 112, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-links input {
+    width: 200px;
+    height: 40px;
+    padding: 0px 20px;
+    line-height: 40px;
+    border-radius: 5px;
+    background: #f7f7f7;
+    border: 1px solid #ededed;
+    font-size: 16px;
+  }
+  /* line 122, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-links input::-webkit-input-placeholder {
+    color: #ababab;
+    font-size: 16px;
+  }
+  /* line 127, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions {
+    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: relative;
+  }
+  /* line 132, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions div {
+    color: #ff491c;
+    cursor: pointer;
+  }
+  /* line 136, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #profile-dropdown {
+    background: white;
+    height: 150px;
+    width: 180px;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 2;
+    position: absolute;
+    left: -150px;
+    bottom: -160px;
+    display: none;
+  }
+  /* line 147, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #profile-dropdown li {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #414141;
+  }
+  /* line 152, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #profile-dropdown .divider {
+    height: 2px;
+    background: #d7d7d7;
+    width: 70px;
+    margin-bottom: 20px;
+  }
+  /* line 158, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #profile-dropdown li:hover {
+    color: #ff491c;
+  }
+  /* line 162, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #nav-profile-pic, header #navbar-actions #nav-profile-pic img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: block;
+  }
+  /* line 168, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #create-btn {
+    height: 40px;
+    background: #ff491c;
+    color: white;
+    line-height: 40px;
+    border-radius: 5px;
+    width: 100px;
+    padding: 0px 18px;
+    margin-left: 20px;
+  }
+  /* line 178, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #create-btn:hover {
+    background: #df4019;
+  }
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container {
+  padding: 30px 10px 10px 10px;
+}
+/* line 7, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form h2 {
+  margin-top: 20px;
+  font-weight: 800;
+}
+/* line 11, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form textarea {
+  margin-top: 10px;
+  width: 100%;
+  height: 88px;
+  display: block;
+  border: 1px solid #ededed;
+  line-height: 14px;
+  padding: 15px 10px;
+}
+/* line 20, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form input {
+  margin-top: 10px;
+  height: 44px;
+  width: 100%;
+  display: block;
+  border: 1px solid #ededed;
+  padding: 15px 10px;
+}
+/* line 28, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form #submit-settings {
+  width: 100%;
+  background: #ff491c;
+  color: white;
+  text-align: center;
+  line-height: 44px;
+  padding: 0px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+/* line 38, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form #submit-settings:hover {
+  background: #df4019;
+}
+
+@media (min-width: 1024px) {
+  /* line 45, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+  .settings-container {
+    padding: 80px calc(50vw - 470px);
+  }
+  /* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+  .settings-container .user-settings-form h2 {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+  /* line 52, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+  .settings-container .user-settings-form #submit-settings {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 840px;
+    margin-top: 60px;
+  }
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+.user-profile-container {
+  padding: 10px;
+}
+
+/* line 8, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#profile-pic {
+  height: 80px;
+  width: 80px;
+  margin: 20px auto 0px auto;
+  border-radius: 40px;
+  display: block;
+}
+
+/* line 16, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#user-name {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* line 21, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#user-description {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* line 26, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#settings {
+  width: 300px;
+  background: #ff491c;
+  color: white;
+  text-align: center;
+  margin: 30px auto 0px auto;
+}
+
+/* line 34, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#settings:hover {
+  background: #df4019;
+}
+
+@media (min-width: 1024px) {
+  /* line 40, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  .user-profile-container {
+    padding: 60px 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  /* line 44, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #user-info {
+    width: 220px;
+    margin-left: calc(50vw - 470px);
+  }
+
+  /* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    margin: 0;
+  }
+
+  /* line 54, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #user-name {
+    margin-top: 40px;
+    text-align: left;
+  }
+
+  /* line 58, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #user-description {
+    text-align: left;
+  }
+
+  /* line 61, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #settings {
+    margin: 40px 0px 0px 0px;
+    width: 100px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
