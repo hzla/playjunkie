@@ -32,7 +32,9 @@
 				<% end %>
 			</div>
 		<% end %>
-		<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
+		<%= link_to new_quiz_path do %>
+			<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
+		<% end %>
 	</div>
 	
 	
