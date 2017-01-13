@@ -44,5 +44,18 @@
 @media (min-width: 1024px) {
 	.settings-container {
 		padding: 80px calc(50vw - 470px);
+		.user-settings-form {
+			h2 {
+				font-size: 18px;
+				margin-top: 40px;
+			}
+			#submit-settings {
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				margin-left: 840px;
+				margin-top: 60px;
+			}
+		}
 	}
 }

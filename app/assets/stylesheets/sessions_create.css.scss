@@ -27,12 +27,14 @@
 		margin-top: 20px;
 		p {
 			font-size: 14px;
+			color: white;
 		}
 	}
 	.or {
 		text-align: center;
 		font-size: 14px;
 		margin-top: 20px;
+		height: 14px;
 	}
 	form {
 		text-align: left;
@@ -97,11 +99,15 @@
 	}
 }
 
+
+////// add classes for 14 - 16px shifts
 @media (min-width: 768px) {
 .user-forms-container {
-	padding-top: 40px;
+	padding: 40px calc(50vw - 210px);
 	.signin-content {
 		margin-bottom: 60px;
+		width: 420px;
+		padding: 60px;
 	}
 	form {
 		.signin-row {
@@ -109,6 +115,28 @@
 				font-size: 16px;
 			}
 		}
+		#signin {
+			font-size: 16px;
+		}
+	}
+	.fb-signin {
+		width: 300px;
+		p {
+			font-size: 16px;
+		}
+	}
+	.or {
+		height: 16px;
+		font-size: 16px;
+	}
+	#forgot-pw, .signup-text {
+		font-size: 16px;
+		p {
+			font-size: 16px;
+		}
+	}
+	.signup-text {
+		width: 210px;
 	}
 }
 
