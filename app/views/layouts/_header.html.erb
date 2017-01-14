@@ -1,5 +1,5 @@
 <header>
-	<%= image_tag 'navbar/mobile-search', id: "search-icon" %>
+	<%= image_tag 'navbar/mobile-search.svg', id: "search-icon" %>
 	<div id="navbar-links">
 		<%= link_to root_path, id: "logo" do %>
 			<%= image_tag 'logo.svg' %>
@@ -8,7 +8,7 @@
 		<div>Fun <%= image_tag "navbar/arrow-fun.svg", :class => "dropdown-arrow" %></div>
 		<%= text_field_tag :search, nil, :class => "search-input", placeholder: "Search" %>
 	</div>
-	<%= image_tag 'navbar/mobile-menu', id: 'menu-icon' %>
+	<%= image_tag 'navbar/mobile-menu.svg', id: 'menu-icon' %>
 
 	<div id='navbar-actions'>
 		<% if signed_out? %>
