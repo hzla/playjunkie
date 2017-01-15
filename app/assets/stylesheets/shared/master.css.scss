@@ -33,6 +33,10 @@ time, mark, audio, video, input, textarea {
 	color: $dark-grey;
 }
 
+input, textarea {
+	display: block;
+}
+
 li {
 	list-style: none;
 }

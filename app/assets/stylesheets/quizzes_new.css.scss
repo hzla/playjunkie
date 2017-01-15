@@ -8,6 +8,7 @@
 		@include flexbox;
 		margin-top: 40px;
 		position: relative;
+		width: 620px;
 		#quiz-image-input {
 			height: 130px;
 			width: 150px;
@@ -62,14 +63,17 @@
 		margin-top: 60px;
 
 	}
+
 	.form-box {
 		border: 1px solid $dark-outline;
 		padding: 30px 20px;
 		margin-top: 20px;
 		border-radius: 5px;
+		width: 620px;
 		h3 {
 			color: red;
 			font-weight: 800;
+			margin-bottom: 30px;
 		}
 		.divider {
 			background: #cfcfcf;
@@ -80,6 +84,98 @@
 		h3.answer-header {
 			color: $dark-grey;
 			margin-top: 30px;
+
+		}
+		.box-field {
+			@include flexbox;
+			width: 100%;
+			@include justify-content(space-between);
+			margin-bottom: 10px;
+			.box-label {
+				margin-top: 12px;
+			}
+			.box-input {
+				border: 1px solid $dark-outline;
+				border-radius: 5px;
+				width: 400px;
+				height: 40px;
+			}
+			.box-input.question-image-input {
+				height: 260px;
+				cursor: pointer;
+				line-height: 260px;
+				text-align: center;
+				color: $grey;
+			}
+		}
+		.form-answers {
+			width: 100%;
+			@include flexbox;
+			.form-answer {
+				width: 137px;
+				height: 300px;
+				border-radius: 5px;
+				background: white;
+				padding: 10px;
+				position: relative;
+				border: 1px solid $dark-outline;
+				margin-left: 10px;
+				input, textarea, .answer-image-input {
+					width: 100%;
+					border: 1px solid $dark-outline;
+					border-radius: 5px;
+					margin-bottom: 10px;
+					padding: 10px;
+				}
+				.answer-image-input {
+					height: 94px;
+					text-align: center;
+					color: $grey;
+					padding: 30px 0px;
+					cursor: pointer;
+				}
+				.answer-text-input {
+					height: 80px;
+				}
+				.answer-image-credit-input {
+					height: 40px;
+				}
+				.checkbox-container {
+					width: 72px;
+					@include flexbox;
+					@include justify-content(space-between);
+					height: 16px;
+					margin: 20px auto 10px auto;
+				}
+			}
+			.form-answer:first-child {
+				margin-left: 0px;
+			}
+		}
+		.form-answers.text-style {
+			display: block;
+			.text-answer-form {
+				@include flexbox;
+				@include justify-content(space-between);
+				.answer-text-input {
+					height: 40px;
+					width: 450px;
+					border: 1px solid $dark-outline;
+					border-radius: 5px;
+					padding: 10px;
+				}
+				.checkbox-container {
+					background: white;
+					border: 1px solid $dark-outline;
+					height: 40px;
+					width: 120px;
+					padding: 0px 24px;
+					@include flexbox;
+					@include justify-content(space-between);
+					@include align-items(center);
+					border-radius: 5px;
+				}
+			}
 		}
 	}
 	#submit-bar {

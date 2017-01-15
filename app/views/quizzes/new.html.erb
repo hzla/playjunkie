@@ -18,13 +18,99 @@
 		<h2 class="super-bold content-title">Add Questions</h2>
 		<div class="form-box">
 			<h3>Question 1</h3>
+			<class class="box-field">
+				<label class="box-label">Question Image</label>
+				<div class="box-input question-image-input">Click to add image...</div>
+			</class>
+			<class class="box-field">
+				<label class="box-label">Question</label>
+				<%= text_field_tag :question_text_1, nil, :class => "box-input" %>
+			</class>
+			<class class="box-field">
+				<label class="box-label">Image Credit</label>
+				<%= text_field_tag :image_credit_1, nil, :class => "box-input" %>
+			</class>
 			<div class="divider"></div>
 			<h3 class="answer-header">Answers</h3>
+			<class class="box-field">
+				<label class="box-label">Answer Format</label>
+			</class>
+			<div class="form-answers">
+				<div class="form-answer">
+					<div class="answer-image-input">Click to add image...</div>
+					<%= text_area_tag :answer_text_1, nil, :class => "answer-text-input", placeholder: "Answer text..." %>
+					<%= text_field_tag :answer_image_credit_1, nil, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
+					<div class="checkbox-container">
+						<%= check_box_tag :correct_1, nil, :class => "checkbox-input" %>
+						<p>Correct</p>
+					</div>
+				</div>
+				<div class="form-answer">
+					<div class="answer-image-input">Click to add image...</div>
+					<%= text_area_tag :answer_text_1, nil, :class => "answer-text-input", placeholder: "Answer text..." %>
+					<%= text_field_tag :answer_image_credit_1, nil, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
+					<div class="checkbox-container">
+						<%= check_box_tag :correct_1, nil, :class => "checkbox-input" %>
+						<p>Correct</p>
+					</div>
+				</div>
+				<div class="form-answer">
+					<div class="answer-image-input">Click to add image...</div>
+					<%= text_area_tag :answer_text_1, nil, :class => "answer-text-input", placeholder: "Answer text..." %>
+					<%= text_field_tag :answer_image_credit_1, nil, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
+					<div class="checkbox-container">
+						<%= check_box_tag :correct_1, nil, :class => "checkbox-input" %>
+						<p>Correct</p>
+					</div>
+				</div>
+				<div class="form-answer">
+					<div class="answer-image-input">Click to add image...</div>
+					<%= text_area_tag :answer_text_1, nil, :class => "answer-text-input", placeholder: "Answer text..." %>
+					<%= text_field_tag :answer_image_credit_1, nil, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
+					<div class="checkbox-container">
+						<%= check_box_tag :correct_1, nil, :class => "checkbox-input" %>
+						<p>Correct</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="form-box">
+			<h3>Question 2</h3>
+			<class class="box-field">
+				<label class="box-label">Question Image</label>
+				<div class="box-input question-image-input">Click to add image...</div>
+			</class>
+			<class class="box-field">
+				<label class="box-label">Question</label>
+				<%= text_field_tag :question_text_1, nil, :class => "box-input" %>
+			</class>
+			<class class="box-field">
+				<label class="box-label">Image Credit</label>
+				<%= text_field_tag :image_credit_1, nil, :class => "box-input" %>
+			</class>
+			<div class="divider"></div>
+			<h3 class="answer-header">Answers</h3>
+			<class class="box-field">
+				<label class="box-label">Answer Format</label>
+			</class>
+			<div class="form-answers text-style">
+				<div class="text-answer-form">
+					<%= text_area_tag :answer_text_1, nil, :class => "answer-text-input", placeholder: "Answer text..." %>
+					<div class="checkbox-container">
+						<%= check_box_tag :correct_1, nil, :class => "checkbox-input" %>
+						<p>Correct</p>
+					</div>
+				</div>
+			</div>
+
 		</div>
 
 		<h2 class="super-bold content-title">Add Results</h2>
 
 		<div class="form-box">
+
 		</div>
 		<div id="submit-bar"></div>
 	<% end %>
