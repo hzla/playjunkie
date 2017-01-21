@@ -14,7 +14,7 @@
 			width: 150px;
 			display: block;
 			opacity: 0;
-			z-index: 1;
+			z-index: 2;
 			cursor: pointer;
 		}
 		#quiz-image-preview {
@@ -28,7 +28,7 @@
 			left: 0;
 			top: 0;
 			display: none;
-			z-index: 2;
+			z-index: 1;
 			cursor: pointer;
 		}
 		.image-input-overlay {
@@ -70,6 +70,16 @@
 		margin-top: 20px;
 		border-radius: 5px;
 		width: 620px;
+		position: relative;
+		.closer {
+			cursor: pointer;
+			position: absolute;
+			top: -10px;
+			right: -10px;
+			height: 20px;
+			width: 20px;
+			z-index: 3;
+		}
 		h3 {
 			color: red;
 			font-weight: 800;
@@ -91,6 +101,7 @@
 			width: 100%;
 			@include justify-content(space-between);
 			margin-bottom: 10px;
+			position: relative;
 			.box-label {
 				margin-top: 12px;
 			}
@@ -107,11 +118,51 @@
 				text-align: center;
 				color: $grey;
 			}
+			input[type="file"] {
+				position: absolute;
+				right: 0;
+				height: 260px;
+				top: 0;
+				width: 400px;
+				opacity: 0;
+				z-index: 2;
+				cursor: pointer;
+			}
+			.question-image-preview {
+				position: absolute;
+				right: 0;
+				height: 260px;
+				top: 0;
+				width: 400px;
+				z-index: 1;
+				cursor: pointer;
+				display: none;
+				border-radius: 5px;
+			}
+			.answer-format-selection {
+				width: 400px;
+				@include flexbox;
+				.answer-format {
+					height: 40px;
+					width: 40px;
+					margin-right: 10px;
+					cursor: pointer;
+				}
+				.answer-format.selected, .image-format.answer-format {
+					display: none;
+				}
+				.answer-format.image-format.selected {
+					display: block;
+				}
+			}
 		}
-		.form-answers {
+		.form-answers.text-style {
+			display: none;
+		}
+		.form-answers, .form-results {
 			width: 100%;
 			@include flexbox;
-			.form-answer {
+			.form-answer, .image-and-text-box  {
 				width: 137px;
 				height: 300px;
 				border-radius: 5px;
@@ -120,40 +171,62 @@
 				position: relative;
 				border: 1px solid $dark-outline;
 				margin-left: 10px;
-				input, textarea, .answer-image-input {
+				input, textarea, .image-input {
 					width: 100%;
 					border: 1px solid $dark-outline;
 					border-radius: 5px;
 					margin-bottom: 10px;
 					padding: 10px;
+					font-size: 12px;
 				}
-				.answer-image-input {
+				.image-input {
 					height: 94px;
 					text-align: center;
 					color: $grey;
 					padding: 30px 0px;
 					cursor: pointer;
+					background: $background-white;
 				}
-				.answer-text-input {
+				input[type="file"], .answer-image-preview {
+					height: 94px;
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					width: 115px;
+					cursor: pointer;
+					opacity: 0;
+					z-index: 2;
+				}
+				.answer-image-preview {
+					opacity: 1;
+					display: none;
+					border-radius: 5px;
+					z-index: 1;
+				}
+				textarea {
 					height: 80px;
 				}
-				.answer-image-credit-input {
+				input {
 					height: 40px;
 				}
 				.checkbox-container {
 					width: 72px;
 					@include flexbox;
 					@include justify-content(space-between);
+					@include align-items(center);
 					height: 16px;
 					margin: 20px auto 10px auto;
+					input {
+						height: auto;
+						margin: 0;
+					}
 				}
 			}
-			.form-answer:first-child {
+			.image-and-text-box:first-child {
 				margin-left: 0px;
 			}
 		}
 		.form-answers.text-style {
-			display: block;
 			.text-answer-form {
 				@include flexbox;
 				@include justify-content(space-between);
@@ -177,6 +250,48 @@
 				}
 			}
 		}
+		.form-results {
+			@include flexbox;
+			width: 100%;
+			height: 100%;
+			.form-result {
+				height: 100%;
+				position: relative;
+				input[type="file"], .result-image-preview {
+					position: absolute;
+					left: 10px;
+					height: 94px;
+					top: 100px;
+					width: 115px;
+					opacity: 0;
+					z-index: 2;
+					cursor: pointer;
+				}
+				.result-image-preview {
+					border-radius: 5px;
+					display: none;
+					z-index: 1;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	#add-question {
+		background: $orange;
+		text-align: center;
+		color: white;
+		font-weight: 800;
+		cursor: pointer;
+		margin-top: 20px;
+		width: 620px;
+	}
+
+	#add-question:hover {
+		background: $hover-orange
+	}
+
+	.results-box {
+		padding: 20px;
 	}
 	#submit-bar {
 		position: fixed;
@@ -185,5 +300,40 @@
 		background: white;
 		bottom: 0px;
 		left: 0px;
+		#submit-bar-content {
+			height: 100%;
+			width: 620px;
+			margin-left: calc(50vw - 470px);
+			padding: 10px 0px;
+			@include flexbox;
+			@include justify-content(space-between);
+			.btn {
+				width: 100px;
+				height: 100%;
+				text-align: center;
+				font-weight: 800;
+				cursor: pointer;
+			}
+			#preview-quiz {
+				background: white;
+				color:  $grey;
+				border: 1px solid $grey;
+			}
+			#submit-actions {
+				@include flexbox;
+				#save-quiz {
+					background: $dark-outline;
+					color: $dark-grey;
+				}
+				#publish-quiz {
+					background: $red;
+					color: white;
+					margin-left: 10px;
+				}
+				#publish-quiz:hover {
+					background: $hover-red;
+				}
+			}
+		}
 	}
 }

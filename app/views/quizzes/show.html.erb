@@ -1,0 +1,19 @@
+<div class="content-container">
+	<%= @quiz.attributes %>
+	<br>
+	<br>
+	<% @quiz.quiz_items.each do |a| %>
+		<%= a.attributes %>
+		<br>
+		<br>
+		<% a.item_answers.each do |b| %>
+			<%= b.attributes %>
+			<br>
+		<% end %>	
+	<% end %>	
+	<br>
+	<% @quiz.results.each do |result| %>
+		<%= result.attributes %>
+	<% end %>
+
+</div>

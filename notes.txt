@@ -5,3 +5,13 @@ no profile picture upload
 
 
 
+Fri
+	Quiz Create/Quiz Take
+Sat 
+	Quiz Take/Publish/Profile Quiz View
+Sun
+	Landing
+Monday
+	Trending/Browse
+Tues - Fri
+	Finishing Up
