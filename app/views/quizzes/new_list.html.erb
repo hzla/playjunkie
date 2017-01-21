@@ -1,0 +1,56 @@
+<div class="content-container quiz-form-container list-oriented-quiz">
+	<h1 class="super-bold">Create a New List</h1>
+
+	<%= form_for Quiz.new do |f| %>
+		<%= f.hidden_field :quiz_type, value: "list" %>
+		<div id="quiz-main-info">
+			<%= f.file_field :image, :id => "quiz-image-input", required: true %>
+			<img id="quiz-image-preview" class="image-preview" src="#" alt="preview failed to load" class="hidden" /> 
+			<div class="image-input-overlay">
+				Click to Add Image
+			</div>
+			
+			<div id="quiz-text-info">
+				<%= f.text_field :title, :class => "btn", placeholder: "Title", required: true %>
+				<%= f.text_area :description, :class => "btn", placeholder: "Description", required: true %>
+			</div>
+		</div>
+
+		<h2 class="super-bold content-title">Add Items</h2>
+
+			<div class="form-box question">
+				<%= image_tag "close-box.svg", :class => "close-question closer" %>
+				<h3 class=" question-number">Item 1</h3>
+				<class class="box-field ">
+					<label class="box-label">Title</label>
+					<%= text_field_tag "quiz_item_1[item_text]", nil, :class => "box-input" %>
+				</class>
+				<class class="box-field ">
+					<label class="box-label">Image</label>
+					<%= image_tag "close-box.svg", :class => "close-question closer" %>
+					<div class="box-input question-image-input">Click to add image...</div>
+					<%= file_field_tag "quiz_item_1[image]", :class => "question-image-input" %>
+					<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />
+				</class>
+				<class class="box-field ">
+					<label class="box-label">Image Credit</label>
+					<%= text_field_tag "quiz_item_1[image_credit]", nil, :class => "box-input" %>
+				</class>
+			</div>
+		<div id="add-question" class="btn">
+			Add Item
+		</div>
+
+		<div id="submit-bar">
+			<div id="submit-bar-content">
+				<div id="preview-quiz" class="btn">
+					Preview
+				</div>
+				<div id="submit-actions">
+					<div id="save-quiz" class="btn">Save</div>
+					<%= f.submit 'Publish', id: "publish-quiz", :class => "btn" %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

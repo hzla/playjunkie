@@ -1,8 +1,8 @@
-<div class="content-container quiz-form-container">
-	<h1 class="super-bold">Create a New Trivia</h1>
+<div class="content-container quiz-form-container result-oriented-quiz">
+	<h1 class="super-bold">Create a New Quiz</h1>
 
 	<%= form_for Quiz.new do |f| %>
-
+		<%= f.hidden_field :quiz_type, value: "personality" %>
 		<div id="quiz-main-info">
 			<%= f.file_field :image, :id => "quiz-image-input", required: true %>
 			<img id="quiz-image-preview" class="image-preview" src="#" alt="preview failed to load" class="hidden" /> 
@@ -15,24 +15,42 @@
 				<%= f.text_area :description, :class => "btn", placeholder: "Description", required: true %>
 			</div>
 		</div>
+
+		<h2 class="super-bold content-title">Add Results</h2>
+
+		<div class="form-box results-box">
+			<div class="form-results show-add-result">
+				<div class="form-result image-and-text-box">
+					<%= image_tag "close-box.svg", :class => "close-result closer" %>
+					<%= text_area_tag "result_1[result_text]", nil, :class => "result-text-input", placeholder: "Answer text..." %>
+					<div class="image-input">Click to add image...</div>
+					<%= file_field_tag "result_1[image]", :class => "result-image-input" %>
+					<img class="result-image-preview image-preview" src="#" alt="preview failed to load" />
+					<%= text_field_tag "result_1[image_credit]", nil, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
+				</div>
+				<div class="add-result">
+						<div class="btn">Add Result</div>
+				</div>
+			</div>	
+		</div>
 		
 		<h2 class="super-bold content-title">Add Questions</h2>
 			<div class="form-box question">
 				<%= image_tag "close-box.svg", :class => "close-question closer" %>
-				<h3 class="increment question-number">Question 1</h3>
+				<h3 class=" question-number">Question 1</h3>
 				
-				<class class="box-field increment">
+				<class class="box-field ">
 					<label class="box-label">Question Image</label>
 					<%= image_tag "close-box.svg", :class => "close-question closer" %>
 					<div class="box-input question-image-input">Click to add image...</div>
-					<%= file_field_tag "quiz_item_1[image]", :class => "question-image-input", required: true %>
+					<%= file_field_tag "quiz_item_1[image]", :class => "question-image-input" %>
 					<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />
 				</class>
-				<class class="box-field increment">
+				<class class="box-field ">
 					<label class="box-label">Question</label>
 					<%= text_field_tag "quiz_item_1[item_text]", nil, :class => "box-input" %>
 				</class>
-				<class class="box-field increment">
+				<class class="box-field ">
 					<label class="box-label">Image Credit</label>
 					<%= text_field_tag "quiz_item_1[image_credit]", nil, :class => "box-input" %>
 				</class>
@@ -49,32 +67,15 @@
 					</div>
 				</div>
 
-				<div class="form-answers text-style increment-quiz-item" >
-					<div class="text-answer-form">
-						<%= image_tag "close-box.svg", :class => "close-answer closer" %>
-						<%= text_area_tag "quiz_item_1_item_answer_1[answer_text]", nil, :class => "answer-text-input", placeholder: "Answer text..." %>
-						<div class="checkbox-container">
-							<%= check_box_tag "quiz_item_1_item_answer_1[correct]", nil, :class => "checkbox-input" %>
-							<p>Correct</p>
-						</div>
-					</div>
-					<div class="add-answer">
-						<%= image_tag "add-answer-plus.svg", :class => "add-answer-btn" %>
-						<p>Add Answer</p>
-					</div>
-				</div>
 				<div class="form-answers image-style">
 					<div class="form-answer image-and-text-box">
 						<%= image_tag "close-box.svg", :class => "close-answer closer" %>
 						<div class="image-input">Click to add image...</div>
-						<%= file_field_tag "quiz_item_1_item_answer_1[image]", :class => "answer-image-input", required: true %>
+						<%= file_field_tag "quiz_item_1_item_answer_1[image]", :class => "answer-image-input" %>
 						<img class="answer-image-preview image-preview" src="#" alt="preview failed to load" />
 						<%= text_area_tag "quiz_item_1_item_answer_1[answer_text]", nil, :class => "answer-text-input", placeholder: "Answer text..." %>
 						<%= text_field_tag "quiz_item_1_item_answer_1[image_credit]", nil, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
-						<div class="checkbox-container">
-							<%= check_box_tag "quiz_item_1_item_answer_1[correct]", nil, :class => "checkbox-input" %>
-							<p>Correct</p>
-						</div>
+						<%= select_tag "quiz_item_1_item_answer_1[result_id]", "<option disabled='disabled' selected='selected'>Assign a Result</option><option value='0'>Result 1</option>".html_safe %>
 					</div>
 					<div class="add-answer">
 						<%= image_tag "add-answer.svg", :class => "add-answer-btn" %>
@@ -82,39 +83,10 @@
 					</div>
 				</div>
 			</div>
-
-
 		<div id="add-question" class="btn">
 			Add Question
 		</div>
 
-
-
-
-
-
-
-
-
-		
-		<h2 class="super-bold content-title">Add Results</h2>
-
-		<div class="form-box results-box">
-			<div class="form-results">
-				<div class="form-result image-and-text-box">
-					<%= image_tag "close-box.svg", :class => "close-result closer" %>
-					<%= text_area_tag "result_1[result_text]", nil, :class => "result-text-input", placeholder: "Answer text..." %>
-					<div class="image-input">Click to add image...</div>
-					<%= file_field_tag "result_1[image]", :class => "result-image-input", required: true %>
-					<img class="result-image-preview image-preview" src="#" alt="preview failed to load" />
-					<%= text_field_tag "result_1[image_credit]", nil, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
-				</div>
-				<div class="add-result">
-						<div class="btn">Add Result</div>
-				</div>
-			</div>
-			
-		</div>
 		<div id="submit-bar">
 			<div id="submit-bar-content">
 				<div id="preview-quiz" class="btn">
@@ -128,23 +100,3 @@
 		</div>
 	<% end %>
 </div>
-
-
-
-
-<script>
-	function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();  
-        reader.onload = function (e) {
-            $('#preview').show()
-            $('#preview').attr('src', e.target.result);
-        }   
-        reader.readAsDataURL(input.files[0]);
-    }
-  }
-    
-  $("#imgInp").change(function(){
-      readURL(this);
-  });
-</script>

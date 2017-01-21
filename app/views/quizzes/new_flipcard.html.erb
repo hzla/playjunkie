@@ -1,0 +1,129 @@
+<div class="content-container quiz-form-container result-oriented-quiz">
+	<h1 class="super-bold">Create a New Flip Card</h1>
+
+	<%= form_for Quiz.new do |f| %>
+		<%= f.hidden_field :quiz_type, value: "flipcard" %>
+		<div id="quiz-main-info">
+			<%= f.file_field :image, :id => "quiz-image-input", required: true %>
+			<img id="quiz-image-preview" class="image-preview" src="#" alt="preview failed to load" class="hidden" /> 
+			<div class="image-input-overlay">
+				Click to Add Image
+			</div>
+			
+			<div id="quiz-text-info">
+				<%= f.text_field :title, :class => "btn", placeholder: "Title", required: true %>
+				<%= f.text_area :description, :class => "btn", placeholder: "Description", required: true %>
+			</div>
+		</div>
+		
+		<h2 class="super-bold content-title">Add A Flip Card</h2>
+			<div class="form-box question">
+				<%= image_tag "close-box.svg", :class => "close-question closer" %>
+				<h3 class="question-number">Flip Card 1</h3>
+				<div class="box-field">
+					<div class="choose-front side-chooser btn selected">Front</div>
+					<div class="choose-back side-chooser btn">Back</div>
+				</div>
+
+				<div class="box-field">
+					<label class="box-label">Card Title</label>
+					<%= text_field_tag "quiz_item_1[title]", nil, :class => "box-input" %>
+				</div>
+
+				<div class="box-field">
+					<label class="box-label">Card Image</label>
+					<div class="flip-container">
+						<div class="flipper">
+							<div class="front">
+								<div class="front-side card-side shown">
+									<div class="box-input question-image-input">
+										<div class="add-card-text">Add Text</div>
+										<div class="text-box">
+										</div>
+										<%= hidden_field_tag "quiz_item_1[item_text]", nil, :class => "card-text-input" %>
+										<div class="background-edit-container">
+											<div class="colors-container">
+												<p>Choose Background Color</p>
+												<div class="colors">
+													<div class="color" style="background-color: #1e5efd;"></div>
+													<div class="color" style="background-color: #00cf7b;"></div>
+													<div class="color" style="background-color: #8d1cd9;"></div>
+													<div class="color" style="background-color: #ee4a7f;"></div>
+													<div class="color" style="background-color: #ea8408;"></div>
+												</div>
+												<%= hidden_field_tag "quiz_item_1[color]", nil, :class => "card-color-input" %>
+											</div>
+											<div class="or">Or</div>
+											<div class="card-image-input-btn">
+												Add Image
+											</div>
+										</div>
+										<%= file_field_tag "quiz_item_1[image]", :class => "question-image-input" %>
+										<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />
+									</div>
+								</div>
+							</div>
+							<div class="back">
+								<div class="back-side card-side">
+									<div class="box-input question-image-input">
+										<div class="add-card-text">Add Text</div>
+										<div class="text-box">
+										</div>
+										<%= hidden_field_tag "quiz_item_1[item_text_back]", nil, :class => "card-text-input" %>
+										<div class="background-edit-container">
+											<div class="colors-container">
+												<p>Choose Background Color</p>
+												<div class="colors">
+													<div class="color" style="background-color: #1e5efd;"></div>
+													<div class="color" style="background-color: #00cf7b;"></div>
+													<div class="color" style="background-color: #8d1cd9;"></div>
+													<div class="color" style="background-color: #ee4a7f;"></div>
+													<div class="color" style="background-color: #ea8408;"></div>
+												</div>
+											</div>
+											<%= hidden_field_tag "quiz_item_1[color_back]", nil, :class => "card-color-input" %>
+											<div class="or">Or</div>
+											<div class="card-image-input-btn">
+												Add Image
+											</div>
+										</div>
+										<%= file_field_tag "quiz_item_1[image_back]", :class => "question-image-input" %>
+										<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+
+				
+				
+			
+				<div class="box-field ">
+					<label class="box-label">Image Credit</label>
+					<%= text_field_tag "quiz_item_1[image_credit_back]", nil, :class => "box-input" %>
+				</div>
+				<div class="divider"></div>
+			</div>
+
+		<div id="add-question" class="btn">
+			Add Question
+		</div>
+
+		<%= f.text_area :completion_message, :class => "btn", placeholder: "Completion Message..." %>
+		<div id="submit-bar">
+			<div id="submit-bar-content">
+				<div id="preview-quiz" class="btn">
+					Preview
+				</div>
+				<div id="submit-actions">
+					<div id="save-quiz" class="btn">Save</div>
+					<%= f.submit 'Publish', id: "publish-quiz", :class => "btn" %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
+

@@ -21,7 +21,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, input, textarea {
+time, mark, audio, video, input, textarea, select {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -31,6 +31,13 @@ time, mark, audio, video, input, textarea {
 	box-sizing: border-box;
 	font-family: 'verlag';
 	color: $dark-grey;
+}
+
+
+select {
+	-webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
 }
 
 input, textarea {
@@ -76,7 +83,8 @@ a {
 input:focus,
 select:focus,
 textarea:focus,
-button:focus {
+button:focus,
+div:focus {
     outline: none;
 }
 
@@ -139,7 +147,7 @@ p, div {
 ////////////////////////////////// Animations //////////////////////////////////////
 
 * {
-	transition-duration: 0.4s;
+	transition: background 0.4s ease;
 }
 
 ////////////////////////////////// Margins //////////////////////////////////////

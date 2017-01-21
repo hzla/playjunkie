@@ -15,3 +15,10 @@ Monday
 	Trending/Browse
 Tues - Fri
 	Finishing Up
+
+
+
+this to add in to card create after
+	validatiosn
+	char limits
+	rearranging order

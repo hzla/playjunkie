@@ -96,6 +96,121 @@
 			margin-top: 30px;
 
 		}
+		.side-chooser {
+			width: 285px;
+			text-align: center;
+			font-weight: 800;
+			color: $dark-outline;
+			border: 1px solid $dark-outline;
+			cursor: pointer;
+		}
+		.side-chooser.selected {
+			background: $dark-outline;
+			color: $dark-grey;
+		}
+		.choose-front {
+			margin-right: 10px;
+		}
+		.box-field .card-side {
+
+			div.question-image-input {
+				background: $dark-grey;
+				cursor: default;
+				padding: 12px 60px 15px 60px;
+				position: relative;
+				@include flexbox;
+				@include justify-content(space-between);
+				@include flex-direction(column);
+				@include align-items(center);
+				.add-card-text {
+					background: $dark-outline;
+					text-align: center;
+					border-radius: 5px;
+					width: 80px;
+					line-height: 30px;
+					cursor: pointer;
+					z-index: 2;
+				}
+				.text-box {
+					width: 320px;
+					height: 128px;
+					position: absolute;
+					left: 40px;
+					top: 66px;
+					color: white;
+					z-index: 2;
+					font-size: 24px;
+					line-height: 24px;
+				}
+				.text-box:focus {
+
+				}
+			}
+			input.question-image-input {
+				width: 80px;
+				height: 30px;
+				top: initial;
+				bottom: 20px;
+				right: 65px;
+				cursor: pointer;
+			}
+			.background-edit-container {
+				width: 100%;
+				height: 40px;
+				position: relative;
+				@include flexbox;
+				@include align-items(center);
+				line-height: initial;
+				* {
+					z-index: 2;
+				}
+				.image-preview {
+					z-index: 1;
+				}
+				.colors-container {
+					width: 140px;
+					height: auto;
+					p {
+					 	color: white;
+					 	font-size: 8px;
+					 	width: 100%;
+					 	text-align: center;
+					 	margin-bottom: 5px;
+					 	height: 8px;
+					}
+					.colors {
+						height: 20px;
+						width: 100%;
+						@include flexbox;
+						@include justify-content(space-between);
+						.color {
+							height: 20px;
+							width: 20px;
+							border: 1px solid white;
+							border-radius: 20px;
+							cursor: pointer;
+							background: red;
+						}
+					}
+				}
+				.or {
+					width: 14px;
+					font-size: 12px;
+					margin: 0px 20px;
+					color: white;
+					height: 12px;
+				}
+				.card-image-input-btn {
+					background: $dark-outline;
+					text-align: center;
+					border-radius: 5px;
+					width: 80px;
+					line-height: 30px;
+					cursor: pointer;
+				}
+			}
+			
+		}
 		.box-field {
 			@include flexbox;
 			width: 100%;
@@ -128,6 +243,10 @@
 				z-index: 2;
 				cursor: pointer;
 			}
+			input, textarea {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
 			.question-image-preview {
 				position: absolute;
 				right: 0;
@@ -155,9 +274,6 @@
 					display: block;
 				}
 			}
-		}
-		.form-answers.text-style {
-			display: none;
 		}
 		.form-answers, .form-results {
 			width: 100%;
@@ -224,6 +340,14 @@
 						margin: 0;
 					}
 				}
+				select {
+					width: 100%;
+					height: 40px;
+					border-radius: 5px;
+					border: 1px solid $dark-outline;
+					padding: 10px;
+					font-size: 12px;
+				}
 			}
 			div:nth-child(4n - 3) {
 				margin-left: 0px;
@@ -265,6 +389,7 @@
 			@include flex-direction(row);
 			@include align-items(center);
 			padding: 0px 232px;
+			transition: 0s;
 			p {
 				font-weight: 800;
 				font-size: 16px;
@@ -282,11 +407,17 @@
 			.text-answer-form:first-child {
 				margin-top: 0px;
 			}
-			.text-answer-form {
+			.form-answer {
 				@include flexbox;
 				@include justify-content(space-between);
 				position: relative;
 				margin-top: 10px;
+				height: 40px;
+				width: 100%;
+				border: none;
+				background: none;
+				padding: 0px;
+				margin-left: 0px;
 				.answer-text-input {
 					height: 40px;
 					width: 450px;
@@ -294,17 +425,29 @@
 					border-radius: 5px;
 					padding: 10px;
 				}
+				.answer-image-input, .answer-image-credit-input, .image-input {
+					display: none;
+				}
 				.checkbox-container {
 					background: white;
 					border: 1px solid $dark-outline;
 					height: 40px;
 					width: 120px;
 					padding: 0px 24px;
+					margin: 0px;
 					@include flexbox;
 					@include justify-content(space-between);
 					@include align-items(center);
 					border-radius: 5px;
 				}
+				select {
+					width: 120px;
+				}
+			}
+		}
+		.form-results.show-add-result {
+			.add-result {
+				@include flexbox;
 			}
 		}
 		.form-results {
@@ -383,6 +526,7 @@
 		background: white;
 		bottom: 0px;
 		left: 0px;
+		z-index: 5;
 		#submit-bar-content {
 			height: 100%;
 			width: 620px;
@@ -419,4 +563,62 @@
 			}
 		}
 	}
+	textarea#quiz_completion_message {
+		width: 620px;
+		border: 1px solid $dark-outline;
+		padding: 12px 10px;
+		margin: 60px 0px;
+		line-height: 16px;
+	}
+}
+.quiz-form-container.list-oriented-quiz {
+	#add-question {
+		margin-bottom: 40px;
+	}
+}
+
+
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container.flip .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	height: 260px;
+	width: 400px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.4s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
