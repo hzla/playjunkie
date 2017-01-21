@@ -162,6 +162,7 @@
 		.form-answers, .form-results {
 			width: 100%;
 			@include flexbox;
+			@include flex-wrap(wrap);
 			.form-answer, .image-and-text-box  {
 				width: 137px;
 				height: 300px;
@@ -171,6 +172,8 @@
 				position: relative;
 				border: 1px solid $dark-outline;
 				margin-left: 10px;
+				margin-bottom: 10px;
+				transition-duration: 0s;
 				input, textarea, .image-input {
 					width: 100%;
 					border: 1px solid $dark-outline;
@@ -222,14 +225,62 @@
 					}
 				}
 			}
-			.image-and-text-box:first-child {
+			div:nth-child(4n - 3) {
 				margin-left: 0px;
+			}
+		}
+		.image-style .add-answer {
+			width: 137px;
+			border: 1px solid $dark-outline;
+			height: 300px;
+			margin-left: 10px;
+			@include flexbox;
+			@include justify-content(space-between);
+			@include flex-direction(column);
+			padding: 112px 0px;
+			cursor: pointer;
+			border-radius: 5px;
+			img {
+				height: 40px;
+				width: 40px;
+				margin: 0 auto;
+			}
+			p {
+				font-weight: 800;
+				font-size: 16px;
+				text-align: center;
+				margin-top: 20px;
+			}
+		}
+
+		.text-style .add-answer {
+			width: 100%;
+			border: none;
+			height: 40px;
+			margin: 10px 0 0 0;
+			background: $dark-outline;
+			@include flexbox;
+			@include flex-direction(row);
+			@include align-items(center);
+			padding: 0px 232px;
+			p {
+				font-weight: 800;
+				font-size: 16px;
+				width: auto;
+				display: block;
+				margin-left: 10px;
+			}
+			img {
+				height: 20px;
+				width: 20px;
+				display: block;
 			}
 		}
 		.form-answers.text-style {
 			.text-answer-form {
 				@include flexbox;
 				@include justify-content(space-between);
+				position: relative;
 				.answer-text-input {
 					height: 40px;
 					width: 450px;

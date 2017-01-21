@@ -51,16 +51,21 @@
 
 				<div class="form-answers text-style increment-quiz-item" >
 					<div class="text-answer-form">
+						<%= image_tag "close-box.svg", :class => "close-answer closer" %>
 						<%= text_area_tag "quiz_item_1_item_answer_1[answer_text]", nil, :class => "answer-text-input", placeholder: "Answer text..." %>
 						<div class="checkbox-container">
 							<%= check_box_tag "quiz_item_1_item_answer_1[correct]", nil, :class => "checkbox-input" %>
 							<p>Correct</p>
 						</div>
 					</div>
+					<div class="add-answer">
+						<%= image_tag "add-answer-plus.svg", :class => "add-answer-btn" %>
+						<p>Add Answer</p>
+					</div>
 				</div>
 				<div class="form-answers image-style">
 					<div class="form-answer image-and-text-box">
-						<%= image_tag "close-box.svg", :class => "close-question closer" %>
+						<%= image_tag "close-box.svg", :class => "close-answer closer" %>
 						<div class="image-input">Click to add image...</div>
 						<%= file_field_tag "quiz_item_1_item_answer_1[image]", :class => "answer-image-input", required: true %>
 						<img class="answer-image-preview image-preview" src="#" alt="preview failed to load" />
@@ -71,17 +76,9 @@
 							<p>Correct</p>
 						</div>
 					</div>
-					<div class="form-answer image-and-text-box">
-						<%= image_tag "close-box.svg", :class => "close-question closer" %>
-						<div class="image-input">Click to add image...</div>
-						<%= file_field_tag "quiz_item_1_item_answer_2[image]", :id => "answer-image-input", required: true %>
-						<img class="answer-image-preview image-preview" src="#" alt="preview failed to load" />
-						<%= text_area_tag "quiz_item_1_item_answer_2[answer_text]", nil, :class => "answer-text-input", placeholder: "Answer text..." %>
-						<%= text_field_tag "quiz_item_1_item_answer_2[image_credit]", nil, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
-						<div class="checkbox-container">
-							<%= check_box_tag "quiz_item_1_item_answer_2[correct]", nil, :class => "checkbox-input" %>
-							<p>Correct</p>
-						</div>
+					<div class="add-answer">
+						<%= image_tag "add-answer.svg", :class => "add-answer-btn" %>
+						<p>Add Answer</p>
 					</div>
 				</div>
 			</div>
@@ -105,20 +102,12 @@
 		<div class="form-box results-box">
 			<div class="form-results">
 				<div class="form-result image-and-text-box">
-					<%= image_tag "close-box.svg", :class => "close-question closer" %>
+					<%= image_tag "close-box.svg", :class => "close-result closer" %>
 					<%= text_area_tag "result_1[result_text]", nil, :class => "result-text-input", placeholder: "Answer text..." %>
 					<div class="image-input">Click to add image...</div>
 					<%= file_field_tag "result_1[image]", :class => "result-image-input", required: true %>
 					<img class="result-image-preview image-preview" src="#" alt="preview failed to load" />
 					<%= text_field_tag "result_1[image_credit]", nil, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
-				</div>
-				<div class="form-result image-and-text-box">
-					<%= image_tag "close-box.svg", :class => "close-question closer" %>
-					<%= text_area_tag "result_2[result_text]", nil, :class => "result-text-input", placeholder: "Answer text..." %>
-					<div class="image-input">Click to add image...</div>
-					<%= file_field_tag "result_2[image]", :class => "quiz-image-input", required: true %>
-					<img class="result-image-preview image-preview" src="#" alt="preview failed to load" />
-					<%= text_field_tag "result_2[image_credit]", nil, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
 				</div>
 			</div>
 			

@@ -4,9 +4,41 @@ QuizNew =
 		$('body').on 'click', '.answer-format', @selectAnswerFormat
 		$('body').on 'click', '#add-question', @addQuestion
 		$('body').on 'click', '.close-question', @closeQuestion
+		$('body').on 'click', '.add-answer', @addAnswer
+		$('body').on 'click', '.close-answer', @closeAnswer
+
+
 		@displayClosers()
 
 		@questionCount = 1
+
+
+
+	addAnswer: ->
+		question = $(@).parents('.question')
+		lastAnswer = question.find('.form-answer:visible').last()
+
+		newAnswer = lastAnswer.clone()
+
+		newAnswer.find('input, textarea').val("").prop('checked', 'true') #reset fields
+		newAnswer.find('.image-preview').attr('src', '#').hide() # clear image previews
+
+		answerCount = question.find('.form-answer:visible').length
+		incrementedAnswer = newAnswer.html().replace("///item_answer_#{answerCount}///", "item_answer_#{answerCount + 1}")
+
+		lastAnswer.after(lastAnswer.clone())
+		question.find('.form-answer:visible').last().html(incrementedAnswer)	
+
+		if answerCount == 3
+			$(@).hide()
+
+	closeAnswer: ->
+		answer = $(@).parent()
+		
+		question = $(@).parents('.question')
+		answerCount = question.find('.form-answer:visible').length
+
+		
 
 	displayClosers: ->
 		if $('.question:visible').length < 2
@@ -40,7 +72,7 @@ QuizNew =
 
 		lastQuestion.after("<div class='form-box question'></div>") #create a container for the next question
 		
-		$('.question').last().append(incrementedQuestion) #add the next question
+		$('.question:visible').last().append(incrementedQuestion) #add the next question
 		QuizNew.questionCount += 1
 		QuizNew.displayClosers()
 
