@@ -259,6 +259,8 @@
 			height: 40px;
 			margin: 10px 0 0 0;
 			background: $dark-outline;
+			cursor: pointer;
+			border-radius: 5px;
 			@include flexbox;
 			@include flex-direction(row);
 			@include align-items(center);
@@ -277,10 +279,14 @@
 			}
 		}
 		.form-answers.text-style {
+			.text-answer-form:first-child {
+				margin-top: 0px;
+			}
 			.text-answer-form {
 				@include flexbox;
 				@include justify-content(space-between);
 				position: relative;
+				margin-top: 10px;
 				.answer-text-input {
 					height: 40px;
 					width: 450px;
@@ -308,6 +314,7 @@
 			.form-result {
 				height: 100%;
 				position: relative;
+				margin-bottom: 10px;
 				input[type="file"], .result-image-preview {
 					position: absolute;
 					left: 10px;
@@ -323,6 +330,31 @@
 					display: none;
 					z-index: 1;
 					opacity: 1;
+				}
+			}
+			.add-result {
+				width: 137px;
+				height: 266px;
+				border: 1px solid $dark-outline;
+				margin-left: 10px;
+				margin-bottom: 10px;
+				border-radius: 5px;
+				@include flexbox;
+				transition-duration: 0s;
+				display: none;
+				@include align-items(center);
+				@include align-content(center);
+				div {
+					background: $orange;
+					cursor: pointer;
+					color: white;
+					font-weight: 800;
+					text-align: center;
+					width: calc(100% - 20px);
+					margin: 0px 20px;
+				}
+				div:hover {
+					background: $hover-orange;
 				}
 			}
 		}

@@ -6,6 +6,9 @@ QuizNew =
 		$('body').on 'click', '.close-question', @closeQuestion
 		$('body').on 'click', '.add-answer', @addAnswer
 		$('body').on 'click', '.close-answer', @closeAnswer
+		$('body').on 'click', '.add-result', @addResult
+		$('body').on 'click', '.close-result', @closeResult
+
 
 
 		@displayClosers()
@@ -13,38 +16,73 @@ QuizNew =
 		@questionCount = 1
 
 
+	addResult: ->
+		lastResult = $('.form-result:visible').last()
+
+		newResult = lastResult.clone()
+		newResult.find('input, textarea').val("")
+		newResult.find('.image-preview').attr('src', '#').hide()
+
+		resultCount = $('.form-result:visible').length
+		incrementedResult = newResult.html().replace(///result_#{resultCount}///g, "result_#{resultCount + 1}")
+		lastResult.after(lastResult.clone())
+		$('.form-result:visible').last().html(incrementedResult)
+
+		$('.close-result').show()
+
+		if $('.form-result:visible').length == $('.question:visible').length
+			$(@).hide()
+
+	closeResult: ->
+		form = $(@).parents('.new_quiz')
+		result = $(@).parent()
+		result.addClass('hidden').prependTo(form)
+		QuizNew.displayClosers()
+		result.find('.result-text-input').val("skip")
+		$('.add-result').show()
 
 	addAnswer: ->
 		question = $(@).parents('.question')
-		lastAnswer = question.find('.form-answer:visible').last()
+		lastAnswer = question.find('.form-answer:visible, .text-answer-form:visible').last()
 
 		newAnswer = lastAnswer.clone()
 
 		newAnswer.find('input, textarea').val("").prop('checked', 'true') #reset fields
 		newAnswer.find('.image-preview').attr('src', '#').hide() # clear image previews
 
-		answerCount = question.find('.form-answer:visible').length
-		incrementedAnswer = newAnswer.html().replace("///item_answer_#{answerCount}///", "item_answer_#{answerCount + 1}")
+		answerCount = question.find('.form-answer:visible, .text-answer-form:visible').length
+		incrementedAnswer = newAnswer.html().replace(///item_answer_#{answerCount}///g, "item_answer_#{answerCount + 1}")
 
 		lastAnswer.after(lastAnswer.clone())
-		question.find('.form-answer:visible').last().html(incrementedAnswer)	
+		question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
 
 		if answerCount == 3
 			$(@).hide()
 
-	closeAnswer: ->
-		answer = $(@).parent()
-		
-		question = $(@).parents('.question')
-		answerCount = question.find('.form-answer:visible').length
+		QuizNew.displayClosers()
 
-		
+	closeAnswer: ->
+		question = $(@).parents('.question')
+		answer = $(@).parent().addClass('hidden').prependTo(question)
+		answer.find('.answer-text-input').val("skip")
+		$('.form-answers:visible').find('.add-answer').show()
 
 	displayClosers: ->
 		if $('.question:visible').length < 2
 			$('.close-question').hide()
 		else
 			$('.close-question').show()
+
+		$('.question:visible').each ->
+			if $('.form-answer:visible, .text-answer-form:visible').length < 2
+				$(@).find('.close-answer').hide()
+			else
+				$(@).find('.close-answer').show()
+
+		if $('.form-result:visible').length < 2
+			$('.close-result').hide()
+		else
+			$('.close-result').show()
 
 	closeQuestion: ->
 		confirmation = confirm "Yo you sure?"
@@ -75,6 +113,8 @@ QuizNew =
 		$('.question:visible').last().append(incrementedQuestion) #add the next question
 		QuizNew.questionCount += 1
 		QuizNew.displayClosers()
+
+		$('.add-result').css('display', 'flex') #allow one more result to be added
 
 
 	selectAnswerFormat: ->
