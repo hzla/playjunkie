@@ -19,6 +19,4 @@ Tues - Fri
 
 
 this to add in to card create after
-	validatiosn
-	char limits
-	rearranging order
+	validations/char limits

@@ -1,6 +1,7 @@
 QuizNew =
 	init: ->
 		$('body').on 'change', "input[type='file']", @showImagePreview
+		$('body').on 'click', '.close-image', @closeImage
 		$('body').on 'click', '.answer-format', @selectAnswerFormat
 		$('body').on 'click', '#add-question', @addQuestion
 		$('body').on 'click', '.close-question', @closeQuestion
@@ -8,15 +9,75 @@ QuizNew =
 		$('body').on 'click', '.close-answer', @closeAnswer
 		$('body').on 'click', '.add-result', @addResult
 		$('body').on 'click', '.close-result', @closeResult
+		$('body').on 'click', '.move-question', @moveQuestion
 
 		$('body').on 'click', '.color', @chooseColor
 		$('body').on 'click', '.add-card-text', @addCardText
 		$('body').on 'click', '.side-chooser', @chooseSide
 		$('body').on 'keyup', '.text-box', @syncItemText
 		@displayClosers()
+		@displayMovers()
 
 		@questionCount = 1
 
+
+	syncResultsRange: ->
+		resultsCount = $('.form-result:visible').length
+		questionsCount = $('.question:visible').length
+
+		rangeWidth = Math.floor((questionsCount / resultsCount))
+		console.log rangeWidth
+		ranges = []
+
+		rangeStart = 0
+		rangeEnd = rangeWidth
+		console.log ranges
+		
+		for i in [1..resultsCount]
+			range = []
+			range.push rangeStart
+			range.push rangeEnd
+			if rangeStart == rangeEnd
+				rangeStart += 1
+				rangeEnd += 1
+			else
+				rangeStart += (rangeWidth + 1)
+				rangeEnd += (rangeWidth + 1)
+			ranges.push range
+
+		questionLimit = questionsCount
+		for i in [1..ranges.length]
+			if ranges[ranges.length - i][1] > questionLimit
+				ranges[ranges.length - i][1] = questionLimit
+			if ranges[ranges.length - i][0] > questionLimit
+				ranges[ranges.length - i][0] = questionLimit
+			questionLimit -= 1
+
+		$('.form-result:visible .results-range').each (i) ->
+			$(@).find('.min').text(ranges[i][0])
+			$(@).find('.max').text(ranges[i][1])
+			if ranges[i][0] == ranges[i][1]
+				$(@).find('.min, .hyphen').hide()
+			else
+				$(@).find('.min, .hyphen').show()
+
+
+
+	moveQuestion: ->
+		question = $(@).parents('.question')
+		if $(@).hasClass('move-down')
+			question.insertAfter(question.nextAll('.question:visible').first())
+		else
+			question.insertBefore(question.prevAll('.question:visible').first())
+
+		$('.question:visible .question-number').each (i) ->
+				$(@).find('p').text("#{i + 1}")
+		QuizNew.displayMovers()
+
+	displayMovers: ->
+		$('.move-question').show()
+		$('.question:visible').first().find('.move-up').hide()
+		$('.question:visible').last().find('.move-down').hide()
 	chooseSide: ->
 		card = $(@).parents('.question')
 		card.find('.side-chooser').removeClass('selected')
@@ -44,7 +105,6 @@ QuizNew =
 		card.find('.image-preview').attr('src', '#').hide()
 		card.find('.card-color-input').val(color)
 
-
 	addResultChoiceToAnswers: ->
 		$('select').each ->
 			optionCount = $(@).find('option').length
@@ -68,6 +128,7 @@ QuizNew =
 		if $('.result-oriented-quiz').length > 0
 			QuizNew.addResultChoiceToAnswers()
 
+		QuizNew.syncResultsRange()
 	closeResult: ->
 		form = $(@).parents('.new_quiz')
 		result = $(@).parent()
@@ -75,6 +136,7 @@ QuizNew =
 		QuizNew.displayClosers()
 		result.find('.result-text-input').val("skip")
 		$('.add-result').show()
+		QuizNew.syncResultsRange()
 
 	addAnswer: ->
 		question = $(@).parents('.question')
@@ -91,7 +153,7 @@ QuizNew =
 		lastAnswer.after(lastAnswer.clone())
 		question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
 
-		if answerCount == 3
+		if answerCount == 3 && $('.trivia-oriented-quiz').length > 0
 			$(@).hide()
 
 		if $('.result-oriented-quiz').length > 0
@@ -128,9 +190,11 @@ QuizNew =
 		if confirmation
 			$(@).parent().hide()
 			$(@).parent().find('.box-input').val("skip")
-			$('.question-number:visible').each (i) ->
-				$(@).text("Question #{i + 1}")
+			$('.question:visible .question-number').each (i) ->
+				$(@).find('p').text("#{i + 1}")
 			QuizNew.questionCount -= 1
+			QuizNew.displayMovers()
+			QuizNew.syncResultsRange()
 
 	addQuestion: ->
 		lastQuestion = $('.question:visible').last()
@@ -153,7 +217,7 @@ QuizNew =
 		newQuestion.find('.flip-container').removeClass('flip')
 		newQuestion.find('.choose-front').addClass('selected') #reset card sides
 
-		incrementedQuestion = newQuestion.html().replace(///quiz_item_#{QuizNew.questionCount}///g, "quiz_item_#{QuizNew.questionCount + 1}").replace("Question #{QuizNew.questionCount}", "Question #{QuizNew.questionCount + 1}") #increment all question numbers
+		incrementedQuestion = newQuestion.html().replace(///quiz_item_#{QuizNew.questionCount}///g, "quiz_item_#{QuizNew.questionCount + 1}").replace("<p>#{QuizNew.questionCount}</p>", "<p>#{QuizNew.questionCount + 1}</p>") #increment all question numbers
 
 		lastQuestion.after("<div class='form-box question'></div>") #create a container for the next question
 		
@@ -162,6 +226,8 @@ QuizNew =
 		QuizNew.displayClosers()
 
 		$('.add-result').css('display', 'flex') #allow one more result to be added
+		QuizNew.displayMovers()
+		QuizNew.syncResultsRange()
 
 
 	selectAnswerFormat: ->
@@ -184,15 +250,22 @@ QuizNew =
 
 	showImagePreview: -> 
 		input = @
-		console.log "doing stuff"
 		if input.files && input.files[0]
 			reader = new FileReader()
-			console.log "doinug more stuff"
+			console.log "doing more stuff"
 			reader.onload =  (e) ->
 				previewBox = $(input).next()
 				previewBox.show()
 				previewBox.attr 'src', e.target.result
 			reader.readAsDataURL input.files[0]
+			$(@).parents('.box-field').find('.close-image').show()
+
+	closeImage: ->
+		box = $(@).parents('.box-field')
+		box.find('.image-preview').attr('src', '#').hide()
+		box.find('input.question-image-input').val("")
+		$(@).hide()
+
 
 ready = ->
 	QuizNew.init()

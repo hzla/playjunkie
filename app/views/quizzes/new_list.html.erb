@@ -19,15 +19,17 @@
 		<h2 class="super-bold content-title">Add Items</h2>
 
 			<div class="form-box question">
+				<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
+				<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>
 				<%= image_tag "close-box.svg", :class => "close-question closer" %>
-				<h3 class=" question-number">Item 1</h3>
+				<h3 class=" question-number">Item <p>1</p></h3>
 				<class class="box-field ">
 					<label class="box-label">Title</label>
 					<%= text_field_tag "quiz_item_1[item_text]", nil, :class => "box-input" %>
 				</class>
 				<class class="box-field ">
 					<label class="box-label">Image</label>
-					<%= image_tag "close-box.svg", :class => "close-question closer" %>
+					<%= image_tag "close-box.svg", :class => "close-image closer" %>
 					<div class="box-input question-image-input">Click to add image...</div>
 					<%= file_field_tag "quiz_item_1[image]", :class => "question-image-input" %>
 					<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />

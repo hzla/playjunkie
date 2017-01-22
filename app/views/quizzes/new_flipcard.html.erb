@@ -18,8 +18,10 @@
 		
 		<h2 class="super-bold content-title">Add A Flip Card</h2>
 			<div class="form-box question">
+				<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
+				<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>
 				<%= image_tag "close-box.svg", :class => "close-question closer" %>
-				<h3 class="question-number">Flip Card 1</h3>
+				<h3 class="question-number">Flip Card <p>1</p></h3>
 				<div class="box-field">
 					<div class="choose-front side-chooser btn selected">Front</div>
 					<div class="choose-back side-chooser btn">Back</div>

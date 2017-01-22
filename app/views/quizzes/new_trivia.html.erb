@@ -18,12 +18,14 @@
 		
 		<h2 class="super-bold content-title">Add Questions</h2>
 			<div class="form-box question">
+				<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
+				<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>
 				<%= image_tag "close-box.svg", :class => "close-question closer" %>
-				<h3 class=" question-number">Question 1</h3>
+				<h3 class=" question-number">Question <p>1</p></h3>
 				
 				<class class="box-field ">
 					<label class="box-label">Question Image</label>
-					<%= image_tag "close-box.svg", :class => "close-question closer" %>
+					<%= image_tag "close-box.svg", :class => "close-image closer" %>
 					<div class="box-input question-image-input">Click to add image...</div>
 					<%= file_field_tag "quiz_item_1[image]", :class => "question-image-input" %>
 					<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />
@@ -86,6 +88,11 @@
 					<%= file_field_tag "result_1[image]", :class => "result-image-input" %>
 					<img class="result-image-preview image-preview" src="#" alt="preview failed to load" />
 					<%= text_field_tag "result_1[image_credit]", nil, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
+
+					<div class="results-range">
+						<p>Results Range</p>
+						<p> <span class="min">0</span><span class="hyphen">-</span><span class="max">1</span></p>
+					</div>
 				</div>
 				<div class="add-result">
 						<div class="btn">Add Result</div>
