@@ -92,6 +92,7 @@ div:focus {
 
 h1 {
 	font-size: 20px;
+	font-weight: 800;
 }
 
 h2 {
@@ -177,7 +178,26 @@ textarea.btn {
  }
 }
 
+//////////
 
+.fb-blue-bg {
+	background: #3B5998;
+}
+.tw-blue-bg {
+	background: #55ACEE;
+}
+
+.pinterest-red-bg {
+	background: #BD081C;
+}
+
+.blue-bg {
+	background: $blue;
+}
+
+.black-bg {
+	background: $dark-grey;
+}
 
 
 

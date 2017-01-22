@@ -1,0 +1,120 @@
+@import 'shared/variables';
+@import 'shared/mixins';
+
+
+#banner-ad {
+	width: 100%;
+	position: absolute;
+	top: 44px;
+	left: 0;
+	height: 44px;
+	border: 1px solid $blue;
+}
+
+.content-container.quiz-take {
+	padding: 30px 10px 10px 10px;
+	top: 88px;
+	.quiz-description {
+		margin-top: 20px;
+	}
+	.quiz-info {
+		margin-top: 20px;
+		.quiz-user {
+			@include flexbox;
+			@include align-items(center);
+			img {
+				height: 30px;
+				width: 30px;
+				border-radius: 30px;
+			}
+			p {
+				color: $grey;
+				margin-left: 10px;
+			}
+		}
+		.quiz-subinfo {
+			margin-top: 10px;
+			@include flexbox;
+			@include justify-content(space-between);
+			p {
+				color: $grey;
+			}
+			.quiz-type {
+				font-weight: 800;
+			}
+		}
+		.social-medias {
+			margin-top: 20px;
+			@include flexbox;
+			@include justify-content(space-between);
+			.social-media {
+				height: 44px;
+				width: calc((100% - 40px) / 5);
+				cursor: pointer;
+				line-height: 44px;
+				border-radius: 5px;
+				@include flexbox;
+				@include align-items(center);
+			}
+			img, p {
+				margin: 0 auto;
+				color: white;
+				font-size: 16px;
+			}
+		}
+	}
+	.items {
+		.item {
+			width: 100%;
+			img {
+				height: calc((100vw - 20px) * 2 / 3);
+				width: 100%;
+				margin-top: 30px;
+			}
+		}
+		p {
+			line-height: 24px;
+			font-weight: 600;
+			font-size: 14px;
+			margin-top: 10px;
+		}
+		.answers {
+			@include flexbox;
+			@include flex-wrap(wrap);
+			@include justify-content(space-between);
+			.answer {
+				width: calc((100% - 10px) / 2);
+				background: white;
+				border: 1px solid $light-outline;
+				cursor: pointer;
+				padding: 10px;
+				border-radius: 5px;
+				margin: 10px 0px;
+				img {
+					width: 100%;
+					height: calc((((100vw - 30px) / 2) - 20px) * 2 / 3);
+					margin: 0;
+				}
+			}
+			.answer.correct.selected {
+				background: $light-green;
+				border: 1px solid $green;
+			}
+			.answer.incorrect.selected {
+				background: $light-pink;
+				border: 1px solid $pink;
+			}
+			.answer.text-style {
+				width: 100%;
+				height: 44px;
+				line-height: 44px;
+				padding: 0px 12px;
+			}
+		}
+	}
+
+
+
+
+
+}

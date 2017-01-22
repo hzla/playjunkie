@@ -17,6 +17,7 @@ class QuizzesController < ApplicationController
 
 	def create
 		quiz = Quiz.create quiz_params
+		# quiz.update_attributes user_id: current_user.id
 
 		result_count = 1
 		created_results = []
@@ -56,8 +57,8 @@ class QuizzesController < ApplicationController
 				item_answer.update_attributes quiz_item_id: quiz_item.id 
 				answer_count += 1
 
-				if quiz.quiz_type = "personality"
-					item_answer.update_attributes result_id: created_results[item_answer.result_id].id
+				if quiz.quiz_type == "personality"
+					 item_answer.update_attributes result_id: created_results[item_answer.result_id].id
 				end
 			end
 			item_count += 1

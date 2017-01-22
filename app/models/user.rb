@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   include Clearance::User
   has_many :authorizations
+  has_many :quizzes
 
 
 
