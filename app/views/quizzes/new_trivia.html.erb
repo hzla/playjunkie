@@ -83,13 +83,15 @@
 			<div class="form-results">
 				<div class="form-result image-and-text-box">
 					<%= image_tag "close-box.svg", :class => "close-result closer" %>
-					<%= text_area_tag "result_1[result_text]", nil, :class => "result-text-input", placeholder: "Answer text..." %>
+					<%= text_area_tag "result_1[result_text]", nil, :class => "result-text-input", placeholder: "Answer text..." %>			
 					<div class="image-input">Click to add image...</div>
 					<%= file_field_tag "result_1[image]", :class => "result-image-input" %>
 					<img class="result-image-preview image-preview" src="#" alt="preview failed to load" />
 					<%= text_field_tag "result_1[image_credit]", nil, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
 
 					<div class="results-range">
+						<%= hidden_field_tag "result_1[range_min]", 0, :class => "range-min" %>
+						<%= hidden_field_tag "result_1[range_max]", 1, :class => "range-max" %>	
 						<p>Results Range</p>
 						<p> <span class="min">0</span><span class="hyphen">-</span><span class="max">1</span></p>
 					</div>

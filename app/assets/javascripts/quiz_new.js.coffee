@@ -26,12 +26,10 @@ QuizNew =
 		questionsCount = $('.question:visible').length
 
 		rangeWidth = Math.floor((questionsCount / resultsCount))
-		console.log rangeWidth
 		ranges = []
 
 		rangeStart = 0
 		rangeEnd = rangeWidth
-		console.log ranges
 		
 		for i in [1..resultsCount]
 			range = []
@@ -56,6 +54,8 @@ QuizNew =
 		$('.form-result:visible .results-range').each (i) ->
 			$(@).find('.min').text(ranges[i][0])
 			$(@).find('.max').text(ranges[i][1])
+			$(@).find('.range-min').val(ranges[i][0])
+			$(@).find('.range-max').val(ranges[i][1])
 			if ranges[i][0] == ranges[i][1]
 				$(@).find('.min, .hyphen').hide()
 			else

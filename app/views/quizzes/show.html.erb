@@ -1,46 +1,103 @@
 <div id="banner-ad"></div>
 
-<div class="content-container quiz-take">
-	<h1 class="quiz-title"><%= @quiz.title %></h1>
-	<p class="quiz-description"><%= @quiz.description %></p>
-	<div class="quiz-info">
-		<div class="quiz-user">
-			<%= image_tag @quiz.user.profile_pic, :class => "quiz-user-profile_pic" %>
-			<p class="quiz-user-name"><%= @quiz.user.name %></p>
-		</div>
-		<div class="quiz-subinfo">
-			<p class="quiz-date"><%= @quiz.created_at %></p>
-			<p class="quiz-type"><%= @quiz.quiz_type.upcase %></p>
-		</div>
-		<div class="social-medias">
-			<div class="social-media fb-blue-bg"><%= image_tag "fb.svg" %></div>
-			<div class="social-media tw-blue-bg"><%= image_tag "twitter.svg" %></div>
-			<div class="social-media pinterest-red-bg"><%= image_tag "pinterest.svg" %></div>
-			<div class="social-media blue-bg"><p>Link</p></div>
-			<div class="social-media black-bg"><p>Embed</p></div>
-		</div>
-	</div>
-	<div class="items">
-		<% @quiz.quiz_items.each do |item| %>
-			<div class="item">
-				<% if item.image %>
-					<%= image_tag item.image_url, :class => "item-image" %>
-				<% end %>
-				<p class="item-text"><%= item.item_text %></p>
-
-				<% unless item.item_answers.empty? %>
-					<div class="answers">
-						<% item.item_answers.each do |answer| %>
-							<div class="answer <%= answer.image.present? ? 'image-style' : 'text-style' %> <%= answer.correct? ? 'correct' : 'incorrect' %>">
-								<% if answer.image.present? %>
-									<%= image_tag answer.image_url, :class => "answer-image" %>
-								<% end %>
-								<p class="answer-text"><%= answer.answer_text %></p>
-							</div>
-						<% end %>
-					</div>
-				<% end %>
+<div class="content-container quiz-take <%= @quiz.quiz_type %>">
+	<div class="quiz-main">
+		<h1 class="quiz-title"><%= @quiz.title %></h1>
+		<p class="quiz-description"><%= @quiz.description %></p>
+		<div class="quiz-info">
+			<div class="quiz-user">
+				<%= image_tag @quiz.user.profile_pic, :class => "quiz-user-profile_pic" %>
+				<p class="quiz-user-name"><%= @quiz.user.name %></p>
 			</div>
+			<div class="quiz-subinfo">
+				<p class="quiz-date"><%= @quiz.created_at %></p>
+				<p class="quiz-type"><%= @quiz.quiz_type.upcase %></p>
+			</div>
+			<div class="social-medias">
+				<div class="social-media fb-blue-bg"><%= image_tag "fb.svg" %></div>
+				<div class="social-media tw-blue-bg"><%= image_tag "twitter.svg" %></div>
+				<div class="social-media pinterest-red-bg"><%= image_tag "pinterest.svg" %></div>
+				<div class="social-media blue-bg"><p>Link</p></div>
+				<div class="social-media black-bg"><p>Embed</p></div>
+			</div>
+		</div>
+		<div class="items">
+			<% @quiz.quiz_items.each_with_index do |item, i| %>
+				<div class="item <%= item.image.present? ? 'image-style' : 'text-style' %>">
+					<div class="question-header">
+						<div class="item-number"><%= i + 1 %></div>
+						<% if item.image.present? %>
+							<div class="image-container">
+								<%= image_tag item.image_url, :class => "item-image" %>
+								<div class="image-credit"><%= item.image_credit %></div>
+							</div>
+
+							
+						<% end %>
+						<p class="item-text"><%= item.item_text %></p>
+					</div>
+
+					<% unless item.item_answers.empty? %>
+						<div class="answers">
+							<% item.item_answers.each do |answer| %>
+								<div class="answer <%= answer.image.present? ? 'image-style' : 'text-style' %> <%= answer.correct? ? 'correct' : 'incorrect' %> <%= @quiz.quiz_type %>" result-id="<%= answer.result_id %>"> 
+									<% if answer.image.present? %>
+										<div class="image-container">
+											<%= image_tag answer.image_url, :class => "answer-image" %>
+											<div class="image-credit"><%= answer.image_credit %></div>
+										</div>
+									<% end %>
+									<p class="answer-text"><%= answer.answer_text %></p>
+								</div>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+		<% if @quiz.results %>
+			<% @quiz.results.order(:id).each do |result| %>
+				<div class="result" range-min="<%= result.range_min %>" range-max="<%= result.range_max %>" result-id="<%= result.id %>">
+					<p class="score <%= @quiz.quiz_type %>"><span class="score-number"></span> CORRECT</p>
+					<p><%= result.result_text %></p>
+					<% if result.image.present? %>
+						<%= image_tag result.image_url, :class => "result-image" %>
+					<% end %>
+					<p class="result-social-message">Share your Result!</p>
+					<div class="social-medias">
+						<div class="social-media fb-blue-bg"><%= image_tag "fb.svg" %></div>
+						<div class="social-media tw-blue-bg"><%= image_tag "twitter.svg" %></div>
+						<div class="social-media pinterest-red-bg"><%= image_tag "pinterest.svg" %></div>
+						<div class="social-media blue-bg"><p>Link</p></div>
+						<div class="social-media black-bg"><p>Embed</p></div>
+					</div>
+				</div>
+			<% end %>
 		<% end %>
+		<div class="bottom-ads">
+			<div class="bottom-ad"></div>
+			<div class="bottom-ad"></div>
+			<div class="bottom-ad"></div>
+			<div class="bottom-ad"></div>
+			<div class="bottom-ad"></div>
+			<div class="bottom-ad"></div>
+		</div>
 	</div>
+	<div class="side-content">
+		<div id="ad1" class="side-ad"></div>
+		<div class="divider"></div>
+		<div class="recommendations">
+			<h3>Recommended</h3>
+			<% Quiz.all.limit(6).each do |rec| %>
+				<div class="rec">
+					<%= image_tag rec.image_url %>
+					<p><%= rec.title %></p>
+				</div>
+				
+			<% end %>
+		</div>
+		<div class="divider"></div>
+		<div id="add2" class="side-ad"></div>
+	</div>
+	
 </div>

@@ -3,4 +3,5 @@ class ItemAnswer < ApplicationRecord
 
 	belongs_to :quiz_item
 	belongs_to :result
+
 end

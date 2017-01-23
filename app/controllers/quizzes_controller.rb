@@ -17,7 +17,7 @@ class QuizzesController < ApplicationController
 
 	def create
 		quiz = Quiz.create quiz_params
-		# quiz.update_attributes user_id: current_user.id
+		quiz.update_attributes user_id: current_user.id
 
 		result_count = 1
 		created_results = []
@@ -90,7 +90,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def result_params result_number
-		params.require("result_#{result_number}").permit(:image, :result_text, :image_credit)
+		params.require("result_#{result_number}").permit(:image, :result_text, :image_credit, :range_min, :range_max)
 	end
 
 end
