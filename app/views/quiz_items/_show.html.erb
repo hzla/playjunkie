@@ -1,0 +1,61 @@
+<% if @quiz.quiz_type == "flipcard" %>
+	<div class="item text-style personality">
+		<div class="question-header">
+			<div class="item-number"><%= i + 1 %></div>
+			<h2 class="item-title"><%= item.title %></h2>
+		</div>
+
+		<div class="flip-container">
+			<div class="flipper">
+				<div class="front">
+					<div class="image-container flippable" style="background-color:<%= item.color %>;">
+						<% if item.image.present? %>
+							<%= image_tag item.image_url, :class => "item-image" %>
+						<% end %>
+						<p class="card-text"><%= item.item_text %></p>
+						<div class="image-credit"><%= item.image_credit %></div>
+					</div>	
+				</div>
+				<div class="back">
+					<div class="image-container" style="background-color:<%= item.color_back %>;">
+						<% if item.image_back.present? %>
+							<%= image_tag item.image_back_url, :class => "item-image" %>
+						<% end %>
+						<p class="card-text"><%= item.item_text_back %></p>
+						<div class="image-credit"><%= item.image_credit_back %></div>
+					</div>	
+				</div>
+			</div>
+		</div>		
+	</div>
+	
+<% else %>
+	<div class="item <%= item.image.present? ? 'image-style' : 'text-style' %>">
+		<div class="question-header">
+			<div class="item-number"><%= i + 1 %></div>
+			<% if item.image.present? %>
+				<div class="image-container">
+					<%= image_tag item.image_url, :class => "item-image" %>
+					<div class="image-credit"><%= item.image_credit %></div>
+				</div>			
+			<% end %>
+			<p class="item-text"><%= item.item_text %></p>
+		</div>
+
+		<% unless item.item_answers.empty? %>
+			<div class="answers">
+				<% item.item_answers.each do |answer| %>
+					<div class="answer <%= answer.image.present? ? 'image-style' : 'text-style' %> <%= answer.correct? ? 'correct' : 'incorrect' %> <%= @quiz.quiz_type %>" result-id="<%= answer.result_id %>"> 
+						<% if answer.image.present? %>
+							<div class="image-container">
+								<%= image_tag answer.image_url, :class => "answer-image" %>
+								<div class="image-credit"><%= answer.image_credit %></div>
+							</div>
+						<% end %>
+						<p class="answer-text"><%= answer.answer_text %></p>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+<% end %>

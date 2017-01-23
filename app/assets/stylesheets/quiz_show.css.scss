@@ -80,6 +80,9 @@
 				@include flexbox;
 				@include align-items(center);
 			}
+			.question-header.flipcard {
+				margin-top: 30px;
+			}
 			.item-number {
 				position: static;
 				margin-right: 10px; 
@@ -106,6 +109,20 @@
 			width: 100%;
 			.image-container {
 				position: relative;
+				height: calc((100vw - 20px) * 2 / 3);
+				margin-top: 30px;
+				border-radius: 5px;
+				@include flexbox;
+				@include align-items(center);
+				padding: 0px 20px;
+				.card-text {
+					text-align: center;
+					color: white;
+					font-size: 20px;
+					font-weight: 700;
+					margin: 0 auto;
+					width: calc(100% - 40px);
+				}
 				.image-credit {
 					position: absolute;
 					bottom: 10px;
@@ -122,7 +139,10 @@
 			img {
 				height: calc((100vw - 20px) * 2 / 3);
 				width: 100%;
-				margin-top: 30px;
+				position: absolute;
+				top: 0;
+				left: 0;
+
 			}
 		}
 		p {
@@ -169,6 +189,12 @@
 			}
 		}
 	}
+	.result.sharer {
+		display: block;
+		.result-social-message {
+			margin-top: 0px;
+		}
+	}
 	.result {
 		margin: 60px 0px;
 		border: 1px solid $dark-outline;
@@ -203,7 +229,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
 
 	#banner-ad {
 		top: 80px;
@@ -254,7 +280,24 @@
 		.quiz-main {
 			width: 620px;
 			.items {
+				.item.text-style {
+					.question-header {
+						margin-top: 60px;
+					}
+				}
 				.item {
+					.image-container {
+						height: calc(620px * 2 / 3);
+						padding: 0px 40px;
+						.card-text {
+							width: calc(100% - 80px);
+							z-index: 2;
+							font-size: 28px;
+						}
+					}
+					.image-container.flippable {
+						cursor: pointer;
+					}
 					.item-number {
 						height: 40px;
 						width: 40px;

@@ -622,6 +622,22 @@
 	width: 400px;
 }
 
+.flipcard {
+	.flip-container, .front, .back {
+		height: calc(100vw - 20px * 2 / 3);
+		width: auto;
+	}
+}
+
+@media (min-width: 960px) {
+	.flipcard {
+		.flip-container, .front, .back {
+			height: 414px;
+			width: 620px;
+		}
+	}
+}
+
 /* flip speed goes here */
 .flipper {
 	transition: 0.4s;

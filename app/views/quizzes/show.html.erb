@@ -22,40 +22,11 @@
 			</div>
 		</div>
 		<div class="items">
-			<% @quiz.quiz_items.each_with_index do |item, i| %>
-				<div class="item <%= item.image.present? ? 'image-style' : 'text-style' %>">
-					<div class="question-header">
-						<div class="item-number"><%= i + 1 %></div>
-						<% if item.image.present? %>
-							<div class="image-container">
-								<%= image_tag item.image_url, :class => "item-image" %>
-								<div class="image-credit"><%= item.image_credit %></div>
-							</div>
-
-							
-						<% end %>
-						<p class="item-text"><%= item.item_text %></p>
-					</div>
-
-					<% unless item.item_answers.empty? %>
-						<div class="answers">
-							<% item.item_answers.each do |answer| %>
-								<div class="answer <%= answer.image.present? ? 'image-style' : 'text-style' %> <%= answer.correct? ? 'correct' : 'incorrect' %> <%= @quiz.quiz_type %>" result-id="<%= answer.result_id %>"> 
-									<% if answer.image.present? %>
-										<div class="image-container">
-											<%= image_tag answer.image_url, :class => "answer-image" %>
-											<div class="image-credit"><%= answer.image_credit %></div>
-										</div>
-									<% end %>
-									<p class="answer-text"><%= answer.answer_text %></p>
-								</div>
-							<% end %>
-						</div>
-					<% end %>
-				</div>
+			<% @quiz.quiz_items.order(:id).each_with_index do |item, i| %>
+				<%= render partial: "quiz_items/show", locals: {item: item, i: i} %>
 			<% end %>
 		</div>
-		<% if @quiz.results %>
+		<% if !@quiz.results.empty? %>
 			<% @quiz.results.order(:id).each do |result| %>
 				<div class="result" range-min="<%= result.range_min %>" range-max="<%= result.range_max %>" result-id="<%= result.id %>">
 					<p class="score <%= @quiz.quiz_type %>"><span class="score-number"></span> CORRECT</p>
@@ -73,6 +44,17 @@
 					</div>
 				</div>
 			<% end %>
+		<% else %>
+			<div class="result sharer">
+				<p class="result-social-message">Share this <%= @quiz.quiz_type.capitalize %></p>
+				<div class="social-medias">
+					<div class="social-media fb-blue-bg"><%= image_tag "fb.svg" %></div>
+					<div class="social-media tw-blue-bg"><%= image_tag "twitter.svg" %></div>
+					<div class="social-media pinterest-red-bg"><%= image_tag "pinterest.svg" %></div>
+					<div class="social-media blue-bg"><p>Link</p></div>
+					<div class="social-media black-bg"><p>Embed</p></div>
+				</div>
+			</div>
 		<% end %>
 		<div class="bottom-ads">
 			<div class="bottom-ad"></div>

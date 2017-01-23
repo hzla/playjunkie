@@ -78,6 +78,7 @@ QuizNew =
 		$('.move-question').show()
 		$('.question:visible').first().find('.move-up').hide()
 		$('.question:visible').last().find('.move-down').hide()
+	
 	chooseSide: ->
 		card = $(@).parents('.question')
 		card.find('.side-chooser').removeClass('selected')

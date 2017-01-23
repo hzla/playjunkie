@@ -4,6 +4,10 @@ QuizShow =
 		@resultScores = {}
 		$('body').on 'click', '.trivia .answer:not(.unselectable)', @chooseTriviaAnswer
 		$('body').on 'click', '.personality .answer', @choosePersonalityAnswer
+		$('body').on 'click', '.flipcard .image-container', @flipCard
+
+	flipCard: ->
+		$(@).parents('.flip-container').toggleClass('flip')
 
 	choosePersonalityAnswer: ->
 		answers = $(@).parent()
