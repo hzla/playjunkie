@@ -20,6 +20,12 @@ QuizNew =
 
 		@questionCount = 1
 
+		$('body').on 'submit', '#new_quiz', @validateFields
+
+	validateFields: ->
+		$('.question').each ->
+			
+
 
 	syncResultsRange: ->
 		resultsCount = $('.form-result:visible').length

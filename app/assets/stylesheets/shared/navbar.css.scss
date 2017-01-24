@@ -38,6 +38,9 @@ header {
 		height: 22px;
 		display: block;
 	}
+	#creation-dropdown {
+		display: none;
+	}
 	#nav-dropdown {
 		display: none;
 		top: 0;
@@ -132,6 +135,47 @@ header {
 			div {
 				color: $red;
 				cursor: pointer;
+			}
+			#creation-dropdown {
+				position: absolute;
+				padding: 10px 20px;
+				width: 180px;
+				border-radius: 5px;
+				background: white;
+				right: 0;
+				top: 70px;
+				height: 170px;
+				@include flexbox;
+				@include flex-direction(column);
+				@include justify-content(space-between);
+				display: none;
+				.creation {
+					@include flexbox;
+					@include justify-content(space-between);
+					@include align-items(center);
+					.plus-btn {
+						height: 30px;
+						width: 30px;
+						border-radius: 5px;
+						border: 1px solid $dark-grey;
+						cursor: pointer;
+						img, svg {
+							height: 12px;
+							width: 12px;
+							margin: 8px;
+						}
+					}
+					.plus-btn:hover {
+						background: $red;
+						border: none;
+						svg {
+							margin: 9px;
+						}
+						svg * {
+							fill: white;
+						}
+					}
+				}
 			}
 			#profile-dropdown {
 				background: white;

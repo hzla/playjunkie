@@ -5,10 +5,8 @@ no profile picture upload
 
 
 
-Fri
-	Quiz Create/Quiz Take
 Sat 
-	Quiz Take/Publish/Profile Quiz View
+	Publish/Profile Quiz View
 Sun
 	Landing
 Monday
@@ -18,5 +16,11 @@ Tues - Fri
 
 
 
-this to add in to card create after
-	validations/char limits
+
+
+validations/char limits
+publish page
+profile quiz view
+edit page
+save/preview
+landing page

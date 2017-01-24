@@ -32,9 +32,51 @@
 				<% end %>
 			</div>
 		<% end %>
-		<%= link_to new_quiz_path do %>
+
 			<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
-		<% end %>
+			<div id="creation-dropdown">
+				<div class="creation">
+					<p>
+						Trivia
+					</p>
+					<%= link_to new_trivia_path do %>
+						<div class="plus-btn">
+							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
+						</div>
+					<% end %>
+				</div>
+				<div class="creation">
+					<p>
+						Quiz
+					</p>
+
+					<%= link_to new_quiz_quiz_path do %>
+						<div class="plus-btn">
+							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
+						</div>
+					<% end %>
+				</div>
+				<div class="creation">
+					<p>
+						Flipcard
+					</p>
+					<%= link_to new_flipcard_path do %>
+						<div class="plus-btn">
+							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
+						</div>
+					<% end %>
+				</div>
+				<div class="creation">
+					<p>
+						List
+					</p>
+					<%= link_to new_list_path do %>
+						<div class="plus-btn">
+							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
+						</div>
+					<% end %>
+				</div>
+			</div>
 	</div>
 	
 	

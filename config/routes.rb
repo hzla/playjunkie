@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users
 
   get '/quizzes/new_trivia', to: 'quizzes#new_trivia', as: 'new_trivia'
-  get '/quizzes/new_quiz', to: 'quizzes#new_quiz', as: 'new_new_quiz'
+  get '/quizzes/new_quiz', to: 'quizzes#new_quiz', as: 'new_quiz_quiz'
   get '/quizzes/new_flipcard', to: 'quizzes#new_flipcard', as: 'new_flipcard'
   get '/quizzes/new_list', to: 'quizzes#new_list', as: 'new_list'
   resources :quizzes
