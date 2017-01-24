@@ -4,7 +4,7 @@
 	<%= form_for Quiz.new do |f| %>
 		<%= f.hidden_field :quiz_type, value: "list" %>
 		<div id="quiz-main-info">
-			<%= f.file_field :image, :id => "quiz-image-input", required: true %>
+			<%= f.file_field :image, :id => "quiz-image-input" %>
 			<img id="quiz-image-preview" class="image-preview" src="#" alt="preview failed to load" class="hidden" /> 
 			<div class="image-input-overlay">
 				Click to Add Image
@@ -25,7 +25,7 @@
 				<h3 class=" question-number">Item <p>1</p></h3>
 				<class class="box-field ">
 					<label class="box-label">Title</label>
-					<%= text_field_tag "quiz_item_1[item_text]", nil, :class => "box-input" %>
+					<%= text_field_tag "quiz_item_1[item_text]", nil, :class => "box-input question-text" %>
 				</class>
 				<class class="box-field ">
 					<label class="box-label">Image</label>
@@ -44,6 +44,9 @@
 		</div>
 
 		<div id="submit-bar">
+			<div id="missing-field-error" class="error-message">
+				Questions, answers, and results must have either an image or text.
+			</div>
 			<div id="submit-bar-content">
 				<div id="preview-quiz" class="btn">
 					Preview

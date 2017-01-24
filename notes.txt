@@ -18,7 +18,7 @@ Tues - Fri
 
 
 
-validations/char limits
+char limits
 publish page
 profile quiz view
 edit page

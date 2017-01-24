@@ -555,6 +555,17 @@
 		bottom: 0px;
 		left: 0px;
 		z-index: 5;
+		.error-message {
+			 position: absolute;
+	    color: $red;
+	    width: 360px;
+	    bottom: 90px;
+	    right: 60px;
+	    display: none;
+		}
+		#correct-answer-error {
+			bottom: 140px;
+		}
 		#submit-bar-content {
 			height: 100%;
 			width: 620px;

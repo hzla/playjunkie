@@ -4,7 +4,7 @@
 	<%= form_for Quiz.new do |f| %>
 		<%= f.hidden_field :quiz_type, value: "personality" %>
 		<div id="quiz-main-info">
-			<%= f.file_field :image, :id => "quiz-image-input", required: true %>
+			<%= f.file_field :image, :id => "quiz-image-input" %>
 			<img id="quiz-image-preview" class="image-preview" src="#" alt="preview failed to load" class="hidden" /> 
 			<div class="image-input-overlay">
 				Click to Add Image
@@ -50,7 +50,7 @@
 				</class>
 				<class class="box-field ">
 					<label class="box-label">Question</label>
-					<%= text_field_tag "quiz_item_1[item_text]", nil, :class => "box-input" %>
+					<%= text_field_tag "quiz_item_1[item_text]", nil, :class => "box-input question-text" %>
 				</class>
 				<class class="box-field ">
 					<label class="box-label">Image Credit</label>
@@ -77,7 +77,7 @@
 						<img class="answer-image-preview image-preview" src="#" alt="preview failed to load" />
 						<%= text_area_tag "quiz_item_1_item_answer_1[answer_text]", nil, :class => "answer-text-input", placeholder: "Answer text..." %>
 						<%= text_field_tag "quiz_item_1_item_answer_1[image_credit]", nil, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
-						<%= select_tag "quiz_item_1_item_answer_1[result_id]", "<option disabled='disabled' selected='selected'>Assign a Result</option><option value='0'>Result 1</option>".html_safe %>
+						<%= select_tag "quiz_item_1_item_answer_1[result_id]", "<option disabled='disabled' selected='selected'>Assign a Result</option><option value='0'>Result 1</option>".html_safe, required: true %>
 					</div>
 					<div class="add-answer">
 						<%= image_tag "add-answer.svg", :class => "add-answer-btn" %>
@@ -90,6 +90,9 @@
 		</div>
 
 		<div id="submit-bar">
+			<div id="missing-field-error" class="error-message">
+				Questions, answers, and results must have either an image or text.
+			</div>
 			<div id="submit-bar-content">
 				<div id="preview-quiz" class="btn">
 					Preview

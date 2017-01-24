@@ -1,4 +1,4 @@
-<div class="content-container quiz-form-container result-oriented-quiz">
+<div class="content-container quiz-form-container flipcard-oriented-quiz">
 	<h1 class="super-bold">Create a New Flip Card</h1>
 
 	<%= form_for Quiz.new do |f| %>
@@ -29,7 +29,7 @@
 
 				<div class="box-field">
 					<label class="box-label">Card Title</label>
-					<%= text_field_tag "quiz_item_1[title]", nil, :class => "box-input" %>
+					<%= text_field_tag "quiz_item_1[title]", nil, :class => "box-input", required: true %>
 				</div>
 
 				<div class="box-field">
@@ -42,7 +42,7 @@
 										<div class="add-card-text">Add Text</div>
 										<div class="text-box">
 										</div>
-										<%= hidden_field_tag "quiz_item_1[item_text]", nil, :class => "card-text-input" %>
+										<%= hidden_field_tag "quiz_item_1[item_text]", nil, :class => "card-text-input question-text" %>
 										<div class="background-edit-container">
 											<div class="colors-container">
 												<p>Choose Background Color</p>
@@ -71,7 +71,7 @@
 										<div class="add-card-text">Add Text</div>
 										<div class="text-box">
 										</div>
-										<%= hidden_field_tag "quiz_item_1[item_text_back]", nil, :class => "card-text-input" %>
+										<%= hidden_field_tag "quiz_item_1[item_text_back]", nil, :class => "card-text-input question-text" %>
 										<div class="background-edit-container">
 											<div class="colors-container">
 												<p>Choose Background Color</p>
@@ -116,6 +116,9 @@
 
 		<%= f.text_area :completion_message, :class => "btn", placeholder: "Completion Message..." %>
 		<div id="submit-bar">
+			<div id="missing-field-error" class="error-message">
+				Each card side must have either an image or text.
+			</div>
 			<div id="submit-bar-content">
 				<div id="preview-quiz" class="btn">
 					Preview

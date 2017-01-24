@@ -20,11 +20,81 @@ QuizNew =
 
 		@questionCount = 1
 
-		$('body').on 'submit', '#new_quiz', @validateFields
+		$('body').on 'submit', '#new_quiz', @validateFields if $('.flipcard-oriented-quiz').length < 1
 
 	validateFields: ->
-		$('.question').each ->
+		missingFieldError = false
+		incorrectNumberofAnswers = false
+
+		for i in [0..$('.question').length - 1]
+			question = $($('.question')[i])
+			console.log question
+			image = question.find('input.question-image-input')
+			text = question.find('.question-text')
+			if text.val() == "" && image.val() == ""
+				text.css('border', '1px solid red') if text.val() == "" 
+				question.find('div.question-image-input').css('border', '1px solid red') if image.val() == ""
+				missingFieldError = true
+			else
+				text.attr('style', '')
+				question.find('div.question-image-input').attr('style', '')
 			
+			correctAnswersCount = 0
+			question.find('.form-answer').each -> #validate answer fields
+				if $(@).find("input[type='checkbox']:checked").length > 0
+					correctAnswersCount += 1
+
+				image = $(@).find('.answer-image-input')
+				text = $(@).find('.answer-text-input')
+				if $(@).find('.image-input:visible').length > 0 #if image style
+					if image.val() == "" && text.val() == ""
+						text.css('border', '1px solid red') if text.val() == "" 
+						$(@).find('.image-input').css('border', '1px solid red') if image.val() == ""
+						missingFieldError = true
+					else
+						text.attr('style', '')
+						$(@).find('.image-input').attr('style', '')
+				else
+					if text.val() == ""
+						text.css('border', '1px solid red')
+						missingFieldError = true
+					else
+						text.attr('style', '')
+
+
+			if $('.trivia-oriented-quiz').length > 0
+				if correctAnswersCount != 1
+					incorrectNumberofAnswers = true
+					$(@).css('border', '1px solid red')
+				else
+					$(@).attr('style', '')
+			else
+				incorrectNumberofAnswers  = false
+
+		$('.form-result').each ->
+			text = $(@).find('.result-text-input')
+			image = $(@).find('.result-image-input')
+			if text.val() == "" && image.val() == ""
+				text.css('border', '1px solid red') if text.val() == "" 
+				$(@).find('.image-input').css('border', '1px solid red') if image.val() == ""
+				missingFieldError = true
+			else
+				text.attr('style', '')
+				(@).find('.image-input').attr('style', '')
+
+
+		if missingFieldError
+			$('#missing-field-error').show() 
+		else
+			$('#missing-field-error').hide()
+		if incorrectNumberofAnswers
+			$('#correct-answer-error').show() 
+		else
+			$('#correct-answer-error').hide() 
+		return !missingFieldError && !incorrectNumberofAnswers
+
+
+
 
 
 	syncResultsRange: ->
