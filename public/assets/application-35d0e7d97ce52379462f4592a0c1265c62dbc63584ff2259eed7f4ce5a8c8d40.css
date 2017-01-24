@@ -1,0 +1,2274 @@
+/* line 5, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+#banner-ad {
+  width: 100%;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  height: 44px;
+  border: 1px solid #2e9be8;
+}
+
+/* line 14, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take {
+  padding: 30px 10px 10px 10px;
+  top: 88px;
+}
+/* line 17, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .side-content {
+  display: none;
+}
+/* line 20, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take img {
+  border-radius: 5px;
+}
+/* line 23, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .quiz-description {
+  margin-top: 20px;
+}
+/* line 26, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .quiz-info {
+  margin-top: 20px;
+}
+/* line 28, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .quiz-info .quiz-user {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+/* line 31, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .quiz-info .quiz-user img {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+}
+/* line 36, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .quiz-info .quiz-user p {
+  color: #ababab;
+  margin-left: 10px;
+}
+/* line 41, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .quiz-info .quiz-subinfo {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 45, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .quiz-info .quiz-subinfo p {
+  color: #ababab;
+}
+/* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .quiz-info .quiz-subinfo .quiz-type {
+  font-weight: 800;
+}
+/* line 53, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .social-medias {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 57, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .social-medias .social-media {
+  height: 44px;
+  width: calc((100% - 40px) / 5);
+  cursor: pointer;
+  line-height: 44px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+/* line 66, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .social-medias img, .content-container.quiz-take .social-medias p {
+  margin: 0 auto;
+  color: white;
+  font-size: 16px;
+  height: 20px;
+  width: auto;
+}
+/* line 73, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .social-medias p {
+  height: auto;
+}
+/* line 79, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item.text-style .question-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+/* line 83, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item.text-style .question-header.flipcard {
+  margin-top: 30px;
+}
+/* line 86, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item.text-style .item-number {
+  position: static;
+  margin-right: 10px;
+}
+/* line 92, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item {
+  position: relative;
+  width: 100%;
+}
+/* line 94, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item .item-number {
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 30px;
+  top: 40px;
+  left: 10px;
+  position: absolute;
+  background: #ff491c;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  z-index: 1;
+  font-weight: 800;
+}
+/* line 110, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item .image-container {
+  position: relative;
+  height: calc((100vw - 20px) * 2 / 3);
+  margin-top: 30px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  padding: 0px 20px;
+}
+/* line 118, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item .image-container .card-text {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+}
+/* line 126, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item .image-container .image-credit {
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  height: 15px;
+  font-size: 9px;
+  line-height: 15px;
+  padding: 0px 5px;
+  text-align: center;
+}
+/* line 139, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .item img {
+  height: calc((100vw - 20px) * 2 / 3);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 148, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items p {
+  line-height: 24px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 10px;
+}
+/* line 154, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .answers {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 158, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .answers .answer {
+  width: calc((100% - 10px) / 2);
+  background: white;
+  border: 1px solid #d7d7d7;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
+/* line 166, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .answers .answer img {
+  width: 100%;
+  height: calc((((100vw - 30px) / 2) - 20px) * 2 / 3);
+  margin: 0;
+}
+/* line 172, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .answers .answer.personality.incorrect.selected {
+  background: #eaf5fc;
+  border: 1px solid #2e9be8;
+}
+/* line 176, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .answers .answer.correct.selected {
+  background: #e7faf0;
+  border: 1px solid #12d66d;
+}
+/* line 180, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .answers .answer.incorrect.selected {
+  background: #fff1f5;
+  border: 1px solid #ff799f;
+}
+/* line 184, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .items .answers .answer.text-style {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  padding: 0px 12px;
+}
+/* line 192, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result.sharer {
+  display: block;
+}
+/* line 194, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result.sharer .result-social-message {
+  margin-top: 0px;
+}
+/* line 198, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result {
+  margin: 60px 0px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  padding: 20px 10px;
+  display: none;
+  background: white;
+}
+/* line 205, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result p.personality.score {
+  display: none;
+}
+/* line 208, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result p.score {
+  color: #12d66d;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+/* line 212, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result p.score span {
+  color: #12d66d;
+}
+/* line 216, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result p {
+  line-height: 24px;
+  font-weight: 600;
+  font-size: 14px;
+}
+/* line 221, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result img.result-image {
+  margin-top: 10px;
+  width: 100%;
+  height: calc((100vw - 40px) * 2 / 3);
+}
+/* line 226, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+.content-container.quiz-take .result .result-social-message {
+  margin-top: 20px;
+}
+
+@media (min-width: 960px) {
+  /* line 234, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  #banner-ad {
+    top: 80px;
+    left: calc(50vw - 470px);
+    width: 940px;
+    height: 120px;
+  }
+
+  /* line 240, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take {
+    top: 200px;
+    padding: 60px calc(50vw - 470px);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+  }
+  /* line 245, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .side-content {
+    width: 300px;
+    display: block;
+    height: auto;
+  }
+  /* line 249, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .side-content .side-ad {
+    width: 100%;
+    height: 580px;
+    border: 1px solid #2e9be8;
+  }
+  /* line 254, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .side-content .divider {
+    background: #ededed;
+    height: 2px;
+    width: 150px;
+    margin: 30px auto;
+  }
+  /* line 261, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .side-content .recommendations h3 {
+    font-weight: 800;
+  }
+  /* line 264, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .side-content .recommendations img {
+    height: 100px;
+    margin-top: 20px;
+    width: 300px;
+  }
+  /* line 269, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .side-content .recommendations p {
+    margin-top: 10px;
+  }
+  /* line 276, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .social-medias .social-media {
+    height: 30px;
+  }
+  /* line 280, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main {
+    width: 620px;
+  }
+  /* line 284, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .item.text-style .question-header {
+    margin-top: 60px;
+  }
+  /* line 289, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .item .image-container {
+    height: calc(620px * 2 / 3);
+    padding: 0px 40px;
+  }
+  /* line 292, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .item .image-container .card-text {
+    width: calc(100% - 80px);
+    z-index: 2;
+    font-size: 28px;
+  }
+  /* line 298, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .item .image-container.flippable {
+    cursor: pointer;
+  }
+  /* line 301, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .item .item-number {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    z-index: 1;
+  }
+  /* line 308, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .item img {
+    height: calc(620px * 2 / 3);
+  }
+  /* line 311, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .item p {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  /* line 317, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .answers .answer {
+    width: 300px;
+  }
+  /* line 319, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .answers .answer img {
+    height: 186px;
+    width: 280px;
+  }
+  /* line 323, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .answers .answer p {
+    font-size: 18px;
+    margin: 0;
+  }
+  /* line 328, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .answers .answer.text-style {
+    width: 100%;
+    padding: 12px;
+  }
+  /* line 331, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .items .answers .answer.text-style p {
+    line-height: 18px;
+  }
+  /* line 337, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .result {
+    padding: 40px 20px;
+  }
+  /* line 339, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .result img.result-image {
+    width: 580px;
+    height: 386px;
+  }
+  /* line 343, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .result p.score {
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+  /* line 347, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .result p {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  /* line 351, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .result .social-media p {
+    font-size: 16px;
+    height: auto;
+    line-height: 30px;
+    font-weight: 400;
+  }
+  /* line 358, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .bottom-ads {
+    margin: 60px 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+  }
+  /* line 363, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quiz_show.css.scss */
+  .content-container.quiz-take .quiz-main .bottom-ads .bottom-ad {
+    border: 1px solid #2e9be8;
+    width: calc((620px - 40px) / 3);
+    margin-bottom: 20px;
+    height: 130px;
+  }
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container {
+  padding: 60px calc(50vw - 470px);
+}
+/* line 7, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  position: relative;
+  width: 620px;
+}
+/* line 12, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-image-input {
+  height: 130px;
+  width: 150px;
+  display: block;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+/* line 20, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-image-preview {
+  height: 130px;
+  width: 150px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 130px;
+  color: #ababab;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 1;
+  cursor: pointer;
+}
+/* line 34, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info .image-input-overlay {
+  height: 130px;
+  width: 150px;
+  border-radius: 5px;
+  border: 1px solid #d7d7d7;
+  text-align: center;
+  line-height: 130px;
+  color: #ababab;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 46, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-text-info {
+  margin-left: 10px;
+  width: 460px;
+}
+/* line 49, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-text-info input, .quiz-form-container #quiz-main-info #quiz-text-info textarea {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 16px;
+  border: 1px solid #d7d7d7;
+}
+/* line 55, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #quiz-main-info #quiz-text-info textarea {
+  margin-top: 10px;
+  line-height: 16px;
+}
+/* line 62, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container h2.content-title {
+  margin-top: 60px;
+}
+/* line 67, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box {
+  border: 1px solid #d7d7d7;
+  padding: 30px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 620px;
+  position: relative;
+}
+/* line 74, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .closer {
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  height: 20px;
+  width: 20px;
+  z-index: 3;
+}
+/* line 83, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .close-image {
+  display: none;
+}
+/* line 86, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .move-question {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: -10px;
+  top: 13px;
+  cursor: pointer;
+  display: none;
+}
+/* line 95, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .move-question.move-down {
+  top: 43px;
+}
+/* line 98, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box h3 {
+  color: #ff491c;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+/* line 102, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box h3 p {
+  display: inline;
+  color: #ff491c;
+  font-size: 16px;
+  font-weight: 800;
+}
+/* line 109, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .divider {
+  background: #cfcfcf;
+  height: 1px;
+  width: 100%;
+  margin-top: 30px;
+}
+/* line 115, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box h3.answer-header {
+  color: #414141;
+  margin-top: 30px;
+}
+/* line 120, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .side-chooser {
+  width: 285px;
+  text-align: center;
+  font-weight: 800;
+  color: #d7d7d7;
+  border: 1px solid #d7d7d7;
+  cursor: pointer;
+}
+/* line 128, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .side-chooser.selected {
+  background: #d7d7d7;
+  color: #414141;
+}
+/* line 132, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .choose-front {
+  margin-right: 10px;
+}
+/* line 137, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side div.question-image-input {
+  background: #414141;
+  cursor: default;
+  padding: 12px 60px 15px 60px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+/* line 146, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side div.question-image-input .add-card-text {
+  background: #d7d7d7;
+  text-align: center;
+  border-radius: 5px;
+  width: 80px;
+  line-height: 30px;
+  cursor: pointer;
+  z-index: 2;
+}
+/* line 155, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side div.question-image-input .text-box {
+  width: 320px;
+  height: 128px;
+  position: absolute;
+  left: 40px;
+  top: 66px;
+  color: white;
+  z-index: 2;
+  font-size: 24px;
+  line-height: 24px;
+}
+/* line 170, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side input.question-image-input {
+  width: 80px;
+  height: 30px;
+  top: initial;
+  bottom: 20px;
+  right: 65px;
+  cursor: pointer;
+}
+/* line 178, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  line-height: initial;
+}
+/* line 185, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container * {
+  z-index: 2;
+}
+/* line 188, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container .image-preview {
+  z-index: 1;
+}
+/* line 191, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container .colors-container {
+  width: 140px;
+  height: auto;
+}
+/* line 194, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container .colors-container p {
+  color: white;
+  font-size: 8px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  height: 8px;
+}
+/* line 202, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container .colors-container .colors {
+  height: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 207, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container .colors-container .colors .color {
+  height: 20px;
+  width: 20px;
+  border: 1px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+  background: red;
+}
+/* line 217, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container .or {
+  width: 14px;
+  font-size: 12px;
+  margin: 0px 20px;
+  color: white;
+  height: 12px;
+}
+/* line 224, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .card-side .background-edit-container .card-image-input-btn {
+  background: #d7d7d7;
+  text-align: center;
+  border-radius: 5px;
+  width: 80px;
+  line-height: 30px;
+  cursor: pointer;
+}
+/* line 235, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  position: relative;
+}
+/* line 241, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .box-label {
+  margin-top: 12px;
+}
+/* line 244, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .box-input {
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  width: 400px;
+  height: 40px;
+}
+/* line 250, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .box-input.question-image-input {
+  height: 260px;
+  cursor: pointer;
+  line-height: 260px;
+  text-align: center;
+  color: #ababab;
+}
+/* line 257, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field input[type="file"] {
+  position: absolute;
+  right: 0;
+  height: 260px;
+  top: 0;
+  width: 400px;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+/* line 267, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field input, .quiz-form-container .form-box .box-field textarea {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 271, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .question-image-preview {
+  position: absolute;
+  right: 0;
+  height: 260px;
+  top: 0;
+  width: 400px;
+  z-index: 1;
+  cursor: pointer;
+  display: none;
+  border-radius: 5px;
+}
+/* line 282, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .answer-format-selection {
+  width: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 285, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .answer-format-selection .answer-format {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+/* line 291, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .answer-format-selection .answer-format.selected, .quiz-form-container .form-box .box-field .answer-format-selection .image-format.answer-format {
+  display: none;
+}
+/* line 294, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .box-field .answer-format-selection .answer-format.image-format.selected {
+  display: block;
+}
+/* line 299, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers, .quiz-form-container .form-box .form-results {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+/* line 303, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer, .quiz-form-container .form-box .form-answers .image-and-text-box, .quiz-form-container .form-box .form-results .form-answer, .quiz-form-container .form-box .form-results .image-and-text-box {
+  width: calc((100% - 40px) / 4);
+  height: 300px;
+  border-radius: 5px;
+  background: white;
+  padding: 10px;
+  position: relative;
+  border: 1px solid #d7d7d7;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  transition-duration: 0s;
+}
+/* line 314, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer input, .quiz-form-container .form-box .form-answers .form-answer textarea, .quiz-form-container .form-box .form-answers .form-answer .image-input, .quiz-form-container .form-box .form-answers .image-and-text-box input, .quiz-form-container .form-box .form-answers .image-and-text-box textarea, .quiz-form-container .form-box .form-answers .image-and-text-box .image-input, .quiz-form-container .form-box .form-results .form-answer input, .quiz-form-container .form-box .form-results .form-answer textarea, .quiz-form-container .form-box .form-results .form-answer .image-input, .quiz-form-container .form-box .form-results .image-and-text-box input, .quiz-form-container .form-box .form-results .image-and-text-box textarea, .quiz-form-container .form-box .form-results .image-and-text-box .image-input {
+  width: 100%;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 12px;
+}
+/* line 322, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer .image-input, .quiz-form-container .form-box .form-answers .image-and-text-box .image-input, .quiz-form-container .form-box .form-results .form-answer .image-input, .quiz-form-container .form-box .form-results .image-and-text-box .image-input {
+  height: 94px;
+  text-align: center;
+  color: #ababab;
+  padding: 30px 0px;
+  cursor: pointer;
+  background: #f7f7f7;
+}
+/* line 330, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer input[type="file"], .quiz-form-container .form-box .form-answers .form-answer .answer-image-preview, .quiz-form-container .form-box .form-answers .image-and-text-box input[type="file"], .quiz-form-container .form-box .form-answers .image-and-text-box .answer-image-preview, .quiz-form-container .form-box .form-results .form-answer input[type="file"], .quiz-form-container .form-box .form-results .form-answer .answer-image-preview, .quiz-form-container .form-box .form-results .image-and-text-box input[type="file"], .quiz-form-container .form-box .form-results .image-and-text-box .answer-image-preview {
+  height: 94px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 115px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+/* line 340, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer .answer-image-preview, .quiz-form-container .form-box .form-answers .image-and-text-box .answer-image-preview, .quiz-form-container .form-box .form-results .form-answer .answer-image-preview, .quiz-form-container .form-box .form-results .image-and-text-box .answer-image-preview {
+  opacity: 1;
+  display: none;
+  border-radius: 5px;
+  z-index: 1;
+}
+/* line 346, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer textarea, .quiz-form-container .form-box .form-answers .image-and-text-box textarea, .quiz-form-container .form-box .form-results .form-answer textarea, .quiz-form-container .form-box .form-results .image-and-text-box textarea {
+  height: 80px;
+}
+/* line 349, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer input, .quiz-form-container .form-box .form-answers .image-and-text-box input, .quiz-form-container .form-box .form-results .form-answer input, .quiz-form-container .form-box .form-results .image-and-text-box input {
+  height: 40px;
+}
+/* line 352, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer .checkbox-container, .quiz-form-container .form-box .form-answers .image-and-text-box .checkbox-container, .quiz-form-container .form-box .form-results .form-answer .checkbox-container, .quiz-form-container .form-box .form-results .image-and-text-box .checkbox-container {
+  width: 72px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  height: 16px;
+  margin: 20px auto 10px auto;
+}
+/* line 359, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer .checkbox-container input, .quiz-form-container .form-box .form-answers .image-and-text-box .checkbox-container input, .quiz-form-container .form-box .form-results .form-answer .checkbox-container input, .quiz-form-container .form-box .form-results .image-and-text-box .checkbox-container input {
+  height: auto;
+  margin: 0;
+}
+/* line 364, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers .form-answer select, .quiz-form-container .form-box .form-answers .image-and-text-box select, .quiz-form-container .form-box .form-results .form-answer select, .quiz-form-container .form-box .form-results .image-and-text-box select {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #d7d7d7;
+  padding: 10px;
+  font-size: 12px;
+}
+/* line 373, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers div:nth-child(4n - 3), .quiz-form-container .form-box .form-results div:nth-child(4n - 3) {
+  margin-left: 0px;
+}
+/* line 377, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .image-style .add-answer {
+  width: calc((100% - 40px) / 4);
+  border: 1px solid #d7d7d7;
+  height: 300px;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 112px 0px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* line 388, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .image-style .add-answer img {
+  height: 40px;
+  width: 40px;
+  margin: 0 auto;
+}
+/* line 393, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .image-style .add-answer p {
+  font-weight: 800;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+}
+/* line 401, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .text-style .add-answer {
+  width: 100%;
+  border: none;
+  height: 40px;
+  margin: 10px 0 0 0;
+  background: #d7d7d7;
+  cursor: pointer;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  padding: 0px 232px;
+  transition: 0s;
+}
+/* line 414, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .text-style .add-answer p {
+  font-weight: 800;
+  font-size: 16px;
+  width: auto;
+  display: block;
+  margin-left: 10px;
+}
+/* line 421, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .text-style .add-answer img {
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+/* line 428, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers.text-style .text-answer-form:first-child {
+  margin-top: 0px;
+}
+/* line 431, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers.text-style .form-answer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 10px;
+  height: 40px;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 0px;
+  margin-left: 0px;
+}
+/* line 442, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers.text-style .form-answer .answer-text-input {
+  height: 40px;
+  width: 450px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  padding: 10px;
+}
+/* line 449, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers.text-style .form-answer .answer-image-input, .quiz-form-container .form-box .form-answers.text-style .form-answer .answer-image-credit-input, .quiz-form-container .form-box .form-answers.text-style .form-answer .image-input {
+  display: none;
+}
+/* line 452, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers.text-style .form-answer .checkbox-container {
+  background: white;
+  border: 1px solid #d7d7d7;
+  height: 40px;
+  width: 120px;
+  padding: 0px 24px;
+  margin: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  border-radius: 5px;
+}
+/* line 464, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-answers.text-style .form-answer select {
+  width: 120px;
+}
+/* line 470, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results.show-add-result .add-result {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 474, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+/* line 478, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results .form-result {
+  height: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+/* line 482, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results .form-result input[type="file"], .quiz-form-container .form-box .form-results .form-result .result-image-preview {
+  position: absolute;
+  left: 10px;
+  height: 94px;
+  top: 100px;
+  width: 115px;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+/* line 492, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results .form-result .result-image-preview {
+  border-radius: 5px;
+  display: none;
+  z-index: 1;
+  opacity: 1;
+}
+/* line 498, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results .form-result .results-range {
+  margin-top: 20px;
+}
+/* line 499, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results .form-result .results-range p {
+  text-align: center;
+  font-size: 12px;
+}
+/* line 506, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results .add-result {
+  width: calc((100% - 40px) / 4);
+  height: 266px;
+  border: 1px solid #d7d7d7;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  transition-duration: 0s;
+  display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -moz-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+/* line 518, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results .add-result div {
+  background: #ff9c1d;
+  cursor: pointer;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  width: calc(100% - 20px);
+  margin: 0px 20px;
+}
+/* line 527, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .form-box .form-results .add-result div:hover {
+  background: #e88d19;
+}
+/* line 533, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #add-question {
+  background: #ff9c1d;
+  text-align: center;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 620px;
+}
+/* line 543, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #add-question:hover {
+  background: #e88d19;
+}
+/* line 547, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container .results-box {
+  padding: 20px;
+}
+/* line 550, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background: white;
+  bottom: 0px;
+  left: 0px;
+  z-index: 5;
+}
+/* line 558, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar #submit-bar-content {
+  height: 100%;
+  width: 620px;
+  margin-left: calc(50vw - 470px);
+  padding: 10px 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+/* line 565, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar #submit-bar-content .btn {
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  font-weight: 800;
+  cursor: pointer;
+}
+/* line 572, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar #submit-bar-content #preview-quiz {
+  background: white;
+  color: #ababab;
+  border: 1px solid #ababab;
+}
+/* line 577, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar #submit-bar-content #submit-actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 579, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar #submit-bar-content #submit-actions #save-quiz {
+  background: #d7d7d7;
+  color: #414141;
+}
+/* line 583, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar #submit-bar-content #submit-actions #publish-quiz {
+  background: #ff491c;
+  color: white;
+  margin-left: 10px;
+}
+/* line 588, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container #submit-bar #submit-bar-content #submit-actions #publish-quiz:hover {
+  background: #df4019;
+}
+/* line 594, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container textarea#quiz_completion_message {
+  width: 620px;
+  border: 1px solid #d7d7d7;
+  padding: 12px 10px;
+  margin: 60px 0px;
+  line-height: 16px;
+}
+
+/* line 603, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.quiz-form-container.list-oriented-quiz #add-question, .quiz-form-container.result-oriented-quiz #add-question {
+  margin-bottom: 40px;
+}
+
+/* entire container, keeps perspective */
+/* line 612, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.flip-container {
+  perspective: 1000px;
+}
+
+/* flip the pane when hovered */
+/* line 616, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.flip-container.flip .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+/* line 620, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.flip-container, .front, .back {
+  height: 260px;
+  width: 400px;
+}
+
+/* line 626, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.flipcard .flip-container, .flipcard .front, .flipcard .back {
+  height: calc(100vw - 20px * 2 / 3);
+  width: auto;
+}
+
+@media (min-width: 960px) {
+  /* line 634, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+  .flipcard .flip-container, .flipcard .front, .flipcard .back {
+    height: 414px;
+    width: 620px;
+  }
+}
+/* flip speed goes here */
+/* line 642, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.flipper {
+  transition: 0.4s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+/* line 650, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+/* line 659, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+/* line 666, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/quizzes_new.css.scss */
+.back {
+  transform: rotateY(180deg);
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container {
+  padding: 10px calc(50vw - 150px);
+}
+/* line 6, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .signin-content, .user-forms-container .signup-content {
+  border-radius: 5px;
+  height: auto;
+  width: 300px;
+  background: white;
+  border: 1px solid #ededed;
+  padding: 30px 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 16, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .fb-signin {
+  width: 280px;
+  padding: 0px 54px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  background: #3B5998;
+  color: white;
+  margin-top: 20px;
+}
+/* line 18, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .fb-signin img {
+  height: 20px;
+}
+/* line 28, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .fb-signin p {
+  font-size: 14px;
+  color: white;
+}
+/* line 33, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .or {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  height: 14px;
+}
+/* line 39, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form {
+  text-align: left;
+}
+/* line 42, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form .signin-row label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+/* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form .signin-row input {
+  border: 1px solid #ededed;
+  margin-top: 10px;
+  width: 100%;
+  padding: 0px 20px;
+}
+/* line 55, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form #signin {
+  background: #ff9c1d;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+/* line 64, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container form #signin:hover {
+  background: #e88d19;
+}
+/* line 68, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container #forgot-pw {
+  color: #ff9c1d;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #ededed;
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+/* line 78, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container #signup-terms {
+  font-size: 10px;
+  margin-top: 20px;
+}
+/* line 82, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .signup-text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 200px;
+  margin: 20px auto 0px auto;
+}
+/* line 88, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .signup-text p {
+  font-size: 14px;
+}
+/* line 91, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .signup-text .signup-link {
+  margin-left: 10px;
+  color: #ff9c1d;
+  cursor: pointer;
+}
+/* line 97, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+.user-forms-container .error-message {
+  color: #ff491c;
+}
+
+@media (min-width: 768px) {
+  /* line 105, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container {
+    padding: 40px calc(50vw - 210px);
+  }
+  /* line 107, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .signin-content {
+    margin-bottom: 60px;
+    width: 420px;
+    padding: 60px;
+  }
+  /* line 114, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container form .signin-row label {
+    font-size: 16px;
+  }
+  /* line 118, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container form #signin {
+    font-size: 16px;
+  }
+  /* line 122, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .fb-signin {
+    width: 300px;
+  }
+  /* line 124, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .fb-signin p {
+    font-size: 16px;
+  }
+  /* line 128, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .or {
+    height: 16px;
+    font-size: 16px;
+  }
+  /* line 132, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container #forgot-pw, .user-forms-container .signup-text {
+    font-size: 16px;
+  }
+  /* line 134, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container #forgot-pw p, .user-forms-container .signup-text p {
+    font-size: 16px;
+  }
+  /* line 138, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/sessions_create.css.scss */
+  .user-forms-container .signup-text {
+    width: 210px;
+  }
+}
+/* line 21, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/font.css.scss */
+* {
+  font-family: "Verlag";
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/layouts.css.scss */
+.content-container {
+  position: absolute;
+  top: 44px;
+  left: 0px;
+  background: #f7f7f7;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  /* line 16, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/layouts.css.scss */
+  .content-container {
+    top: 60px;
+  }
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 12, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, textarea, select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-family: 'verlag';
+  color: #414141;
+}
+
+/* line 37, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 43, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+input, textarea {
+  display: block;
+}
+
+/* line 47, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+li {
+  list-style: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 51, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 55, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+body {
+  line-height: 1.2;
+  background: #f7f7f7;
+}
+
+/* line 59, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 62, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 65, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 70, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 75, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.hidden {
+  display: none !important;
+}
+
+/* line 79, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 83, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+div:focus {
+  outline: none;
+}
+
+/* line 93, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+h1 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* line 98, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* line 103, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+h3 {
+  font-size: 14px;
+}
+
+/* line 107, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+header p, header div, header a {
+  font-size: 14px;
+}
+
+/* line 111, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+p, div {
+  font-size: 14px;
+}
+
+/* line 115, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.bold {
+  font-weight: 600;
+}
+
+/* line 119, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.super-bold {
+  font-weight: 800;
+}
+
+@media (min-width: 769px) {
+  /* line 124, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  h1 {
+    font-size: 28px;
+  }
+
+  /* line 128, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  h2 {
+    font-size: 24px;
+  }
+
+  /* line 132, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  h2.content-title {
+    font-size: 18px;
+  }
+
+  /* line 136, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  h3 {
+    font-size: 16px;
+  }
+
+  /* line 140, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  header p, header div, header a {
+    font-size: 16px;
+  }
+
+  /* line 144, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  p, div {
+    font-size: 16px;
+  }
+}
+/* line 151, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+* {
+  transition: background 0.4s ease;
+}
+
+/* line 159, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.btn {
+  border-radius: 5px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  display: block;
+}
+
+/* line 168, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+textarea.btn {
+  height: 88px;
+}
+
+@media (min-width: 1024px) {
+  /* line 172, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  textarea.btn {
+    height: 80px;
+  }
+
+  /* line 175, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+  .btn {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+  }
+}
+/* line 184, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.fb-blue-bg {
+  background: #3B5998;
+}
+
+/* line 187, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.tw-blue-bg {
+  background: #55ACEE;
+}
+
+/* line 191, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.pinterest-red-bg {
+  background: #BD081C;
+}
+
+/* line 195, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.blue-bg {
+  background: #2e9be8;
+}
+
+/* line 199, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/master.css.scss */
+.black-bg {
+  background: #414141;
+}
+/* line 5, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header {
+  height: 44px;
+  background: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 10px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-content: center;
+  -moz-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+/* line 17, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header img:hover {
+  cursor: pointer;
+}
+/* line 20, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #search-icon, header #menu-icon {
+  width: 20px;
+  height: auto;
+}
+/* line 24, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #navbar-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+/* line 27, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #navbar-links div, header #navbar-links input {
+  display: none;
+}
+/* line 32, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #navbar-actions {
+  display: none;
+}
+/* line 36, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #logo, header #logo img {
+  width: auto;
+  height: 22px;
+  display: block;
+}
+/* line 41, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #creation-dropdown {
+  display: none;
+}
+/* line 44, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 1;
+}
+/* line 53, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown #close-dropdown {
+  height: 14px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}
+/* line 60, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown .dropdown-content {
+  background: white;
+  padding-top: 15px;
+}
+/* line 64, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown li {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  height: 44px;
+  width: calc(100% - 120px);
+  margin: 0 auto;
+  border-bottom: 1px solid #ededed;
+  line-height: 44px;
+}
+/* line 74, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown li.no-outline {
+  border-bottom: 0px;
+}
+/* line 77, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown li.bold {
+  font-weight: 600;
+}
+/* line 80, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown li.list-header {
+  color: #ababab;
+  font-weight: 800;
+  background: #ededed;
+  width: 100%;
+}
+/* line 86, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+header #nav-dropdown .nav-categories {
+  background: #f7f7f7;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 1024px) {
+  /* line 94, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header {
+    height: 60px;
+    padding: 0px calc(50vw - 470px);
+  }
+  /* line 97, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #search-icon, header #menu-icon {
+    display: none;
+  }
+  /* line 100, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header img.dropdown-arrow {
+    height: 8px;
+    width: 8px;
+    margin-left: 5px;
+  }
+  /* line 106, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-links div, header #navbar-links input {
+    line-height: 60px;
+    margin-left: 40px;
+    display: block;
+  }
+  /* line 111, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-links #logo, header #navbar-links #logo img {
+    width: auto;
+    height: 30px;
+  }
+  /* line 115, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-links input {
+    width: 200px;
+    height: 40px;
+    padding: 0px 20px;
+    line-height: 40px;
+    border-radius: 5px;
+    background: #f7f7f7;
+    border: 1px solid #ededed;
+    font-size: 16px;
+  }
+  /* line 125, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-links input::-webkit-input-placeholder {
+    color: #ababab;
+    font-size: 16px;
+  }
+  /* line 130, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions {
+    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: relative;
+  }
+  /* line 135, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions div {
+    color: #ff491c;
+    cursor: pointer;
+  }
+  /* line 139, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #creation-dropdown {
+    position: absolute;
+    padding: 10px 20px;
+    width: 180px;
+    border-radius: 5px;
+    background: white;
+    right: 0;
+    top: 70px;
+    height: 170px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    display: none;
+  }
+  /* line 152, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #creation-dropdown .creation {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+  }
+  /* line 156, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #creation-dropdown .creation .plus-btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid #414141;
+    cursor: pointer;
+  }
+  /* line 162, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #creation-dropdown .creation .plus-btn img, header #navbar-actions #creation-dropdown .creation .plus-btn svg {
+    height: 12px;
+    width: 12px;
+    margin: 8px;
+  }
+  /* line 168, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #creation-dropdown .creation .plus-btn:hover {
+    background: #ff491c;
+    border: none;
+  }
+  /* line 171, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #creation-dropdown .creation .plus-btn:hover svg {
+    margin: 9px;
+  }
+  /* line 174, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #creation-dropdown .creation .plus-btn:hover svg * {
+    fill: white;
+  }
+  /* line 180, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #profile-dropdown {
+    background: white;
+    height: 150px;
+    width: 180px;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 2;
+    position: absolute;
+    left: -150px;
+    bottom: -160px;
+    display: none;
+  }
+  /* line 191, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #profile-dropdown li {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #414141;
+  }
+  /* line 196, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #profile-dropdown .divider {
+    height: 2px;
+    background: #d7d7d7;
+    width: 70px;
+    margin-bottom: 20px;
+  }
+  /* line 202, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #profile-dropdown li:hover {
+    color: #ff491c;
+  }
+  /* line 206, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #nav-profile-pic, header #navbar-actions #nav-profile-pic img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: block;
+  }
+  /* line 212, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #create-btn {
+    height: 40px;
+    background: #ff491c;
+    color: white;
+    line-height: 40px;
+    border-radius: 5px;
+    width: 100px;
+    padding: 0px 18px;
+    margin-left: 20px;
+  }
+  /* line 222, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/shared/navbar.css.scss */
+  header #navbar-actions #create-btn:hover {
+    background: #df4019;
+  }
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container {
+  padding: 30px 10px 10px 10px;
+}
+/* line 7, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form h2 {
+  margin-top: 20px;
+  font-weight: 800;
+}
+/* line 11, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form textarea {
+  margin-top: 10px;
+  width: 100%;
+  height: 88px;
+  display: block;
+  border: 1px solid #ededed;
+  line-height: 14px;
+  padding: 15px 10px;
+}
+/* line 20, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form input {
+  margin-top: 10px;
+  height: 44px;
+  width: 100%;
+  display: block;
+  border: 1px solid #ededed;
+  padding: 15px 10px;
+}
+/* line 28, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form #submit-settings {
+  width: 100%;
+  background: #ff491c;
+  color: white;
+  text-align: center;
+  line-height: 44px;
+  padding: 0px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+/* line 38, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+.settings-container .user-settings-form #submit-settings:hover {
+  background: #df4019;
+}
+
+@media (min-width: 1024px) {
+  /* line 45, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+  .settings-container {
+    padding: 80px calc(50vw - 470px);
+  }
+  /* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+  .settings-container .user-settings-form h2 {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+  /* line 52, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_edit.css.scss */
+  .settings-container .user-settings-form #submit-settings {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 840px;
+    margin-top: 60px;
+  }
+}
+/* line 4, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+.user-profile-container {
+  padding: 10px;
+}
+
+/* line 8, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#profile-pic {
+  height: 80px;
+  width: 80px;
+  margin: 20px auto 0px auto;
+  border-radius: 40px;
+  display: block;
+}
+
+/* line 16, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#user-name {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* line 21, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#user-description {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* line 26, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#settings {
+  width: 300px;
+  background: #ff491c;
+  color: white;
+  text-align: center;
+  margin: 30px auto 0px auto;
+}
+
+/* line 34, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+#settings:hover {
+  background: #df4019;
+}
+
+@media (min-width: 1024px) {
+  /* line 40, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  .user-profile-container {
+    padding: 60px 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  /* line 44, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #user-info {
+    width: 220px;
+    margin-left: calc(50vw - 470px);
+  }
+
+  /* line 48, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    margin: 0;
+  }
+
+  /* line 54, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #user-name {
+    margin-top: 40px;
+    text-align: left;
+  }
+
+  /* line 58, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #user-description {
+    text-align: left;
+  }
+
+  /* line 61, /Users/andylee/Desktop/qwizzy/app/assets/stylesheets/users_show.css.scss */
+  #settings {
+    margin: 40px 0px 0px 0px;
+    width: 100px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
