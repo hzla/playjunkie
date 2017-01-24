@@ -1,0 +1,61 @@
+@import 'shared/variables';
+@import 'shared/mixins';
+
+
+.content-container.quiz-publish-container {
+	padding: 180px calc(50vw - 320px) 0px calc(50vw - 320px);
+	h2, h1 {
+		text-align: center;
+	}
+	h1 {
+		margin-top: 20px;
+	}
+	.published-social-media {
+		margin-top: 55px;
+		@include flexbox;
+		@include justify-content(space-between);
+		.social-media {
+			div {
+				@include flexbox;
+				margin: 0 auto;
+			}
+			cursor: pointer;
+			text-align: center;
+			border-radius: 5px;
+			padding: 12px 0px;
+			@include flexbox;
+			@include align-items(center);
+			width: 240px;
+			p {
+				color: white;
+				font-weight: 800;
+				margin-left: 10px;
+			}
+		}
+		.social-media.embed-btn {
+			width: 120px;
+			p {
+				margin: 0 auto;
+			}
+		}
+	}
+	.quiz-link {
+		margin-top: 10px;
+		font-size: 16px;
+		padding: 12px;
+		width: 100%;
+		border-radius: 5px;
+		border: 1px solid $light-outline;
+	}
+	.quiz-btn {
+		width: 130px;
+    background: $red;
+    color: white;
+    text-align: center;
+    margin: 40px auto 120px auto;
+    font-weight: 800;
+	}
+	.quiz-btn:hover {
+		background: $hover-red
+	}
+}

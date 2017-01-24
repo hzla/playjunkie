@@ -63,9 +63,7 @@ class QuizzesController < ApplicationController
 			end
 			item_count += 1
 		end 
-		
-
-		redirect_to quiz_path(quiz)
+		@quiz = quiz
 	end
 
 

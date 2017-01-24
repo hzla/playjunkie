@@ -1,3 +1,33 @@
-<div class="content-container">
-	
+<div class="content-container quiz-publish-container">
+	<div class="content">
+		<h2>Hooray! You just published</h2>
+		<h1><%= @quiz.title %></h1>
+
+		<div class="published-social-media">
+			<div class="social-media fb-blue-bg">
+				<div>
+					<%= image_tag "fb.svg" %>
+					<p>Share on Facebook</p>
+				</div>
+				
+			</div>
+			<div class="social-media tw-blue-bg">
+				<div>
+					<%= image_tag "twitter.svg" %>
+					<p>Share on Twitter</p>
+				</div>
+			</div>
+			<div class="social-media embed-btn black-bg">
+				<p>Embed</p>
+			</div>
+		</div>
+
+		<%= text_field_tag :link, quiz_url(@quiz), :class => "quiz-link" %>
+
+		<%= link_to quiz_path(@quiz) do %>
+			<div class="quiz-btn btn">
+				Check It Out!
+			</div>
+		<% end %>
+	</div>
 </div>

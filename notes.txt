@@ -3,24 +3,39 @@ no sign in on mobile
 no profile picture upload
 
 
+20hrs on setup/user sign in
+65hrs so far on quiz create/take
 
+projected to first draft finish
 
-Sat 
-	Publish/Profile Quiz View
-Sun
-	Landing
-Monday
-	Trending/Browse
-Tues - Fri
-	Finishing Up
+	21hrs
 
 
 
 
 
-char limits
-publish page
-profile quiz view
-edit page
-save/preview
-landing page
+Tues
+
+	char limits 30min
+	result assignment validation 10min
+	edit page 1hr
+	save/preview 3hr
+	landing page 2hr
+	trending 30min
+	browse 30min
+	search 2hr
+	contact 30min
+	copy 1hr
+
+
+Wednesday
+	refactor/cleanup 10hr
+		-forgot pw 30min
+		-footer 30min
+		-header hovers 20min
+		-ads ????
+		-social media ???
+		-admin panel 1hr
+		-mobile create lockout 20min
+
+

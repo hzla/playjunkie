@@ -44,6 +44,7 @@ gem 'react-rails', '~> 1.0'
 
 
 gem 'pry'
+gem 'faker'
 
 #Testing
 group :development, :test do

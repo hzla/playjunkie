@@ -6,11 +6,49 @@
 
 		<p id="user-description"><%= @user.description %></p>
 
-		<%= link_to edit_user_path(@user), :class => "btn", id: "settings" do %>
-			Settings
+		<% if current_user == @user %>
+			<%= link_to edit_user_path(@user), :class => "btn", id: "settings" do %>
+				Settings
+			<% end %>
 		<% end %>
 	</div>
 	<div id="user-quizzes">
+		<h1>My Stuff</h1>
+		<p class="mobile-message">View this page in desktop mode to edit your quizzes!</p>
+		<div class="sort-bar">
+			<p>Sort by:</p>
+			<p>Publish Date</p>
+			<p>Name</p>
+			<p>Creation Date</p>
+		</div>
+		<div class="quiz-list-container">
+			<% @user.quizzes.order(:publish_date).each do |quiz| %>
+				<div class="quiz">
+					<div class="quiz-info">
+						<div class="quiz-title"><%= quiz.title %></div>
+						<div class="quiz-user">
+							<%= image_tag quiz.user.profile_pic %>
+							<p><%= quiz.user.name %></p>
+						</div>
+						<div class="quiz-sub-info">
+							<p class="creation-date">Created on <%= quiz.created_at %></p>
+							<p class="publish-date">Published on <%= quiz.created_at %></p>
+							<p class="quiz-type"><%= quiz.quiz_type.upcase %></p>
+						</div>
+						<div class="quiz-stats">
+							<span>Stats:</span>
+							<span>0 Views</span>
+							<span>0% Completion Rate</span>
+						</div>
+					</div>
+					<%= image_tag quiz.image_url, :class => "quiz-image" %>
+					<div class="quiz-actions">
+						<div class="edit-quiz btn">Edit</div>
+						<div class="delete-quiz btn">Delete</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
 	</div>
 	
 </div>
