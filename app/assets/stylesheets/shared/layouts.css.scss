@@ -2,8 +2,7 @@
 @import 'variables';
 
 .content-container {
-	position: absolute;
-	top: 44px;
+	margin-top: 44px;
 	left: 0px;
 	background: $background-white;
 	width: 100%;
@@ -14,6 +13,6 @@
 
 @media (min-width: 1024px) {
 	.content-container {
-		top: 60px;
+		margin-top: 60px;
 	}
 }

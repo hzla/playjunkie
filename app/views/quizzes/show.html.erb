@@ -71,7 +71,7 @@
 		<div class="recommendations">
 			<h3>Recommended</h3>
 			<% Quiz.all.limit(6).each do |rec| %>
-				<div class="rec">
+				<div class="side-quiz">
 					<%= image_tag rec.image_url %>
 					<p><%= rec.title %></p>
 				</div>

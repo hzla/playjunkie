@@ -43,7 +43,9 @@
 					</div>
 					<%= image_tag quiz.image_url, :class => "quiz-image" %>
 					<div class="quiz-actions">
-						<div class="edit-quiz btn">Edit</div>
+						<%= link_to edit_quiz_path(quiz) do %>
+							<div class="edit-quiz btn">Edit</div>
+						<% end %>
 						<div class="delete-quiz btn">Delete</div>
 					</div>
 				</div>

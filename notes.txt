@@ -19,21 +19,22 @@ Tues
 
 	COMPLETE result assignment validation 10min
 	COMPLETE edit page 5hr
-	save/preview 3hr
+	COMPLETE save/preview 1hr
 	
 
 
 
 Thurs
-	landing page 2hr
+	COMPLETE landing page 3hr
+
+
+
+Friday/Sat
 	trending 30min
 	browse 30min
 	search 2hr
 	contact 30min
 	copy 1hr
-
-
-Friday/Sat
 	refactor/cleanup 10hr
 		-forgot pw 30min
 		-footer 30min
@@ -42,5 +43,6 @@ Friday/Sat
 		-social media ???
 		-admin panel 1hr
 		-mobile create lockout 20min
+		-sorting on home page
 
 

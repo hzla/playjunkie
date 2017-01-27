@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="16px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Star</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="M2A-Landing-(signed-in)" transform="translate(-11.000000, -184.000000)" fill="#FFBE1E">
+            <g id="Group-8" transform="translate(11.000000, 184.000000)">
+                <path d="M8.40026366,14.520541 L4.96429428,15.7353892 C3.70918988,16.1791538 2.72150661,15.4623177 2.75851849,14.1242943 L2.85829959,10.5170896 L0.645121037,7.65711422 C-0.173069031,6.5998098 0.202633857,5.43817465 1.47720788,5.06460141 L4.9751415,4.03936916 L7.02687085,1.0627647 C7.78537476,-0.0376563163 9.01260687,-0.0413495693 9.77365648,1.0627647 L11.8253858,4.03936916 L15.3233194,5.06460141 C16.6010584,5.43910228 16.9763424,6.59626125 16.1554063,7.65711422 L13.9422277,10.5170896 L14.0420088,14.1242943 C14.0788969,15.457842 13.0882286,16.1780546 11.836233,15.7353892 L8.40026366,14.520541 Z" id="Star"></path>
+            </g>
+        </g>
+    </g>
+</svg>

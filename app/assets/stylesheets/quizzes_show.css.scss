@@ -237,7 +237,7 @@
 		width: 940px;
 		height: 120px;
 	}
-	.content-container.quiz-take {
+	.content-container.quiz-take, .content-container.main-container {
 		top:  200px;
 		padding: 60px calc(50vw - 470px);
 		@include flexbox;
@@ -268,6 +268,7 @@
 				}
 				p {
 					margin-top: 10px;
+					font-weight: 700;
 				}
 			}
 		}

@@ -12,4 +12,12 @@ class Quiz < ApplicationRecord
 		end
 	end
 
+	def self.featured
+		all.limit(12)
+	end
+
+	def self.editors_picks
+		all.limit(3)
+	end
+
 end
