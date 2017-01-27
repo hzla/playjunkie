@@ -114,6 +114,7 @@
 				border-radius: 5px;
 				@include flexbox;
 				@include align-items(center);
+				background: $dark-grey;
 				padding: 0px 20px;
 				.card-text {
 					text-align: center;
@@ -238,7 +239,7 @@
 		height: 120px;
 	}
 	.content-container.quiz-take, .content-container.main-container {
-		top:  200px;
+		margin-top:  260px;
 		padding: 60px calc(50vw - 470px);
 		@include flexbox;
 		@include justify-content(space-between);
