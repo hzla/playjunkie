@@ -113,6 +113,9 @@
 			.image-container.flippable {
 				background: $dark-grey;
 			}
+			.answer .image-container {
+				height: calc((((100vw - 30px) / 2) - 20px) * 2 / 3);
+			}
 			.image-container {
 				position: relative;
 				height: calc((100vw - 20px) * 2 / 3);
@@ -302,6 +305,9 @@
 							margin-top: 10px;
 						}
 
+					}
+					.answer .image-container {
+						height: 186px;
 					}
 					.image-container {
 						height: calc(620px * 2 / 3);
