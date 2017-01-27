@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124113035) do
+ActiveRecord::Schema.define(version: 20170127064941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(version: 20170124113035) do
     t.integer  "result_id"
     t.integer  "quiz_item_id"
     t.boolean  "correct?"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "image"
+    t.string   "remember_code"
   end
 
   create_table "quiz_items", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170124113035) do
     t.string   "image"
     t.text     "item_text_back"
     t.string   "image_back"
+    t.string   "remember_code"
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -60,18 +62,20 @@ ActiveRecord::Schema.define(version: 20170124113035) do
     t.string   "quiz_type"
     t.integer  "user_id"
     t.datetime "publish_date"
+    t.boolean  "is_preview?"
   end
 
   create_table "results", force: :cascade do |t|
     t.text     "result_text"
     t.string   "image_credit"
     t.string   "range"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "image"
     t.integer  "quiz_id"
     t.integer  "range_min"
     t.integer  "range_max"
+    t.string   "remember_code"
   end
 
   create_table "users", force: :cascade do |t|

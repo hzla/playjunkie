@@ -4,4 +4,10 @@ class QuizItem < ApplicationRecord
 
 	has_many :item_answers
 	belongs_to :quiz
+	after_create :generate_remember_code
+
+
+	def generate_remember_code
+		self.update_attributes remember_code: Code.generate
+	end
 end

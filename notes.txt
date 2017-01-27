@@ -15,11 +15,16 @@ projected to first draft finish
 
 
 Tues
+	COMPLETE char limits + refactoring quiz new 2hr 
 
-	char limits 30min
-	result assignment validation 10min
-	edit page 1hr
+	COMPLETE result assignment validation 10min
+	COMPLETE edit page 5hr
 	save/preview 3hr
+	
+
+
+
+Thurs
 	landing page 2hr
 	trending 30min
 	browse 30min
@@ -28,7 +33,7 @@ Tues
 	copy 1hr
 
 
-Wednesday
+Friday/Sat
 	refactor/cleanup 10hr
 		-forgot pw 30min
 		-footer 30min

@@ -1,0 +1,39 @@
+<div class="box-field">
+	<label class="box-label">Answer Format</label>
+	<div class="answer-format-selection">
+		<%= image_tag "image-format.svg", :class => "image-format answer-format", format_type: "image" %>
+		<%= image_tag "image-format-selected.svg", :class => "image-format selected answer-format", format_type: "image" %>
+		<%= image_tag "text-format.svg", :class => "text-format answer-format", format_type: "text" %>
+		<%= image_tag "text-format-selected.svg", :class => "text-format answer-format selected", format_type: "text" %>
+	</div>
+</div>
+
+<div class="form-answers image-style">
+	<% answers.each_with_index do |answer, i| %>
+		<div class="form-answer image-and-text-box">
+			<%= hidden_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[remember_code]", answer.remember_code, :class => "remember-code" %>
+			<%= image_tag "close-box.svg", :class => "close-answer closer" %>
+			<div class="image-input">Click to add image...</div>
+			<%= file_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[image]", :class => "answer-image-input required" %>
+			<img class="answer-image-preview image-preview" src="<%= answer.image_url %>" alt="preview failed to load" />
+			<div class="char-countable">
+				<p class="char-count">90</p>
+				<%= text_area_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[answer_text]", answer.answer_text, :class => "answer-text-input required", placeholder: "Answer text...", maxlength: 90 %>
+			</div>
+			<%= text_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[image_credit]", answer.image_credit, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
+
+			<% if answer_type == "trivia" %>
+				<div class="checkbox-container">
+					<%= check_box_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[correct?]", nil, answer.correct?, :class => "checkbox-input" %>
+					<p>Correct</p>
+				</div>
+			<% else %>
+				<%= select_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[result_id]", answer.html_options, required: true %>
+			<% end %>
+		</div>
+	<% end %>
+	<div class="add-answer">
+		<%= image_tag "add-answer.svg", :class => "add-answer-btn" %>
+		<p>Add Answer</p>
+	</div>
+</div>

@@ -7,9 +7,9 @@
 		quiz = Quiz.create title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, completion_message: Faker::Lorem.paragraph, published: true, user_id: User.first.id, quiz_type: type
 		
 		
-			result_1 = Result.create quiz_id: quiz.id, result_text: Faker::Lorem.sentence, image_credit: Faker::Lorem.sentence, quiz_id: quiz.id, range_min: 0, range_max: 1
-			result_2 = Result.create quiz_id: quiz.id, result_text: Faker::Lorem.sentence, image_credit: Faker::Lorem.sentence, quiz_id: quiz.id, range_min: 2, range_max: 3
-			result_3 = Result.create quiz_id: quiz.id, result_text: Faker::Lorem.sentence, image_credit: Faker::Lorem.sentence, quiz_id: quiz.id, range_min: 4, range_max: 4
+			result_1 = Result.create quiz_id: quiz.id, result_text: Faker::Lorem.sentence, image_credit: Faker::Lorem.sentence, quiz_id: quiz.id, range_min: 0, range_max: 1, remember_code: Code.generate
+			result_2 = Result.create quiz_id: quiz.id, result_text: Faker::Lorem.sentence, image_credit: Faker::Lorem.sentence, quiz_id: quiz.id, range_min: 2, range_max: 3, remember_code: Code.generate
+			result_3 = Result.create quiz_id: quiz.id, result_text: Faker::Lorem.sentence, image_credit: Faker::Lorem.sentence, quiz_id: quiz.id, range_min: 4, range_max: 5, remember_code: Code.generate
 		
 
 

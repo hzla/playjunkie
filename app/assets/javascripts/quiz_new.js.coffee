@@ -18,9 +18,47 @@ QuizNew =
 		@displayClosers()
 		@displayMovers()
 
-		@questionCount = 1
+		@questionCount = $('.question:visible').length
 
 		$('body').on 'submit', '#new_quiz', @validateFields if $('.flipcard-oriented-quiz').length < 1
+		$('body').on 'keyup', '.char-countable input, .char-countable textarea', @showCharsRemaining
+		$('body').on 'keypress', '.text-box', @showCharsRemainingForTextbox
+
+		$('body').on 'click', '#submit-bar .btn', @submitQuiz
+
+
+		@showImagePreviews()
+
+
+	submitQuiz: ->
+		action = $(@).attr('id')
+		if action == 'preview-quiz'
+			$('form').attr('target', '_blank')
+		else
+			$('form').attr('target', '')
+
+		$(@).parents("#submit-bar").find('.quiz-submit-action').val action
+		$('form').submit()
+
+	showImagePreviews: ->
+		$('.image-preview').show()
+		$(".image-preview[src='#'], .image-preview[src='']").hide()
+
+	showCharsRemainingForTextbox: (e) ->
+		currentChars = $(@).text().trim().length
+		limit = parseInt($(@).attr('maxlength'))
+		remaining = limit - currentChars
+		$(@).parent().find('.char-count').text remaining
+		if remaining == 0
+			e.preventDefault()
+
+	showCharsRemaining: ->
+		currentChars = $(@).val().length
+		limit = parseInt($(@).attr('maxlength'))
+		remaining = limit - currentChars
+		$(@).parent().find('.char-count').text remaining
+
+
 
 	validateFields: ->
 		missingFieldError = false
@@ -28,7 +66,6 @@ QuizNew =
 
 		for i in [0..$('.question').length - 1]
 			question = $($('.question')[i])
-			console.log question
 			image = question.find('input.question-image-input')
 			text = question.find('.question-text')
 			if text.val() == "" && image.val() == ""
@@ -61,13 +98,18 @@ QuizNew =
 					else
 						text.attr('style', '')
 
+				if $(@).find('select').length > 0 #if this is a personality quiz
+					if $(@).find('select').val() == null
+						missingFieldError = true
+						$(@).find('select').css 'border', '1px solid red'
+
 
 			if $('.trivia-oriented-quiz').length > 0
 				if correctAnswersCount != 1
 					incorrectNumberofAnswers = true
-					$(@).css('border', '1px solid red')
+					question.css('border', '1px solid red')
 				else
-					$(@).attr('style', '')
+					question.attr('style', '')
 			else
 				incorrectNumberofAnswers  = false
 
@@ -80,8 +122,7 @@ QuizNew =
 				missingFieldError = true
 			else
 				text.attr('style', '')
-				(@).find('.image-input').attr('style', '')
-
+				$(@).find('.image-input').attr('style', '')
 
 		if missingFieldError
 			$('#missing-field-error').show() 
@@ -92,10 +133,6 @@ QuizNew =
 		else
 			$('#correct-answer-error').hide() 
 		return !missingFieldError && !incorrectNumberofAnswers
-
-
-
-
 
 	syncResultsRange: ->
 		resultsCount = $('.form-result:visible').length
@@ -191,14 +228,16 @@ QuizNew =
 		lastResult = $('.form-result:visible').last()
 
 		newResult = lastResult.clone()
-		newResult.find('input, textarea').val("")
-		newResult.find('.image-preview').attr('src', '#').hide()
-
 		resultCount = $('.form-result:visible').length
 		incrementedResult = newResult.html().replace(///result_#{resultCount}///g, "result_#{resultCount + 1}")
 		lastResult.after(lastResult.clone())
 		$('.form-result:visible').last().html(incrementedResult)
+		
+		newResult = $('.form-result:visible').last()
+		newResult.find('input, textarea').val("")
+		newResult.find('.image-preview').attr('src', '#').hide()
 		$('.close-result').show()
+		
 		if $('.form-result:visible').length == $('.question:visible').length && $('.trivia-oriented-quiz').length > 0
 			$(@).hide()
 
@@ -206,6 +245,7 @@ QuizNew =
 			QuizNew.addResultChoiceToAnswers()
 
 		QuizNew.syncResultsRange()
+	
 	closeResult: ->
 		form = $(@).parents('.new_quiz')
 		result = $(@).parent()
@@ -221,7 +261,6 @@ QuizNew =
 
 		newAnswer = lastAnswer.clone()
 
-		newAnswer.find('input, textarea').val("").prop('checked', 'true') #reset fields
 		newAnswer.find('.image-preview').attr('src', '#').hide() # clear image previews
 
 		answerCount = question.find('.form-answer:visible, .text-answer-form:visible').length
@@ -229,6 +268,8 @@ QuizNew =
 
 		lastAnswer.after(lastAnswer.clone())
 		question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
+		question.find('.form-answer').last().find('input, textarea').val("").prop('checked', 'true')
+
 
 		if answerCount == 3 && $('.trivia-oriented-quiz').length > 0
 			$(@).hide()
@@ -266,7 +307,7 @@ QuizNew =
 		confirmation = confirm "Yo you sure?"
 		if confirmation
 			$(@).parent().hide()
-			$(@).parent().find('.box-input').val("skip")
+			$(@).parent().find('.box-input, .card-text-input').val("skip")
 			$('.question:visible .question-number').each (i) ->
 				$(@).find('p').text("#{i + 1}")
 			QuizNew.questionCount -= 1
@@ -275,9 +316,13 @@ QuizNew =
 
 	addQuestion: ->
 		lastQuestion = $('.question:visible').last()
-		
+
 		newQuestion = lastQuestion.clone()
+		newQuestion = newQuestion.html().replace(///quiz_item_#{QuizNew.questionCount}///g, "quiz_item_#{QuizNew.questionCount + 1}").replace("<p>#{QuizNew.questionCount}</p>", "<p>#{QuizNew.questionCount + 1}</p>") #increment all question numbers
+		lastQuestion.after("<div class='form-box question'></div>") #create a container for the next question
+		$('.question:visible').last().append(newQuestion) #add the next question
 		
+		newQuestion = $(".question:visible").last()
 
 		newQuestion.find('.text-box').text("")
 		newQuestion.find('.question-image-input').css('background-color', '')
@@ -294,13 +339,14 @@ QuizNew =
 		newQuestion.find('.flip-container').removeClass('flip')
 		newQuestion.find('.choose-front').addClass('selected') #reset card sides
 
-		incrementedQuestion = newQuestion.html().replace(///quiz_item_#{QuizNew.questionCount}///g, "quiz_item_#{QuizNew.questionCount + 1}").replace("<p>#{QuizNew.questionCount}</p>", "<p>#{QuizNew.questionCount + 1}</p>") #increment all question numbers
+		newAnswer = newQuestion.find('.form-answer').first().clone()
+		newQuestion.find('.form-answer').remove()
+		newQuestion.find('.form-answers').prepend newAnswer
 
-		lastQuestion.after("<div class='form-box question'></div>") #create a container for the next question
 		
-		$('.question:visible').last().append(incrementedQuestion) #add the next question
-		QuizNew.questionCount += 1
+		
 		QuizNew.displayClosers()
+		QuizNew.questionCount += 1
 
 		$('.add-result').css('display', 'flex') #allow one more result to be added
 		QuizNew.displayMovers()

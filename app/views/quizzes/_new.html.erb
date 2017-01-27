@@ -1,0 +1,16 @@
+<div id="quiz-main-info">
+	<%= f.file_field :image, :id => "quiz-image-input" %>
+	<img id="quiz-image-preview" class="image-preview" src="#" alt="preview failed to load" class="hidden" /> 
+	<div class="image-input-overlay">
+		Click to Add Image
+	</div>
+	
+	<div id="quiz-text-info">
+		<div class="char-countable">
+			<%= f.text_field :title, :class => "btn", placeholder: "Title", required: true, maxlength: 80 %>
+			<p class="char-count single-row">80</p>
+		</div>
+		
+		<%= f.text_area :description, :class => "btn", placeholder: "Description", required: true %>
+	</div>
+</div>

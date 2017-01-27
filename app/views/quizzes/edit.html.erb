@@ -1,0 +1,11 @@
+<div class="content-container quiz-form-container trivia-oriented-quiz quiz-edit">
+	<h1 class="super-bold">Edit your <%= @quiz.quiz_type.capitalize %> Quiz</h1>
+
+	<%= form_for @quiz do |f| %>
+		<%= f.hidden_field :quiz_type, value: @quiz.quiz_type %>
+		<%= render partial: "new", locals: {f: f} %>
+		<%= render partial: "quiz_items/edit", locals: {quiz_type: @quiz.quiz_type, questions: @quiz.quiz_items.order(:id)} %>
+		<%= render partial: "results/edit", locals: {result_type: @quiz.quiz_type, results: @quiz.results.order(:id)} %>
+		<%= render partial: "submit_bar", locals: {f: f} %>
+	<% end %>
+</div>

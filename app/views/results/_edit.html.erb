@@ -1,0 +1,34 @@
+<h2 class="super-bold content-title">Add Results</h2>
+<div class="form-box results-box">
+
+	
+	<div class="form-results show-add-result">
+		<% results.each_with_index do |result, i| %>
+			<div class="form-result image-and-text-box">
+				<%= hidden_field_tag "result_#{i + 1}[remember_code]", result.remember_code, :class => "remember-code" %>
+				<%= image_tag "close-box.svg", :class => "close-result closer" %>
+				<div class="char-countable">
+					<p class="char-count">90</p>
+					<%= text_area_tag "result_#{i + 1}[result_text]", result.result_text, :class => "result-text-input required", placeholder: "Answer text...", maxlength: 90 %>		
+				</div>
+					
+				<div class="image-input">Click to add image...</div>
+				<%= file_field_tag "result_#{i + 1}[image]", :class => "result-image-input" %>
+				<img class="result-image-preview image-preview" src="<%= result.image_url %>" alt="preview failed to load" />
+				<%= text_field_tag "result_#{i + 1}[image_credit]", result.image_credit, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
+
+				<% if result_type == "trivia" %>
+					<div class="results-range">
+						<%= hidden_field_tag "result_#{i + 1}[range_min]", result.range_min, :class => "range-min" %>
+						<%= hidden_field_tag "result_#{i + 1}[range_max]", result.range_max, :class => "range-max" %>	
+						<p>Results Range</p>
+						<p> <span class="min"><%= result.range_min %></span><span class="hyphen">-</span><span class="max"><%= result.range_max %></span></p>
+					</div>
+				<% end %>
+			</div>
+		<% end %>	
+		<div class="add-result">
+				<div class="btn">Add Result</div>
+		</div>
+	</div>
+</div>

@@ -1,16 +1,17 @@
-<div class="content-container quiz-form-container flipcard-oriented-quiz">
-	<h1 class="super-bold">Create a New Flip Card</h1>
+<div class="content-container quiz-form-container trivia-oriented-quiz quiz-edit">
+	<h1 class="super-bold">Edit your Flip Cards</h1>
 
-	<%= form_for Quiz.new do |f| %>
-		<%= f.hidden_field :quiz_type, value: "flipcard" %>
+	<%= form_for @quiz do |f| %>
+		<%= f.hidden_field :quiz_type, value: @quiz.quiz_type %>
 		<%= render partial: "new", locals: {f: f} %>
-		
 		<h2 class="super-bold content-title">Add A Flip Card</h2>
+		<% @quiz.quiz_items.each_with_index do |card, i| %>
 			<div class="form-box question">
+				<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", card.remember_code, :class => "remember-code" %>
 				<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
 				<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>
 				<%= image_tag "close-box.svg", :class => "close-question closer" %>
-				<h3 class="question-number">Flip Card <p>1</p></h3>
+				<h3 class="question-number">Flip Card <p><%= i + 1 %></p></h3>
 				<div class="box-field">
 					<div class="choose-front side-chooser btn selected">Front</div>
 					<div class="choose-back side-chooser btn">Back</div>
@@ -20,7 +21,7 @@
 					<label class="box-label">Card Title</label>
 					<div class="char-countable">
 						<p class="char-count left single-row">90</p>
-						<%= text_field_tag "quiz_item_1[title]", nil, :class => "box-input", required: true, maxlength: 90 %>
+						<%= text_field_tag "quiz_item_#{i + 1}[title]", card.title, :class => "box-input", required: true, maxlength: 90 %>
 					</div>
 					
 				</div>
@@ -31,13 +32,12 @@
 							<% ["front", "back"].each do |side| %>
 								<div class="<%= side %>">
 									<div class="<%= side %>-side card-side shown">
-										<div class="box-input question-image-input">
+										<div class="box-input question-image-input" style="background-color:<%= card.send("color#{side == 'back' ? '_back' : nil}".to_sym) %>">
 											<p class="char-count">120</p>
-											<div class="add-card-text">Add Text</div>
-											<div class="text-box" maxlength="120">
-											</div>
+											<div class="add-card-text">Edit Text</div>
+											<div class="text-box" maxlength="120"><%= card.send("item_text#{side == 'back' ? '_back' : nil}".to_sym) %></div>
 			
-											<%= hidden_field_tag "quiz_item_1[item_text#{side == 'back' ? '_back' : nil}]", nil, :class => "card-text-input question-text" %>
+											<%= hidden_field_tag "quiz_item_#{i + 1}[item_text#{side == 'back' ? '_back' : nil}]", card.send("item_text#{side == 'back' ? '_back' : nil}".to_sym), :class => "card-text-input question-text" %>
 											<div class="background-edit-container">
 												<div class="colors-container">
 													<p>Choose Background Color</p>
@@ -48,15 +48,15 @@
 														<div class="color" style="background-color: #ee4a7f;"></div>
 														<div class="color" style="background-color: #ea8408;"></div>
 													</div>
-													<%= hidden_field_tag "quiz_item_1[color#{side == 'back' ? '_back' : nil}]", nil, :class => "card-color-input" %>
+													<%= hidden_field_tag "quiz_item_#{i + 1}[color#{side == 'back' ? '_back' : nil}]", card.send("color#{side == 'back' ? '_back' : nil}".to_sym), :class => "card-color-input" %>
 												</div>
 												<div class="or">Or</div>
 												<div class="card-image-input-btn">
 													Add Image
 												</div>
 											</div>
-											<%= file_field_tag "quiz_item_1[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
-											<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />
+											<%= file_field_tag "quiz_item_#{i + 1}[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
+											<img class="question-image-preview image-preview" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>" alt="preview failed to load" />
 										</div>
 									</div>
 								</div>
@@ -66,15 +66,14 @@
 				</div>			
 				<div class="box-field ">
 					<label class="box-label">Image Credit</label>
-					<%= text_field_tag "quiz_item_1[image_credit]", nil, :class => "box-input" %>
+					<%= text_field_tag "quiz_item_#{i + 1}[image_credit]", card.image_credit, :class => "box-input" %>
 				</div>
 			</div>
+		<% end %>
 		<div id="add-question" class="btn">
 			Add Card
 		</div>
-
-		<%= f.text_area :completion_message, :class => "btn", placeholder: "Completion Message..." %>
+		
 		<%= render partial: "submit_bar", locals: {f: f} %>
 	<% end %>
 </div>
-

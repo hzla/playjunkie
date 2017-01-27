@@ -4,6 +4,34 @@
 .quiz-form-container {
 	padding: 60px calc(50vw - 470px);
 
+
+	div.char-countable {
+		position: relative;
+		.char-count {
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+			color: $grey;
+			font-size: 12px;
+		}
+		.char-count.single-row {
+			bottom: 13px;
+		}
+		.char-count.left {
+			right: initial;
+			left: -20px;
+		}
+	}
+	.card-side {
+		.char-count {
+			position: absolute;
+			color: $grey;
+			font-size: 12px;
+			line-height: initial;
+			top: 20px;
+			left: 140px;
+		}
+	}
 	#quiz-main-info {
 		@include flexbox;
 		margin-top: 40px;
@@ -505,7 +533,6 @@
 			}
 			.add-result {
 				width: calc((100% - 40px) / 4);
-				height: 266px;
 				border: 1px solid $dark-outline;
 				margin-left: 10px;
 				margin-bottom: 10px;

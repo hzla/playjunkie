@@ -286,6 +286,16 @@
 					}
 				}
 				.item {
+					.question-header {
+						@include align-items(flex-start);
+						.item-text {
+							width: calc(100% - 40px);
+						}
+						h2 {
+							margin-top: 10px;
+						}
+
+					}
 					.image-container {
 						height: calc(620px * 2 / 3);
 						padding: 0px 40px;
@@ -304,6 +314,8 @@
 						line-height: 40px;
 						font-size: 24px;
 						z-index: 1;
+						margin-top: 15px;
+						margin-bottom: 10px;
 					}
 					img {
 						height: calc(620px * 2 / 3);
