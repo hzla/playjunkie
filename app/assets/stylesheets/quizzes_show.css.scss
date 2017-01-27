@@ -13,7 +13,7 @@
 
 .content-container.quiz-take {
 	padding: 30px 10px 10px 10px;
-	top: 88px;
+	margin-top: 88px;
 	.side-content {
 		display: none;
 	}
@@ -78,7 +78,9 @@
 		.item.text-style {
 			.question-header {
 				@include flexbox;
-				@include align-items(center);
+				.item-text {
+					width: calc(100% - 40px);
+				}
 			}
 			.question-header.flipcard {
 				margin-top: 30px;
@@ -86,6 +88,7 @@
 			.item-number {
 				position: static;
 				margin-right: 10px; 
+				margin-top: 10px;
 			}
 
 		}
@@ -107,6 +110,9 @@
 				font-weight: 800;
 			}
 			width: 100%;
+			.image-container.flippable {
+				background: $dark-grey;
+			}
 			.image-container {
 				position: relative;
 				height: calc((100vw - 20px) * 2 / 3);
@@ -114,7 +120,6 @@
 				border-radius: 5px;
 				@include flexbox;
 				@include align-items(center);
-				background: $dark-grey;
 				padding: 0px 20px;
 				.card-text {
 					text-align: center;
@@ -184,7 +189,7 @@
 			}
 			.answer.text-style {
 				width: 100%;
-				height: 44px;
+				height: auto;
 				line-height: 44px;
 				padding: 0px 12px;
 			}
@@ -239,7 +244,7 @@
 		height: 120px;
 	}
 	.content-container.quiz-take, .content-container.main-container {
-		margin-top:  260px;
+		margin-top:  200px;
 		padding: 60px calc(50vw - 470px);
 		@include flexbox;
 		@include justify-content(space-between);
@@ -284,7 +289,7 @@
 			.items {
 				.item.text-style {
 					.question-header {
-						margin-top: 60px;
+						margin-top: 50px;
 					}
 				}
 				.item {
@@ -309,6 +314,7 @@
 					}
 					.image-container.flippable {
 						cursor: pointer;
+						background: $dark-grey;
 					}
 					.item-number {
 						height: 40px;
