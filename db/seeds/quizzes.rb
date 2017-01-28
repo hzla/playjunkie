@@ -22,7 +22,7 @@
 		end
 	end
 
-	["personality"].each do |type|
+	["quiz"].each do |type|
 		quiz = Quiz.create title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, completion_message: Faker::Lorem.paragraph, published: true, user_id: User.first.id, quiz_type: type
 
 		result_1 = Result.create quiz_id: quiz.id, result_text: Faker::Lorem.sentence, image_credit: Faker::Lorem.sentence, quiz_id: quiz.id

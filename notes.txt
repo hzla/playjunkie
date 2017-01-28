@@ -8,9 +8,6 @@ no profile picture upload
 
 projected to first draft finish
 
-	21hrs
-
-
 
 
 
@@ -29,20 +26,26 @@ Thurs
 
 
 
-Friday/Sat
-	trending 30min
-	browse 30min
-	search 2hr
-	contact 30min
-	copy 1hr
-	refactor/cleanup 10hr
+Friday
+	COMPLETE trending 30min
+	COMPLETE browse 30min
+	COMPLETE search 2hr
+	COMPLETE copy 30min
+	COMPLETE header hovers 20min
+	COMPLETE footer 30min
+
+
+Sat
+	refactor/cleanup 
 		-forgot pw 30min
-		-footer 30min
-		-header hovers 20min
+		-contact 30min
 		-ads ????
-		-social media ???
+		-social media 1hr
 		-admin panel 1hr
 		-mobile create lockout 20min
-		-sorting on home page
+		-sorting 2hr
+		-aws 1hr
+		-image cropping 30min
+		-pagination 1hr
 
 

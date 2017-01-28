@@ -48,13 +48,14 @@ li {
 	list-style: none;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
 	line-height: 1.2;
 	background: $background-white;
+	overflow-y:scroll;
+	overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -200,6 +201,9 @@ textarea.btn {
 	background: $dark-grey;
 }
 
+.highlighted {
+	color: $red;
+}
 
 
 

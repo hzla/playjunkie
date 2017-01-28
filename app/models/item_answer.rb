@@ -22,4 +22,16 @@ class ItemAnswer < ApplicationRecord
 		options.html_safe
 	end
 
+	def text
+		answer_text || ""
+ 	end
+
+ 	def quiz
+ 		if quiz_item
+ 			quiz_item.quiz
+ 		else
+ 			nil
+ 		end
+ 	end
+
 end

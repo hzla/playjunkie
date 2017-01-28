@@ -20,4 +20,16 @@ class Quiz < ApplicationRecord
 		all.limit(3)
 	end
 
+	def self.trending
+		where('publish_date > ?', Time.now - 7.days).order('view_count desc').limit(10)
+	end
+
+	def text
+		title + description || ""
+	end
+
+	def quiz
+		self
+	end
+
 end

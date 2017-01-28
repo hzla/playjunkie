@@ -1,5 +1,5 @@
 <% if @quiz.quiz_type == "flipcard" %>
-	<div class="item text-style personality">
+	<div class="item text-style quiz">
 		<div class="question-header">
 			<div class="item-number"><%= i + 1 %></div>
 			<h2 class="item-title"><%= item.title %></h2>
@@ -17,7 +17,7 @@
 					</div>	
 				</div>
 				<div class="back">
-					<div class="image-container" style="background-color:<%= item.color_back %>;">
+					<div class="image-container flippable" style="background-color:<%= item.color_back %>;">
 						<% if item.image_back.present? %>
 							<%= image_tag item.image_back_url, :class => "item-image" %>
 						<% end %>

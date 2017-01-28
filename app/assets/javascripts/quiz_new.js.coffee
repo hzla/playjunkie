@@ -98,7 +98,7 @@ QuizNew =
 					else
 						text.attr('style', '')
 
-				if $(@).find('select').length > 0 #if this is a personality quiz
+				if $(@).find('select').length > 0 #if this is a quiz quiz
 					if $(@).find('select').val() == null
 						missingFieldError = true
 						$(@).find('select').css 'border', '1px solid red'

@@ -8,6 +8,9 @@ Header =
 		$('body').on 'mouseenter', '#create-btn', @showCreationDropdown
 		$('body').on 'mouseleave', '#creation-dropdown', @closeCreationDropdown
 
+		$('body').on 'mouseenter', '.fun-dropdown-trigger', @showFunDropdown
+		$('body').on 'mouseleave', '.fun-dropdown', @closeFunDropdown
+
 	toggleMenuOnClick: ->
 		$('#nav-dropdown').toggle()
 
@@ -24,6 +27,12 @@ Header =
 
 	closeCreationDropdown: ->
 		$('#creation-dropdown').hide()
+
+	showFunDropdown: ->
+		$('.fun-dropdown').show()
+
+	closeFunDropdown: ->
+		$('.fun-dropdown').hide()
 
 ready = ->
 	Header.init()

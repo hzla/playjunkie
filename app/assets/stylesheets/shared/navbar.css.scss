@@ -27,6 +27,9 @@ header {
 		div, input {
 			display: none;
 		}
+		.fun-dropdown {
+			display: none;
+		}
 
 	}
 	#navbar-actions {
@@ -103,10 +106,36 @@ header {
 			margin-left: 5px;
 		}
 		#navbar-links {
+			position: relative;
 			div, input {
 				line-height: 60px;
 				margin-left: 40px;
 				display: block;
+			}
+			.fun-dropdown-trigger {
+				cursor: pointer;
+			}
+			.fun-dropdown {
+				position: absolute;
+				padding: 20px;
+				width: 180px;
+				background: white;
+				border-radius: 5px;
+				top: 70px;
+				right: 120px;
+				margin: 0;
+				line-height: initial;
+				a {
+					font-size: 16px;
+					margin-top: 20px;
+					display: block;
+				}
+				a:first-child {
+					margin-top: 0px;
+				}
+				a:hover {
+					color: $red;
+				}
 			}
 			#logo, #logo img {
 				width: auto;

@@ -1,8 +1,23 @@
 @import 'shared/variables';
 @import 'shared/mixins';
 
+.content-container.main-container.no-banner {
+	margin-top: 44px;
+	h1.page-title {
+		margin-bottom: 30px;
+		margin-top: 20px;
+	}
+	.list-view {
+		a:first-child .quiz-list-item {
+			margin-top: 0px;
+		}
+	}
+}
+
+
 .content-container.main-container {
 	padding: 10px;
+	@include flex-direction(column);
 	#banner {
 		padding: 0px 10px;
 		h1 {
@@ -119,6 +134,38 @@
 
 
 @media (min-width: 940px) {
+	.content-container.main-container.no-banner {
+		margin-top: 60px;
+		.page-title-container {
+			@include flexbox;
+			@include align-items(center);
+			.create-quiz-type {
+				background: $red;
+				color: white;
+				line-height: 40px;
+				cursor: pointer;
+				text-align: center;
+				font-weight: 800;
+				width: 100px;
+				margin: 20px 0px 40px 40px;
+			}
+			.create-quiz-type:hover {
+				background: $hover-red;
+			}
+		}
+		h1.page-title {
+			margin-bottom: 40px;
+			margin-top: 20px;
+		}
+		.list-view {
+			a:first-child .quiz-list-item {
+				margin-top: 0px;
+			}
+		}
+		.sort-bar {
+			margin-bottom: 20px;
+		}
+	}
 	.content-container.main-container {
 		margin-top: 260px;
 		padding: 40px calc(50vw - 470px) 80px calc(50vw - 470px);
@@ -259,6 +306,12 @@
 		.side-content {
 			display: block;
 		}
-
+		#bottom-ad {
+			width: 620px;
+			height: 115px;
+			margin-top: 60px;
+			border: 1px solid $blue;
+			border-radius: 5px;
+		}
 	}
 }

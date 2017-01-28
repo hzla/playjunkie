@@ -10,11 +10,26 @@ class QuizzesController < ApplicationController
 	def new_list
 	end
 
+	def show
+		@quiz = Quiz.find params[:id]
+		@quiz.update_attributes view_count: (@quiz.view_count + 1)
+	end
+
+	def trending
+		@quizzes = Quiz.trending
+
+	end
+
+	def browse 
+		@editors_picks = Quiz.editors_picks
+		@quiz_type = params[:quiz_type] 
+		@quizzes = Quiz.where(published: true, quiz_type: @quiz_type)
+	end
 
 	def edit
 		@quiz = Quiz.find params[:id]
 
-		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "personality"
+		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"
 			render "edit" and return
 		elsif @quiz.quiz_type == "flipcard"
 			render "edit_flipcard" and return
@@ -83,7 +98,7 @@ class QuizzesController < ApplicationController
 						item_answer = ItemAnswer.find_by_remember_code answer_fields["remember_code"]
 						item_answer.update_attributes answer_fields
 						answer_count += 1
-						if quiz.quiz_type == "personality"
+						if quiz.quiz_type == "quiz"
 							 item_answer.update_attributes result_id: created_results[item_answer.result_id].id
 							 #could be buggy
 						end
@@ -92,7 +107,7 @@ class QuizzesController < ApplicationController
 						item_answer.update_attributes quiz_item_id: quiz_item.id 
 						answer_count += 1
 
-						if quiz.quiz_type == "personality"
+						if quiz.quiz_type == "quiz"
 							 item_answer.update_attributes result_id: created_results[item_answer.result_id].id
 						end
 					end
@@ -112,7 +127,7 @@ class QuizzesController < ApplicationController
 					item_answer.update_attributes quiz_item_id: quiz_item.id 
 					answer_count += 1
 
-					if quiz.quiz_type == "personality"
+					if quiz.quiz_type == "quiz"
 						 item_answer.update_attributes result_id: created_results[item_answer.result_id].id
 					end
 				end
@@ -124,7 +139,7 @@ class QuizzesController < ApplicationController
 		if params[:action_type] == "preview-quiz"
 			redirect_to quiz_path(quiz) and return
 		elsif params[:action_type] == "publish-quiz"
-			@quiz.update_attributes published: true
+			@quiz.update_attributes published: true, publish_date: Time.now
 			render "create" and return
 		else
 			redirect_to user_path(current_user)
@@ -176,7 +191,7 @@ class QuizzesController < ApplicationController
 				item_answer.update_attributes quiz_item_id: quiz_item.id 
 				answer_count += 1
 
-				if quiz.quiz_type == "personality"
+				if quiz.quiz_type == "quiz"
 					 item_answer.update_attributes result_id: created_results[item_answer.result_id].id
 				end
 			end
@@ -188,18 +203,11 @@ class QuizzesController < ApplicationController
 			quiz.update_attributes is_preview?: true 
 			redirect_to quiz_path(quiz) and return
 		elsif params[:action_type] == "publish-quiz"
-			@quiz.update_attributes published: true
+			@quiz.update_attributes published: true, publish_date: Time.now
 			render "create" and return
 		else
 			redirect_to user_path(current_user)
 		end
-	end
-
-
-
-
-	def show
-		@quiz = Quiz.find params[:id]
 	end
 
 	private

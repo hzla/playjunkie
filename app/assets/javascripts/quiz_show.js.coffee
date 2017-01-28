@@ -3,13 +3,13 @@ QuizShow =
 		@score = 0
 		@resultScores = {}
 		$('body').on 'click', '.trivia .answer:not(.unselectable)', @chooseTriviaAnswer
-		$('body').on 'click', '.personality .answer', @choosePersonalityAnswer
+		$('body').on 'click', '.quiz .answer', @chooseQuizAnswer
 		$('body').on 'click', '.flipcard .image-container', @flipCard
 
 	flipCard: ->
 		$(@).parents('.flip-container').toggleClass('flip')
 
-	choosePersonalityAnswer: ->
+	chooseQuizAnswer: ->
 		answers = $(@).parent()
 			
 		currentResultId = parseInt($(@).attr('result-id')) #get the result id that this answer boosts

@@ -1,0 +1,36 @@
+<footer>
+	<div class="footer-main">
+		<div class="col">
+			<%= link_to about_path do %>
+				<li>About</li>
+			<% end %>
+			<li>Contact</li>
+			<li>Advertise With Us</li>
+			<%= link_to privacy_path do %>
+				<li>Privacy</li>
+			<% end %>
+			<li>Terms and Conditions</li>
+		</div>
+		<div class="col formats">
+			<li>Our Formats</li>
+			<%= link_to browse_path(quiz_type: "trivia") do %>
+				<li>Trivia</li>
+			<% end %>
+			<%= link_to browse_path(quiz_type: "quiz") do %>
+				<li>Quizzes</li>
+			<% end %>
+			<%= link_to browse_path(quiz_type: "flipcard") do %>
+				<li>Flip Cards</li>
+			<% end %>
+			<%= link_to browse_path(quiz_type: "list") do %>
+				<li>List</li>
+			<% end %>
+		</div>
+
+
+	</div>
+	<div class="footer-bottom">
+		© 2016 Reaction Time LLC. All rights reserved.
+	</div>
+
+</footer>

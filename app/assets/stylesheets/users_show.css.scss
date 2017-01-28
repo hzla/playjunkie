@@ -34,12 +34,12 @@
 #settings:hover {
 	background: $hover-red;
 }
-
+.sort-bar {
+	display: none;
+}
 #user-quizzes {
 	margin-top: 10px;
-	.sort-bar {
-		display: none;
-	}
+
 	h1 {
 		display: none;
 	}
@@ -130,21 +130,22 @@
 		margin: 40px 0px 0px 0px;
 		width: 100px;
 	}
+	.sort-bar {
+		@include flexbox;
+		margin-top: 40px;
+		p {
+			margin-right: 40px;
+			color: $grey;
+			cursor: pointer;
+		}
+		p:first-child {
+			cursor: default;
+		}
+	}
 	#user-quizzes {
 		margin: 0px 0px 0px 20px;
 		width: 700px;
-		.sort-bar {
-			@include flexbox;
-			margin-top: 40px;
-			p {
-				margin-right: 40px;
-				color: $grey;
-				cursor: pointer;
-			}
-			p:first-child {
-				cursor: default;
-			}
-		}
+
 		h1 {
 			display: block;
 		}

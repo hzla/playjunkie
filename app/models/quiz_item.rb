@@ -10,4 +10,8 @@ class QuizItem < ApplicationRecord
 	def generate_remember_code
 		self.update_attributes remember_code: Code.generate
 	end
+
+	def text
+		item_text || ""
+	end
 end

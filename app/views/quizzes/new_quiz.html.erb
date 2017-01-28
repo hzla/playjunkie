@@ -2,10 +2,10 @@
 	<h1 class="super-bold">Create a New Quiz</h1>
 
 	<%= form_for Quiz.new do |f| %>
-		<%= f.hidden_field :quiz_type, value: "personality" %>
+		<%= f.hidden_field :quiz_type, value: "quiz" %>
 		<%= render partial: "new", locals: {f: f} %>
-		<%= render partial: "results/new", locals: {result_type: "personality"} %>
-		<%= render partial: "quiz_items/new", locals: {quiz_type: "personality"} %>
+		<%= render partial: "results/new", locals: {result_type: "quiz"} %>
+		<%= render partial: "quiz_items/new", locals: {quiz_type: "quiz"} %>
 		<%= render partial: "submit_bar", locals: {f: f} %>
 	<% end %>
 </div>

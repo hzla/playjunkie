@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127064941) do
+ActiveRecord::Schema.define(version: 20170128031258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,10 @@ ActiveRecord::Schema.define(version: 20170127064941) do
     t.integer  "user_id"
     t.datetime "publish_date"
     t.boolean  "is_preview?"
+    t.integer  "view_count",         default: 0
+    t.boolean  "featured",           default: false
+    t.boolean  "homepage_pick",      default: false
+    t.boolean  "browse_pick",        default: false
   end
 
   create_table "results", force: :cascade do |t|

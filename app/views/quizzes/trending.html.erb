@@ -1,0 +1,32 @@
+<div class="content-container main-container no-banner">
+	<h1 class="page-title">TRENDING</h1>
+	<div class="quizzes-content">
+	 	<div id="main-content">
+		 	<div class="quizzes-section list-view">
+		 		<% @quizzes.each do |quiz| %>
+		 			<%= link_to quiz_path(quiz) do %>
+			 			<div class="quiz-list-item">
+			 				<%= image_tag quiz.image_url, :class => "quiz-image" %>
+			 				<div class="quiz-info">
+			 					<div class="quiz-title"><%= quiz.title %></div>
+			 					<div class="quiz-sub-info">
+			 						<div class="quiz-user">
+			 							<%= image_tag quiz.user.profile_pic %>
+			 							<p><%= quiz.user.name %></p>
+			 						</div>
+			 						<div class="quiz-type"><%= quiz.quiz_type.upcase %></div>
+			 					</div>
+			 				</div>
+			 			</div>
+			 		<% end %>
+		 		<% end %>
+		 		<div id="bottom-ad">
+
+		 		</div>
+		 	</div>
+		 	<div class="side-content">
+				<div id="ad1" class="side-ad"></div>
+			</div>
+		 </div>
+	 </div>
+</div>
