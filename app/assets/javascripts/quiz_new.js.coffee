@@ -20,7 +20,7 @@ QuizNew =
 
 		@questionCount = $('.question:visible').length
 
-		$('body').on 'submit', '#new_quiz', @validateFields if $('.flipcard-oriented-quiz').length < 1
+		$('body').on 'submit', '#new_quiz, .edit_quiz', @validateFields if $('.flipcard-oriented-quiz').length < 1
 		$('body').on 'keyup', '.char-countable input, .char-countable textarea', @showCharsRemaining
 		$('body').on 'keypress', '.text-box', @showCharsRemainingForTextbox
 

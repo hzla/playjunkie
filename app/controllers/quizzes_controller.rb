@@ -2,12 +2,16 @@ class QuizzesController < ApplicationController
 	before_filter :require_signin, except: [:index, :show]
 
 	def new_trivia
+		@footer = false
 	end
 	def new_quiz
+		@footer = false
 	end
 	def new_flipcard
+		@footer = false
 	end
 	def new_list
+		@footer = false
 	end
 
 	def show
@@ -27,6 +31,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def edit
+		@footer = false
 		@quiz = Quiz.find params[:id]
 
 		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"
