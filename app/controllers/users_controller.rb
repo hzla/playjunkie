@@ -41,7 +41,7 @@ class UsersController < Clearance::SessionsController
       redirect_to user_path @user and return
     else
     	message = @user.errors.first[0].to_s.capitalize + " " + @user.errors.first[1].to_s
-    	redirect_to register_path(message: message, error: @users.errors.first[0].to_s)
+    	redirect_to register_path(message: message, error: @user.errors.first[0].to_s)
     end
   end
 
