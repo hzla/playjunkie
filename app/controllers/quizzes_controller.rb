@@ -20,14 +20,16 @@ class QuizzesController < ApplicationController
 	end
 
 	def trending
-		@quizzes = Quiz.trending
+		@page = params[:page] ? params[:page].to_i : 1
+		@quizzes = Quiz.trending.offset((@page - 1) * 10).limit(10)
 
 	end
 
 	def browse 
+		@page = params[:page] ? params[:page].to_i : 1
 		@editors_picks = Quiz.editors_picks
 		@quiz_type = params[:quiz_type] 
-		@quizzes = Quiz.where(published: true, quiz_type: @quiz_type)
+		@quizzes = Quiz.where(published: true, quiz_type: @quiz_type).offset((@page - 1) * 10).limit(10)
 	end
 
 	def edit

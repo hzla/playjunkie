@@ -12,6 +12,14 @@ class ApplicationController < ActionController::Base
   	@footer = false
   end
 
+  def authenticate_admin
+    redirect_to root_path if !current_admin_user
+  end
+
+  def current_admin_user
+    current_user.is_admin? ? current_user : nil
+  end
+
 
 
   def require_signin

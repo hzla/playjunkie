@@ -38,27 +38,41 @@
 		 	<div class="quizzes-section list-view">
 			 	<div class="sort-bar">
 					<p>Sort by:</p>
-					<p>Publish Date</p>
-					<p>Name</p>
-					<p>Creation Date</p>
+					<p sort-name="pd">Publish Date</p>
+					<p sort-name="n">Name</p>
+					<p sort-name="cd">Creation Date</p>
 				</div>
-		 		<% @quizzes.each do |quiz| %>
-		 			<%= link_to quiz_path(quiz) do %>
-			 			<div class="quiz-list-item">
-			 				<%= image_tag quiz.image_url, :class => "quiz-image" %>
-			 				<div class="quiz-info">
-			 					<div class="quiz-title"><%= quiz.title %></div>
-			 					<div class="quiz-sub-info">
-			 						<div class="quiz-user">
-			 							<%= image_tag quiz.user.profile_pic %>
-			 							<p><%= quiz.user.name %></p>
-			 						</div>
-			 						<div class="quiz-type"><%= quiz.quiz_type.upcase %></div>
-			 					</div>
-			 				</div>
-			 			</div>
+
+				<div class="sortable">
+			 		<% @quizzes.each do |quiz| %>
+			 			<%= link_to quiz_path(quiz), :class => "sort-item", publish_date: (quiz.publish_date.to_i), creation_date: (quiz.created_at.to_i)  do %>
+				 			<div class="quiz-list-item">
+				 				<%= image_tag quiz.image_url, :class => "quiz-image" %>
+				 				<div class="quiz-info">
+				 					<div class="quiz-title"><%= quiz.title %></div>
+				 					<div class="quiz-sub-info">
+				 						<div class="quiz-user">
+				 							<%= image_tag quiz.user.profile_pic %>
+				 							<p><%= quiz.user.name %></p>
+				 						</div>
+				 						<div class="quiz-type"><%= quiz.quiz_type.upcase %></div>
+				 					</div>
+				 				</div>
+				 			</div>
+				 		<% end %>
 			 		<% end %>
-		 		<% end %>
+			 	</div>
+			 	<div id="page-controls">
+		 			<%= link_to params.permit(:page).merge(:page => @page - 1) do %>
+		 				<% if @page > 1 %>
+		 					<div class="page-prev page-btn btn"><p>Previous</p></div>
+		 				<% end %>
+		 			<% end %>
+		 			<p class="page-number">Page <%= @page %></p>
+		 			<%= link_to params.permit(:page).merge(:page => @page + 1) do %>
+		 				<div class="page-next page-btn btn"><p>Next</p></div>
+		 			<% end %>
+		 		</div>
 		 		<div class="bottom-ads">
 					<div class="bottom-ad"></div>
 					<div class="bottom-ad"></div>

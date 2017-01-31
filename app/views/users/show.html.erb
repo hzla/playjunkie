@@ -17,13 +17,13 @@
 		<p class="mobile-message">View this page in desktop mode to edit your quizzes!</p>
 		<div class="sort-bar">
 			<p>Sort by:</p>
-			<p>Publish Date</p>
-			<p>Name</p>
-			<p>Creation Date</p>
+			<p sort-name="pd">Publish Date</p>
+			<p sort-name="n">Name</p>
+			<p sort-name="cd">Creation Date</p>
 		</div>
-		<div class="quiz-list-container">
+		<div class="quiz-list-container sortable">
 			<% @user.quizzes.order(:publish_date).each do |quiz| %>
-				<div class="quiz">
+				<div class="quiz sort-item" publish_date="<%= quiz.publish_date.to_i %>" creation_date="<%= quiz.created_at.to_i %>">
 					<div class="quiz-info">
 						<div class="quiz-title"><%= quiz.title %></div>
 						<div class="quiz-user">
@@ -32,7 +32,7 @@
 						</div>
 						<div class="quiz-sub-info">
 							<p class="creation-date">Created on <%= quiz.created_at %></p>
-							<p class="publish-date">Published on <%= quiz.created_at %></p>
+							<p class="publish-date">Published on <%= quiz.publish_date %></p>
 							<p class="quiz-type"><%= quiz.quiz_type.upcase %></p>
 						</div>
 						<div class="quiz-stats">

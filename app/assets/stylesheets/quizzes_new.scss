@@ -1,10 +1,13 @@
 @import 'shared/variables';
 @import 'shared/mixins';
 
+#mobile-container {
+	display: none;
+}
+
+
 .quiz-form-container {
 	padding: 60px calc(50vw - 470px);
-
-
 	div.char-countable {
 		position: relative;
 		.char-count {
@@ -703,4 +706,36 @@
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+}
+
+
+
+
+@media (max-width: 620px) {
+	.quiz-form-container {
+		display: none;
+	}
+	#mobile-container {
+		display: block;
+		margin-top: 44px;
+		width: 100vw;
+		height: calc(100vh - 44px);
+		padding: 30px 10px 10px 10px;
+		@include flexbox;
+		@include justify-content(space-between);
+		@include flex-direction(column);
+		p {
+			font-size: 20px;
+			font-weight: 800;
+		}
+		.btn {
+			background: $red;
+			color: white;
+			width: 100%;
+			line-height: 44px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: 800;
+		}
+	}
 }

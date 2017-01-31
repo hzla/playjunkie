@@ -20,8 +20,18 @@
 			 			</div>
 			 		<% end %>
 		 		<% end %>
+		 		<div id="page-controls">
+		 			<%= link_to params.permit(:page).merge(:page => @page - 1) do %>
+		 				<% if @page > 1 %>
+		 					<div class="page-prev page-btn btn"><p>Previous</p></div>
+		 				<% end %>
+		 			<% end %>
+		 			<p class="page-number">Page <%= @page %></p>
+		 			<%= link_to params.permit(:page).merge(:page => @page + 1) do %>
+		 				<div class="page-next page-btn btn"><p>Next</p></div>
+		 			<% end %>
+		 		</div>
 		 		<div id="bottom-ad">
-
 		 		</div>
 		 	</div>
 		 	<div class="side-content">

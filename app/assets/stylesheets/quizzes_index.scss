@@ -40,7 +40,7 @@
 			}
 			span {
 				font-size: 18px;
-				font-weight: 700;
+				font-weight: 600;
 				margin-left: 10px;
 			}
 			.divider {
@@ -58,7 +58,7 @@
 				font-size: 12px;
 				color: $grey;
 				margin-top: 20px;
-				font-weight: 700;
+				font-weight: 600;
 			}
 		}
 		.quizzes-section.card-view {
@@ -90,7 +90,7 @@
 					height: calc(100% - 120px);
 					.quiz-title {
 						font-size: 18px;
-						font-weight: 700;
+						font-weight: 600;
 					}
 				}
 			}
@@ -121,11 +121,41 @@
 					font-size: 14px;
 					.quiz-title {
 						font-size: 18px;
-						font-weight: 700;
+						font-weight: 600;
 					}
 					.quiz-type {
 						display: none;
 					}
+				}
+			}
+			#page-controls {
+				a {
+					width: 80px;
+				}
+				margin-top: 10px;
+				width: 100%;
+				@include flexbox;
+				@include justify-content(space-between);
+				@include align-items(center);
+				.btn {
+					width: 80px;
+					@include flexbox;
+					@include align-items(center);
+					background: $orange;
+					cursor: pointer;
+					p {
+						font-size: 16px;
+						color: white;
+						font-weight: 800;
+						text-align: center;
+						width: 100%;
+					}
+				}
+				.btn:hover {
+					background: $hover-orange;
+				}
+				p {
+					font-size: 14px;
 				}
 			}
 		}
@@ -134,6 +164,9 @@
 
 
 @media (min-width: 940px) {
+	.content-container.main-container.home-container {
+		margin-top: 260px;
+	}
 	.content-container.main-container.no-banner {
 		margin-top: 60px;
 		.page-title-container {
@@ -191,7 +224,7 @@
 						p {
 							color: white;
 							font-size: 12px;
-							font-weight: 700;
+							font-weight: 600;
 							text-align: center;
 							margin: 0;
 							width: 20px;
@@ -221,7 +254,7 @@
 		    margin: 30px auto;
 		    p {
 		    	font-size: 16px;
-		    	font-weight: 700;
+		    	font-weight: 600;
 		    	cursor: pointer;
 		    	color: white;
 		    	height: 16px;
@@ -261,7 +294,7 @@
 				}
 				.quiz-type {
 					font-size: 12px;
-					font-weight: 700;
+					font-weight: 600;
 					color: $grey;
 					margin: 0px;
 				}
@@ -299,6 +332,15 @@
 						.quiz-type {
 							display: block;
 						}
+					}
+				}
+				#page-controls {
+					margin-top: 20px;
+					a {
+						width: 100px;
+					}
+					.btn {
+						width: 100px;
 					}
 				}
 			}

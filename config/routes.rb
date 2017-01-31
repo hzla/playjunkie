@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :passwords, controller: "clearance/passwords", only: [:create, :new]
+  ActiveAdmin.routes(self)
+  resources :passwords, controller: "clearance/passwords", only: [:create]
 
   root to: "quizzes#index"
 
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
   #users
   post '/users', to: 'users#create'
   resources :users
+
+  #passwords 
+  get '/passwords/new', to: 'passwords#new', as: 'new_password'
 
 
   #quizzes

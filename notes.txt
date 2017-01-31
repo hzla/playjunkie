@@ -2,30 +2,17 @@ no signout
 no sign in on mobile
 no profile picture upload
 
-
 20hrs on setup/user sign in
 65hrs so far on quiz create/take
-
-projected to first draft finish
-
-
-
+15.5hrs on browsing pages
 
 Tues
 	COMPLETE char limits + refactoring quiz new 2hr 
-
 	COMPLETE result assignment validation 10min
 	COMPLETE edit page 5hr
 	COMPLETE save/preview 1hr
-	
-
-
-
 Thurs
 	COMPLETE landing page 3hr
-
-
-
 Friday
 	COMPLETE trending 30min
 	COMPLETE browse 30min
@@ -34,18 +21,28 @@ Friday
 	COMPLETE header hovers 20min
 	COMPLETE footer 30min
 
-
 Sat
 	refactor/cleanup 
-		-forgot pw 30min
+		-forgot pw 1hr
 		-contact 30min
 		-ads ????
-		-social media 1hr
-		-admin panel 1hr
-		-mobile create lockout 20min
-		-sorting 2hr
-		-aws 1hr
+
+
+		COMPLETE admin panel 1hr
+		COMPLETE load fonts 10MIN
+		COMPLETE sorting 2hr
+		COMPLETE mobile links 10min
+		COMPLETE mobile create lockout 20min
+		COMPLETEE pagination 1hr
+		
+
 		-image cropping 30min
-		-pagination 1hr
+		-social media 1hr
+		-aws 1hr
+		
+
+		-BUG FIXES
+		
+		
 
 
