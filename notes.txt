@@ -42,6 +42,10 @@ Sat
 		
 
 		-BUG FIXES
+
+
+			-permissions for admin panel and viewing stuff
+			-differeent view points of user profiles
 		
 		
 
