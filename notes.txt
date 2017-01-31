@@ -1,7 +1,3 @@
-no signout
-no sign in on mobile
-no profile picture upload
-
 20hrs on setup/user sign in
 65hrs so far on quiz create/take
 15.5hrs on browsing pages
@@ -33,7 +29,7 @@ Sat
 		COMPLETE sorting 2hr
 		COMPLETE mobile links 10min
 		COMPLETE mobile create lockout 20min
-		COMPLETEE pagination 1hr
+		COMPLETE pagination 1hr
 		
 
 		-image cropping 30min

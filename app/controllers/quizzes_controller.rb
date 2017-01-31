@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-	before_filter :require_signin, except: [:index, :show]
+	before_filter :require_signin, except: [:index, :show, :trending, :browse]
 
 	def new_trivia
 		@footer = false
