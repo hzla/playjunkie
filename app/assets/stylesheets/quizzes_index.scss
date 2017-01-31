@@ -61,19 +61,24 @@
 				font-weight: 600;
 			}
 		}
+		.quizzes-section.card-view > a {
+			border: 1px solid $light-outline;
+			background: white;
+			border-radius: 5px;
+			display: block;
+			margin-right: 10px;
+		}
 		.quizzes-section.card-view {
 			@include flexbox;
 			overflow-x: scroll;
 			margin-top: 10px;
 			margin-bottom: 30px;
-
 			.quiz-card {
-				margin-right: 10px;
 				height: 100%;
 				width: 240px;
 				border-radius: 5px;
 				background: white;
-				border: 1px solid $light-outline;
+				border: 1px solid white;
 				position: relative;
 				.quiz-image {
 					height: 120px;

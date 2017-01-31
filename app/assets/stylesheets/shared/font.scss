@@ -3,17 +3,20 @@
   font-family: 'Verlag';
   font-style: normal;
   font-weight: 400;
-  src: asset_url('/assets/Verlag-Normal.ttf');
+  // src: asset_url('/assets/Verlag-Normal.ttf');
+  src: url(font-path('Verlag-Normal.ttf'));
 }
 @font-face {
   font-family: 'Verlag';
   font-style: normal;
   font-weight: 800;
-  src: asset_url('/assets/Verlag-Black.ttf');
+  // src: asset_url('/assets/Verlag-Black.ttf');
+  src: url(font-path('Verlag-Black.ttf'));
 }
 @font-face {
   font-family: 'Verlag';
   font-style: normal;
   font-weight: 600;
-  src: asset_url('/assets/Verlag-Bold.ttf');
+  // src: asset_url('/assets/Verlag-Bold.ttf');
+  src: url(font-path('Verlag-Bold.ttf'));
 }
