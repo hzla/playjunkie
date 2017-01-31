@@ -27,7 +27,7 @@ class QuizzesController < ApplicationController
 
 	def browse 
 		@page = params[:page] ? params[:page].to_i : 1
-		@editors_picks = Quiz.editors_picks
+		@editors_picks = Quiz.editors_picks(params[:quiz_type])
 		@quiz_type = params[:quiz_type] 
 		@quizzes = Quiz.where(published: true, quiz_type: @quiz_type).offset((@page - 1) * 10).limit(10)
 	end
@@ -215,6 +215,14 @@ class QuizzesController < ApplicationController
 		else
 			redirect_to user_path(current_user)
 		end
+	end
+
+	def destroy
+		quiz = Quiz.find params[:id]
+		if current_user == quiz.user
+			quiz.destroy
+		end
+		redirect_to user_path(current_user)
 	end
 
 	private

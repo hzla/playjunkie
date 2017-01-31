@@ -49,12 +49,22 @@
 				font-size: 18px;
 				margin-top: 40px;
 			}
+			textarea {
+				margin-top: 20px;
+				height: 80px;
+			}
+			input {
+				margin-top: 20px;
+			}
 			#submit-settings {
 				width: 100px;
 				height: 40px;
 				line-height: 40px;
 				margin-left: 840px;
 				margin-top: 60px;
+				border-radius: 5px;
+				text-shadow: none;
+				box-shadow: none;
 			}
 		}
 	}

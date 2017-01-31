@@ -31,6 +31,7 @@ time, mark, audio, video, input, textarea, select {
 	box-sizing: border-box;
 	font-family: 'verlag';
 	color: $dark-grey;
+	-webkit-overflow-scrolling: touch;
 }
 
 .content-container, header, footer, #mobile-container {

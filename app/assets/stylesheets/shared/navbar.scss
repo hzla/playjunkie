@@ -129,6 +129,7 @@ header {
 					font-size: 16px;
 					margin-top: 20px;
 					display: block;
+					cursor: pointer;
 				}
 				a:first-child {
 					margin-top: 0px;
@@ -194,7 +195,12 @@ header {
 							margin: 8px;
 						}
 					}
-					.plus-btn:hover {
+				}
+				.creation:hover {
+					p {
+						color: $red;
+					}
+					.plus-btn {
 						background: $red;
 						border: none;
 						svg {

@@ -11,6 +11,8 @@ Header =
 		$('body').on 'mouseenter', '.fun-dropdown-trigger', @showFunDropdown
 		$('body').on 'mouseleave', '.fun-dropdown', @closeFunDropdown
 
+		$('body').on 'click', '#get-started', @showCreationDropdown
+
 	toggleMenuOnClick: ->
 		$('#nav-dropdown').toggle()
 

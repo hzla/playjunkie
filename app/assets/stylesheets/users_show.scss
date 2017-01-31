@@ -168,6 +168,14 @@
 		}
 	}
 	.quiz-list-container {
+		.quiz.no-actions {
+			height: 160px;
+			@include justify-content(space-between);
+			img {
+				height: 120px;
+				width: 180px;
+			}
+		}
 		.quiz {
 			height: 240px;
 			margin-top: 20px;

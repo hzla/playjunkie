@@ -13,15 +13,19 @@ class Quiz < ApplicationRecord
 	end
 
 	def self.featured
-		all.limit(12)
+		all.where(featured: true)
 	end
 
-	def self.editors_picks
-		all.limit(3)
+	def self.editors_picks quiz_type=nil
+		if quiz_type
+			where(browse_pick: true, quiz_type: quiz_type).limit(3)
+		else
+			where(homepage_pick: true).limit(3)
+		end
 	end
 
 	def self.trending
-		where('publish_date > ?', Time.now - 7.days).order('view_count desc').limit(10)
+		where('publish_date > ?', Time.now - 7.days).order('view_count desc')
 	end
 
 	def text
@@ -30,6 +34,20 @@ class Quiz < ApplicationRecord
 
 	def quiz
 		self
+	end
+
+	def self.seed_frontpage
+		Quiz.update_all homepage_pick: false, featured: false, browse_pick: false
+
+		Quiz.all.shuffle[0..2].each do |quiz|
+			quiz.update_attributes homepage_pick: true
+		end
+		Quiz.all.shuffle[0..9].each do |quiz|
+			quiz.update_attributes featured: true
+		end
+		["trivia", "quiz", "flipcard", "list"].each do |type|
+			where(quiz_type: type).limit(3).update_all browse_pick: true
+		end
 	end
 
 end

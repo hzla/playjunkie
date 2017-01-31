@@ -1,6 +1,6 @@
 QuizSort =
 	init: ->
-		$('body').on 'click', '.sort-bar p', @chooseSortOption
+		$('body').on 'click', '.sort-bar p:not(.label)', @chooseSortOption
 
 	chooseSortOption: ->
 		$(@).parents().find('p').removeClass('selected')

@@ -60,13 +60,15 @@
 				<div class="recommendations">
 					<h3 class="red-text">TRENDING</h3>
 					<% Quiz.all.limit(6).each_with_index do |rec, i| %>
-						<div class="side-quiz">
-							<div class="quiz-number">
-								<p><%= i + 1 %></p>
+						<%= link_to quiz_path(rec) do %>
+							<div class="side-quiz">
+								<div class="quiz-number">
+									<p><%= i + 1 %></p>
+								</div>
+								<%= image_tag rec.image_url %>
+								<p><%= rec.title %></p>
 							</div>
-							<%= image_tag rec.image_url %>
-							<p><%= rec.title %></p>
-						</div>		
+						<% end %>		
 					<% end %>
 				</div>
 			</div>

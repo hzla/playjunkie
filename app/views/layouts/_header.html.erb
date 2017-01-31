@@ -54,47 +54,46 @@
 
 			<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
 			<div id="creation-dropdown">
-				<div class="creation">
-					<p>
-						Trivia
-					</p>
-					<%= link_to new_trivia_path do %>
+				<%= link_to new_trivia_path do %>
+					<div class="creation">
+						<p>
+							Trivia
+						</p>	
 						<div class="plus-btn">
 							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
 						</div>
-					<% end %>
-				</div>
-				<div class="creation">
-					<p>
-						Quiz
-					</p>
-
-					<%= link_to new_quiz_quiz_path do %>
+					</div>
+				<% end %>
+				<%= link_to new_quiz_quiz_path do %>
+					<div class="creation">
+						<p>
+							Quiz
+						</p>	
 						<div class="plus-btn">
 							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
 						</div>
-					<% end %>
-				</div>
-				<div class="creation">
-					<p>
-						Flipcard
-					</p>
-					<%= link_to new_flipcard_path do %>
+					</div>
+				<% end %>
+				<%= link_to new_flipcard_path do %>
+					<div class="creation">
+						<p>
+							Flip Card
+						</p>	
 						<div class="plus-btn">
 							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
 						</div>
-					<% end %>
-				</div>
-				<div class="creation">
-					<p>
-						List
-					</p>
-					<%= link_to new_list_path do %>
+					</div>
+				<% end %>
+				<%= link_to new_list_path do %>
+					<div class="creation">
+						<p>
+							List
+						</p>	
 						<div class="plus-btn">
 							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
 						</div>
-					<% end %>
-				</div>
+					</div>
+				<% end %>
 			</div>
 	</div>
 	
@@ -105,7 +104,9 @@
 		<div class="dropdown-content">
 			<%= image_tag 'close-x.svg', id: 'close-dropdown' %>
 			<% if signed_out? %>
+			<%= link_to login_path do %>
 				<li class="bold signinup">Sign In/Up</li>
+			<% end %>
 			<% end %>
 			<%= link_to root_path do %>
 				<li class="bold">Home</li>

@@ -34,6 +34,7 @@ class UsersController < Clearance::SessionsController
 	end
 
 	def create
+		#check for password confirmation
     @user = User.new user_params
 
     if @user.save
