@@ -100,7 +100,7 @@
 				}
 			}
 		}
-		.quizzes-section.list-view {
+		.quizzes-section.list-view, {
 			.quiz-list-item {
 				border: 1px solid $light-outline;
 				@include flexbox;
@@ -133,37 +133,38 @@
 					}
 				}
 			}
-			#page-controls {
-				a {
-					width: 80px;
-				}
-				margin-top: 10px;
-				width: 100%;
-				@include flexbox;
-				@include justify-content(space-between);
-				@include align-items(center);
-				.btn {
-					width: 80px;
-					@include flexbox;
-					@include align-items(center);
-					background: $orange;
-					cursor: pointer;
-					p {
-						font-size: 16px;
-						color: white;
-						font-weight: 800;
-						text-align: center;
-						width: 100%;
-					}
-				}
-				.btn:hover {
-					background: $hover-orange;
-				}
-				p {
-					font-size: 14px;
-				}
-			}
 		}
+	}
+}
+
+#page-controls {
+	a {
+		width: 80px;
+	}
+	margin-top: 10px;
+	width: 100%;
+	@include flexbox;
+	@include justify-content(space-between);
+	@include align-items(center);
+	.btn {
+		width: 80px;
+		@include flexbox;
+		@include align-items(center);
+		background: $orange;
+		cursor: pointer;
+		p {
+			font-size: 16px;
+			color: white;
+			font-weight: 800;
+			text-align: center;
+			width: 100%;
+		}
+	}
+	.btn:hover {
+		background: $hover-orange;
+	}
+	p {
+		font-size: 14px;
 	}
 }
 
@@ -341,15 +342,6 @@
 						}
 					}
 				}
-				#page-controls {
-					margin-top: 20px;
-					a {
-						width: 100px;
-					}
-					.btn {
-						width: 100px;
-					}
-				}
 			}
 		}
 		.side-content {
@@ -363,4 +355,14 @@
 			border-radius: 5px;
 		}
 	}
+	#page-controls {
+		margin-top: 20px;
+		a {
+			width: 100px;
+		}
+		.btn {
+			width: 100px;
+		}
+	}
 }
+

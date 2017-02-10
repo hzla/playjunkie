@@ -13,6 +13,9 @@ class QuizzesController < ApplicationController
 
 	def show
 		@quiz = Quiz.find params[:id]
+		@quiz_type = @quiz.quiz_type
+		@page = params[:page] ? params[:page].to_i : 1
+		@item = @quiz.quiz_items.order(:order)[@page - 1]
 		@quiz.increment_view_count
 	end
 
