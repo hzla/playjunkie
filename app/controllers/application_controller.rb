@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   	@footer = true
   end
 
-
   def hide_footer
   	@footer = false
   end
@@ -19,8 +18,6 @@ class ApplicationController < ActionController::Base
   def current_admin_user
     current_user.is_admin? ? current_user : nil
   end
-
-
 
   def require_signin
   	if !signed_in?

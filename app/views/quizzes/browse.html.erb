@@ -17,7 +17,7 @@
 	 		<% @editors_picks.each do |quiz| %>
 	 			<%= link_to quiz_path(quiz) do %>
 		 			<div class="quiz-card">
-		 				<%= image_tag quiz.image_url, :class => "quiz-image" %>
+		 				<%= image_tag quiz.image_url(:card), :class => "quiz-image" %>
 		 				<div class="quiz-info">
 		 					<div class="quiz-title"><%= quiz.title %></div>
 		 					<div class="quiz-sub-info">
@@ -47,7 +47,7 @@
 			 		<% @quizzes.each do |quiz| %>
 			 			<%= link_to quiz_path(quiz), :class => "sort-item", publish_date: (quiz.publish_date.to_i), creation_date: (quiz.created_at.to_i)  do %>
 				 			<div class="quiz-list-item">
-				 				<%= image_tag quiz.image_url, :class => "quiz-image" %>
+				 				<%= image_tag quiz.image_url(:square), :class => "quiz-image" %>
 				 				<div class="quiz-info">
 				 					<div class="quiz-title"><%= quiz.title %></div>
 				 					<div class="quiz-sub-info">

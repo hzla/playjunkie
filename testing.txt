@@ -28,3 +28,27 @@ Search
 User Profile
 	-Quiz Display
 	-Quiz Delete
+
+
+Quiz Creation
+	-Checks required field presence
+	-Can Preview
+	-Can Save
+	-Can Publish
+	-Can Adjust Order
+
+Quiz Editing
+	-Checks required field presence
+	-Can Preview
+	-Can Save
+	-Can Publish
+
+	-Can Insert
+	-Can Delete
+	-Can Change text
+	-Can Change Order
+
+
+
+
+

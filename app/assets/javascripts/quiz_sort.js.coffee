@@ -23,10 +23,10 @@ QuizSort =
 
 
 	sortByPublishDate: (a, b) ->
-		$(a).attr('publish_date').localeCompare($(b).attr('publish_date'))
+		$(b).attr('publish_date').localeCompare($(a).attr('publish_date'))
 
 	sortByCreationDate: (a, b) ->
-		$(a).attr('creation_date').localeCompare($(b).attr('creation_date'))
+		$(b).attr('creation_date').localeCompare($(a).attr('creation_date'))
 
 	sortByName: (a, b) ->
 		console.log $(a).find('.quiz-title').text()

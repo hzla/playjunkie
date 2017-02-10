@@ -1,4 +1,4 @@
-<div class="content-container quiz-form-container trivia-oriented-quiz quiz-edit">
+<div class="content-container quiz-form-container quiz-edit">
 	<h1 class="super-bold">Edit your List</h1>
 
 	<%= form_for @quiz do |f| %>
@@ -8,6 +8,7 @@
 
 		<% @quiz.quiz_items.each_with_index do |item, i| %>
 			<div class="form-box question">
+				<%= hidden_field_tag "quiz_item_#{i + 1}[order]", item.order, :class => "item-order" %>
 				<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", item.remember_code, :class => "remember-code" %>
 				<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
 				<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>

@@ -10,7 +10,7 @@
 				<div class="front">
 					<div class="image-container flippable" style="background-color:<%= item.color %>;">
 						<% if item.image.present? %>
-							<%= image_tag item.image_url, :class => "item-image" %>
+							<%= image_tag item.image_url(:item), :class => "item-image" %>
 						<% end %>
 						<p class="card-text"><%= item.item_text %></p>
 						<div class="image-credit"><%= item.image_credit %></div>
@@ -19,7 +19,7 @@
 				<div class="back">
 					<div class="image-container flippable" style="background-color:<%= item.color_back %>;">
 						<% if item.image_back.present? %>
-							<%= image_tag item.image_back_url, :class => "item-image" %>
+							<%= image_tag item.image_back_url(:item), :class => "item-image" %>
 						<% end %>
 						<p class="card-text"><%= item.item_text_back %></p>
 						<div class="image-credit"><%= item.image_credit_back %></div>
@@ -35,12 +35,18 @@
 			<div class="item-number"><%= i + 1 %></div>
 			<% if item.image.present? %>
 				<div class="image-container flippable">
-					<%= image_tag item.image_url, :class => "item-image" %>
+					<%= image_tag item.image_url(:item), :class => "item-image" %>
 					<div class="image-credit"><%= item.image_credit %></div>
 				</div>			
 			<% end %>
-			<p class="item-text"><%= item.item_text %></p>
+			<p class="item-text"><%= item.title || item.item_text %></p>
 		</div>
+
+		<% if @quiz.quiz_type == "list" %>
+			<p class="item-description">
+				<%= item.item_text %>
+			</p>
+		<% end %>
 
 		<% unless item.item_answers.empty? %>
 			<div class="answers">
@@ -48,7 +54,7 @@
 					<div class="answer <%= answer.image.present? ? 'image-style' : 'text-style' %> <%= answer.correct? ? 'correct' : 'incorrect' %> <%= @quiz.quiz_type %>" result-id="<%= answer.result_id %>"> 
 						<% if answer.image.present? %>
 							<div class="image-container">
-								<%= image_tag answer.image_url, :class => "answer-image" %>
+								<%= image_tag answer.image_url(:item_thumbnail), :class => "answer-image" %>
 								<div class="image-credit"><%= answer.image_credit %></div>
 							</div>
 						<% end %>

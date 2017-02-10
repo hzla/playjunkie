@@ -12,26 +12,20 @@ Rails.application.routes.draw do
   get '/signout', to: 'sessions#destroy'
 
   #users
-  post '/users', to: 'users#create'
   resources :users
 
   #passwords 
   get '/passwords/new', to: 'passwords#new', as: 'new_password'
 
-
   #quizzes
   get '/trending', to: 'quizzes#trending', as: 'trending'
   get '/browse/:quiz_type', to: 'quizzes#browse', as: 'browse'
-  get '/quizzes/new_trivia', to: 'quizzes#new_trivia', as: 'new_trivia'
-  get '/quizzes/new_quiz', to: 'quizzes#new_quiz', as: 'new_quiz_quiz'
-  get '/quizzes/new_flipcard', to: 'quizzes#new_flipcard', as: 'new_flipcard'
-  get '/quizzes/new_list', to: 'quizzes#new_list', as: 'new_list'
+  get '/quizzes/new/:quiz_type', to: 'quizzes#new', as: 'new_quiz'
   resources :quizzes
 
   #searches
   post '/searches', to: 'searches#create'
   get '/searches', to: 'searches#show', as: 'search'
-
 
   #pages
   get '/about', to: 'pages#about', as: 'about'

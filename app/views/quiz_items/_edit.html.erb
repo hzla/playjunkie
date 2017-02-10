@@ -1,6 +1,8 @@
+
 <h2 class="super-bold content-title">Edit Questions</h2>
 <% questions.each_with_index do |question, i| %>
 	<div class="form-box question">
+		<%= hidden_field_tag "quiz_item_#{i + 1}[order]", question.order, :class => "item-order" %>
 		<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", question.remember_code, :class => "remember-code" %>
 		<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
 		<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>

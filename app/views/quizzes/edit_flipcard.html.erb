@@ -7,6 +7,7 @@
 		<h2 class="super-bold content-title">Add A Flip Card</h2>
 		<% @quiz.quiz_items.each_with_index do |card, i| %>
 			<div class="form-box question">
+				<%= hidden_field_tag "quiz_item_#{i + 1}[order]", card.order, :class => "item-order" %>
 				<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", card.remember_code, :class => "remember-code" %>
 				<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
 				<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>

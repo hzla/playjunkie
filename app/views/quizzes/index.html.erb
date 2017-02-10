@@ -15,7 +15,7 @@
 	 		<% Quiz.editors_picks.each do |quiz| %>
 	 			<%= link_to quiz_path(quiz) do %>
 		 			<div class="quiz-card">
-		 				<%= image_tag quiz.image_url, :class => "quiz-image" %>
+		 				<%= image_tag quiz.image_url(:card), :class => "quiz-image" %>
 		 				<div class="quiz-info">
 		 					<div class="quiz-title"><%= quiz.title %></div>
 		 					<div class="quiz-sub-info">
@@ -41,7 +41,7 @@
 		 		<% Quiz.featured.each do |quiz| %>
 		 			<%= link_to quiz_path(quiz) do %>
 			 			<div class="quiz-list-item">
-			 				<%= image_tag quiz.image_url, :class => "quiz-image" %>
+			 				<%= image_tag quiz.image_url(:square), :class => "quiz-image" %>
 			 				<div class="quiz-info">
 			 					<div class="quiz-title"><%= quiz.title %></div>
 			 					<div class="quiz-sub-info">
@@ -65,7 +65,7 @@
 								<div class="quiz-number">
 									<p><%= i + 1 %></p>
 								</div>
-								<%= image_tag rec.image_url %>
+								<%= image_tag rec.image_url(:sidebar) %>
 								<p><%= rec.title %></p>
 							</div>
 						<% end %>		

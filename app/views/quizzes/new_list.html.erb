@@ -7,6 +7,7 @@
 
 		<h2 class="super-bold content-title">Add Items</h2>
 		<div class="form-box question">
+			<%= hidden_field_tag "quiz_item_1[order]", 1, :class => "item-order" %>
 			<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
 			<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>
 			<%= image_tag "close-box.svg", :class => "close-question closer" %>

@@ -1,0 +1,40 @@
+20hrs on setup/user sign in
+65hrs so far on quiz create/take
+15.5hrs on browsing pages
+
+Tues
+	COMPLETE char limits + refactoring quiz new 2hr 
+	COMPLETE result assignment validation 10min
+	COMPLETE edit page 5hr
+	COMPLETE save/preview 1hr
+Thurs
+	COMPLETE landing page 3hr
+Friday
+	COMPLETE trending 30min
+	COMPLETE browse 30min
+	COMPLETE search 2hr
+	COMPLETE copy 30min
+	COMPLETE header hovers 20min
+	COMPLETE footer 30min
+
+Sat/Sun
+	refactor/cleanup 
+		-forgot pw 1hr
+		-contact 30min
+		-ads ????
+
+
+		COMPLETE admin panel 1hr
+		COMPLETE load fonts 10MIN
+		COMPLETE sorting 2hr
+		COMPLETE mobile links 10min
+		COMPLETE mobile create lockout 20min
+		COMPLETE pagination 1hr
+		
+
+		-image cropping 30min
+		-social media 1hr
+		-aws 1hr
+
+Mon
+	COMPLETE QA 4hr	

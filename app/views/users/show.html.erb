@@ -24,7 +24,7 @@
 			<p sort-name="cd">Creation Date</p>
 		</div>
 		<div class="quiz-list-container sortable">
-			<% @user.quizzes.order(:publish_date).each do |quiz| %>
+			<% @quizzes.each do |quiz| %>
 				<div class="quiz sort-item <%= 'no-actions' if current_user != @user %>" publish_date="<%= quiz.publish_date.to_i %>" creation_date="<%= quiz.created_at.to_i %>">
 					<div class="quiz-info">
 						<div class="quiz-title"><%= quiz.title %></div>
@@ -47,7 +47,7 @@
 							</div>
 						<% end %>
 					</div>
-					<%= image_tag quiz.image_url, :class => "quiz-image" %>
+					<%= image_tag quiz.image_url(:item), :class => "quiz-image" %>
 					<% if current_user == @user %>
 						<div class="quiz-actions">
 							<%= link_to edit_quiz_path(quiz) do %>

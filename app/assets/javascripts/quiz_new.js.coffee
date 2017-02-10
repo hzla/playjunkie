@@ -31,14 +31,20 @@ QuizNew =
 
 
 	submitQuiz: ->
+		valid = QuizNew.validateFields()
+		console.log valid
+		if !valid
+			return
+
 		action = $(@).attr('id')
 		if action == 'preview-quiz'
-			$('form').attr('target', '_blank')
+			$('#new_quiz, .edit_quiz').attr('target', '_blank')
 		else
-			$('form').attr('target', '')
+			$('#new_quiz, .edit_quiz').attr('target', '')
 
+		console.log valid
 		$(@).parents("#submit-bar").find('.quiz-submit-action').val action
-		$('form').submit()
+		$('#new_quiz, .edit_quiz').submit()
 
 	showImagePreviews: ->
 		$('.image-preview').show()
@@ -61,6 +67,12 @@ QuizNew =
 
 
 	validateFields: ->
+		$('.question:visible .item-order').each (i) ->
+			$(@).val(i + 1)
+
+
+
+
 		missingFieldError = false
 		incorrectNumberofAnswers = false
 
@@ -269,6 +281,7 @@ QuizNew =
 		lastAnswer.after(lastAnswer.clone())
 		question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
 		question.find('.form-answer').last().find('input, textarea').val("").prop('checked', 'true')
+		question.find("input[type='checkbox']").val("on")
 
 
 		if answerCount == 3 && $('.trivia-oriented-quiz').length > 0
@@ -328,6 +341,7 @@ QuizNew =
 		newQuestion.find('.question-image-input').css('background-color', '')
 		
 		newQuestion.find('input, textarea').val("").prop('checked', 'true') #reset fields
+		newQuestion.find("input[type='checkbox']").val("on")
 		newQuestion.find('.image-preview').attr('src', '#').hide() # clear image previews	
 		
 		newQuestion.find('.answer-format').hide()

@@ -145,6 +145,10 @@
 					padding: 0px 5px;
 					text-align: center;
 				}
+				.item-description {
+					font-size: 14px;
+					font-weight: 400;
+				}
 			}
 			img {
 				height: calc((100vw - 20px) * 2 / 3);
@@ -160,6 +164,9 @@
 			font-weight: 600;
 			font-size: 14px;
 			margin-top: 10px;
+		}
+		p.item-description {
+			font-weight: 400;
 		}
 		.answers {
 			@include flexbox;
@@ -307,6 +314,10 @@
 							margin-top: 10px;
 						}
 
+					}
+					.item-description {
+						font-size: 18px;
+						font-weight: 400;
 					}
 					.answer .image-container {
 						height: 186px;

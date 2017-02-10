@@ -32,8 +32,9 @@ gem 'httparty'
 
 #Images:
 gem 'carrierwave'
-gem 'rmagick', :require => false
+gem 'rmagick'
 gem 'mini_magick'
+gem "fog-aws"
 
 #Social
 gem 'omniauth-facebook'
