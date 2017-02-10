@@ -31,19 +31,24 @@ QuizNew =
 
 
 	submitQuiz: ->
-		valid = QuizNew.validateFields()
-		console.log valid
-		if !valid
+		action = $(@).attr('id')
+		$(@).parents("#submit-bar").find('.quiz-submit-action').val action
+
+		if action == 'save-quiz'
+			$('#new_quiz, .edit_quiz').submit()
 			return
 
-		action = $(@).attr('id')
+
+
+		valid = QuizNew.validateFields()
+		if !valid
+			return
+		
 		if action == 'preview-quiz'
 			$('#new_quiz, .edit_quiz').attr('target', '_blank')
 		else
 			$('#new_quiz, .edit_quiz').attr('target', '')
-
-		console.log valid
-		$(@).parents("#submit-bar").find('.quiz-submit-action').val action
+		
 		$('#new_quiz, .edit_quiz').submit()
 
 	showImagePreviews: ->
@@ -67,14 +72,24 @@ QuizNew =
 
 
 	validateFields: ->
-		$('.question:visible .item-order').each (i) ->
-			$(@).val(i + 1)
-
-
-
-
+		return true if $('.quiz-submit-action').val() == "save-quiz"
 		missingFieldError = false
 		incorrectNumberofAnswers = false
+		console.log "valdating"
+		quizTitle = ($('#quiz_title').val() != "")
+		quizDescription = ($('#quiz_description').val() != "")
+		quizImage = ($('#quiz-image-input').val() != "")
+		$('#quiz_title').css('border', '1px solid red') if !quizTitle
+		$('#quiz_description').css('border', '1px solid red') if !quizDescription
+		$('#quiz-image-input').parent().find('.image-input-overlay').css('border', '1px solid red') if !quizImage
+
+		if !quizTitle or !quizDescription or !quizImage
+			missingFieldError = true
+
+
+
+		$('.question:visible .item-order').each (i) ->
+			$(@).val(i + 1)
 
 		for i in [0..$('.question').length - 1]
 			question = $($('.question')[i])

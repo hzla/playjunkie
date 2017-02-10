@@ -1,4 +1,12 @@
 Amazon Setup
 		
+	Set Up Amazon Account
+	Set Up Carrierwave Fog
+	Set Up Versions
+
+Quiz Validation Bugs
+	add custom validation for quiz title, desc, image
+	remove validation for save
+	fix everything that just broke because of incomplete quizzes
 
 

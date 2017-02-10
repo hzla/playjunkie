@@ -39,7 +39,9 @@ class QuizItem < ApplicationRecord
 				answer_count += 1
 
 				if quiz.quiz_type == "quiz"
-					 item_answer.update_attributes result_id: results[item_answer.result_id].id
+					if item_answer.result_id
+					 	item_answer.update_attributes result_id: results[item_answer.result_id].id
+					end
 				end
 			end
 			item_count += 1
@@ -78,7 +80,7 @@ class QuizItem < ApplicationRecord
 						item_answer.update_attributes answer_fields
 						answer_count += 1
 						if quiz.quiz_type == "quiz"
-							 item_answer.update_attributes result_id: created_results[item_answer.result_id].id
+							 item_answer.update_attributes result_id: results[item_answer.result_id].id
 							 #could be buggy
 						end
 					else
@@ -87,7 +89,9 @@ class QuizItem < ApplicationRecord
 						answer_count += 1
 
 						if quiz.quiz_type == "quiz"
-							 item_answer.update_attributes result_id: created_results[item_answer.result_id].id
+							if item_answer.result_id
+								item_answer.update_attributes result_id: results[item_answer.result_id].id
+							end
 						end
 					end
 				end
