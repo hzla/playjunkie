@@ -44,6 +44,14 @@ class Quiz < ApplicationRecord
 		self
 	end
 
+	def file_field_image
+		if image.present?
+			image
+		else
+			nil
+		end
+	end
+
 	###### Class Methods for grabbing Collections
 
 	def self.featured

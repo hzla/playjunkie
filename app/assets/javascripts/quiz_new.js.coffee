@@ -75,6 +75,7 @@ QuizNew =
 		return true if $('.quiz-submit-action').val() == "save-quiz"
 		missingFieldError = false
 		incorrectNumberofAnswers = false
+		
 		console.log "valdating"
 		quizTitle = ($('#quiz_title').val() != "")
 		quizDescription = ($('#quiz_description').val() != "")
@@ -82,10 +83,12 @@ QuizNew =
 		$('#quiz_title').css('border', '1px solid red') if !quizTitle
 		$('#quiz_description').css('border', '1px solid red') if !quizDescription
 		$('#quiz-image-input').parent().find('.image-input-overlay').css('border', '1px solid red') if !quizImage
+		quizImage = true if $('.quiz-edit').length > 0
 
 		if !quizTitle or !quizDescription or !quizImage
 			missingFieldError = true
 
+		console.log missingFieldError
 
 
 		$('.question:visible .item-order').each (i) ->
@@ -97,12 +100,14 @@ QuizNew =
 			text = question.find('.question-text')
 			if text.val() == "" && image.val() == ""
 				text.css('border', '1px solid red') if text.val() == "" 
+				
 				question.find('div.question-image-input').css('border', '1px solid red') if image.val() == ""
 				missingFieldError = true
 			else
 				text.attr('style', '')
 				question.find('div.question-image-input').attr('style', '')
 			
+
 			correctAnswersCount = 0
 			question.find('.form-answer').each -> #validate answer fields
 				if $(@).find("input[type='checkbox']:checked").length > 0
