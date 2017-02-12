@@ -49,7 +49,7 @@ class QuizzesController < ApplicationController
 			@quiz.update_attributes published: true, publish_date: Time.now
 			render "create" and return
 		else
-			redirect_to user_path(current_user)
+			redirect_to edit_quiz_path(@quiz, saved: true)
 		end
 	end
 
@@ -63,7 +63,7 @@ class QuizzesController < ApplicationController
 			@quiz.update_attributes published: true, publish_date: Time.now
 			render "create" and return
 		else # if editing quiz
-			redirect_to user_path(current_user)
+			redirect_to edit_quiz_path(@quiz, saved: true)
 		end
 	end
 

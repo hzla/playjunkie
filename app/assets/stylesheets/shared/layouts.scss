@@ -10,6 +10,15 @@
 	min-height: calc(100vh - 44px);
 }
 
+#flash-message {
+	// display: none;
+	position: absolute;
+	color: $blue;
+	top: 80px;
+	left: calc(50vw - 470px);
+	font-size: 24px;
+}
+
 
 
 @media (min-width: 1024px) {

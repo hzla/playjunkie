@@ -3,8 +3,6 @@ class User < ApplicationRecord
   has_many :authorizations, dependent: :destroy
   has_many :quizzes
 
-
-
   def self.create_from_facebook auth_hash
 		profile = auth_hash['info']
 		fb_token = auth_hash.credentials.token
@@ -13,7 +11,6 @@ class User < ApplicationRecord
     binding.pry
     user if user.save(validate: false)
 	end	
-
 
   def self.generate_code
     random = (48..122).map {|x| x.chr}

@@ -17,7 +17,7 @@ QuizNew =
 		$('body').on 'keyup', '.text-box', @syncItemText
 		@displayClosers()
 		@displayMovers()
-
+		@closeSaveMessage()
 		@questionCount = $('.question:visible').length
 
 		$('body').on 'submit', '#new_quiz, .edit_quiz', @validateFields if $('.flipcard-oriented-quiz').length < 1
@@ -29,6 +29,14 @@ QuizNew =
 		if $('#new_quiz').length > 0
 			window.onbeforeunload = @confirmCloseWindow  
 		@showImagePreviews()
+
+	closeSaveMessage: ->
+		setTimeout ->
+			$('#flash-message').animate
+				opacity: 0
+			, 400
+		, 1500
+
 
 	confirmCloseWindow: (e) ->
 		if $('#new_quiz').length > 0
@@ -101,14 +109,14 @@ QuizNew =
 		$('.question:visible .item-order').each (i) ->
 			$(@).val(i + 1)
 
-		for i in [0..$('.question').length - 1]
+		for i in [0..$('.question').length - 1] #validate each question
 			question = $($('.question')[i])
-			image = question.find('input.question-image-input')
+			image = question.find('.question-image-preview')
 			text = question.find('.question-text')
-			if text.val() == "" && image.val() == ""
+			if text.val() == "" && image.attr('src') == "#"
 				text.css('border', '1px solid red') if text.val() == "" 
-				
-				question.find('div.question-image-input').css('border', '1px solid red') if image.val() == ""
+
+				question.find('div.question-image-input').css('border', '1px solid red') if image.attr('src') == "#"
 				missingFieldError = true
 			else
 				text.attr('style', '')
@@ -120,12 +128,12 @@ QuizNew =
 				if $(@).find("input[type='checkbox']:checked").length > 0
 					correctAnswersCount += 1
 
-				image = $(@).find('.answer-image-input')
+				image = $(@).find('.answer-image-preview')
 				text = $(@).find('.answer-text-input')
 				if $(@).find('.image-input:visible').length > 0 #if image style
-					if image.val() == "" && text.val() == ""
+					if image.attr('src') == "#" && text.val() == ""
 						text.css('border', '1px solid red') if text.val() == "" 
-						$(@).find('.image-input').css('border', '1px solid red') if image.val() == ""
+						$(@).find('.image-input').css('border', '1px solid red') if image.attr('src') == "#" 
 						missingFieldError = true
 					else
 						text.attr('style', '')
@@ -154,10 +162,10 @@ QuizNew =
 
 		$('.form-result').each ->
 			text = $(@).find('.result-text-input')
-			image = $(@).find('.result-image-input')
-			if text.val() == "" && image.val() == ""
+			image = $(@).find('.result-image-preview')
+			if text.val() == "" && image.attr('src') == "#"
 				text.css('border', '1px solid red') if text.val() == "" 
-				$(@).find('.image-input').css('border', '1px solid red') if image.val() == ""
+				$(@).find('.image-input').css('border', '1px solid red') if image.attr('src') == "#"
 				missingFieldError = true
 			else
 				text.attr('style', '')
