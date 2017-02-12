@@ -30,7 +30,7 @@ QuizNew =
 			window.onbeforeunload = @confirmCloseWindow  
 		@showImagePreviews()
 
-	confirmCloseWindow: () ->
+	confirmCloseWindow: (e) ->
 		e = e || window.event;
 
 		if (e) 
