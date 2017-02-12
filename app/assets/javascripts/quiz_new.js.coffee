@@ -28,6 +28,10 @@ QuizNew =
 
 		if $('#new_quiz').length > 0
 			window.onbeforeunload = @confirmCloseWindow  
+
+		$('body').on 'click', '.btn', ->
+			window.onbeforeunload = null
+			
 		@showImagePreviews()
 
 	closeSaveMessage: ->
@@ -40,6 +44,7 @@ QuizNew =
 
 	confirmCloseWindow: (e) ->
 		if $('#new_quiz').length > 0
+			console.log e
 			e = e || window.event;
 			if (e) 
 				e.returnValue = 'Sure?'
