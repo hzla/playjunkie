@@ -26,10 +26,6 @@ class User < ApplicationRecord
     true
   end
 
-  def is_admin?
-    true
-  end
-
   def profile_pic
     profile_pic_url or '/assets/facebook.svg'
   end

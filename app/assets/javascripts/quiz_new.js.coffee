@@ -31,11 +31,11 @@ QuizNew =
 		@showImagePreviews()
 
 	confirmCloseWindow: (e) ->
-		e = e || window.event;
-
-		if (e) 
-			e.returnValue = 'Sure?'
-		return 'Sure?'
+		if $('#new_quiz').length > 0
+			e = e || window.event;
+			if (e) 
+				e.returnValue = 'Sure?'
+			return 'Sure?'
 
 	submitQuiz: ->
 		action = $(@).attr('id')
