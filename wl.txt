@@ -2,14 +2,14 @@
 65hrs so far on quiz create/take
 15.5hrs on browsing pages
 
-Tues
+
 	COMPLETE char limits + refactoring quiz new 2hr 
 	COMPLETE result assignment validation 10min
 	COMPLETE edit page 5hr
 	COMPLETE save/preview 1hr
-Thurs
+
 	COMPLETE landing page 3hr
-Friday
+
 	COMPLETE trending 30min
 	COMPLETE browse 30min
 	COMPLETE search 2hr
@@ -17,7 +17,7 @@ Friday
 	COMPLETE header hovers 20min
 	COMPLETE footer 30min
 
-Sat/Sun
+
 	refactor/cleanup 
 		-forgot pw 1hr
 		-contact 30min
@@ -36,5 +36,5 @@ Sat/Sun
 		-social media 1hr
 		-aws 1hr
 
-Mon
+
 	COMPLETE QA 4hr	

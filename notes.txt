@@ -3,14 +3,46 @@ Amazon Setup
 	COMPLETE Set Up Amazon Account 15min
 	COMPLETE Set Up Carrierwave Fog 15min
 	COMPLETE Set Up Versions 1hr
-	backgroud proccesses for image uploading
-	optimizations for uploading
 
 
 Quiz Validation Bugs
-	add custom validation for quiz title, desc, image 30min
-	remove validation for save 15min
-	fix everything that just broke because of incomplete quizzes 1.5hr
+	COMPLETE add custom validation for quiz title, desc, image 30min
+	COMPLETE remove validation for save 15min
+	COMPLETE fix everything that just broke because of incomplete quizzes 1.5hr
+
+135 + 88 future
+
+QA Round 1
+	current 48 items * ~15min = 12hrs
+	Additional items ~= 4hrs
+
+QA ROund 2
+	8hrs
+
+Optimization
+	Background workers for uploading 4hr
+	Reducing database queries 4hr
+	Other 4hr
+
+Deployment
+	12hrs
+
+Build API
+	Setup
+	Quiz, and all quiz items
+	User
+	Search
+
+	20hrs
+
+Misc
+	20hrs
+
+
+
+
+
+
 
 
 
