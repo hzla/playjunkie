@@ -26,9 +26,16 @@ QuizNew =
 
 		$('body').on 'click', '#submit-bar .btn', @submitQuiz
 
-
+		if $('#new_quiz').length > 0
+			window.onbeforeunload = @confirmCloseWindow  
 		@showImagePreviews()
 
+	confirmCloseWindow: () ->
+		e = e || window.event;
+
+		if (e) 
+			e.returnValue = 'Sure?'
+		return 'Sure?'
 
 	submitQuiz: ->
 		action = $(@).attr('id')
