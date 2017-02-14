@@ -18,6 +18,7 @@ class UsersController < Clearance::SessionsController
 	end
 
 	def edit
+		redirect_to root_path if current_user != @user
 	end
 
 	def update

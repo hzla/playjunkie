@@ -32,6 +32,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def edit
+		redirect_to root_path if current_user != @quiz.user
 		@footer = false
 		@quiz = Quiz.find params[:id]
 		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"
