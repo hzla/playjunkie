@@ -161,7 +161,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 	removeResultChoice: (index) ->
 		$('select').each ->
-			if parseInt($(@).val()) == index
+			if parseInt($(@).val()) == indexw
 				$(@).val(-1)
 			$($(@).find('option')[index + 1]).remove()
 
