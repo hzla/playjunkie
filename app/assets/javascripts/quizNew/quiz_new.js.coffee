@@ -288,8 +288,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 				console.log previewBox
 				previewBox.show()
 				$(previewBox).css('background-image', "url(#{e.target.result})")
-
-				# previewBox.attr 'src', e.target.result
+				previewBox.attr 'src', e.target.result
 			
 			reader.readAsDataURL input.files[0]
 			$(@).parent().find('.close-image').show()
