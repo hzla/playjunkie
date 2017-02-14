@@ -8,7 +8,6 @@ class User < ApplicationRecord
 		fb_token = auth_hash.credentials.token
 		user = User.new name: profile['name'], profile_pic_url: profile['image'], email: profile['email']
     user.authorizations.build :unique_id => auth_hash["uid"]
-    binding.pry
     user if user.save(validate: false)
 	end	
 

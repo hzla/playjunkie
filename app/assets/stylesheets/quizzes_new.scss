@@ -8,6 +8,10 @@
 
 .quiz-form-container {
 	padding: 60px calc(50vw - 470px);
+	.image-preview {
+		background-position: center;
+		background-size: cover;
+	}
 	div.char-countable {
 		position: relative;
 		.char-count {
@@ -166,7 +170,7 @@
 		.box-field .card-side {
 
 			div.question-image-input {
-				background: $dark-grey;
+				background: rgb(30, 94, 253);
 				cursor: default;
 				padding: 12px 60px 15px 60px;
 				position: relative;
@@ -309,6 +313,8 @@
 				cursor: pointer;
 				display: none;
 				border-radius: 5px;
+				background-position: center;
+				background-size: cover;
 			}
 			.answer-format-selection {
 				width: 400px;
@@ -342,6 +348,10 @@
 				margin-left: 10px;
 				margin-bottom: 10px;
 				transition-duration: 0s;
+				.close-image {
+					right: 7px;
+    			top: 10px;
+				}
 				input, textarea, .image-input {
 					width: 100%;
 					border: 1px solid $dark-outline;
@@ -456,6 +466,9 @@
 			}
 		}
 		.form-answers.text-style {
+			.image-preview {
+				display: none !important;
+			}
 			.text-answer-form:first-child {
 				margin-top: 0px;
 			}
@@ -519,6 +532,10 @@
 					opacity: 0;
 					z-index: 2;
 					cursor: pointer;
+				}
+				.close-image {
+					right: -2px;
+    			top: 90px;
 				}
 				.result-image-preview {
 					border-radius: 5px;
@@ -585,13 +602,16 @@
 		bottom: 0px;
 		left: 0px;
 		z-index: 5;
-		.error-message {
-			 position: absolute;
-	    color: $red;
+		#errors {
+			position: absolute;
 	    width: 360px;
 	    bottom: 90px;
 	    right: 60px;
-	    display: none;
+		}
+		.error-message {
+			color: $red;
+			margin-top: 10px;
+			display: none;
 		}
 		#correct-answer-error {
 			bottom: 140px;

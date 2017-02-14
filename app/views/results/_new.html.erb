@@ -1,5 +1,3 @@
-
-
 <h2 class="super-bold content-title">Add Results</h2>
 <div class="form-box results-box">
 	<div class="form-results show-add-result">
@@ -11,8 +9,9 @@
 			</div>
 				
 			<div class="image-input">Click to add image...</div>
+			<%= image_tag "close-box.svg", :class => "close-image closer" %>
 			<%= file_field_tag "result_1[image]", :class => "result-image-input" %>
-			<img class="result-image-preview image-preview" src="#" alt="preview failed to load" />
+			<div class="result-image-preview image-preview" src="#" alt="preview failed to load"></div>
 			<%= text_field_tag "result_1[image_credit]", nil, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
 
 			<% if result_type == "trivia" %>
@@ -24,7 +23,7 @@
 				</div>
 			<% end %>
 		</div>
-		<div class="add-result">
+		<div class="add-result" style="display: <%= @quiz_type == 'trivia' ? 'none' : nil  %>">
 				<div class="btn">Add Result</div>
 		</div>
 	</div>	

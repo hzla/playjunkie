@@ -1,4 +1,4 @@
-<div class="content-container quiz-form-container list-oriented-quiz">
+<div class="content-container quiz-form-container list-quiz">
 	<h1 class="super-bold">Create a New List</h1>
 
 	<%= form_for Quiz.new do |f| %>
@@ -21,7 +21,7 @@
 				<%= image_tag "close-box.svg", :class => "close-image closer" %>
 				<div class="box-input question-image-input">Click to add image...</div>
 				<%= file_field_tag "quiz_item_1[image]", :class => "question-image-input" %>
-				<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />
+				<div class="question-image-preview image-preview" src="#" alt="preview failed to load"></div>
 			</class>
 			<class class="box-field ">
 				<label class="box-label">Image Credit</label>
@@ -29,7 +29,7 @@
 			</class>
 			<class class="box-field ">
 				<label class="box-label">Description</label>
-				<%= text_field_tag "quiz_item_1[item_text]", nil, :class => "box-input" %>
+				<%= text_area "quiz_item_1[item_text]", nil, :class => "box-input item-description" %>
 			</class>
 		</div>
 		<div id="add-question" class="btn">

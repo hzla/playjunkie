@@ -1,4 +1,4 @@
-<div class="content-container quiz-form-container flipcard-oriented-quiz">
+<div class="content-container quiz-form-container flipcard-quiz">
 	<h1 class="super-bold">Create a New Flip Card</h1>
 
 	<%= form_for Quiz.new do |f| %>
@@ -21,7 +21,7 @@
 					<label class="box-label">Card Title</label>
 					<div class="char-countable">
 						<p class="char-count left single-row">90</p>
-						<%= text_field_tag "quiz_item_1[title]", nil, :class => "box-input", required: true, maxlength: 90 %>
+						<%= text_field_tag "quiz_item_1[title]", nil, :class => "box-input", maxlength: 90 %>
 					</div>
 					
 				</div>
@@ -49,15 +49,16 @@
 														<div class="color" style="background-color: #ee4a7f;"></div>
 														<div class="color" style="background-color: #ea8408;"></div>
 													</div>
-													<%= hidden_field_tag "quiz_item_1[color#{side == 'back' ? '_back' : nil}]", nil, :class => "card-color-input" %>
+													<%= hidden_field_tag "quiz_item_1[color#{side == 'back' ? '_back' : nil}]", "rgb(30, 94, 253)", :class => "card-color-input" %>
 												</div>
 												<div class="or">Or</div>
 												<div class="card-image-input-btn">
 													Add Image
 												</div>
 											</div>
+											<%= image_tag "close-box.svg", :class => "close-image closer" %>
 											<%= file_field_tag "quiz_item_1[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
-											<img class="question-image-preview image-preview" src="#" alt="preview failed to load" />
+											<div class="question-image-preview image-preview" src="#" alt="preview failed to load"></div>
 										</div>
 									</div>
 								</div>
@@ -74,7 +75,7 @@
 			Add Card
 		</div>
 
-		<%= f.text_area :completion_message, :class => "btn", placeholder: "Completion Message...", required: true %>
+		<%= f.text_area :completion_message, :class => "btn", placeholder: "Completion Message..." %>
 		<%= render partial: "submit_bar", locals: {f: f} %>
 	<% end %>
 </div>

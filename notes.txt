@@ -14,10 +14,15 @@ Quiz Validation Bugs
 
 QA Round 1
 	current 48 items * ~15min = 12hrs
+		COMPLETE 9 2hrs 
 	Additional items ~= 4hrs
 
 QA ROund 2
 	8hrs
+
+	
+
+VERSION 2
 
 Optimization
 	Background workers for uploading 4hr

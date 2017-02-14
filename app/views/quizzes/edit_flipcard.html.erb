@@ -1,4 +1,4 @@
-<div class="content-container quiz-form-container quiz-edit">
+<div class="content-container quiz-form-container quiz-edit flipcard-quiz">
 	<h1 class="super-bold">Edit your Flip Cards</h1>
 
 	<%= form_for @quiz do |f| %>
@@ -22,7 +22,7 @@
 					<label class="box-label">Card Title</label>
 					<div class="char-countable">
 						<p class="char-count left single-row">90</p>
-						<%= text_field_tag "quiz_item_#{i + 1}[title]", card.title, :class => "box-input", required: true, maxlength: 90 %>
+						<%= text_field_tag "quiz_item_#{i + 1}[title]", card.title, :class => "box-input", maxlength: 90 %>
 					</div>
 					
 				</div>
@@ -57,7 +57,7 @@
 												</div>
 											</div>
 											<%= file_field_tag "quiz_item_#{i + 1}[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
-											<img class="question-image-preview image-preview" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>" alt="preview failed to load" />
+											<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load"></div>
 										</div>
 									</div>
 								</div>
@@ -74,6 +74,8 @@
 		<div id="add-question" class="btn">
 			Add Card
 		</div>
+
+		<%= f.text_area :completion_message, :class => "btn", placeholder: "Completion Message..." %>
 		
 		<%= render partial: "submit_bar", locals: {f: f} %>
 	<% end %>

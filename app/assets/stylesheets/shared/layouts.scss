@@ -1,6 +1,10 @@
 @import 'mixins';
 @import 'variables';
 
+body, html {
+	overflow-x: hidden;
+}
+
 .content-container {
 	margin-top: 44px;
 	left: 0px;
@@ -13,10 +17,10 @@
 #flash-message {
 	// display: none;
 	position: absolute;
-	color: $blue;
-	top: 80px;
-	left: calc(50vw - 470px);
-	font-size: 24px;
+	color: $green;
+  bottom: 20px;
+  right: calc(50vw + 80px);
+  font-size: 14px;
 }
 
 

@@ -1,6 +1,5 @@
 Header =
 	init: ->
-		console.log "init"
 		$('body').on 'click', '#close-dropdown, #menu-icon', @toggleMenuOnClick
 		$('body').on 'mouseenter', '#nav-profile-pic', @showProfileDropdown
 		$('body').on 'mouseleave', '#profile-dropdown', @closeProfileDropdown

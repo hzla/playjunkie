@@ -34,7 +34,7 @@
 		<div class="question-header">
 			<div class="item-number"><%= i + 1 %></div>
 			<% if item.image.present? %>
-				<div class="image-container flippable">
+				<div class="image-container">
 					<%= image_tag item.image_url(:item), :class => "item-image" %>
 					<div class="image-credit"><%= item.image_credit %></div>
 				</div>			

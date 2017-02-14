@@ -1,6 +1,6 @@
 <div id="quiz-main-info">
 	<%= f.file_field :image, :id => "quiz-image-input" %>
-	<img id="quiz-image-preview" class="image-preview" src="<%= @quiz.image_url(:item_thumbnail) if @quiz %>" alt="preview failed to load" class="hidden" /> 
+	<div id="quiz-image-preview" class="image-preview" style="background-image: url(<%= @quiz.image_url(:item_thumbnail) if @quiz %>);" alt="preview failed to load" class="hidden"></div> 
 	<div class="image-input-overlay">
 		Click to Add Image
 	</div>

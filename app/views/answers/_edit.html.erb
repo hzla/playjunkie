@@ -14,8 +14,9 @@
 			<%= hidden_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[remember_code]", answer.remember_code, :class => "remember-code" %>
 			<%= image_tag "close-box.svg", :class => "close-answer closer" %>
 			<div class="image-input">Click to add image...</div>
+			<%= image_tag "close-box.svg", :class => "close-image closer" %>
 			<%= file_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[image]", :class => "answer-image-input required" %>
-			<img class="answer-image-preview image-preview" src="<%= answer.image_url(:item_thumbnail) %>" alt="preview failed to load" />
+			<div class="answer-image-preview image-preview" style="background-image: url(<%= answer.image_url(:item_thumbnail) %>);" alt="preview failed to load"></div>
 			<div class="char-countable">
 				<p class="char-count">90</p>
 				<%= text_area_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[answer_text]", answer.answer_text, :class => "answer-text-input required", placeholder: "Answer text...", maxlength: 90 %>

@@ -3,15 +3,15 @@ development:
   encoding: unicode
   database: qwizzy
   host: localhost
-  username: postgres
-  password: password
+  username: andylee
+  password: 
 test:
   adapter: postgresql
   encoding: unicode
   database: qwizzy_test
   host: localhost
   pool: 5
-  username: postgres
+  username: andylee
   password: password
 production:
   adapter: postgresql

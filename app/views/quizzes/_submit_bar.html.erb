@@ -1,20 +1,32 @@
 <div id="submit-bar">
 	<%= hidden_field_tag :action_type, nil, :class => "quiz-submit-action" %>
-	<div id="missing-field-error" class="error-message">
-		Fields missing. Questions, answers, and results must have either an image or text.
+	<div id="errors">
+		<div id="missing-field-error" class="error-message">
+			Fields missing. <% unless @quiz_type == "list" || @quiz_type == "flipcard" %> Questions, answers, and results must have either an image or text. <% end %>
+		</div>
+		<div id="correct-answer-error" class="error-message">
+			There may only be one correct answer per question.
+		</div>
+		<div id="list-item-error" class="error-message">
+			A title, image, or description for list items is required.
+		</div>
+		<div id="flipcard-error" class="error-message">
+			Both the Front card and Back card need to have text or an image.
+		</div>
 	</div>
-	<div id="correct-answer-error" class="error-message">
-		There may only be one correct answer per question.
-	</div>
+	
 	<div id="submit-bar-content">
 		<div id="preview-quiz" class="btn submit-btn">
 			Preview
 		</div>
 		<div id="submit-actions">
 			<div id="save-quiz" class="btn">Save</div>
-			<div id="publish-quiz" class="btn submit-btn">
-			Publish
-		</div>
+			<% unless @quiz && @quiz.published %>
+				<div id="publish-quiz" class="btn submit-btn">Publish</div>
+			<% end %>
 		</div>
 	</div>
+	<% if params["saved"] == "true" %>
+		<div id="flash-message">Save Successful</div>
+	<% end %>
 </div>

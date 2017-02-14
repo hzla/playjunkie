@@ -51,6 +51,10 @@ input, textarea {
 	display: block;
 }
 
+textarea { 
+	resize:vertical; 
+}
+
 li {
 	list-style: none;
 }
