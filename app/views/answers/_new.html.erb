@@ -27,7 +27,7 @@
 				<p>Correct</p>
 			</div>
 		<% else %>
-			<%= select_tag "quiz_item_1_item_answer_1[result_id]", "<option disabled='disabled' selected='selected'>Assign a Result</option><option value='0'>Result 1</option>".html_safe, required: true %>
+			<%= select_tag "quiz_item_1_item_answer_1[result_id]", "<option disabled='disabled' selected='selected' value='-1'>Assign a Result</option><option value='0' class='result-1'>Result 1</option>".html_safe, required: true %>
 		<% end %>
 	</div>
 	<div class="add-answer">

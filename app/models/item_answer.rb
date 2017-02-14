@@ -12,12 +12,12 @@ class ItemAnswer < ApplicationRecord
 	end
 
 	def html_options
-		options = "<option disabled='disabled'>Assign a Result</option>"
+		options = "<option disabled='disabled' value='-1'>Assign a Result</option>"
 		results = quiz_item.quiz.results.order(:id)
 
 		(0..results.count - 1).each do |n|
 			selected = (results[n].id == result_id)
-			options += "<option value='#{n}' #{selected ? 'selected=\"selected\"' : nil}>Result #{n + 1}</option>"
+			options += "<option value='#{n}' #{selected ? 'selected=\"selected\"' : nil} class='result-#{n + 1}'>Result #{n + 1}</option>"
 		end
 		options.html_safe
 	end

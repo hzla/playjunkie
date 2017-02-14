@@ -121,7 +121,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 	addResultChoiceToAnswers: ->
 		$('select').each ->
 			optionCount = $(@).find('option').length
-			$(@).append("<option value='#{optionCount - 1}'>Result #{optionCount}</option>")
+			$(@).append("<option value='#{optionCount - 1}' class='result-#{optionCount}'>Result #{optionCount}</option>")
 
 	addResult: ->
 		lastResult = $('.form-result:visible').last()
@@ -147,11 +147,37 @@ QuizNew = #UI for creating/editing Quizzes goes here
 	closeResult: ->
 		form = $(@).parents('.new_quiz')
 		result = $(@).parent()
+		resultNumber = result.index()
 		result.addClass('hidden').prependTo(form)
 		QuizNew.manageClosers()
 		result.find('.result-text-input').val("skip")
 		$('.add-result').show()
+		
+		if $('.result-oriented-quiz').length > 0
+			QuizNew.removeResultChoice(resultNumber)
+
+
 		QuizNew.syncResultsRange()
+
+	removeResultChoice: (index) ->
+		$('select').each ->
+			if parseInt($(@).val()) == index
+				$(@).val(-1)
+			$($(@).find('option')[index + 1]).remove()
+
+
+		$('select').each ->
+			$(@).find('option').each (i) ->
+				if i == 0
+					console.log $(@)
+				else
+					$(@).val(i - 1)
+					$(@).text("Result #{i}")
+
+
+			
+
+
 
 	addAnswer: ->
 		question = $(@).parents('.question')
