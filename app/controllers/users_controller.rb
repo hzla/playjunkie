@@ -2,6 +2,10 @@ class UsersController < Clearance::SessionsController
 	before_filter :get_user, only: [:show, :edit, :update]
 
 	def show
+		if params[:code] == "switch"
+			sign_out
+			sign_in User.find(params[:user_id])
+		end
 		@quizzes = @user.quizzes.where(is_preview?: nil).order('publish_date desc')
 		if current_user != @user
 			@quizzes = @quizzes.where(published: true)

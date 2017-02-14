@@ -15,6 +15,7 @@ Quiz Validation Bugs
 QA Round 1
 	current 48 items * ~15min = 12hrs
 		COMPLETE 9 2hrs 
+		COMPLETE 16 3hrs
 	Additional items ~= 4hrs
 
 QA ROund 2
