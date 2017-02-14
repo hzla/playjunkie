@@ -26,7 +26,7 @@ Header =
 		$('#creation-dropdown').hide()
 
 		check = setInterval ->
-			if $('#profile-dropdown:hover').length < 1 && $('#nav-profile-pic:hover').length < 1
+			if $('#profile-dropdown:hover').length < 1 && $('#nav-profile-pic:hover').length < 1 && $('.bridge:hover').length < 1
 				$('#profile-dropdown').hide()
 		, 1000
 
@@ -38,7 +38,7 @@ Header =
 		$('#profile-dropdown').hide()
 
 		check = setInterval ->
-			if $('#creation-dropdown:hover').length < 1 && $('#create-btn:hover').length < 1
+			if $('#creation-dropdown:hover').length < 1 && $('#create-btn:hover').length < 1 && $('.bridge:hover').length < 1
 				$('#creation-dropdown').hide()
 		, 500
 
@@ -50,7 +50,7 @@ Header =
 		$('.fun-dropdown').show()
 
 		check = setInterval ->
-			if $('.fun-dropdown:hover').length < 1 && $('.fun-dropdown-trigger:hover').length < 1
+			if $('.fun-dropdown:hover').length < 1 && $('.fun-dropdown-trigger:hover').length < 1 && $('.bridge:hover').length < 1
 				$('.fun-dropdown').hide()
 		, 1000
 

@@ -35,7 +35,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 			$('#flash-message').animate
 				opacity: 0
 			, 400
-		, 1500
+		, 2500
 
 	confirmCloseWindow: (e) ->
 		if $('#new_quiz').length > 0
@@ -161,7 +161,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 	removeResultChoice: (index) ->
 		$('select').each ->
-			if parseInt($(@).val()) == indexw
+			if parseInt($(@).val()) == index
 				$(@).val(-1)
 			$($(@).find('option')[index + 1]).remove()
 
@@ -219,7 +219,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 			$('.close-question').show()
 
 		$('.question:visible').each -> 
-			if $('.form-answer:visible, .text-answer-form:visible').length < 2
+			if $(@).find('.form-answer:visible, .text-answer-form:visible').length < 2
 				$(@).find('.close-answer').hide()
 			else
 				$(@).find('.close-answer').show()
@@ -267,14 +267,15 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		newQuestion.find('.image-format.selected, .text-format:not(.selected)').show()
 		newQuestion.find('.form-answer.image-style').show()
 		newQuestion.find('.form-answer.text-style').hide() # reset selected answer format
-		newQuestion.find('.close-image').hide()
+		
 
 		newQuestion.find('.side-chooser').removeClass('selected')
 		newQuestion.find('.flip-container').removeClass('flip')
 		newQuestion.find('.choose-front').addClass('selected') #reset card sides
 
-		#TODO figure out why i wrote these 3 lines
+
 		newAnswer = newQuestion.find('.form-answer').first().clone()
+		newAnswer.removeClass('hidden')
 		newQuestion.find('.form-answer').remove()
 		newQuestion.find('.form-answers').prepend newAnswer
 		

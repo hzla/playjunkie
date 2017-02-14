@@ -471,7 +471,7 @@
 			.image-preview {
 				display: none !important;
 			}
-			.close-iamge {
+			.close-image {
 				display: none !important;
 			}
 			.text-answer-form:first-child {
@@ -642,6 +642,7 @@
 			}
 			#submit-actions {
 				@include flexbox;
+				position: relative;
 				#save-quiz {
 					background: $dark-outline;
 					color: $dark-grey;
@@ -733,6 +734,17 @@
 	transform: rotateY(180deg);
 }
 
+
+
+#flash-message {
+	// display: none;
+	position: absolute;
+	color: $green;
+  bottom: 13px;
+  font-size: 14px;
+  right: calc(100% + 40px);
+  width: 85px;
+}
 
 
 

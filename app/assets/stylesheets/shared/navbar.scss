@@ -12,7 +12,7 @@ header {
 	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%;
+	width: 100vw;
 	z-index: 5;
 	img:hover {
 		cursor: pointer;
@@ -102,6 +102,16 @@ header {
 }
 
 @media (min-width: 1024px) {
+	#navbar-actions .bridge {
+		height: 20px;
+		width: 100vw;
+		position: fixed;
+		top: 50px;
+		left: 0px;
+		opacity: 0;
+		z-index: 3;
+		cursor: default;
+	}
 	header {
 		height: 60px;
 		padding: 0px calc(50vw - 470px); 

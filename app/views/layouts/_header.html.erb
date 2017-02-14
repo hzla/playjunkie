@@ -30,6 +30,7 @@
 	<%= image_tag 'navbar/mobile-menu.svg', id: 'menu-icon' %>
 
 	<div id='navbar-actions'>
+		<div class="bridge"></div>
 		<% if signed_out? %>
 			<%= link_to login_path do %>
 				<div class="signinup">Sign In</div>

@@ -24,9 +24,10 @@
 			<% unless @quiz && @quiz.published %>
 				<div id="publish-quiz" class="btn submit-btn">Publish</div>
 			<% end %>
+			<% if params["saved"] == "true" %>
+				<div id="flash-message">Save Successful</div>
+			<% end %>
 		</div>
 	</div>
-	<% if params["saved"] == "true" %>
-		<div id="flash-message">Save Successful</div>
-	<% end %>
+	
 </div>

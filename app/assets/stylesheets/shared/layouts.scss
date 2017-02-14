@@ -12,16 +12,9 @@ body, html {
 	width: 100%;
 	height: auto;
 	min-height: calc(100vh - 44px);
+	width: 100vw;
 }
 
-#flash-message {
-	// display: none;
-	position: absolute;
-	color: $green;
-  bottom: 20px;
-  right: calc(50vw + 80px);
-  font-size: 14px;
-}
 
 
 

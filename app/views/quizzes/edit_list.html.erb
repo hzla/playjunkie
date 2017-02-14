@@ -31,7 +31,7 @@
 				</div>
 				<div class="box-field ">
 					<label class="box-label">Description</label>
-					<%= text_area "quiz_item_#{i + 1}[item_text]", item.item_text, :class => "box-input item-description" %>
+					<%= text_area_tag "quiz_item_#{i + 1}[item_text]", item.item_text, :class => "box-input item-description" %>
 				</div>
 			</div>
 		<% end %>
