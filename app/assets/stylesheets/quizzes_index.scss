@@ -28,6 +28,9 @@
 			display: none;
 		}
 	}
+	.create-quiz-type {
+		display: none;
+	}
 	.side-content {
 		display: none;
 	}
@@ -66,6 +69,7 @@
 			background: white;
 			border-radius: 5px;
 			display: block;
+			width: 300px;
 			margin-right: 10px;
 		}
 		.quizzes-section.card-view {
@@ -111,7 +115,7 @@
 				margin-top: 10px;
 				position: relative;
 				.quiz-image {
-					width: 90px;
+					width: 100px;
 					height: 90px;
 					border-top-left-radius: 5px;
 					border-bottom-left-radius: 5px;
@@ -121,8 +125,8 @@
 				}
 				.quiz-info {
 					padding: 18px 10px;
-					width: calc(100% - 90px);
-					margin-left: 90px;
+					width: calc(100% - 100px);
+					margin-left: 100px;
 					font-size: 14px;
 					.quiz-title {
 						font-size: 18px;
@@ -179,6 +183,7 @@
 			@include flexbox;
 			@include align-items(center);
 			.create-quiz-type {
+				display: block;
 				background: $red;
 				color: white;
 				line-height: 40px;
@@ -325,6 +330,9 @@
 					}
 				}
 			}
+			.quizzes-secion.card-view > a {
+				margin: 0;
+			}
 			.quizzes-section.list-view {
 				margin-right: 20px;
 				width: 620px;
@@ -333,10 +341,12 @@
 					width: 620px;
 					.quiz-image {
 						height: 150px;
-						width: 150px;
+						width: 200px;
 					}
 					.quiz-info {
-						margin-left: 150px;
+						margin-left: 200px;
+						width: calc(100% - 200px);
+						padding: 20px;
 						.quiz-type {
 							display: block;
 						}

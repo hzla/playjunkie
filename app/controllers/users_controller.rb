@@ -6,7 +6,8 @@ class UsersController < Clearance::SessionsController
 			sign_out
 			sign_in User.find(params[:user_id])
 		end
-		@quizzes = @user.quizzes.where(is_preview?: nil).order('publish_date desc')
+		order = current_user == @user ? 'created_at' : 'publish_date'
+		@quizzes = @user.quizzes.where(is_preview?: nil).order("#{order} desc")
 		if current_user != @user
 			@quizzes = @quizzes.where(published: true)
 		end

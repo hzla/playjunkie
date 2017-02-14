@@ -8,7 +8,7 @@
 			<div>Trending</div>
 		<% end %>
 		<div class="fun-dropdown-trigger">Fun <%= image_tag "navbar/arrow-fun.svg", :class => "dropdown-arrow" %></div>
-		<div class="fun-dropdown">
+		<div class="fun-dropdown dropdown">
 			<%= link_to '/browse/quiz' do %>
 				Quiz
 			<% end %>
@@ -38,7 +38,7 @@
 			<%= link_to user_path(current_user), id: "nav-profile-pic" do %>
 				<%= image_tag current_user.profile_pic %>
 			<% end %>
-			<div id="profile-dropdown">
+			<div id="profile-dropdown" class="dropdown">
 				<%= link_to user_path(current_user) do %>
 					<li>Profile</li>
 				<% end %>
@@ -53,7 +53,7 @@
 		<% end %>
 
 			<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
-			<div id="creation-dropdown">
+			<div id="creation-dropdown" class="dropdown">
 				<%= link_to new_quiz_quiz_path do %>
 					<div class="creation">
 						<p>

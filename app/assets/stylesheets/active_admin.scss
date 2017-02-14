@@ -19,4 +19,11 @@
 
 body form input[type=submit], form input[type=button], form button {
 	font-family: 'Verlag'
+
+}
+
+body {
+	form input[type=text], form input[type=password], form input[type=email], form input[type=number], form input[type=url], form input[type=tel], form input[type=date], form input[type=time], form textarea {
+		font-family: 'Verlag'
+	}
 }

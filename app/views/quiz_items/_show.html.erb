@@ -32,7 +32,10 @@
 <% else %>
 	<div class="item <%= item.image.present? ? 'image-style' : 'text-style' %>">
 		<div class="question-header">
-			<div class="item-number"><%= i + 1 %></div>
+			<div class="item-title">
+				<div class="item-number"><%= i + 1 %></div>
+				<div class="title-text"><%= item.title %></div>
+			</div>
 			<% if item.image.present? %>
 				<div class="image-container">
 					<%= image_tag item.image_url(:item), :class => "item-image" %>

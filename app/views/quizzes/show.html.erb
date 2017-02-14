@@ -5,10 +5,15 @@
 		<h1 class="quiz-title"><%= @quiz.title %></h1>
 		<p class="quiz-description"><%= @quiz.description %></p>
 		<div class="quiz-info">
-			<div class="quiz-user">
-				<%= image_tag @quiz.user.profile_pic, :class => "quiz-user-profile_pic" %>
-				<p class="quiz-user-name"><%= @quiz.user.name %></p>
-			</div>
+			
+				<div class="quiz-user">
+					<%= link_to user_path(@quiz.user) do %>
+						<%= image_tag @quiz.user.profile_pic, :class => "quiz-user-profile_pic" %>
+					<% end %>
+					<%= link_to user_path(@quiz.user) do %>
+						<p class="quiz-user-name"><%= @quiz.user.name %></p>
+					<% end %>
+				</div>
 			<div class="quiz-subinfo">
 				<p class="quiz-date"><%= @quiz.created_at %></p>
 				<p class="quiz-type"><%= @quiz.quiz_type.upcase %></p>

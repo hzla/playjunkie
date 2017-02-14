@@ -13,21 +13,25 @@
 		<% end %>
 	</div>
 	<div id="user-quizzes">
-		<h1>My Stuff</h1>
+		<h1><%= current_user == @user ? "My" : "#{@user.name}'s" %> Stuff</h1>
 		<% if current_user == @user %>
 			<p class="mobile-message">View this page in desktop mode to edit your quizzes!</p>
 		<% end %>
 		<div class="sort-bar">
 			<p class="label">Sort by:</p>
-			<p sort-name="pd" class="selected">Publish Date</p>
+			<p sort-name="pd" class="<%= 'selected' unless current_user == @user %>">Publish Date</p>
 			<p sort-name="n">Name</p>
-			<p sort-name="cd">Creation Date</p>
+			<% if current_user == @user %>
+				<p sort-name="cd" class="selected">Creation Date</p>
+			<% end %>
 		</div>
 		<div class="quiz-list-container sortable">
 			<% @quizzes.each do |quiz| %>
 				<div class="quiz sort-item <%= 'no-actions' if current_user != @user %>" publish_date="<%= quiz.publish_date.to_i %>" creation_date="<%= quiz.created_at.to_i %>">
 					<div class="quiz-info">
-						<div class="quiz-title"><%= quiz.title %></div>
+						<%= link_to quiz_path(quiz) do %>
+							<div class="quiz-title"><%= quiz.title %></div>
+						<% end %>
 						<div class="quiz-user">
 							<%= image_tag quiz.user.profile_pic %>
 							<p><%= quiz.user.name %></p>
@@ -36,7 +40,14 @@
 							<% if current_user == @user %>
 								<p class="creation-date">Created on <%= quiz.created_at %></p>
 							<% end %>
-							<p class="publish-date">Published on <%= quiz.publish_date %></p>
+							
+							<p class="publish-date">
+								<% if quiz.publish_date %>
+									Published on <%= quiz.publish_date %>
+								<% else %>
+									Not published yet
+								<% end %>
+							</p>
 							<p class="quiz-type"><%= quiz.quiz_type.upcase %></p>
 						</div>
 						<% if current_user == @user %>

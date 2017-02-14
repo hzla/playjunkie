@@ -30,6 +30,14 @@ header {
 		.fun-dropdown {
 			display: none;
 		}
+		.search-input {
+			width: calc(100vw - 80px);
+			border-radius: 5px;
+			background: $background-white;
+			border: 1px solid $light-outline;
+			font-size: 16px;
+			height: 34px;
+		}
 
 	}
 	#navbar-actions {
@@ -100,6 +108,10 @@ header {
 		#search-icon, #menu-icon {
 			display: none;
 		}	
+		.dropdown {
+			box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
+			border: 1px solid $light-outline;
+		}
 		img.dropdown-arrow {
 			height: 8px;
 			width: 8px;
@@ -111,6 +123,9 @@ header {
 				line-height: 60px;
 				margin-left: 40px;
 				display: block;
+			}
+			.search-input {
+				width: 200px;
 			}
 			.fun-dropdown-trigger {
 				cursor: pointer;
@@ -145,7 +160,7 @@ header {
 			input {
 				width: 200px;
 				height: 40px;
-				padding: 0px 20px;
+				padding: 0px 12px;
 				line-height: 40px;
 				border-radius: 5px;
 				background: $background-white;
@@ -168,7 +183,7 @@ header {
 			}
 			#creation-dropdown {
 				position: absolute;
-				padding: 10px 20px;
+				padding: 10px 0px;
 				width: 180px;
 				border-radius: 5px;
 				background: white;
@@ -183,6 +198,7 @@ header {
 					@include flexbox;
 					@include justify-content(space-between);
 					@include align-items(center);
+					padding: 0px 20px;
 					.plus-btn {
 						height: 30px;
 						width: 30px;

@@ -8,6 +8,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :file
   storage :fog
 
+  # 10:9, 4:3, 2:1, 3:1, 3:2
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -16,8 +18,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
   version :square do 
-    process :resize_to_fill => [300, 300]
+    process :resize_to_fill => [200, 180]
   end
+
+  #version :4/3
 
   version :card do 
     process :resize_to_fill => [600, 300]

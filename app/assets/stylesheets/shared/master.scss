@@ -47,7 +47,7 @@ select {
    appearance: none;
 }
 
-input, textarea {
+input[type='submit'], textarea {
 	-webkit-appearance: none;
 	display: block;
 }

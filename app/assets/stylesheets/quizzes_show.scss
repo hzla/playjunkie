@@ -79,6 +79,7 @@
 		.item.text-style {
 			.question-header {
 				@include flexbox;
+				@include align-items(center);
 				.item-text {
 					width: calc(100% - 40px);
 				}
@@ -100,7 +101,7 @@
 				height: 30px;
 				border: 2px solid white;
 				border-radius: 30px;
-				top: 40px;
+				top: 10px;
 				left: 10px;
 				position: absolute;
 				background: $red;
@@ -110,12 +111,23 @@
 				z-index: 1;
 				font-weight: 800;
 			}
+			.title-text {
+				display: none;
+			}
 			width: 100%;
 			.image-container.flippable {
 				background: $dark-grey;
 			}
 			.answer .image-container {
 				height: calc((((100vw - 30px) / 2) - 20px) * 2 / 3);
+			}
+			.answer.image-style {
+				.image-container {
+					margin-top: 0px;
+				}
+				.answer-text {
+					text-align: center;
+				}
 			}
 			.image-container {
 				position: relative;
@@ -246,6 +258,30 @@
 	}
 }
 
+.list.content-container.quiz-take {
+	.items .item {
+		.item-title {
+			margin-top: 30px; 
+			@include flexbox;
+		}
+		.item-number {
+			position: static;
+			margin-right: 10px;
+		}
+		.title-text {
+			display: block;
+			width: calc(100% - 40px);
+			font-weight: 600;
+		}
+		.item-text {
+			display: none;
+		}
+		.image-container {
+			margin-top: 10px;
+		}
+	}
+}
+
 @media (min-width: 960px) {
 
 	#banner-ad {
@@ -304,9 +340,14 @@
 						margin-top: 50px;
 					}
 				}
+				.item.image-style {
+					.item-number {
+						margin-top: 0px;
+					}
+				}
 				.item {
 					.question-header {
-						@include align-items(flex-start);
+						@include align-items(center);
 						.item-text {
 							width: calc(100% - 40px);
 						}
@@ -343,6 +384,8 @@
 						z-index: 1;
 						margin-top: 15px;
 						margin-bottom: 10px;
+						top: 20px;
+						left: 20px;
 					}
 					img {
 						height: calc(620px * 2 / 3);
@@ -393,6 +436,24 @@
 					line-height: 30px;
 					font-weight: 400;
 				}
+			}
+		}
+	}
+
+	.list.content-container.quiz-take {
+		.items .item {
+			.item-title {
+				margin-top: 60px; 
+			}
+			.item-number {
+				margin-right: 20px;
+			}
+			.title-text {
+				width: calc(100% - 50px);
+				font-size: 24px;
+			}
+			.image-container {
+				margin-top: 20px;
 			}
 		}
 	}

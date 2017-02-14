@@ -10,7 +10,13 @@ Header =
 		$('body').on 'mouseenter', '.fun-dropdown-trigger', @showFunDropdown
 		$('body').on 'mouseleave', '.fun-dropdown', @closeFunDropdown
 
+		$('body').on 'click', '#search-icon', @openSearch
+
 		$('body').on 'click', '#get-started', @showCreationDropdown
+
+	openSearch: ->
+		$('.search-input').toggle()
+		$('#logo').toggle()
 
 	toggleMenuOnClick: ->
 		$('#nav-dropdown').toggle()
@@ -19,6 +25,11 @@ Header =
 		$('#profile-dropdown').show()
 		$('#creation-dropdown').hide()
 
+		check = setInterval ->
+			if $('#profile-dropdown:hover').length < 1 && $('#nav-profile-pic:hover').length < 1
+				$('#profile-dropdown').hide()
+		, 1000
+
 	closeProfileDropdown: ->
 		$('#profile-dropdown').hide()
 
@@ -26,11 +37,22 @@ Header =
 		$('#creation-dropdown').css('display', 'flex')
 		$('#profile-dropdown').hide()
 
+		check = setInterval ->
+			if $('#creation-dropdown:hover').length < 1 && $('#create-btn:hover').length < 1
+				$('#creation-dropdown').hide()
+		, 500
+
+
 	closeCreationDropdown: ->
 		$('#creation-dropdown').hide()
 
 	showFunDropdown: ->
 		$('.fun-dropdown').show()
+
+		check = setInterval ->
+			if $('.fun-dropdown:hover').length < 1 && $('.fun-dropdown-trigger:hover').length < 1
+				$('.fun-dropdown').hide()
+		, 1000
 
 	closeFunDropdown: ->
 		$('.fun-dropdown').hide()
