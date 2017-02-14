@@ -40,9 +40,10 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			## for all items ######################################################
 
 			if text.val() == "" && image.attr('src') == "#"
-				text.css('border', '1px solid red') if text.val() == "" 
-				question.find('div.question-image-input').css('border', '1px solid red') if image.attr('src') == "#"
-				missingFieldError = true
+				if $(".list-quiz").length < 1
+					text.css('border', '1px solid red') if text.val() == "" 
+					question.find('div.question-image-input').css('border', '1px solid red') if image.attr('src') == "#"
+					missingFieldError = true 
 			else
 				text.attr('style', '')
 				question.find('div.question-image-input').attr('style', '')
