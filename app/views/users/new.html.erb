@@ -35,9 +35,9 @@
 			</div>
 			<%= submit_tag "Sign Up", id: "signin", :class => "btn" %>
 		<% end %>
-		<div id="signup-terms">By signing up, you agree to our terms and conditions and privacy policy</div>
+		<div id="signup-terms">By signing up, you agree to our <%= link_to "terms and conditions", terms_path %> and <%= link_to "privacy policy", privacy_path %></div>
 		<div class="divider"></div>
-		<div class="signup-text">
+		<div class="signup-text bottom">
 			<p>Already have an account?<p>
 			<%= link_to login_path, :class => "signup-link" do %>
 					Sign In

@@ -37,7 +37,7 @@
 			<% end %>
 		<% else %>
 			<%= link_to user_path(current_user), id: "nav-profile-pic" do %>
-				<%= image_tag current_user.profile_pic %>
+				<%= image_tag profile_pic(current_user) %>
 			<% end %>
 			<div id="profile-dropdown" class="dropdown">
 				<%= link_to user_path(current_user) do %>

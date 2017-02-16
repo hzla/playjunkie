@@ -72,6 +72,9 @@
 			width: 300px;
 			margin-right: 10px;
 		}
+		.quizzes-section.card-view::-webkit-scrollbar {
+			display: none;
+		}
 		.quizzes-section.card-view {
 			@include flexbox;
 			overflow-x: scroll;

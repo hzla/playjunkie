@@ -52,6 +52,10 @@ class Quiz < ApplicationRecord
 		end
 	end
 
+	def formmat_date date
+		date.strftime("%B %-4, %Y at %I:%M%P")
+	end
+
 	###### Class Methods for grabbing Collections
 
 	def self.featured

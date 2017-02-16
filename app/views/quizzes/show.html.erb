@@ -8,14 +8,14 @@
 			
 				<div class="quiz-user">
 					<%= link_to user_path(@quiz.user) do %>
-						<%= image_tag @quiz.user.profile_pic, :class => "quiz-user-profile_pic" %>
+						<%= image_tag profile_pic(@quiz.user), :class => "quiz-user-profile_pic" %>
 					<% end %>
 					<%= link_to user_path(@quiz.user) do %>
 						<p class="quiz-user-name"><%= @quiz.user.name %></p>
 					<% end %>
 				</div>
 			<div class="quiz-subinfo">
-				<p class="quiz-date"><%= @quiz.created_at %></p>
+				<p class="quiz-date"><%= format_date(@quiz.created_at) %></p>
 				<p class="quiz-type"><%= @quiz.quiz_type.upcase %></p>
 			</div>
 			<div class="social-medias">

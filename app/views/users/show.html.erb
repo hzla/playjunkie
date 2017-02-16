@@ -1,6 +1,6 @@
 <div class="content-container user-profile-container">
 	<div id="user-info">
-		<%= image_tag @user.profile_pic + "?type=large", id: "profile-pic" %>
+		<%= image_tag profile_pic(@user) + "?type=large", id: "profile-pic" %>
 
 		<h2 id="user-name"><%= @user.name %></h2>
 
@@ -33,17 +33,17 @@
 							<div class="quiz-title"><%= quiz.title %></div>
 						<% end %>
 						<div class="quiz-user">
-							<%= image_tag quiz.user.profile_pic %>
+							<%= image_tag profile_pic(quiz.user) %>
 							<p><%= quiz.user.name %></p>
 						</div>
 						<div class="quiz-sub-info">
 							<% if current_user == @user %>
-								<p class="creation-date">Created on <%= quiz.created_at %></p>
+								<p class="creation-date">Created on <%= format_date(quiz.created_at) %></p>
 							<% end %>
 							
 							<p class="publish-date">
 								<% if quiz.publish_date %>
-									Published on <%= quiz.publish_date %>
+									Published on <%= format_date(quiz.publish_date) %>
 								<% else %>
 									Not published yet
 								<% end %>

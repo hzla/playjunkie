@@ -82,13 +82,18 @@
 	#signup-terms {
 		font-size: 10px;
 		margin-top: 20px;
+		a {
+			color: $orange;
+			cursor: pointer;
+		}
 	}
 	.signup-text {
 		@include flexbox;
 		@include justify-content(space-between);
 		margin-top: 20px;
-		width: 200px;
+		width: auto;
 		margin: 20px auto 0px auto;
+		display: block;
 		p {
 			font-size: 14px;
 		}
@@ -97,6 +102,9 @@
 			color: $orange;
 			cursor: pointer;
 		}
+	}
+	.signup-text.bottom {
+		display: -webkit-inline-box;
 	}
 	.error-message {
 		color: $red;
@@ -147,7 +155,9 @@
 		}
 	}
 	.signup-text {
-		width: 210px;
+		width: auto;
+		text-align: center;
+		display: block;
 	}
 }
 

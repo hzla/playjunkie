@@ -16,7 +16,7 @@
 			 					<div class="quiz-title"><%= quiz.title %></div>
 			 					<div class="quiz-sub-info">
 			 						<div class="quiz-user">
-			 							<%= image_tag quiz.user.profile_pic %>
+			 							<%= image_tag profile_pic(quiz.user) %>
 			 							<p><%= quiz.user.name %></p>
 			 						</div>
 			 						<div class="quiz-type"><%= quiz.quiz_type.upcase %></div>

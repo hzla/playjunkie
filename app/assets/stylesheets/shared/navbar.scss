@@ -213,7 +213,7 @@ header {
 						height: 30px;
 						width: 30px;
 						border-radius: 8px;
-						border: 1px solid $dark-grey;
+						border: 1px solid $dark-outline;
 						cursor: pointer;
 						img, svg {
 							height: 12px;
@@ -279,6 +279,7 @@ header {
 				width: 100px;
 				padding: 0px 18px;
 				margin-left: 20px;
+				font-weight: 800;
 			}
 			#create-btn:hover {
 				background: $hover-red;

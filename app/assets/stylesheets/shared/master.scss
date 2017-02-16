@@ -33,6 +33,12 @@ time, mark, audio, video, input, textarea, select {
 	color: $dark-grey;
 	-webkit-overflow-scrolling: touch;
 }
+body {
+	form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, form input[type=number]:focus, form input[type=url]:focus, form input[type=tel]:focus, form input[type=date]:focus, form input[type=time]:focus, form textarea:focus {
+		box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+	}
+
+}
 
 .content-container, header, footer, #mobile-container {
 	a:link, a:visited {
