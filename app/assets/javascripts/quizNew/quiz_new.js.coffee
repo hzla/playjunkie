@@ -319,6 +319,9 @@ QuizNew = #UI for creating/editing Quizzes goes here
 			
 			reader.readAsDataURL input.files[0]
 			$(@).parent().find('.close-image').show()
+			$(@).parents('.card-side').find('.card-color-input').val("")
+			$(@).parents('.card-side').find('.question-image-input').attr('style', "").css('background', 'none')
+
 
 	closeImage: ->
 		box = $(@).parent()

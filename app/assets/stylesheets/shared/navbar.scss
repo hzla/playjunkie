@@ -32,7 +32,7 @@ header {
 		}
 		.search-input {
 			width: calc(100vw - 80px);
-			border-radius: 5px;
+			border-radius: 8px;
 			background: $background-white;
 			border: 1px solid $light-outline;
 			font-size: 16px;
@@ -145,7 +145,7 @@ header {
 				padding: 20px;
 				width: 180px;
 				background: white;
-				border-radius: 5px;
+				border-radius: 8px;
 				top: 70px;
 				right: 120px;
 				margin: 0;
@@ -172,7 +172,7 @@ header {
 				height: 40px;
 				padding: 0px 12px;
 				line-height: 40px;
-				border-radius: 5px;
+				border-radius: 8px;
 				background: $background-white;
 				border: 1px solid $light-outline;
 				font-size: 16px;
@@ -195,7 +195,7 @@ header {
 				position: absolute;
 				padding: 10px 0px;
 				width: 180px;
-				border-radius: 5px;
+				border-radius: 8px;
 				background: white;
 				right: 0;
 				top: 70px;
@@ -212,7 +212,7 @@ header {
 					.plus-btn {
 						height: 30px;
 						width: 30px;
-						border-radius: 5px;
+						border-radius: 8px;
 						border: 1px solid $dark-grey;
 						cursor: pointer;
 						img, svg {
@@ -242,7 +242,7 @@ header {
 				background: white;
 				height: 150px;
 				width: 180px;
-				border-radius: 5px;
+				border-radius: 8px;
 				padding: 20px;
 				z-index: 2;
 				position: absolute;
@@ -275,7 +275,7 @@ header {
 				background: $red;
 				color: white;
 				line-height: 40px;
-				border-radius: 5px;
+				border-radius: 8px;
 				width: 100px;
 				padding: 0px 18px;
 				margin-left: 20px;

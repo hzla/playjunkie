@@ -19,9 +19,14 @@ QuizSort =
 			QuizSort.sortByPublishDate
 		else if sortName == "cd"
 			QuizSort.sortByCreationDate
-		else 
+		else if sortName == "vc"
+			QuizSort.sortByPopularity
+		else
 			QuizSort.sortByName
 
+
+	sortByPopularity: (a, b) ->
+		$(b).attr('view_count').localeCompare($(a).attr('view_count'))
 
 	sortByPublishDate: (a, b) ->
 		$(b).attr('publish_date').localeCompare($(a).attr('publish_date'))
@@ -30,7 +35,6 @@ QuizSort =
 		$(b).attr('creation_date').localeCompare($(a).attr('creation_date'))
 
 	sortByName: (a, b) ->
-		console.log $(a).find('.quiz-title').text()
 		$(a).find('.quiz-title').text().localeCompare($(b).find('.quiz-title').text())
 
 

@@ -4,7 +4,7 @@
 .user-forms-container {
 	padding: 10px calc(50vw - 150px);
 	.signin-content, .signup-content {
-		border-radius: 5px;
+		border-radius: 8px;
 		height: auto;
 		width: 300px;
 		background: white;
@@ -60,7 +60,7 @@
 			font-size: 14px;
 			margin-top: 20px;
 			cursor: pointer;
-			border-radius: 5px;
+			border-radius: 8px;
 			border: none;
 			box-shadow: none;
 			text-shadow: none;
@@ -101,6 +101,12 @@
 	.error-message {
 		color: $red;
 		margin-top: 10px;
+	}
+	.divider {
+		height: 1px;
+    width: 100%;
+    background: $dark-outline;
+    margin-top: 20px;
 	}
 }
 

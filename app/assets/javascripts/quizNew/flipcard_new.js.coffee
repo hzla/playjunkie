@@ -24,11 +24,16 @@ FlipcardNew = #Flipcard specefic UI goes here
 		card = $(@).parents('.question-image-input')
 		card.find('.card-text-input').val($(@).text())
 
+		height = $(@).height()
+		offset = (260 - height) / 2
+		$(@).css('top', offset)
+
 	chooseColor: ->
 		card = $(@).parents('.question-image-input')
 		color = $(@).css('background-color')
 		card.css('background-color', color)
 		card.find('input.question-image-input').val("")
+		card.find('.close-image').hide()
 		card.find('.image-preview').attr('src', '#').hide()
 		card.find('.card-color-input').val(color)
 

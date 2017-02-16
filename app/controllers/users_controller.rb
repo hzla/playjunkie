@@ -33,11 +33,11 @@ class UsersController < Clearance::SessionsController
 		if auth
 			user = User.find(auth.user_id)
 			sign_in User.find(auth.user_id)
-			redirect_to user_path(user) and return
+			redirect_to root_path and return
 		else
 			user = User.create_from_facebook auth_hash
 			sign_in user
-			redirect_to user_path(user)
+			redirect_to root_path
 		end
 	end
 

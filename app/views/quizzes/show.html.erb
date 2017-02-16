@@ -91,10 +91,12 @@
 		<div class="recommendations">
 			<h3>Recommended</h3>
 			<% Quiz.all.limit(6).each do |rec| %>
-				<div class="side-quiz">
-					<%= image_tag rec.image_url(:sidebar) %>
-					<p><%= rec.title %></p>
-				</div>
+				<%= link_to quiz_path(rec) do %>
+					<div class="side-quiz">
+						<%= image_tag rec.image_url(:sidebar) %>
+						<p><%= rec.title %></p>
+					</div>
+				<% end %>
 				
 			<% end %>
 		</div>

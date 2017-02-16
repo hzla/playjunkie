@@ -32,7 +32,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def edit
-		redirect_to root_path if current_user != @quiz.user
+		(redirect_to root_path and return) if current_user != @quiz.user
 		@footer = false
 		@quiz = Quiz.find params[:id]
 		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"
@@ -47,8 +47,12 @@ class QuizzesController < ApplicationController
 		if params[:action_type] == "preview-quiz"
 			redirect_to quiz_path(@quiz) and return
 		elsif params[:action_type] == "publish-quiz"
-			@quiz.update_attributes published: true, publish_date: Time.now
-			render "create" and return
+			if @quiz.published?
+				redirect_to edit_quiz_path(@quiz, saved: true) and return
+			else
+				@quiz.update_attributes published: true, publish_date: Time.now
+				render "create" and return
+			end
 		else
 			redirect_to edit_quiz_path(@quiz, saved: true)
 		end

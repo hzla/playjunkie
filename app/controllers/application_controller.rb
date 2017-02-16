@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def require_signin
   	if !signed_in?
-  		redirect_to login_path and return
+  		redirect_to new_user_path and return
   	end
   end
 end

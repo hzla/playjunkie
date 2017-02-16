@@ -61,13 +61,13 @@
 				font-size: 12px;
 				color: $grey;
 				margin-top: 20px;
-				font-weight: 600;
+				font-weight: 800;
 			}
 		}
 		.quizzes-section.card-view > a {
 			border: 1px solid $light-outline;
 			background: white;
-			border-radius: 5px;
+			border-radius: 8px;
 			display: block;
 			width: 300px;
 			margin-right: 10px;
@@ -80,7 +80,7 @@
 			.quiz-card {
 				height: 100%;
 				width: 240px;
-				border-radius: 5px;
+				border-radius: 8px;
 				background: white;
 				border: 1px solid white;
 				position: relative;
@@ -97,6 +97,9 @@
 					padding: 20px;
 					margin-top: 120px;
 					height: calc(100% - 120px);
+					@include flexbox;
+					@include flex-direction(column);
+					@include justify-content(space-between);
 					.quiz-title {
 						font-size: 18px;
 						font-weight: 600;
@@ -105,10 +108,13 @@
 			}
 		}
 		.quizzes-section.list-view, {
+			#no-results {
+				color: $grey;
+			}
 			.quiz-list-item {
 				border: 1px solid $light-outline;
 				@include flexbox;
-				border-radius: 5px;
+				border-radius: 8px;
 				background: white;
 				width: 100%;
 				height: 90px;
@@ -306,7 +312,6 @@
 				}
 				.quiz-type {
 					font-size: 12px;
-					font-weight: 600;
 					color: $grey;
 					margin: 0px;
 				}
@@ -330,8 +335,9 @@
 					}
 				}
 			}
-			.quizzes-secion.card-view > a {
+			.quizzes-section.card-view > a {
 				margin: 0;
+				margin-right: 0px;
 			}
 			.quizzes-section.list-view {
 				margin-right: 20px;
@@ -362,7 +368,7 @@
 			height: 115px;
 			margin-top: 60px;
 			border: 1px solid $blue;
-			border-radius: 5px;
+			border-radius: 8px;
 		}
 	}
 	#page-controls {

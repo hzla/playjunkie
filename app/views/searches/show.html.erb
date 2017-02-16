@@ -2,7 +2,12 @@
 	<h1 class="page-title">SEARCH RESULTS FOR "<%= @terms %>"</h1>
 	<div class="quizzes-content">
 	 	<div id="main-content">
+		 	
+
 		 	<div class="quizzes-section list-view">
+		 		<% if @results == [] %>
+			 		<p id="no-results">No Results were found for "<%= @terms %>"</p>
+			 	<% end %>
 		 		<% @results.each do |quiz| %>
 		 			<%= link_to quiz_path(quiz) do %>
 			 			<div class="quiz-list-item">

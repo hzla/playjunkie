@@ -20,9 +20,11 @@
 			Preview
 		</div>
 		<div id="submit-actions">
-			<div id="save-quiz" class="btn">Save</div>
-			<% unless @quiz && @quiz.published %>
-				<div id="publish-quiz" class="btn submit-btn">Publish</div>
+			<% if @quiz && @quiz.published? %>
+				<div id="publish-quiz" class="btn grey">Save</div>
+			<% else %>
+				<div id="save-quiz" class="btn">Save</div>
+				<div id="publish-quiz" class="btn">Publish</div>
 			<% end %>
 			<% if params["saved"] == "true" %>
 				<div id="flash-message">Save Successful</div>

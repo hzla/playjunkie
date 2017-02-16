@@ -23,7 +23,7 @@
 
 		<% if answer_type == "trivia" %>
 			<div class="checkbox-container">
-				<%= check_box_tag "quiz_item_1_item_answer_1[correct?]", nil, :class => "checkbox-input" %>
+				<%= check_box_tag "quiz_item_1_item_answer_1[correct?]", nil, true, :class => "checkbox-input" %>
 				<p>Correct</p>
 			</div>
 		<% else %>

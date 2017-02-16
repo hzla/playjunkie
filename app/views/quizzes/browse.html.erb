@@ -38,13 +38,14 @@
 		 	<div class="quizzes-section list-view">
 			 	<div class="sort-bar">
 					<p class="label">Sort by:</p>
-					<p sort-name="pd" class="selected">Publish Date</p>
-					<p sort-name="n">Name</p>
+					<p sort-name="vc">Popular</p>
+					<p sort-name="n">Trending</p>
+					<p sort-name="pd" class="selected">New</p>
 				</div>
 
 				<div class="sortable">
 			 		<% @quizzes.each do |quiz| %>
-			 			<%= link_to quiz_path(quiz), :class => "sort-item", publish_date: (quiz.publish_date.to_i), creation_date: (quiz.created_at.to_i)  do %>
+			 			<%= link_to quiz_path(quiz), :class => "sort-item", publish_date: (quiz.publish_date.to_i), creation_date: (quiz.created_at.to_i), view_count: (quiz.view_count) do %>
 				 			<div class="quiz-list-item">
 				 				<%= image_tag quiz.image_url(:square), :class => "quiz-image" %>
 				 				<div class="quiz-info">

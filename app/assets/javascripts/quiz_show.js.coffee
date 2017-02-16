@@ -31,8 +31,12 @@ QuizShow =
 			
 
 	checkForResultDisplay: ->
-		if $('.item:not(.answered)').length < 1
+		if $('.item:not(.answered)').length < 1 && $('.result:visible').length < 1
 			$(".result[result-id='#{QuizShow.currentHighestResult()}']").show()
+			$('html, body').animate
+				scrollTop: $(".result[result-id='#{QuizShow.currentHighestResult()}']").offset().top - 80
+			, 400
+
 
 
 	currentHighestResult: ->
