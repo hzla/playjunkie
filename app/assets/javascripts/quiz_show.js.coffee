@@ -58,11 +58,16 @@ QuizShow =
 		if $('.answer:not(.unselectable)').length < 1
 			QuizShow.showResult()
 
+
 	showResult: ->
 		score = QuizShow.score
 		$('.result').each ->
 			if score >= parseInt($(@).attr('range-min')) and score <= parseInt($(@).attr('range-max'))
-				$(@).show() 
+				$(@).show()
+				result = $(@) 
+				$('html, body').animate
+					scrollTop: result.offset().top - 80
+				, 400
 		$('.score-number').text(score)
 
 

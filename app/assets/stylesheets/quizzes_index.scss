@@ -124,7 +124,7 @@
 				margin-top: 10px;
 				position: relative;
 				.quiz-image {
-					width: 100px;
+					width: 120px;
 					height: 90px;
 					border-top-left-radius: 5px;
 					border-bottom-left-radius: 5px;
@@ -134,8 +134,8 @@
 				}
 				.quiz-info {
 					padding: 18px 10px;
-					width: calc(100% - 100px);
-					margin-left: 100px;
+					width: calc(100% - 120px);
+					margin-left: 120px;
 					font-size: 14px;
 					.quiz-title {
 						font-size: 18px;
@@ -288,6 +288,11 @@
 		}
 		.quizzes-content {
 			width: 940px;
+			.section-label {
+				span {
+					font-size: 24px;
+				}
+			}
 			.quiz-info {
 				@include flexbox;
 				@include justify-content(space-between);

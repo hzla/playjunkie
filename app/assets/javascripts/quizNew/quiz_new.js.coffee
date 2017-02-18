@@ -192,7 +192,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 		lastAnswer.after(lastAnswer.clone())
 		question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
-		question.find('.form-answer').last().find('input, textarea').val("").prop('checked', 'true')
+		question.find('.form-answer').last().find('input, textarea').val("")
 		question.find("input[type='checkbox']").val("on")
 
 		if answerCount == 3 && $('.trivia-oriented-quiz').length > 0
@@ -259,7 +259,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		newQuestion.find('.text-box').text("") #clear flipcard text and color
 		newQuestion.find('.question-image-input').css('background-color', '')
 		
-		newQuestion.find('input, textarea').val("").prop('checked', 'true') #reset fields
+		newQuestion.find('input, textarea').val("") #reset fields
 		newQuestion.find("input[type='checkbox']").val("on")
 		newQuestion.find('.image-preview').attr('src', '#').hide() # clear image previews	
 		
@@ -305,6 +305,8 @@ QuizNew = #UI for creating/editing Quizzes goes here
 			form.removeClass('image-style').addClass('text-style')
 		
 		form.find('input, textarea').val("")
+
+		$(@).parents('.question').find('.answer-format').val($(@).attr('format_type'))
 
 	showImagePreview: -> 
 		input = @

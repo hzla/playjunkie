@@ -143,6 +143,7 @@
 					font-weight: 600;
 					margin: 0 auto;
 					width: calc(100% - 40px);
+					word-wrap: break-word;
 				}
 				.image-credit {
 					position: absolute;
@@ -349,10 +350,14 @@
 				.item {
 					.question-header {
 						.item-text {
-							width: calc(100% - 40px);
+							width: calc(100% - 50px);
+							margin-top: 15px;
+							margin-bottom: 10px;
 						}
 						h2 {
-							margin-top: 10px;
+							margin-top: 20px;
+							margin-bottom: 10px;
+							width: calc(100% - 50px);
 						}
 
 					}
@@ -383,7 +388,6 @@
 						line-height: 40px;
 						font-size: 24px;
 						z-index: 1;
-						margin-top: 15px;
 						margin-bottom: 10px;
 						top: 20px;
 						left: 20px;

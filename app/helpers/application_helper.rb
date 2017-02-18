@@ -27,4 +27,8 @@ module ApplicationHelper
 	def format_date date
 		(date - 8.hours).strftime("%B %-d, %Y at %I:%M%P")
 	end
+
+	def format_date_simple date
+		(date - 8.hours).strftime("%B %-d, %Y")
+	end
 end

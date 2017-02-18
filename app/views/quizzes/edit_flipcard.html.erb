@@ -57,7 +57,7 @@
 												</div>
 											</div>
 											<%= file_field_tag "quiz_item_#{i + 1}[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
-											<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load"></div>
+											<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) || '#' %>"></div>
 										</div>
 									</div>
 								</div>

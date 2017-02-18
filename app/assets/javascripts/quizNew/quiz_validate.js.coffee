@@ -16,7 +16,7 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		incorrectNumberofAnswers = false
 		listItemError = false
 		flipCardError = false
-		console.log "ay"
+
 
 		quizTitle = ($('#quiz_title').val() != "")
 		quizDescription = ($('#quiz_description').val() != "")
@@ -38,9 +38,10 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			text = question.find('.question-text')
 
 			## for all items ######################################################
-
+			console.log text
 			if text.val() == "" && image.attr('src') == "#"
 				if $(".list-quiz").length < 1
+					console.log "should see"
 					text.css('border', '1px solid red') if text.val() == "" 
 					question.find('div.question-image-input').css('border', '1px solid red') if image.attr('src') == "#"
 					missingFieldError = true 

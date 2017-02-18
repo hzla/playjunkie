@@ -6,6 +6,7 @@
 		<%= image_tag "text-format.svg", :class => "text-format answer-format", format_type: "text" %>
 		<%= image_tag "text-format-selected.svg", :class => "text-format answer-format selected", format_type: "text" %>
 	</div>
+	<%= hidden_field_tag "quiz_item_#{item_number}[answer_style]", answer_style, :class => "answer-format" %>
 </div>
 
 <div class="form-answers image-style">
@@ -16,7 +17,7 @@
 			<div class="image-input">Click to add image...</div>
 			<%= image_tag "close-box.svg", :class => "close-image closer" %>
 			<%= file_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[image]", :class => "answer-image-input required" %>
-			<div class="answer-image-preview image-preview" style="background-image: url(<%= answer.image_url(:item_thumbnail) %>);" alt="preview failed to load"></div>
+			<div class="answer-image-preview image-preview" style="background-image: url(<%= answer.image_url(:item_thumbnail) %>);" alt="preview failed to load" src="<%= answer.image_url || '#' %>"></div>
 			<div class="char-countable">
 				<p class="char-count">90</p>
 				<%= text_area_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[answer_text]", answer.answer_text, :class => "answer-text-input required", placeholder: "Answer text...", maxlength: 90 %>

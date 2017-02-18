@@ -78,6 +78,9 @@ class QuizItem < ApplicationRecord
 					if answer_fields["remember_code"] && answer_fields["remember_code"] != ""
 						item_answer = ItemAnswer.find_by_remember_code answer_fields["remember_code"]
 						item_answer.update_attributes answer_fields
+						if answer_fields["correct?"] != "on"
+							item_answer.update_attributes correct?: false
+						end
 						answer_count += 1
 						if quiz.quiz_type == "quiz"
 							 item_answer.update_attributes result_id: results[item_answer.result_id].id
@@ -122,7 +125,7 @@ class QuizItem < ApplicationRecord
 	private
 
 	def self.quiz_item_params quiz_item_number, params
-		params.require("quiz_item_#{quiz_item_number}".to_sym).permit(:order, :image, :image_back, :item_text, :item_text_back, :image_credit, :image_credit_back, :color, :color_back, :title, :remember_code)
+		params.require("quiz_item_#{quiz_item_number}".to_sym).permit(:order, :image, :image_back, :item_text, :item_text_back, :image_credit, :image_credit_back, :color, :color_back, :title, :remember_code, :answer_style)
 	end
 
 	def self.item_answer_params quiz_item_number, item_answer_number, params

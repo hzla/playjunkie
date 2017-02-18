@@ -6,6 +6,7 @@
 		<%= image_tag "text-format.svg", :class => "text-format answer-format", format_type: "text" %>
 		<%= image_tag "text-format-selected.svg", :class => "text-format answer-format selected", format_type: "text" %>
 	</div>
+	<%= hidden_field_tag "quiz_item_1[answer_style]", "image", :class => "answer-format" %>
 </div>
 
 <div class="form-answers image-style">
@@ -23,7 +24,7 @@
 
 		<% if answer_type == "trivia" %>
 			<div class="checkbox-container">
-				<%= check_box_tag "quiz_item_1_item_answer_1[correct?]", nil, true, :class => "checkbox-input" %>
+				<%= check_box_tag "quiz_item_1_item_answer_1[correct?]", nil, false, :class => "checkbox-input" %>
 				<p>Correct</p>
 			</div>
 		<% else %>

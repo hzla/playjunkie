@@ -15,7 +15,7 @@
 				<div class="image-input">Click to add image...</div>
 				<%= image_tag "close-box.svg", :class => "close-image closer" %>
 				<%= file_field_tag "result_#{i + 1}[image]", :class => "result-image-input" %>
-				<div class="result-image-preview image-preview" style="background-image: url(<%= result.image_url(:item_thumbnail) %>);" alt="preview failed to load" /></div>
+				<div class="result-image-preview image-preview" style="background-image: url(<%= result.image_url(:item_thumbnail) %>);" alt="preview failed to load" src="<%= result.image_url || '#' %>"></div>
 				<%= text_field_tag "result_#{i + 1}[image_credit]", result.image_credit, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
 
 				<% if result_type == "trivia" %>
