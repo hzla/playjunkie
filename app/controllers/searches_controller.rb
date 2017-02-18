@@ -7,7 +7,20 @@ class SearchesController < ApplicationController
 		end
 		@page = 1
 		@terms = params[:terms]
-		@results = Search.search_for(@terms)[0..9]
+		
+
+		@full_results = Search.search_for(@terms)
+		
+		if @full_results.length == 0
+			@results = []
+			@last_page = true
+			render 'show' and return
+		end
+
+		@results = @full_results[0..9]
+		@results_count = @full_results.length
+		@last_page = @results_count < 10
+		
 		render 'show'
 	end
 
@@ -21,7 +34,17 @@ class SearchesController < ApplicationController
 			@results = []
 			render 'show' and return
 		end
-		@results = Search.search_for(@terms)[offset..-1][0..9]
+		@full_results = Search.search_for(@terms)
+		
+		
+		if @full_results[offset..-1]
+			@results = @full_results[offset..-1][0..9]
+			@results_count = @full_results.length
+			@last_page = @results_count <= (10 * @page)
+		else
+			@results = []
+			@last_page = true
+		end
 	end
 
 end

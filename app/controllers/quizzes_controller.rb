@@ -5,6 +5,11 @@ class QuizzesController < ApplicationController
 	def index
 	end
 
+	def featured
+		@quizzes = Quiz.featured(1000)
+		render partial: 'list'
+	end
+
 	def new
 		@footer = false
 		@quiz_type = params[:quiz_type]
@@ -21,6 +26,7 @@ class QuizzesController < ApplicationController
 
 	def trending
 		@page = params[:page] ? params[:page].to_i : 1
+		@last_page = Quiz.trending(@page + 1).length == 0
 		@quizzes = Quiz.trending @page
 	end
 
@@ -29,6 +35,7 @@ class QuizzesController < ApplicationController
 		@editors_picks = Quiz.editors_picks(params[:quiz_type])
 		@quiz_type = params[:quiz_type] 
 		@quizzes = Quiz.get_collection_of_type @page, @quiz_type
+		@last_page = Quiz.get_collection_of_type(@page + 1, @quiz_type).length == 0
 	end
 
 	def edit

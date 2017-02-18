@@ -146,6 +146,16 @@
 					}
 				}
 			}
+			#load-more {
+				height: 44px;
+		    background: $orange;
+		    color: white;
+		    font-weight: 800;
+		    text-align: center;
+		    margin-top: 10px;
+		    cursor: pointer;
+		    font-size: 16px;
+			}
 		}
 	}
 }
@@ -350,6 +360,11 @@
 			.quizzes-section.list-view {
 				margin-right: 20px;
 				width: 620px;
+				#load-more {
+					margin-top: 20px;
+					height: 40px;
+					line-height: 40px;
+				}
 				.quiz-list-item {
 					height: 150px;
 					width: 620px;

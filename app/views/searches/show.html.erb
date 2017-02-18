@@ -33,7 +33,9 @@
 		 			<% end %>
 		 			<p class="page-number">Page <%= @page %></p>
 		 			<%= link_to params.permit(:page, :terms).merge(:page => @page + 1, terms: @terms) do %>
-		 				<div class="page-next page-btn btn"><p>Next</p></div>
+		 				<% unless @last_page %>
+		 					<div class="page-next page-btn btn"><p>Next</p></div>
+		 				<% end %>
 		 			<% end %>
 		 		</div>
 		 		<div id="bottom-ad">
@@ -50,7 +52,7 @@
 
 <script>
   $('#search_terms').val("<%= @terms %>")
-  history.pushState({state:1}, "State 1", "?terms=<%= @terms %>")
+  history.pushState({state:1}, "State 1", "?terms=<%= @terms %>&page=<%= @page %>")
   $('.quiz-title').each(function() {
     $(this).html($(this).html().replace(/(<%= @terms %>)/gi, "<span class='highlighted'>$1</span>"))
   })

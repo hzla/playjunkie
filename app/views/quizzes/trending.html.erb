@@ -28,7 +28,9 @@
 		 			<% end %>
 		 			<p class="page-number">Page <%= @page %></p>
 		 			<%= link_to params.permit(:page).merge(:page => @page + 1) do %>
-		 				<div class="page-next page-btn btn"><p>Next</p></div>
+		 				<% unless @last_page %>
+		 					<div class="page-next page-btn btn"><p>Next</p></div>
+		 				<% end %>
 		 			<% end %>
 		 		</div>
 		 		<div id="bottom-ad">

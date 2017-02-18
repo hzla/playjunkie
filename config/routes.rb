@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   #quizzes
   get '/trending', to: 'quizzes#trending', as: 'trending'
   get '/browse/:quiz_type', to: 'quizzes#browse', as: 'browse'
+  get '/quizzes/featured', to: 'quizzes#featured', as: 'featured'
   get '/quizzes/new/:quiz_type', to: 'quizzes#new', as: 'new_quiz'
   resources :quizzes
 

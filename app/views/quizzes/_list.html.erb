@@ -1,0 +1,17 @@
+<% @quizzes.each do |quiz| %>
+	<%= link_to quiz_path(quiz) do %>
+		<div class="quiz-list-item">
+			<%= image_tag quiz.image_url(:square), :class => "quiz-image" %>
+			<div class="quiz-info">
+				<div class="quiz-title"><%= quiz.title %></div>
+				<div class="quiz-sub-info">
+					<div class="quiz-user">
+						<%= image_tag profile_pic(quiz.user) %>
+						<p><%= quiz.user.name %></p>
+					</div>
+					<div class="quiz-type"><%= quiz.quiz_type.upcase %></div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+<% end %>
