@@ -4,6 +4,15 @@ FlipcardNew = #Flipcard specefic UI goes here
 		$('body').on 'click', '.add-card-text', @addCardText
 		$('body').on 'click', '.side-chooser', @chooseSide
 		$('body').on 'keyup', '.text-box', @syncItemText #syncs visible text with hidden fields
+		@centerCardTexts()
+
+	centerCardTexts: ->
+		$('.text-box').each ->
+			height = $(@).height()
+			offset = (260 - height) / 2
+			$(@).css('top', offset)
+
+
 
 	chooseSide: ->
 		card = $(@).parents('.question')

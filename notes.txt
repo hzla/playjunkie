@@ -21,6 +21,7 @@ QA Round 1
 		COMPLETE 18 1hr
 		COMPLETE 10  3hr
 		COMPLETE 19 2hr
+		COMPLETE 14 2hr
 	Additional items ~= 4hrs
 
 QA ROund 2

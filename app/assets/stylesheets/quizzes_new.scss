@@ -696,7 +696,7 @@
 .flipcard {
 	.flip-container, .front, .back {
 		height: calc(100vw - 20px * 2 / 3);
-		width: auto;
+		width: 100%;
 	}
 }
 

@@ -5,8 +5,7 @@ QuizIndex =
 
 	loadMore: ->
 		$.get '/quizzes/featured', (data) -> 
-			# console.log data
-			$('.quizzes-section.list-view').append(data)
+			$('.quizzes-section.list-view').html(data)
 
 
 ready = ->

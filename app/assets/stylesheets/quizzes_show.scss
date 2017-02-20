@@ -26,6 +26,7 @@
 	}
 	.quiz-info {
 		margin-top: 20px;
+		margin-bottom: 30px;
 		.quiz-user {
 			@include flexbox;
 			@include align-items(center);
@@ -79,6 +80,7 @@
 		.item.text-style {
 			.question-header {
 				@include flexbox;
+				@include align-items(baseline);
 				.item-text {
 					width: calc(100% - 40px);
 				}
@@ -339,7 +341,7 @@
 			.items {
 				.item.text-style {
 					.question-header {
-						margin-top: 50px;
+						margin-top: 60px;
 					}
 				}
 				.item.image-style {
