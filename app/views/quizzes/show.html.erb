@@ -26,6 +26,9 @@
 				<div class="social-media black-bg"><p>Embed</p></div>
 			</div>
 		</div>
+		<% if @quiz_type == "quiz" %>
+			<%= render partial: "starter" %>
+		<% end %>
 		<div class="items">
 			<% if @quiz_type != "list" %>
 				<% @quiz.quiz_items.order(:order).each_with_index do |item, i| %>
@@ -86,8 +89,8 @@
 	 	<% end %>
 	</div>
 	<div class="side-content">
-		<div id="ad1" class="side-ad"></div>
-		<div class="divider"></div>
+		<div id="ad-1" class="side-ad"></div>
+		<div class="divider" id="divider-1"></div>
 		<div class="recommendations">
 			<h3>Recommended</h3>
 			<% Quiz.all.limit(6).each do |rec| %>
@@ -96,12 +99,11 @@
 						<%= image_tag rec.image_url(:sidebar) %>
 						<p><%= rec.title %></p>
 					</div>
-				<% end %>
-				
+				<% end %>	
 			<% end %>
 		</div>
-		<div class="divider"></div>
-		<div id="add2" class="side-ad"></div>
+		<div class="divider" id="divider-2"></div>
+		<div id="ad-2" class="side-ad"></div>
 	</div>
 </div>
 

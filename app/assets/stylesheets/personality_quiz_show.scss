@@ -1,0 +1,145 @@
+@import 'shared/variables';
+@import 'shared/mixins';
+
+
+.content-container.quiz-take.quiz {
+ 	.quiz-main .items {
+ 		.item	{
+ 			display: none;
+ 			opacity: 0;
+ 		}
+ 		.image-container {
+ 			margin-top: 10px;
+ 		}
+ 	}
+ 	.quiz-description {
+ 		display: none;
+ 	}
+ 	.quiz-starter {
+ 		img {
+ 			width: 100%;
+ 			margin-top: 10px;
+ 		}
+ 		p {
+ 			margin-top: 20px;
+ 		}
+ 		.btn {
+ 			margin-top: 20px;
+ 			background: $red;
+ 			color: white;
+ 			text-align: center;
+ 			font-weight: 800;
+ 			width: 100%;
+ 			cursor: pointer; 
+ 		}
+ 		.btn:hover {
+ 			background: $hover-red;
+ 		}
+ 	}
+ 	.quiz-navigator {
+ 		height: 40px;
+ 		@include flexbox;
+ 		@include justify-content(space-between);
+ 		border-radius: 8px;
+ 		margin-top: 10px;
+ 		overflow: hidden;
+ 		opacity: 0;
+ 		.nav-back {
+ 			background: $dark-outline;
+ 			@include align-items(center);
+ 			@include flexbox;
+ 			cursor: pointer;
+ 			width: 40px;
+ 			height: 40px;
+ 			border-top-left-radius: 8px;
+ 			border-bottom-left-radius: 8px; 
+ 			img {
+ 				width: 8px;
+ 				margin: 0 auto;
+ 			}
+ 		}
+ 		.nav-numbers {
+ 			border: 1px solid $dark-outline;
+ 			border-top-right-radius: 8px;
+ 			border-bottom-right-radius: 8px;
+ 			width: calc(100% - 40px);
+ 			.nav-num-container {
+ 				@include flexbox;
+ 				@include align-items(center);
+ 				overflow: hidden;
+ 				height: 40px;
+ 				width: 100000px;
+ 			}
+
+ 			li {
+ 				height: 20px;
+ 				width: 20px;
+ 				margin-left: 10px;
+ 				font-weight: 800;
+ 				font-size: 12px;
+ 				text-align: center;
+ 				line-height: 20px;
+ 				border-radius: 4px;
+ 				background: $background-white;
+ 				color: $dark-outline;
+ 				border: 1px solid $dark-outline;
+ 			}
+ 			li.selected {
+ 				background: $red;
+ 				border: 1px solid $red;
+ 				color: white;
+ 			}
+ 		}
+ 	}
+}
+
+@media(min-width: 960px) {
+	.content-container.quiz-take.quiz {
+		#ad-2, #divider-2 {
+			display: none;
+		}
+		.quiz-main .items {
+			.item.text-style, .item.image-style {
+				.question-header {
+					margin-top: 10px;
+				}
+			}
+			.image-container {
+				margin-top: 10px;
+			}
+		}
+		.recommendations {
+			a {
+				display: none;
+			}
+			a:nth-child(10n - 8) {
+				display: block;
+			}
+		}
+		.quiz-navigator {
+			margin-top: 60px;
+		}
+	 	.quiz-starter {
+	 		.starter-main {
+	 			@include flexbox;
+	 			@include justify-content(space-between);
+	 		}
+	 		img {
+	 			width: 300px;
+	 			height: 225px;
+	 			margin-top: 10px;
+	 		}
+	 		p {
+	 			width: 300px;
+	 			margin-top: 10px;
+	 		}
+	 		.btn {
+	 			width: 300px;
+	 		}
+	 		.btn:hover {
+	 			background: $hover-red;
+	 		}
+
+	 	}
+	}	
+}

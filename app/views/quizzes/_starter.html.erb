@@ -1,0 +1,18 @@
+<div class="quiz-starter">
+	<div class="starter-main">
+		<%= image_tag @quiz.image_url(:square) %>
+		<p class-"starter-description"><%= @quiz.description %></p>
+	</div>
+	<div class="starter-btn btn">Let's Go!</div>
+</div>
+
+<div class="quiz-navigator hidden">
+	<div class="nav-back"><%= image_tag "nav-back.svg" %></div>
+	<div class="nav-numbers">
+		<div class="nav-num-container">
+			<% (1..@quiz.quiz_items.count).each do |n| %>
+				<li><%= n %></li>
+			<% end %>
+		</div>
+	</div>
+</div>
