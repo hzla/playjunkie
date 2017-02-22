@@ -17,19 +17,35 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		listItemError = false
 		flipCardError = false
 
-
+		############################# MAIN INFO #####################################
+		
 		quizTitle = ($('#quiz_title').val() != "")
 		quizDescription = ($('#quiz_description').val() != "")
 		quizImage = ($('#quiz-image-input').val() != "")
-		$('#quiz_title').css('border', '1px solid red') if !quizTitle
-		$('#quiz_description').css('border', '1px solid red') if !quizDescription
-		$('#quiz-image-input').parent().find('.image-input-overlay').css('border', '1px solid red') if !quizImage
+		
+		if !quizTitle
+			$('#quiz_title').css('border', '1px solid red') 
+		else
+			$('#quiz_title').attr('style', '')
+
+		if !quizDescription
+			$('#quiz_description').css('border', '1px solid red') 
+		else
+			$('#quiz_description').attr('style', '')
+
+		if !quizImage
+			$('#quiz-image-input').parent().find('.image-input-overlay').css('border', '1px solid red')
+		else
+			$('#quiz-image-input').parent().find('.image-input-overlay').attr('style', '')
+		
 		quizImage = true if $('.quiz-edit').length > 0
 
 		if !quizTitle or !quizDescription or !quizImage
 			missingFieldError = true
 
-		$('.question:visible .item-order').each (i) ->
+		############################## QUIZ ITEMS  ######################## 
+
+		$('.question:visible .item-order').each (i) -> #set item order
 			$(@).val(i + 1)
 
 		for i in [0..$('.question').length - 1] #validate each question
@@ -38,10 +54,8 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			text = question.find('.question-text')
 
 			## for all items ######################################################
-			console.log text
 			if text.val() == "" && image.attr('src') == "#"
 				if $(".list-quiz").length < 1
-					console.log "should see"
 					text.css('border', '1px solid red') if text.val() == "" 
 					question.find('div.question-image-input').css('border', '1px solid red') if image.attr('src') == "#"
 					missingFieldError = true 
@@ -60,7 +74,6 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 					listItemError = true
 				else
 					question.css('border', 'none')
-			###################################################################
 
 			################################# for Flipcards ###########################
 
@@ -88,7 +101,8 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 						$('.back-side').css('border', 'none')
 				else
 					$('.front-side, .back-side, .question').css('border', 'none')
-			###################################################################
+			
+			#################################### ANSWERS  ###############################
 
 			correctAnswersCount = 0
 			question.find('.form-answer').each -> #validate answer fields
@@ -102,20 +116,22 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 						text.css('border', '1px solid red') if text.val() == "" 
 						$(@).find('.image-input').css('border', '1px solid red') if image.attr('src') == "#" 
 						missingFieldError = true
-					else
+					else 
 						text.attr('style', '')
 						$(@).find('.image-input').attr('style', '')
-				else
+				else 
 					if text.val() == ""
 						text.css('border', '1px solid red')
 						missingFieldError = true
 					else
 						text.attr('style', '')
 
-				if $(@).find('select').length > 0 #if this is a quiz quiz
+				if $(@).find('select').length > 0 #if this is a personality quiz
 					if $(@).find('select').val() == null
 						missingFieldError = true
 						$(@).find('select').css 'border', '1px solid red'
+					else
+						$(@).find('select').attr('style', "")
 
 
 			if $('.trivia-oriented-quiz').length > 0

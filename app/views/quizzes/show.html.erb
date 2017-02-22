@@ -78,7 +78,7 @@
 	 			<p class="page-number">Page <%= @page %></p>
 	 			<% if @page == @quiz.quiz_items.count %>
 	 				<%= link_to quiz_path(Quiz.where(quiz_type: "list").shuffle.first) do %>
-		 				<div class="page-next page-btn btn"><p>Next List</p></div>
+		 				<div class="page-next page-btn btn list-next"><p>Next List</p></div>
 		 			<% end %>
 	 			<% else %>
 		 			<%= link_to params.permit(:page, :terms).merge(:page => @page + 1, terms: @terms) do %>

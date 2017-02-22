@@ -146,6 +146,7 @@
 					margin: 0 auto;
 					width: calc(100% - 40px);
 					word-wrap: break-word;
+					z-index: 10;
 				}
 				.image-credit {
 					position: absolute;
@@ -178,6 +179,9 @@
 			font-weight: 600;
 			font-size: 14px;
 			margin-top: 10px;
+		}
+		p.answer-text {
+			margin-top: 0px;
 		}
 		p.item-description {
 			font-weight: 400;
@@ -216,7 +220,10 @@
 				width: 100%;
 				height: auto;
 				line-height: 44px;
+				min-height: 44px;
 				padding: 0px 12px;
+				@include flexbox;
+				@include align-items(center);
 			}
 		}
 	}

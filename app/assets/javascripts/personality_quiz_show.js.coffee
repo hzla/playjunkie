@@ -8,6 +8,7 @@ PQuizShow =
 		current = $('.item:visible').first()
 		prev = current.prev()
 
+		$($('.nav-numbers li')[prev.index()]).removeClass('selected')
 		if current.index() != 0
 			current.animate 
 				opacity: 0

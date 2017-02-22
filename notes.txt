@@ -22,10 +22,11 @@ QA Round 1
 		COMPLETE 10  3hr
 		COMPLETE 19 2hr
 		COMPLETE 14 2hr
-	Additional items ~= 4hrs
+		11.9k
+		
+		COMPLETE quiz revisions 2hr
 
-QA ROund 2
-	8hrs
+
 
 Ads/Social Media
 

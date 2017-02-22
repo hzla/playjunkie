@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-	before_filter :require_signin, except: [:index, :show, :trending, :browse]
+	before_filter :require_signin, except: [:index, :show, :trending, :browse, :featured]
 	before_filter :get_quiz, only: [:show, :edit, :update, :destroy]
 
 	def index
