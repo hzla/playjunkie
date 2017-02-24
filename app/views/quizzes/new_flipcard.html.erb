@@ -33,8 +33,9 @@
 								<div class="<%= side %>">
 									<div class="<%= side %>-side card-side shown">
 										<div class="box-input question-image-input">
-											<p class="char-count">120</p>
 											<div class="add-card-text">Add Text</div>
+											<p class="char-count">120</p>
+											
 											<div class="text-box" maxlength="120">
 											</div>
 			
@@ -57,9 +58,9 @@
 												</div>
 											</div>
 											<%= image_tag "close-box.svg", :class => "close-image closer" %>
-											<%= file_field_tag "quiz_item_1[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
-											<div class="question-image-preview image-preview" src="#" alt="preview failed to load"></div>
 										</div>
+										<%= file_field_tag "quiz_item_1[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
+											<div class="question-image-preview image-preview" src="#" alt="preview failed to load"></div>
 									</div>
 								</div>
 							<% end %>

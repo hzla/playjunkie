@@ -4,7 +4,7 @@ QuizShow =
 		@resultScores = {}
 		$('body').on 'click', '.trivia .answer:not(.unselectable)', @chooseTriviaAnswer
 		$('body').on 'click', '.quiz .answer', @chooseQuizAnswer
-		$('body').on 'touchend click', '.flip-container', @flipCard
+		$('body').on 'click', '.quiz-take .flip-container', @flipCard
 
 	flipCard: ->
 		$(@).toggleClass('flip')

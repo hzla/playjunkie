@@ -174,11 +174,6 @@ QuizNew = #UI for creating/editing Quizzes goes here
 					$(@).val(i - 1)
 					$(@).text("Result #{i}")
 
-
-			
-
-
-
 	addAnswer: ->
 		question = $(@).parents('.question')
 		lastAnswer = question.find('.form-answer:visible, .text-answer-form:visible').last()
@@ -193,7 +188,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		lastAnswer.after(lastAnswer.clone())
 		question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
 		question.find('.form-answer').last().find('input, textarea').val("")
-		question.find("input[type='checkbox']").val("on")
+		question.find("input[type='checkbox']").last().val("on").prop('checked', false)
 
 		if answerCount == 3 && $('.trivia-oriented-quiz').length > 0
 			$(@).hide()
@@ -260,7 +255,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		newQuestion.find('.question-image-input').css('background-color', '')
 		
 		newQuestion.find('input, textarea').val("") #reset fields
-		newQuestion.find("input[type='checkbox']").val("on")
+		newQuestion.find("input[type='checkbox']").val("on").prop('checked', false)
 		newQuestion.find('.image-preview').attr('src', '#').hide() # clear image previews	
 		
 		newQuestion.find('.answer-format').hide()

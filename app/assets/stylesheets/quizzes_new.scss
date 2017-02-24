@@ -34,9 +34,9 @@
 			position: absolute;
 			color: $grey;
 			font-size: 12px;
-			line-height: initial;
+			line-height: 12px;
 			top: 20px;
-			left: 140px;
+			left: 136px;
 		}
 	}
 	#quiz-main-info {
@@ -168,6 +168,7 @@
 			margin-right: 10px;
 		}
 		.box-field .card-side {
+			position: relative;
 
 			div.question-image-input {
 				background: rgb(30, 94, 253);
@@ -197,6 +198,7 @@
 					z-index: 2;
 					font-size: 24px;
 					line-height: 24px;
+					word-wrap: break-word;
 				}
 				.text-box:focus {
 
@@ -205,11 +207,12 @@
 			input.question-image-input {
 				width: 80px;
 				height: 30px;
-				top: initial;
+				top: auto;
 				bottom: 20px;
 				right: 65px;
 				cursor: pointer;
 			}
+
 			.background-edit-container {
 				width: 100%;
 				height: 40px;
@@ -233,6 +236,7 @@
 					 	text-align: center;
 					 	margin-bottom: 5px;
 					 	height: 8px;
+					 	line-height: 8px;
 					}
 					.colors {
 						height: 20px;
@@ -255,6 +259,7 @@
 					margin: 0px 20px;
 					color: white;
 					height: 12px;
+					line-height: 12px;
 				}
 				.card-image-input-btn {
 					background: $dark-outline;
@@ -682,13 +687,20 @@
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
+	cursor: pointer;
+	transform-style: preserve-3d;
 }
 	/* flip the pane when hovered */
-	.flip-container.flip .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-		-webkit-transform: rotateY(180deg);
-	}
-
+// .flip-container.flip .flipper, .flip-container.hover .flipper {
+// 	transform: rotateY(180deg);
+// 	-webkit-transform: rotateY(180deg);
+// }
+.flip-container.flip .back {
+	transform: rotateY(0deg);
+}
+.flip-container.flip .front {
+  transform: rotateY(180deg);
+}
 .flip-container, .front, .back {
 	height: 260px;
 	width: 400px;
@@ -713,16 +725,20 @@
 /* flip speed goes here */
 .flipper {
 	transition: 0.4s;
+	
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
-
+	-ms-transform-style: preserve-3d;
+	
 	position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
+	transition: 0.4s;
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
 
 	position: absolute;
 	top: 0;
@@ -739,8 +755,8 @@
 
 /* back, initially hidden pane */
 .back {
-	transform: rotateY(180deg);
-	-webkit-transform: rotateY(180deg);
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
 }
 
 

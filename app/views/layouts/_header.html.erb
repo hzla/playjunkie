@@ -117,17 +117,17 @@
 			<% end %>
 			<li class="list-header">Categories</li>
 			<div class="nav-categories">
-				<%= link_to '/browse/trivia' do %>
-					<li>Trivia</li>
-				<% end %>
 				<%= link_to '/browse/quiz' do %>
 					<li>Quizzes</li>
+				<% end %>
+				<%= link_to '/browse/list', :class => "no-outline" do %>
+					<li>List</li>
 				<% end %>
 				<%= link_to '/browse/flipcard' do %>
 					<li>Flip Cards</li>
 				<% end %>
-				<%= link_to '/browse/list', :class => "no-outline" do %>
-					<li>List</li>
+				<%= link_to '/browse/trivia' do %>
+					<li>Trivia</li>
 				<% end %>
 			</div>
 		</div>

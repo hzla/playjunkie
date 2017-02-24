@@ -33,9 +33,11 @@
 							<% ["front", "back"].each do |side| %>
 								<div class="<%= side %>">
 									<div class="<%= side %>-side card-side shown">
+										<%= file_field_tag "quiz_item_#{i + 1}[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
+										<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) || '#' %>"></div>
 										<div class="box-input question-image-input" style="background-color:<%= card.send("color#{side == 'back' ? '_back' : nil}".to_sym) %>">
-											<p class="char-count">120</p>
 											<div class="add-card-text">Edit Text</div>
+											<p class="char-count">120</p>
 											<div class="text-box" maxlength="120"><%= card.send("item_text#{side == 'back' ? '_back' : nil}".to_sym) %></div>
 			
 											<%= hidden_field_tag "quiz_item_#{i + 1}[item_text#{side == 'back' ? '_back' : nil}]", card.send("item_text#{side == 'back' ? '_back' : nil}".to_sym), :class => "card-text-input question-text" %>
@@ -56,8 +58,6 @@
 													Add Image
 												</div>
 											</div>
-											<%= file_field_tag "quiz_item_#{i + 1}[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
-											<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) || '#' %>"></div>
 										</div>
 									</div>
 								</div>
