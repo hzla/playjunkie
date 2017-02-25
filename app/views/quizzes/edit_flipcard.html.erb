@@ -33,6 +33,7 @@
 							<% ["front", "back"].each do |side| %>
 								<div class="<%= side %>">
 									<div class="<%= side %>-side card-side shown">
+										<%= image_tag "close-box.svg", :class => "close-image closer" %>
 										<%= file_field_tag "quiz_item_#{i + 1}[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
 										<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) || '#' %>"></div>
 										<div class="box-input question-image-input" style="background-color:<%= card.send("color#{side == 'back' ? '_back' : nil}".to_sym) %>">

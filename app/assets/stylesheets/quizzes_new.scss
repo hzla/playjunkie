@@ -768,7 +768,13 @@
   bottom: 13px;
   font-size: 14px;
   right: calc(100% + 40px);
-  width: 85px;
+  width: 160px;
+  text-align: right;
+
+}
+
+#flash-message.blue {
+	color: $blue;
 }
 
 

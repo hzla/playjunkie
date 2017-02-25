@@ -11,7 +11,7 @@
 	<div class="nav-numbers">
 		<div class="nav-num-container">
 			<% (1..@quiz.quiz_items.count).each do |n| %>
-				<li><%= n %></li>
+				<li class="<%= 'selected' if n == 1 %>"><%= n %></li>
 			<% end %>
 		</div>
 	</div>

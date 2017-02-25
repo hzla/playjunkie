@@ -172,9 +172,6 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			$('#list-item-error').show()
 		else
 			$('#list-item-error').hide()
-
-
-		console.log !missingFieldError && !incorrectNumberofAnswers && !listItemError && !flipCardError	
 		
 		return !missingFieldError && !incorrectNumberofAnswers && !listItemError && !flipCardError	
 
@@ -190,7 +187,10 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		valid = QuizValidate.validateFields()
 		if !valid
 			return
-		
+
+		actionText = $(@).attr('action-text')
+		$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
+
 		if action == 'preview-quiz'
 			$('#new_quiz, .edit_quiz').attr('target', '_blank')
 		else

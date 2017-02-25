@@ -8,7 +8,7 @@ PQuizShow =
 		current = $('.item:visible').first()
 		prev = current.prev()
 
-		$($('.nav-numbers li')[prev.index()]).removeClass('selected')
+		$($('.nav-numbers li')[prev.index() + 1]).removeClass('selected')
 		if current.index() != 0
 			current.animate 
 				opacity: 0
@@ -27,7 +27,7 @@ PQuizShow =
 	answerPQuiz: ->
 		current = $(@).parents('.item')
 		currentNum = current.index()
-		$($('.nav-numbers li')[currentNum]).addClass('selected')
+		$($('.nav-numbers li')[currentNum + 1]).addClass('selected')
 		next = current.next()
 		current.animate 
 			opacity: 0

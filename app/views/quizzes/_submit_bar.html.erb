@@ -21,14 +21,12 @@
 		</div>
 		<div id="submit-actions">
 			<% if @quiz && @quiz.published? %>
-				<div id="publish-quiz" class="btn grey">Save</div>
+				<div id="publish-quiz" class="btn grey" action-text="Saving">Save</div>
 			<% else %>
-				<div id="save-quiz" class="btn">Save</div>
-				<div id="publish-quiz" class="btn">Publish</div>
+				<div id="save-quiz" class="btn" action-text="Saving">Save</div>
+				<div id="publish-quiz" class="btn" action-text="Publishing">Publish</div>
 			<% end %>
-			<% if params["saved"] == "true" %>
-				<div id="flash-message">Save Successful</div>
-			<% end %>
+			<div id="flash-message" class="<%= params['saved'] == 'true' ? '' : 'hidden' %>">Save Successful</div>
 		</div>
 	</div>
 	
