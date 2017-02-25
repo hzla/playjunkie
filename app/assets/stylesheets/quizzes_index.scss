@@ -188,8 +188,11 @@
 	.btn.list-next {
 		background: $red;
 	}
+	.btn.list-next:hover {
+		background: $hover-red
+	}
 	.btn:hover {
-		background: $hover-red;
+		background: $hover-orange;
 	}
 	p {
 		font-size: 14px;
