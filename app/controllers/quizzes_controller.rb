@@ -17,6 +17,11 @@ class QuizzesController < ApplicationController
 	end
 
 	def show
+		@og_title = @quiz.title
+		@og_description = @quiz.description
+
+
+
 		@quiz = Quiz.find params[:id]
 		@quiz_type = @quiz.quiz_type
 		@page = params[:page] ? params[:page].to_i : 1
