@@ -19,6 +19,7 @@ class QuizzesController < ApplicationController
 	def show
 		@og_title = @quiz.title
 		@og_description = @quiz.description
+		@og_image = @quiz.image_url(:item)
 
 
 
