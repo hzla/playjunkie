@@ -56,6 +56,23 @@
 		margin-top: 20px;
 		@include flexbox;
 		@include justify-content(space-between);
+		position: relative;
+		.link-box {
+			position: absolute;
+			height: 44px;
+			width: calc((100% - 30px) / 4);
+			top: 54px;
+			right: 0px;
+			display: none;
+			input {
+				width: 100%;
+				padding: 0px 12px;
+				line-height: 44px;
+				height: 44px;
+				border: 1px solid $dark-outline;
+				border-radius: 8px;
+			}
+		}
 		.social-media {
 			height: 44px;
 			width: calc((100% - 30px) / 4);
@@ -341,6 +358,13 @@
 		.social-medias {
 			.social-media {
 				height: 30px;
+			}
+			.link-box {
+				height: 30px;
+				top: 40px;
+				input {
+					height: 30px;
+				}
 			}
 		}
 		.quiz-main {
