@@ -19,9 +19,9 @@
 				<p class="quiz-type"><%= @quiz.quiz_type.upcase %></p>
 			</div>
 			<div class="social-medias">
-				<div class="social-media fb-blue-bg"><%= image_tag "fb.svg" %></div>
-				<div class="social-media tw-blue-bg"><%= image_tag "twitter.svg" %></div>
-				<div class="social-media pinterest-red-bg"><%= image_tag "pinterest.svg" %></div>
+				<div class="social-media fb-blue-bg fb"><%= image_tag "fb.svg" %></div>
+				<div class="social-media tw-blue-bg twitter"><%= image_tag "twitter.svg" %></div>
+				<div class="social-media pinterest-red-bg pint"><%= image_tag "pinterest.svg" %></div>
 				<div class="social-media blue-bg"><p>Link</p></div>
 			</div>
 		</div>
@@ -59,9 +59,9 @@
 			<div class="result sharer">
 				<p class="result-social-message">Share this <%= @quiz.quiz_type.capitalize %></p>
 				<div class="social-medias">
-					<div class="social-media fb-blue-bg"><%= image_tag "fb.svg" %></div>
-					<div class="social-media tw-blue-bg"><%= image_tag "twitter.svg" %></div>
-					<div class="social-media pinterest-red-bg"><%= image_tag "pinterest.svg" %></div>
+					<div class="social-media fb-blue-bg fb"><%= image_tag "fb.svg" %></div>
+					<div class="social-media tw-blue-bg tw"><%= image_tag "twitter.svg" %></div>
+					<div class="social-media pinterest-red-bg pinterest"><%= image_tag "pinterest.svg" %></div>
 					<div class="social-media blue-bg"><p>Link</p></div>
 				</div>
 			</div>
@@ -104,4 +104,28 @@
 		<div id="ad-2" class="side-ad"></div>
 	</div>
 </div>
+
+
+
+
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '919320708203651',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 

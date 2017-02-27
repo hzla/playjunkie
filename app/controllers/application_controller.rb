@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Clearance::Controller
   protect_from_forgery with: :exception
   before_filter :show_footer
+  before_filter :set_og_tags
 
   def show_footer
   	@footer = true
@@ -24,5 +25,12 @@ class ApplicationController < ActionController::Base
   	if !signed_in?
   		redirect_to new_user_path and return
   	end
+  end
+
+  def set_og_tags
+    @og_title = "PlayJunkie"
+    @og_description = "Test test and test"
+    @og_image = "/missing-user-photo.svg"
+    @meta_description = "do stuff"
   end
 end
