@@ -1,5 +1,6 @@
 class UsersController < Clearance::SessionsController
 	before_filter :get_user, only: [:show, :edit, :update]
+	before_filter :require_signin, only: [:admin_login]
 
 	def show
 		if params[:code] == "switch"
@@ -45,7 +46,7 @@ class UsersController < Clearance::SessionsController
 	end
 
 	def admin_login
-
+		redirect_to root_path if !current_user.is_admin?
 	end
 
 	def admin_authenticate
