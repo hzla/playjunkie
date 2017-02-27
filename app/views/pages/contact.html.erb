@@ -1,0 +1,29 @@
+<div class="content-container user-forms-container contact-form-container">
+	<div class="signin-content signin">
+		<h1 class="super-bold signin-header">Contact Us</h1>
+		<%= form_tag '/contact', :class => "send-email", remote: true do %>
+			<div class="signin-row">
+        <p class="form-message">    
+          
+        </p>
+      </div> 
+			<div class="signin-row">
+				<label>Name:</label>
+				<%= text_field_tag :email, nil, :class => "signin-field btn", name: "name", required: true %>
+			</div>
+			<div class="signin-row">
+				<label>Email:</label>
+				<%= email_field_tag :email, nil, :class => "signin-field btn", name: "email", required: true %>
+			</div>
+			<div class="signin-row">
+				<label>Message:</label>
+				<%= text_area_tag :password, nil, :class => "signin-field btn contact-message", name: "message", required: true, placeholder: "What can we help you with?" %>
+			</div>
+			<%= submit_tag "Submit", id: "signin", :class => "btn red-btn" %>
+		<% end %>
+	</div> 
+</div>
+
+
+
+	

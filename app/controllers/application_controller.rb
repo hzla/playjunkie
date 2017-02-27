@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin
-    redirect_to root_path if !current_admin_user
+    redirect_to root_path and return if !current_admin_user
+    redirect_to '/admin/login' if session[:admin] != "true"
   end
 
   def current_admin_user

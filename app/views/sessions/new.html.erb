@@ -28,7 +28,9 @@
 			</div>
 			<%= submit_tag "Sign In", id: "signin", :class => "btn" %>
 		<% end %>
-		<div id="forgot-pw">Forgot my password</div>
+		<%= link_to new_password_path do %>
+			<div id="forgot-pw">Forgot my password</div>
+		<% end %>
 		<div class="signup-text bottom">
 			<p>Don't have an account?<p>
 			<%= link_to register_path, :class => "signup-link" do %>

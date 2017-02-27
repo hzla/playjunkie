@@ -1,0 +1,24 @@
+<div class="content-container user-forms-container">
+  <div class="signin-content signin">
+    <h1 class="super-bold signin-header">Change Password</h1>
+    <%= form_for :password, url: password_path, html: {method: :put, id: "password-reset"}, remote: true do |form|  %>
+      <%= form.hidden_field :token, value: @user.confirmation_token %>
+      <div class="signin-row">
+        <p class="form-message">    
+          
+        </p>
+      </div>     
+      <div class="signin-row">
+        <label>New Password:</label>
+        <%= form.password_field :password, :class => "signin-field btn", required: true %>
+      </div>
+      <div class="signin-row">
+        <label>Confirm Password:</label>
+        <%= form.password_field :password_confirm, :class => "signin-field btn", required: true %>
+      </div>
+      <%= form.submit "Submit", id: "signin", :class => "btn" %>
+    <% end %>
+  </div> 
+</div>
+
+

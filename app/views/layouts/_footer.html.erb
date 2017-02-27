@@ -4,7 +4,9 @@
 			<%= link_to about_path do %>
 				<li>About</li>
 			<% end %>
-			<li>Contact</li>
+			<%= link_to contact_path do %>
+				<li>Contact</li>
+			<% end %>
 			<li>Advertise With Us</li>
 			<%= link_to privacy_path do %>
 				<li>Privacy</li>
@@ -13,18 +15,18 @@
 		</div>
 		<div class="col formats">
 			<li>Our Formats</li>
-			<%= link_to browse_path(quiz_type: "trivia") do %>
-				<li>Trivia</li>
-			<% end %>
 			<%= link_to browse_path(quiz_type: "quiz") do %>
 				<li>Quizzes</li>
-			<% end %>
-			<%= link_to browse_path(quiz_type: "flipcard") do %>
-				<li>Flip Cards</li>
 			<% end %>
 			<%= link_to browse_path(quiz_type: "list") do %>
 				<li>List</li>
 			<% end %>
+			<%= link_to browse_path(quiz_type: "flipcard") do %>
+				<li>Flip Cards</li>
+			<% end %>
+			<%= link_to browse_path(quiz_type: "trivia") do %>
+				<li>Trivia</li>
+			<% end %>			
 		</div>
 	</div>
 </footer>

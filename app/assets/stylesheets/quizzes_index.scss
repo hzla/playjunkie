@@ -344,6 +344,7 @@
 			}
 			.quizzes-section.card-view {
 				@include justify-content(space-between);
+				overflow: hidden;
 				width: auto;
 				.quiz-card {
 					width: 300px;

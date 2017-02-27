@@ -1,0 +1,16 @@
+<div class="content-container user-forms-container">
+	<div class="signin-content signin">
+		<h1 class="super-bold signin-header">Sign In</h1>
+		<%= form_tag '/admin' do %>
+			<div class="signin-row">
+				<label>Password:</label>
+				<%= password_field_tag :password, nil, :class => "signin-field btn", name: "admin[password]", required: true %>
+			</div>
+			<%= submit_tag "Sign In", id: "signin", :class => "btn" %>
+		<% end %>
+	</div> 
+</div>
+
+
+
+	

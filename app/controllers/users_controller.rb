@@ -24,7 +24,37 @@ class UsersController < Clearance::SessionsController
 
 	def update
 		@user.update_attributes user_params
-		redirect_to user_path(@user)
+		if params[:user][:password] && params[:user][:new_password] && params[:user][:password_confirm]
+			if @user.authenticated?(params[:user][:password])
+				if params[:user][:new_password] == params[:user][:password_confirm]
+					@user.update_password(params[:user][:new_password])
+				else
+					redirect_to edit_user_path(@user, message: "Please reenter password information") and return
+				end
+			end
+		elsif params[:user][:new_password] && params[:user][:password_confirm]
+			if params[:user][:new_password] == params[:user][:password_confirm]
+				@user.update_password(params[:user][:new_password])
+			else
+				redirect_to edit_user_path(@user, message: "Please reenter password information") and return
+			end
+		else
+		end
+		sign_in @user
+		redirect_to edit_user_path(@user, message: "Save successful")
+	end
+
+	def admin_login
+
+	end
+
+	def admin_authenticate
+		if params[:admin][:password] == ENV['ADMIN_PASSWORD']
+			session[:admin] = "true"
+			redirect_to admin_path and return
+		else
+			redirect_to admin_login(error: true) 
+		end
 	end
 
 	def facebook_create
@@ -36,6 +66,7 @@ class UsersController < Clearance::SessionsController
 			redirect_to root_path and return
 		else
 			user = User.create_from_facebook auth_hash
+			UserMailer.welcome(user.email).deliver
 			sign_in user
 			redirect_to root_path
 		end
@@ -46,6 +77,7 @@ class UsersController < Clearance::SessionsController
     @user = User.new user_params
     if @user.save
       sign_in @user
+      UserMailer.welcome(@user.email).deliver
       redirect_to root_path and return
     else
     	message = @user.errors.first[0].to_s.capitalize + " " + @user.errors.first[1].to_s

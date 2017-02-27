@@ -1,0 +1,27 @@
+<div class="content-container user-forms-container">
+  <div class="signin-content signin">
+    <h1 class="super-bold signin-header">Reset Password</h1>
+    <%= form_for :password, url: password_reset_path, html: {id: "password-reset", :class => "send-email"}, remote: true do |form|  %>
+      <div class="signin-row">
+        <p class="form-message">    
+          
+        </p>
+      </div>
+      <div class="signin-row">
+        <label>Email:</label>
+        <%= form.text_field :email, type: 'email', :class => "signin-field btn", required: true %>
+      </div>
+      <%= form.submit "Send Reset Link", id: "signin", :class => "btn" %>
+    <% end %>
+    <div class="signup-text bottom">
+      <p>Don't have an account?<p>
+      <%= link_to register_path, :class => "signup-link" do %>
+        Sign Up
+      <% end %>
+    </div>
+  </div> 
+</div>
+
+
+
+  

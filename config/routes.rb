@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   #passwords 
   get '/passwords/new', to: 'passwords#new', as: 'new_password'
+  get '/passwords/edit', to: 'passwords#edit', as: 'edit_password'
+  put '/passwords', to: 'passwords#update', as: 'password'
+  post '/passwords/reset', to: 'passwords#reset', as: 'password_reset'
 
   #quizzes
   get '/trending', to: 'quizzes#trending', as: 'trending'
@@ -32,6 +35,12 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about', as: 'about'
   get '/privacy', to: 'pages#privacy', as: 'privacy'
   get '/terms', to: 'pages#terms', as: 'terms'
+  get '/contact', to: 'pages#contact', as: 'contact'
+  post '/contact', to: 'pages#send_message'
+
+  #admin
+  get '/admin/login', to: 'users#admin_login', as: 'admin_login'
+  post '/admin', to: 'users#admin_authenticate'
 
 
 

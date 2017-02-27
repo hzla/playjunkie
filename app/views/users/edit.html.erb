@@ -5,11 +5,13 @@
 		<%= f.text_area :description, :class => "user-textarea-input btn", value: @user.description, placeholder: "Description" %>
 		<h2>Change Email</h2>
 		<%= f.email_field :email, :class => "user-text-input btn", value: @user.email, placeholder: "Email"  %>
-		<% unless @user.is_facebook_user? %>
+		<% if !@user.is_facebook_user? || @user.is_admin? %>
 			<h2>Change Password</h2>
-			<%= f.password_field :password, :class => "user-text-input btn", placeholder: "Current Password" %>
-			<%= f.password_field :password, :class => "user-text-input btn", placeholder: "New Password" %>
-			<%= f.password_field :password, :class => "user-text-input btn", placeholder: "Confirm New Password" %>
+			<% if @user.encrypted_password? %>
+				<%= f.password_field :password, :class => "user-text-input btn", placeholder: "Current Password" %>
+			<% end %>
+			<%= f.password_field :new_password, :class => "user-text-input btn", placeholder: "New Password" %>
+			<%= f.password_field :password_confirm, :class => "user-text-input btn", placeholder: "Confirm New Password" %>
 		<% end %>
 
 		<%= f.submit "Save", :class => "btn", id: "submit-settings" %>

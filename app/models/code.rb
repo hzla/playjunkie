@@ -4,7 +4,7 @@ class Code
 		random = (48..122).map {|x| x.chr}
     characters = (random - random[43..48] - random[10..16])
     code = characters.map {|c| characters.sample}
-    code.join[0..15]
+    code.join[0..49]
 	end
 
 

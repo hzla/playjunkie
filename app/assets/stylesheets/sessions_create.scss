@@ -51,6 +51,14 @@
 				width: 100%;
 				padding: 0px 12px;
 			}
+			textarea {
+				margin-top: 10px;
+				height: 120px;
+				padding: 12px;
+				line-height: 16px;
+				width: 100%;
+				border: 1px solid $light-outline;
+			}
 		}
 		#signin {
 			background: $orange;
@@ -109,6 +117,10 @@
 	.error-message {
 		color: $red;
 		margin-top: 10px;
+	}
+	.form-message {
+		margin-top: 10px;
+		display: none;
 	}
 	.divider {
 		height: 1px;

@@ -2,6 +2,7 @@ class SessionsController < Clearance::SessionsController
 
 	def destroy
 		sign_out
+    session[:admin] = nil
 		redirect_to root_path
 	end
 
