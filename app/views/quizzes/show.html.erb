@@ -21,7 +21,9 @@
 			<div class="social-medias">
 				<div class="social-media fb-blue-bg fb"><%= image_tag "fb.svg" %></div>
 				<div class="social-media tw-blue-bg tw"><%= image_tag "twitter.svg" %></div>
-				<div class="social-media pinterest-red-bg pinterest"><%= image_tag "pinterest.svg" %></div>
+				<a href="https://www.pinterest.com/pin/create/button/" data-pin-custom="true" data-pin-media="<%= @quiz.image_url%>" data-pin-description="<%= @quiz.description %>" data-pin-url="<%= quiz_url(@quiz) %>" class="social-media pinterest-red-bg pinterest">
+					<%= image_tag "pinterest.svg" %>
+				</a>
 				<div class="social-media blue-bg"><p>Link</p></div>
 			</div>
 		</div>
@@ -103,10 +105,6 @@
 		<div id="ad-2" class="side-ad"></div>
 	</div>
 </div>
-
-
-
-
 
 
 <script>
