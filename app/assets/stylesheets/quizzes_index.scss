@@ -138,7 +138,7 @@
 					padding: 18px 10px;
 					width: calc(100% - 120px);
 					margin-left: 120px;
-					font-size: 14px;
+					font-size: 15px;
 					.quiz-title {
 						font-size: 18px;
 						font-weight: 600;
@@ -195,7 +195,7 @@
 		background: $hover-orange;
 	}
 	p {
-		font-size: 14px;
+		font-size: 15px;
 	}
 }
 
@@ -282,6 +282,7 @@
 				margin-top: 60px;
 			}
 			#get-started {
+				position: relative;
 				@include flexbox;
 				@include justify-content(space-between);
 				@include align-items(center);
@@ -291,7 +292,7 @@
 		    padding: 0px 20px;
 		    margin: 30px auto;
 		    cursor: pointer;
-		    p {
+		    p.get-started-text {
 		    	font-size: 16px;
 		    	font-weight: 600;
 		    	cursor: pointer;
@@ -299,6 +300,27 @@
 		    	height: 16px;
 		    	line-height: 16px;
 		  	}
+		  	.creation-dropdown {
+		  		top: 50px;
+		  	}
+		  	.bridge {
+		  		position: absolute;
+		  		width: 100%;
+		  		top: 40px;
+		  		left: 0;
+		  		height: 10px;
+		  		background: none;
+		  	}
+		  	.creation-dropdown { 
+		  		.creation p {
+			  		color: $dark-grey;
+			  		font-weight: 400;
+		  		}
+		  		.creation:hover p {
+			  		color: $red;
+			  	}
+		  	}	
+			  	
 		    img {
 
 		    }

@@ -46,7 +46,7 @@
 		width: 620px;
 		#quiz-image-input {
 			height: 130px;
-			width: 150px;
+			width: 173px;
 			display: block;
 			opacity: 0;
 			z-index: 2;
@@ -54,7 +54,7 @@
 		}
 		#quiz-image-preview {
 			height: 130px;
-			width: 150px;
+			width: 173px;
 			border-radius: 8px;
 			text-align: center;
 			line-height: 130px;
@@ -68,7 +68,7 @@
 		}
 		.image-input-overlay {
 			height: 130px;
-			width: 150px;
+			width: 173px;
 			border-radius: 8px;
 			border: 1px solid $dark-outline;
 			text-align: center;
@@ -301,7 +301,7 @@
 				top: 0;
 				width: 400px;
 				opacity: 0;
-				z-index: 2;
+				z-index: 4;
 				cursor: pointer;
 			}
 			input, textarea {
@@ -766,7 +766,7 @@
 	position: absolute;
 	color: $green;
   bottom: 13px;
-  font-size: 14px;
+  font-size: 15px;
   right: calc(100% + 40px);
   width: 160px;
   text-align: right;
@@ -802,7 +802,7 @@
 			width: 100%;
 			line-height: 44px;
 			text-align: center;
-			font-size: 14px;
+			font-size: 15px;
 			font-weight: 800;
 		}
 	}

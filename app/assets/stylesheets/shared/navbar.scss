@@ -49,8 +49,9 @@ header {
 		height: 22px;
 		display: block;
 	}
-	#creation-dropdown {
+	.creation-dropdown {
 		display: none;
+		z-index: 1;
 	}
 	#nav-dropdown {
 		display: none;
@@ -74,7 +75,7 @@ header {
 		}
 		li {
 			text-align: center;
-			font-size: 14px;
+			font-size: 15px;
 			font-weight: 400;
 			height: 44px;
 			width: calc(100% - 120px);
@@ -102,6 +103,54 @@ header {
 }
 
 @media (min-width: 1024px) {
+	.creation-dropdown {
+		position: absolute;
+		padding: 10px 0px;
+		width: 180px;
+		border-radius: 8px;
+		background: white;
+		right: 0;
+		top: 70px;
+		height: 170px;
+		z-index: 2;
+		@include flexbox;
+		@include flex-direction(column);
+		@include justify-content(space-between);
+		display: none;
+		.creation {
+			@include flexbox;
+			@include justify-content(space-between);
+			@include align-items(center);
+			padding: 0px 20px;
+			.plus-btn {
+				height: 30px;
+				width: 30px;
+				border-radius: 8px;
+				border: 1px solid $dark-outline;
+				cursor: pointer;
+				img, svg {
+					height: 12px;
+					width: 12px;
+					margin: 8px;
+				}
+			}
+		}
+		.creation:hover {
+			p {
+				color: $red;
+			}
+			.plus-btn {
+				background: $red;
+				border: none;
+				svg {
+					margin: 9px;
+				}
+				svg * {
+					fill: white;
+				}
+			}
+		}
+	}
 	#navbar-actions .bridge {
 		height: 20px;
 		width: 100vw;
@@ -164,7 +213,7 @@ header {
 				}
 			}
 			#logo, #logo img {
-				width: auto;
+				width: 100px;
 				height: 30px;
 			}
 			input {
@@ -190,53 +239,6 @@ header {
 			div {
 				color: $red;
 				cursor: pointer;
-			}
-			#creation-dropdown {
-				position: absolute;
-				padding: 10px 0px;
-				width: 180px;
-				border-radius: 8px;
-				background: white;
-				right: 0;
-				top: 70px;
-				height: 170px;
-				@include flexbox;
-				@include flex-direction(column);
-				@include justify-content(space-between);
-				display: none;
-				.creation {
-					@include flexbox;
-					@include justify-content(space-between);
-					@include align-items(center);
-					padding: 0px 20px;
-					.plus-btn {
-						height: 30px;
-						width: 30px;
-						border-radius: 8px;
-						border: 1px solid $dark-outline;
-						cursor: pointer;
-						img, svg {
-							height: 12px;
-							width: 12px;
-							margin: 8px;
-						}
-					}
-				}
-				.creation:hover {
-					p {
-						color: $red;
-					}
-					.plus-btn {
-						background: $red;
-						border: none;
-						svg {
-							margin: 9px;
-						}
-						svg * {
-							fill: white;
-						}
-					}
-				}
 			}
 			#profile-dropdown {
 				background: white;

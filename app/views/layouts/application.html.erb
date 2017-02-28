@@ -6,6 +6,8 @@
     <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
+    <%= favicon_link_tag "favicon.ico" %>
+    <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="<%= @og_title %>" />
     <meta property="og:description" content="<%= @og_description %>" />
     <meta property="og:image" content="<%= image_url @og_image.gsub("https", "http") %>" />
@@ -24,6 +26,13 @@
         <%= render partial: "layouts/footer" %>
     <% end %>
     <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4977916302477578",
+    enable_page_level_ads: true
+    });
+    </script>
   </body>
 
   <script>

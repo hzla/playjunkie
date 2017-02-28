@@ -16,10 +16,7 @@
 		<%= image_tag "close-box.svg", :class => "close-image closer" %>
 		<%= file_field_tag "quiz_item_1_item_answer_1[image]", :class => "answer-image-input required" %>
 		<div class="answer-image-preview image-preview" src="#" alt="preview failed to load"></div>
-		<div class="char-countable">
-			<p class="char-count">90</p>
-			<%= text_area_tag "quiz_item_1_item_answer_1[answer_text]", nil, :class => "answer-text-input required", placeholder: "Answer text...", maxlength: 90 %>
-		</div>
+		<%= text_area_tag "quiz_item_1_item_answer_1[answer_text]", nil, :class => "answer-text-input required", placeholder: "Answer text..." %>
 		<%= text_field_tag "quiz_item_1_item_answer_1[image_credit]", nil, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
 
 		<% if answer_type == "trivia" %>

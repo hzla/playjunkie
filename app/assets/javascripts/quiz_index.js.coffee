@@ -4,8 +4,11 @@ QuizIndex =
 
 
 	loadMore: ->
-		$.get '/quizzes/featured', (data) -> 
-			$('.quizzes-section.list-view').html(data)
+		offset = $('.quiz-list-item').length
+		$.get "/quizzes/featured?offset=#{offset}", (data) -> 
+			$('#load-more').before(data)
+			if $(data).find('.quiz-list-item').length < 10
+				$('#load-more').hide()
 
 
 ready = ->

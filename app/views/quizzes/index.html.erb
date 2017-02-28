@@ -1,10 +1,45 @@
 <div class="content-container main-container home-container">
  <div id="banner">
  	<h1>Take Quizzes, Make Your Own, Have Fun</h1>
- 	<div id="get-started" class="btn"><p>Get Started</p> <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
+ 	<div id="get-started" class="btn"><p class="get-started-text">Get Started</p> <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %>
+ 		<div class="bridge"></div>
+ 		<div class="dropdown creation-dropdown">
+			<%= link_to new_quiz_quiz_path do %>
+				<div class="creation">
+					<p>Quiz</p>	
+					<div class="plus-btn">
+						<%= image_tag "add-answer-plus.svg", :class => "svg" %>
+					</div>
+				</div>
+			<% end %>
+			<%= link_to new_list_path do %>
+				<div class="creation">
+					<p>List</p>
+					<div class="plus-btn">
+						<%= image_tag "add-answer-plus.svg", :class => "svg" %>
+					</div>
+				</div>
+			<% end %>
+			<%= link_to new_flipcard_path do %>
+				<div class="creation">
+					<p>Flip Card</p>	
+					<div class="plus-btn">
+						<%= image_tag "add-answer-plus.svg", :class => "svg" %>
+					</div>
+				</div>
+			<% end %>
+			<%= link_to new_trivia_path do %>
+				<div class="creation">
+					<p>Trivia</p>
+					<div class="plus-btn">
+						<%= image_tag "add-answer-plus.svg", :class => "svg" %>
+					</div>
+				</div>
+			<% end %>	
+		</div>
+
+ 	</div>
  </div>		
-
-
 	<div class="quizzes-content">
 	 	<div class="section-label">
 	 		<%= image_tag "editors-picks.svg", :class => "section-icon" %>

@@ -31,4 +31,18 @@ module ApplicationHelper
 	def format_date_simple date
 		(date - 8.hours).strftime("%B %-d, %Y")
 	end
+
+	def random_quiz
+		if session[:seen_lists] == nil
+			session[:seen_lists] = [0]
+		end
+		quiz = Quiz.all.where(quiz_type: "list", is_preview?: nil, published: true).where('id not in (?)', session[:seen_lists]).shuffle.first
+		if !quiz
+			session[:seen_lists] = 0
+			random_quiz
+		end
+		p session[:seen_lists]
+		session[:seen_lists] << quiz.id
+		quiz
+	end
 end

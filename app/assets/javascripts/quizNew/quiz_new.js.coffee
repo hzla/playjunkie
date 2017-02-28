@@ -219,6 +219,11 @@ QuizNew = #UI for creating/editing Quizzes goes here
 			else
 				$(@).find('.close-answer').show()
 
+		$('.close-image').each ->
+			imgPreview = $(@).parent().children('.image-preview')
+			if imgPreview.css('background-image').includes "amazonaws"
+				$(@).show()
+
 		if $('.form-result:visible').length < 2
 			$('.close-result').hide()
 		else

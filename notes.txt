@@ -28,6 +28,7 @@ QA Round 1
 		COMPLETE IE fixes 2hr
 		COMPLETE bug fixes 1hr
 		COMPLETE domain/admin pw/bug fixes 2hr
+		COMPLETE social media/email 4hr
 
 
 

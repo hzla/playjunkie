@@ -179,23 +179,23 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		action = $(@).attr('id')
 		$(@).parents("#submit-bar").find('.quiz-submit-action').val action
 
-		if action == 'save-quiz'
-			$('#new_quiz, .edit_quiz').submit()
-			return
-		
-
-		valid = QuizValidate.validateFields()
-		if !valid
-			return
-
-		actionText = $(@).attr('action-text')
-		$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
-
 		if action == 'preview-quiz'
 			$('#new_quiz, .edit_quiz').attr('target', '_blank')
 		else
 			$('#new_quiz, .edit_quiz').attr('target', '')
 		
+		if action == 'save-quiz'
+			$('#new_quiz, .edit_quiz').submit()
+			return
+		
+		valid = QuizValidate.validateFields()
+		if !valid
+			return
+
+		actionText = $(@).attr('action-text')
+		if actionText != undefined
+			$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
+
 		$('#new_quiz, .edit_quiz').submit()
 
 ready = ->

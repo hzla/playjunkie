@@ -5,14 +5,14 @@ Header =
 		$('body').on 'mouseleave', '#profile-dropdown', @closeProfileDropdown
 
 		$('body').on 'mouseenter', '#create-btn', @showCreationDropdown
-		$('body').on 'mouseleave', '#creation-dropdown', @closeCreationDropdown
+		$('body').on 'mouseleave', '.creation-dropdown', @closeCreationDropdown
 
 		$('body').on 'mouseenter', '.fun-dropdown-trigger', @showFunDropdown
 		$('body').on 'mouseleave', '.fun-dropdown', @closeFunDropdown
 
 		$('body').on 'click', '#search-icon', @openSearch
 
-		$('body').on 'click', '#get-started', @showCreationDropdown
+		$('body').on 'mouseenter', '#get-started', @showCreationDropdown
 
 	openSearch: ->
 		$('.search-input').toggle()
@@ -23,10 +23,10 @@ Header =
 
 	showProfileDropdown: ->
 		$('#profile-dropdown').show()
-		$('#creation-dropdown').hide()
+		$('.creation-dropdown').hide()
 
 		check = setInterval ->
-			if $('#profile-dropdown:hover').length < 1 && $('#nav-profile-pic:hover').length < 1 && $('.bridge:hover').length < 1
+			if $('#profile-dropdown:hover').length < 1 && $('#nav-profile-pic:hover').length < 1 && $('.bridge:hover').length < 1 && $('#get-started:hover').length < 1
 				$('#profile-dropdown').hide()
 		, 1000
 
@@ -34,17 +34,18 @@ Header =
 		$('#profile-dropdown').hide()
 
 	showCreationDropdown: ->
-		$('#creation-dropdown').css('display', 'flex')
+		btn = $(@)
+		btn.parent().find('.creation-dropdown').css('display', 'flex')
 		$('#profile-dropdown').hide()
 
 		check = setInterval ->
-			if $('#creation-dropdown:hover').length < 1 && $('#create-btn:hover').length < 1 && $('.bridge:hover').length < 1
-				$('#creation-dropdown').hide()
+			if $('.creation-dropdown:hover').length < 1 && $('#create-btn:hover').length < 1 && $('.bridge:hover').length < 1 && $('#get-started:hover').length < 1
+				btn.parent().find('.creation-dropdown').hide()
 		, 500
 
 
 	closeCreationDropdown: ->
-		$('#creation-dropdown').hide()
+		$('.creation-dropdown').hide()
 
 	showFunDropdown: ->
 		$('.fun-dropdown').show()

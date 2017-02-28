@@ -58,8 +58,8 @@ class Quiz < ApplicationRecord
 
 	###### Class Methods for grabbing Collections
 
-	def self.featured limit=10
-		all.where(featured: true).limit(limit)
+	def self.featured limit=10, offset=0
+		all.where(featured: true, is_preview?: nil).offset(offset).limit(limit)
 	end
 
 	def self.editors_picks quiz_type=nil

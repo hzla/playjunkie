@@ -54,12 +54,10 @@
 		<% end %>
 
 			<div id="create-btn">Create <%= image_tag "navbar/arrow-create.svg", :class => "dropdown-arrow" %></div>
-			<div id="creation-dropdown" class="dropdown">
+			<div class="dropdown creation-dropdown">
 				<%= link_to new_quiz_quiz_path do %>
 					<div class="creation">
-						<p>
-							Quiz
-						</p>	
+						<p>Quiz</p>	
 						<div class="plus-btn">
 							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
 						</div>
@@ -67,9 +65,7 @@
 				<% end %>
 				<%= link_to new_list_path do %>
 					<div class="creation">
-						<p>
-							List
-						</p>	
+						<p>List</p>
 						<div class="plus-btn">
 							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
 						</div>
@@ -77,9 +73,7 @@
 				<% end %>
 				<%= link_to new_flipcard_path do %>
 					<div class="creation">
-						<p>
-							Flip Card
-						</p>	
+						<p>Flip Card</p>	
 						<div class="plus-btn">
 							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
 						</div>
@@ -87,9 +81,7 @@
 				<% end %>
 				<%= link_to new_trivia_path do %>
 					<div class="creation">
-						<p>
-							Trivia
-						</p>	
+						<p>Trivia</p>
 						<div class="plus-btn">
 							<%= image_tag "add-answer-plus.svg", :class => "svg" %>
 						</div>
@@ -98,9 +90,6 @@
 			</div>
 	</div>
 	
-	
-
-
 	<div id="nav-dropdown">
 		<div class="dropdown-content">
 			<%= image_tag 'close-x.svg', id: 'close-dropdown' %>

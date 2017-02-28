@@ -6,7 +6,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def featured
-		@quizzes = Quiz.featured(1000)
+		@quizzes = Quiz.featured(10, params[:offset])
 		render partial: 'list'
 	end
 
@@ -20,8 +20,6 @@ class QuizzesController < ApplicationController
 		@og_title = @quiz.title
 		@og_description = @quiz.description
 		@og_image = @quiz.image_url(:item)
-
-
 
 		@quiz = Quiz.find params[:id]
 		@quiz_type = @quiz.quiz_type
@@ -48,6 +46,7 @@ class QuizzesController < ApplicationController
 		(redirect_to root_path and return) if current_user != @quiz.user
 		@footer = false
 		@quiz = Quiz.find params[:id]
+		@quiz.update_attributes is_preview?: nil
 		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"
 			render "edit" and return
 		else
