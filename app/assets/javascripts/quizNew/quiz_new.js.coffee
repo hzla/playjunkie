@@ -29,6 +29,8 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		@manageClosers()
 		@manageMovers()
 		@closeSaveMessage()
+		if $('.edit_quiz').length > 0
+			@setAnswerFormats()
 
 	closeSaveMessage: ->
 		setTimeout ->
@@ -306,9 +308,17 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		else
 			form.removeClass('image-style').addClass('text-style')
 		
-		form.find('input, textarea').val("")
-
 		$(@).parents('.question').find('.answer-format').val($(@).attr('format_type'))
+
+	setAnswerFormats: ->
+		console.log "working"
+		$('input.answer-format').each ->
+			if $(@).val() == "image"
+				$(@).parents('.question').find('.image-format').click()
+			else
+				console.log $(@)
+				$(@).parents('.question').find('.text-format').click()
+
 
 	showImagePreview: -> 
 		input = @

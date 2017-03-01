@@ -37,10 +37,6 @@ PQuizShow =
 			if next.length == 0
 				$('.quiz-navigator').hide()
 
-
-
-
-
 ready = ->
 	PQuizShow.init()
 # $(document).ready ready

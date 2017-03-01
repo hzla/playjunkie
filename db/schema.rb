@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170218032042) do
+ActiveRecord::Schema.define(version: 20170301054806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20170218032042) do
     t.string   "image_back"
     t.string   "remember_code"
     t.integer  "order"
-    t.boolean  "answer_style"
+    t.string   "answer_style"
   end
 
   create_table "quizzes", force: :cascade do |t|
