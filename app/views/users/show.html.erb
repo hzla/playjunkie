@@ -41,7 +41,7 @@
 								<p class="creation-date">Created on <%= format_date(quiz.created_at) %></p>
 							<% end %>
 							
-							<p class="publish-date">
+							<p class="publish-date <%= quiz.publish_date ? 'green-txt' : '' %>">
 								<% if quiz.publish_date %>
 									Published on <%= format_date(quiz.publish_date) %>
 								<% else %>

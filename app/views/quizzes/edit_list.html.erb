@@ -6,7 +6,7 @@
 		<%= render partial: "new", locals: {f: f} %>
 		<h2 class="super-bold content-title">Add Items</h2>
 
-		<% @quiz.quiz_items.each_with_index do |item, i| %>
+		<% @quiz.quiz_items.order(:order).each_with_index do |item, i| %>
 			<div class="form-box question">
 				<%= hidden_field_tag "quiz_item_#{i + 1}[order]", item.order, :class => "item-order" %>
 				<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", item.remember_code, :class => "remember-code" %>

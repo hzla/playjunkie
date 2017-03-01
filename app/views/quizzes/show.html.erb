@@ -39,7 +39,9 @@
 					<%= render partial: "quiz_items/show", locals: {item: item, i: i} %>
 				<% end %>
 			<% else %>
-				<%= render partial: "quiz_items/show", locals: {item: @item, i: @page - 1} %>
+				<% @items.each_with_index do |item, i| %>
+					<%= render partial: "quiz_items/show", locals: {item: item, i: i + @offset_start} %>
+				<% end %>
 			<% end %>
 		</div>
 		<% if @quiz_type == "list" %>
@@ -50,7 +52,7 @@
 	 				<% end %>
 	 			<% end %>
 	 			<p class="page-number">Page <%= @page %></p>
-	 			<% if @page == @quiz.quiz_items.count %>
+	 			<% if @page == ((@quiz.quiz_items.count / 5.0).ceil) %>
 	 				<%= link_to quiz_path(random_quiz) do %>
 		 				<div class="page-next page-btn btn list-next"><p>Next List</p></div>
 		 			<% end %>

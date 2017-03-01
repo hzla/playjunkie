@@ -397,6 +397,7 @@
 					.item-description {
 						font-size: 18px;
 						font-weight: 400;
+						margin-top: 20px;
 						line-height: 1.3;
 					}
 					.answer .image-container {
@@ -480,8 +481,11 @@
 
 	.list.content-container.quiz-take {
 		.items .item {
+			.question-header {
+				margin-top: 0px !important;
+			}
 			.item-title {
-				margin-top: 60px; 
+				margin-top: 40px;
 			}
 			.item-number {
 				margin-right: 20px;
@@ -492,6 +496,11 @@
 			}
 			.image-container {
 				margin-top: 20px;
+			}
+		}
+		.items .item.image-style {
+			.item-title {
+				margin-top: 60px;
 			}
 		}
 	}

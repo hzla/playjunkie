@@ -24,7 +24,11 @@ class QuizzesController < ApplicationController
 		@quiz = Quiz.find params[:id]
 		@quiz_type = @quiz.quiz_type
 		@page = params[:page] ? params[:page].to_i : 1
-		@item = @quiz.quiz_items.order(:order)[@page - 1]
+		
+		@offset_start = 0 + ((@page - 1) * 5 )
+		@offset_end = 4 + ((@page - 1) * 5)
+		@items = @quiz.quiz_items.order(:order)[@offset_start..@offset_end]
+		
 		@quiz.increment_view_count
 	end
 

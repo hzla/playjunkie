@@ -61,7 +61,9 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 					missingFieldError = true 
 			else
 				text.attr('style', '')
-				question.find('div.question-image-input').attr('style', '')
+				if $('.flipcard-quiz').length < 1 #don't do this for flipcards because it erases background color
+					question.find('div.question-image-input').attr('style', '')
+
 			
 			
 			################################# for Lists ###########################
@@ -87,7 +89,7 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 
 				if textFront.val() == "" && imageFront.attr('src') == "#" || textBack.val() == "" && imageBack.attr('src') == "#"
 					text.attr('style', '')
-					question.find('div.question-image-input').attr('style', '')
+					# question.find('div.question-image-input').attr('style', '')
 					flipCardError = true
 
 					if textFront.val() == "" && imageFront.attr('src') == "#" 
@@ -179,11 +181,18 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		action = $(@).attr('id')
 		$(@).parents("#submit-bar").find('.quiz-submit-action').val action
 
+		$('.question:visible .item-order').each (i) -> #set item order
+			$(@).val(i + 1)
+			
 		if action == 'preview-quiz'
 			$('#new_quiz, .edit_quiz').attr('target', '_blank')
 		else
 			$('#new_quiz, .edit_quiz').attr('target', '')
 		
+		actionText = $(@).attr('action-text')
+		if actionText != undefined
+			$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
+
 		if action == 'save-quiz'
 			$('#new_quiz, .edit_quiz').submit()
 			return
@@ -192,10 +201,7 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		if !valid
 			return
 
-		actionText = $(@).attr('action-text')
-		if actionText != undefined
-			$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
-
+		
 		$('#new_quiz, .edit_quiz').submit()
 
 ready = ->

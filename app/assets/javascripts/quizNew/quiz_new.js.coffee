@@ -107,7 +107,9 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		if $(@).hasClass('move-down')
 			question.insertAfter(question.nextAll('.question:visible').first())
 		else
+			y = $(window).scrollTop()
 			question.insertBefore(question.prevAll('.question:visible').first())
+			$(window).scrollTop(y);
 
 		$('.question:visible .question-number').each (i) ->
 				$(@).find('p').text("#{i + 1}")

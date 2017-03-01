@@ -38,10 +38,9 @@ module ApplicationHelper
 		end
 		quiz = Quiz.all.where(quiz_type: "list", is_preview?: nil, published: true).where('id not in (?)', session[:seen_lists]).shuffle.first
 		if !quiz
-			session[:seen_lists] = 0
-			random_quiz
+			session[:seen_lists] = [0]
+			quiz = Quiz.all.where(quiz_type: "list", is_preview?: nil, published: true).where('id not in (?)', session[:seen_lists]).shuffle.first
 		end
-		p session[:seen_lists]
 		session[:seen_lists] << quiz.id
 		quiz
 	end
