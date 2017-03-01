@@ -270,7 +270,9 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		newQuestion.find('.answer-format').hide()
 		newQuestion.find('.image-format.selected, .text-format:not(.selected)').show()
 		newQuestion.find('.form-answer.image-style').show()
-		newQuestion.find('.form-answer.text-style').hide() # reset selected answer format
+		 # reset selected answer format
+		newQuestion.find('.form-answers').removeClass('text-style').addClass('image-style')
+		newQuestion.find('input.answer-format').val('image')
 		
 
 		newQuestion.find('.side-chooser').removeClass('selected')
@@ -289,6 +291,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		
 		#Update UI elements
 		QuizNew.manageClosers()
+		newQuestion.find('.close-image').hide()
 		QuizNew.manageMovers()
 		QuizNew.syncResultsRange()
 
