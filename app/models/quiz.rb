@@ -23,7 +23,20 @@ class Quiz < ApplicationRecord
 	end
 
 	def increment_view_count
-		update_attributes view_count: (self.view_count + 1)
+		update_attributes view_count: (self.view_count + 1), view_count_1: (self.view_count_1 + 1), trending_count: (self.trending_count + 1)
+	end
+
+	def shift_daily_view_counts
+		new_view_counts = {view_count_1: 0, trending_count: self.trending_count - self.view_count_7}
+
+		(2..7).each do |n|
+			new_view_counts["view_count_#{n}".to_sym] = self.send("view_count_#{n - 1}".to_sym)
+		end
+		update_attributes new_view_counts
+	end
+
+	def self.shift_daily_view_counts
+		Quiz.where(published: true).each(&:shift_daily_view_counts)
 	end
 
 	##### Attribute Getters
@@ -56,7 +69,7 @@ class Quiz < ApplicationRecord
 		date.strftime("%B %-4, %Y at %I:%M%P")
 	end
 
-	###### Class Methods for grabbing Collections
+	###### Class Methods for grabbing collections
 
 	def self.featured limit=10, offset=0
 		all.where(featured: true, is_preview?: nil).offset(offset).limit(limit)
@@ -70,8 +83,13 @@ class Quiz < ApplicationRecord
 		end
 	end
 
-	def self.get_collection_of_type page, quiz_type
-		where(published: true, quiz_type: quiz_type).offset((page - 1) * 10).limit(10)
+	def self.get_collection_of_type page, quiz_type, order
+		order_types = {"new" => "publish_date", "popular" => "view_count", "trending" => "trending_count" }
+		if order == "new" || order == "popular" || order == "trending" 
+			where(published: true, quiz_type: quiz_type).order("#{order_types[order]} desc").offset((page - 1) * 10).limit(10)
+		else
+			where(published: true, quiz_type: quiz_type).offset((page - 1) * 10).limit(10)
+		end
 	end
 
 	def self.trending page

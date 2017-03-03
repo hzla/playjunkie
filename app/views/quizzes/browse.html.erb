@@ -1,4 +1,4 @@
-<div class="content-container main-container no-banner">
+<div class="content-container main-container no-banner browse-container">
 	
 	<div class="page-title-container">
 		<h1 class="page-title"><%= @quiz_type.upcase %></h1>
@@ -17,7 +17,7 @@
 	 		<% @editors_picks.each do |quiz| %>
 	 			<%= link_to quiz_path(quiz) do %>
 		 			<div class="quiz-card">
-		 				<%= image_tag quiz.image_url(:card), :class => "quiz-image" %>
+		 				<div class="quiz-image img" style="background-image: url(<%= image_url(quiz.image_url(:square)) %>)"></div>
 		 				<div class="quiz-info">
 		 					<div class="quiz-title"><%= quiz.title %></div>
 		 					<div class="quiz-sub-info">
@@ -38,16 +38,22 @@
 		 	<div class="quizzes-section list-view">
 			 	<div class="sort-bar">
 					<p class="label">Sort by:</p>
-					<p sort-name="vc">Popular</p>
-					<p sort-name="n">Trending</p>
-					<p sort-name="pd" class="selected">New</p>
+					<%= link_to params.permit(:page, :sorted_by).merge(:page => @page, sorted_by: "popular") do %>
+						<p class="<%= 'selected' if @sort == 'popular' %>">Popular</p>
+					<% end %>
+					<%= link_to params.permit(:page, :sorted_by).merge(:page => @page, sorted_by: "trending") do %>
+						<p class="<%= 'selected' if @sort == 'trending' %>">Trending</p>
+					<% end %>
+					<%= link_to params.permit(:page, :sorted_by).merge(:page => @page, sorted_by: "new") do %>
+						<p class="<%= 'selected' if @sort == 'new' %>">New</p>
+					<% end %>
 				</div>
 
 				<div class="sortable">
 			 		<% @quizzes.each do |quiz| %>
-			 			<%= link_to quiz_path(quiz), :class => "sort-item", publish_date: (quiz.publish_date.to_i), creation_date: (quiz.created_at.to_i), view_count: (quiz.view_count) do %>
+			 			<%= link_to quiz_path(quiz), :class => "sort-item" do %>
 				 			<div class="quiz-list-item">
-				 				<%= image_tag quiz.image_url(:square), :class => "quiz-image" %>
+				 				<div class="quiz-image img" style="background-image: url(<%= image_url(quiz.image_url(:square)) %>)"></div>
 				 				<div class="quiz-info">
 				 					<div class="quiz-title"><%= quiz.title %></div>
 				 					<div class="quiz-sub-info">
@@ -63,13 +69,13 @@
 			 		<% end %>
 			 	</div>
 			 	<div id="page-controls">
-		 			<%= link_to params.permit(:page).merge(:page => @page - 1) do %>
+		 			<%= link_to params.permit(:page, :sorted_by).merge(:page => @page - 1, :sorted_by => @sort) do %>
 		 				<% if @page > 1 %>
 		 					<div class="page-prev page-btn btn"><p>Previous</p></div>
 		 				<% end %>
 		 			<% end %>
 		 			<p class="page-number">Page <%= @page %></p>
-		 			<%= link_to params.permit(:page).merge(:page => @page + 1) do %>
+		 			<%= link_to params.permit(:page, :sorted_by).merge(:page => @page + 1, :sorted_by => @sort) do %>
 		 				<% unless @last_page %>
 		 					<div class="page-next page-btn btn"><p>Next</p></div>
 		 				<% end %>

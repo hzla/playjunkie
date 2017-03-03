@@ -94,7 +94,7 @@
 				}
 			}
 		}
-		img {
+		.img {
 			width: 100%;
 			height: calc((100vw - 40px) / 2);
 			margin-top: 20px;
@@ -104,10 +104,36 @@
 }
 
 
+.sort-bar {
+	@include flexbox;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	.label:hover {
+		color: $grey;
+		cursor: default;
+	}
+	p {
+		margin-right: 30px;
+		color: $grey;
+		cursor: pointer;
+	}
+	p:hover {
+		color: $dark-grey;
+		// font-weight: 600;
+	}
+	p.selected {
+		color: $dark-grey;
+		// font-weight: 600;
+	}
+}
+
 @media (min-width: 1024px) {
 	.user-profile-container {
 		padding: 60px 0px;
 		@include flexbox;
+		.sort-bar {
+			margin-top: 40px;
+		}
 	}
 	#user-info {
 		width: 220px;
@@ -130,29 +156,6 @@
 		margin: 40px 0px 0px 0px;
 		width: 100px;
 	}
-	.sort-bar {
-		@include flexbox;
-		margin-top: 40px;
-		p {
-			margin-right: 40px;
-			color: $grey;
-			cursor: pointer;
-		}
-		p:first-child {
-			cursor: default;
-		}
-		p:first-child:hover {
-			color: $grey;
-		}
-		p:hover {
-			color: $dark-grey;
-			// font-weight: 600;
-		}
-		p.selected {
-			color: $dark-grey;
-			// font-weight: 600;
-		}
-	}
 	#user-quizzes {
 		margin: 0px 0px 0px 20px;
 		width: 700px;
@@ -167,11 +170,17 @@
 			margin-top: 20px;
 		}
 	}
+	.sort-bar {
+		margin-top: 20px;
+		p {
+			margin-right: 40px;
+		}
+	}
 	.quiz-list-container {
 		.quiz.no-actions {
 			height: 160px;
 			@include justify-content(space-between);
-			img {
+			.img {
 				height: 120px;
 				width: 180px;
 			}
@@ -219,7 +228,7 @@
 					display: block;
 				}
 			}
-			img {
+			.img {
 				margin-left: 80px;
 				margin-top: 0px;
 				height: 120px;

@@ -82,7 +82,7 @@
 			overflow: scroll;
 			overflow-x: scroll;
 			margin-top: 10px;
-			margin-bottom: 30px;
+			margin-bottom: 20px;
 			.quiz-card {
 				height: 100%;
 				border-radius: 8px;
@@ -135,10 +135,12 @@
 					left: -1px;
 				}
 				.quiz-info {
-					padding: 18px 10px;
+					padding: 0px 10px;
 					width: calc(100% - 120px);
 					margin-left: 120px;
 					font-size: 15px;
+					@include flexbox;
+					@include align-items(center);
 					.quiz-title {
 						font-size: 18px;
 						font-weight: 600;
@@ -204,6 +206,11 @@
 	.content-container.main-container.home-container {
 		margin-top: 260px;
 	}
+	.content-container.browse-container {
+		.side-content {
+			margin-top: 60px;
+		}
+	}
 	.content-container.main-container.no-banner {
 		margin-top: 60px;
 		.page-title-container {
@@ -256,7 +263,7 @@
 						border-radius: 20px;
 						@include flexbox;
 						@include align-items(center);
-						top: 30px;
+						top: 10px;
 						left: 10px;
 						background: $red;
 						p {
@@ -410,6 +417,7 @@
 						margin-left: 200px;
 						width: calc(100% - 200px);
 						padding: 20px;
+						@include align-items(flex-start);
 						.quiz-type {
 							display: block;
 						}

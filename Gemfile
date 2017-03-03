@@ -17,6 +17,7 @@ gem 'pg'
 
 #Workers
 gem 'sidekiq'
+gem 'sidekiq-scheduler'
 
 #CurlStuff
 gem 'curb'

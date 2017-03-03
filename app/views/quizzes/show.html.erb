@@ -106,7 +106,7 @@
 			<% Quiz.all.limit(6).each do |rec| %>
 				<%= link_to quiz_path(rec) do %>
 					<div class="side-quiz">
-						<%= image_tag rec.image_url(:sidebar) %>
+						<div class="img" style="background-image: url(<%= image_url(rec.image_url(:square)) %>)"></div>
 						<p><%= rec.title %></p>
 					</div>
 				<% end %>	

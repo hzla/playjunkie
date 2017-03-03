@@ -1,7 +1,8 @@
 QuizSort =
 	init: ->
-		$('body').on 'click', '.sort-bar p:not(.label)', @chooseSortOption
-		$("p.selected").click()
+		if $('.user-profile-container').length > 0
+			$('body').on 'click', '.sort-bar p:not(.label)', @chooseSortOption
+		
 
 	chooseSortOption: ->
 		$(@).parents().find('p').removeClass('selected')

@@ -12,7 +12,7 @@
 			<label class="box-label">Question Image</label>
 			<%= image_tag "close-box.svg", :class => "close-image closer" %>
 			<%= file_field_tag "quiz_item_#{i + 1}[image]", :class => "question-image-input required" %>
-			<div class="question-image-preview image-preview" style="background-image: url(<%= question.image_url(:item) %>);" alt="preview failed to load" src="<%= question.image_url || '#' %>"></div>
+			<div class="question-image-preview image-preview" style="background-image: url(<%= question.image_url %>);" alt="preview failed to load" src="<%= question.image_url || '#' %>"></div>
 			<div class="box-input question-image-input">Click to add image...</div>
 		</div>
 		<div class="box-field">

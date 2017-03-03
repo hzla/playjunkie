@@ -277,7 +277,9 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 		newQuestion.find('.side-chooser').removeClass('selected')
 		newQuestion.find('.flip-container').removeClass('flip')
+		newQuestion.find('.card-color-input').val("rgb(30, 94, 253)")
 		newQuestion.find('.choose-front').addClass('selected') #reset card sides
+
 
 
 		newAnswer = newQuestion.find('.form-answer').first().clone()
@@ -314,12 +316,10 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		$(@).parents('.question').find('.answer-format').val($(@).attr('format_type'))
 
 	setAnswerFormats: ->
-		console.log "working"
 		$('input.answer-format').each ->
 			if $(@).val() == "image"
 				$(@).parents('.question').find('.image-format').click()
 			else
-				console.log $(@)
 				$(@).parents('.question').find('.text-format').click()
 
 

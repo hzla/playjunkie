@@ -57,7 +57,7 @@
 					<div class="answer <%= answer.image.present? ? 'image-style' : 'text-style' %> <%= answer.correct? ? 'correct' : 'incorrect' %> <%= @quiz.quiz_type %>" result-id="<%= answer.result_id %>"> 
 						<% if answer.image.present? %>
 							<div class="image-container">
-								<%= image_tag answer.image_url(:item_thumbnail), :class => "answer-image" %>
+								<%= image_tag answer.image_url(:square), :class => "answer-image" %>
 								<div class="image-credit"><%= answer.image_credit %></div>
 							</div>
 						<% end %>

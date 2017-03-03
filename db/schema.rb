@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301054806) do
+ActiveRecord::Schema.define(version: 20170303083757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,14 @@ ActiveRecord::Schema.define(version: 20170301054806) do
     t.boolean  "featured",           default: false
     t.boolean  "homepage_pick",      default: false
     t.boolean  "browse_pick",        default: false
+    t.integer  "view_count_1",       default: 0
+    t.integer  "view_count_2",       default: 0
+    t.integer  "view_count_3",       default: 0
+    t.integer  "view_count_4",       default: 0
+    t.integer  "view_count_5",       default: 0
+    t.integer  "view_count_6",       default: 0
+    t.integer  "view_count_7",       default: 0
+    t.integer  "trending_count",     default: 0
   end
 
   create_table "results", force: :cascade do |t|

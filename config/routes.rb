@@ -42,6 +42,11 @@ Rails.application.routes.draw do
   get '/admin/login', to: 'users#admin_login', as: 'admin_login'
   post '/admin', to: 'users#admin_authenticate'
 
+  require 'sidekiq/web'
+  constraints Clearance::Constraints::SignedIn.new { |user| user.is_admin? } do
+    mount Sidekiq::Web, at: '/sidekiq'
+  end
+
 
 
 

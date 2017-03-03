@@ -19,7 +19,7 @@ class QuizzesController < ApplicationController
 	def show
 		@og_title = @quiz.title
 		@og_description = @quiz.description
-		@og_image = @quiz.image_url(:item)
+		@og_image = @quiz.image_url
 
 		@quiz = Quiz.find params[:id]
 		@quiz_type = @quiz.quiz_type
@@ -29,7 +29,9 @@ class QuizzesController < ApplicationController
 		@offset_end = 4 + ((@page - 1) * 5)
 		@items = @quiz.quiz_items.order(:order)[@offset_start..@offset_end]
 		
-		@quiz.increment_view_count
+		if @page == 1
+			@quiz.increment_view_count
+		end
 	end
 
 	def trending
@@ -42,8 +44,9 @@ class QuizzesController < ApplicationController
 		@page = params[:page] ? params[:page].to_i : 1
 		@editors_picks = Quiz.editors_picks(params[:quiz_type])
 		@quiz_type = params[:quiz_type] 
-		@quizzes = Quiz.get_collection_of_type @page, @quiz_type
-		@last_page = Quiz.get_collection_of_type(@page + 1, @quiz_type).length == 0
+		@sort = params[:sorted_by] || "new"
+		@quizzes = Quiz.get_collection_of_type @page, @quiz_type, @sort
+		@last_page = Quiz.get_collection_of_type(@page + 1, @quiz_type, @sort).length == 0
 	end
 
 	def edit
