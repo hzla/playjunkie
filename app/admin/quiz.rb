@@ -1,6 +1,6 @@
 ActiveAdmin.register Quiz do
 
-  permit_params :title, :description, :user_id, :completion_message, :quiz_type, :image, :published, :view_count, :featured, :homepage_pick, :browse_pick, :publish_date
+  permit_params :title, :description, :user_id, :completion_message, :quiz_type, :image, :published, :view_count, :featured, :homepage_pick, :browse_pick, :publish_date, :trending_count
 
   index do
     column :id
@@ -17,6 +17,7 @@ ActiveAdmin.register Quiz do
      f.inputs :quiz_type
      f.inputs :image
      f.inputs :view_count
+     f.inputs :trending_count
      f.inputs :publish_date
      f.inputs :completion_message
      f.inputs :featured
