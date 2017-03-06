@@ -38,11 +38,11 @@
 		 	<div class="quizzes-section list-view">
 			 	<div class="sort-bar">
 					<p class="label">Sort by:</p>
-					<%= link_to params.permit(:page, :sorted_by).merge(:page => @page, sorted_by: "popular") do %>
-						<p class="<%= 'selected' if @sort == 'popular' %>">Popular</p>
-					<% end %>
 					<%= link_to params.permit(:page, :sorted_by).merge(:page => @page, sorted_by: "trending") do %>
 						<p class="<%= 'selected' if @sort == 'trending' %>">Trending</p>
+					<% end %>
+					<%= link_to params.permit(:page, :sorted_by).merge(:page => @page, sorted_by: "popular") do %>
+						<p class="<%= 'selected' if @sort == 'popular' %>">Popular</p>
 					<% end %>
 					<%= link_to params.permit(:page, :sorted_by).merge(:page => @page, sorted_by: "new") do %>
 						<p class="<%= 'selected' if @sort == 'new' %>">New</p>

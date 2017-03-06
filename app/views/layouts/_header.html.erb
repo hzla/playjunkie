@@ -7,21 +7,18 @@
 		<%= link_to trending_path do %>
 			<div>Trending</div>
 		<% end %>
-		<div class="fun-dropdown-trigger">Fun <%= image_tag "navbar/arrow-fun.svg", :class => "dropdown-arrow" %></div>
-		<div class="fun-dropdown dropdown">
-			<%= link_to '/browse/quiz' do %>
-				Quiz
-			<% end %>
-			<%= link_to '/browse/list' do %>
-				List
-			<% end %>
-			<%= link_to '/browse/flipcard' do %>
-				Flipcard
-			<% end %>
-			<%= link_to '/browse/trivia' do %>
-				Trivia
-			<% end %>	
-		</div>
+		<%= link_to '/browse/quiz' do %>
+			Quiz
+		<% end %>
+		<%= link_to '/browse/list' do %>
+			List
+		<% end %>
+		<%= link_to '/browse/flipcard' do %>
+			Flipcard
+		<% end %>
+		<%= link_to '/browse/trivia' do %>
+			Trivia
+		<% end %>	
 
 		<%= form_tag '/searches' do %>
 			<%= text_field_tag :terms, nil, :class => "search-input", placeholder: "Search" %>

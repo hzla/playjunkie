@@ -8,9 +8,6 @@ SocialMedia =
 		linkBox = $(@).parents('.social-medias').find('.link-box').show()
 		linkBox.find('input').select()
 
-
-
-
 	shareFb: ->
 		FB.ui
 			method: 'share'
@@ -19,7 +16,8 @@ SocialMedia =
 		, (response) ->
 
 	shareTw: ->
-		window.open("https://twitter.com/intent/tweet?", 'Tweet!', 'height=600px,width=800px');
+		text = encodeURIComponent($('.quiz-title').text() + " " + location.href)
+		window.open("https://twitter.com/intent/tweet?text=#{text}", 'Tweet!', 'height=600px,width=800px');
 
 	sharePinterest: ->
 		currentUrl = location.href

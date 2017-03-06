@@ -45,7 +45,7 @@ class Quiz < ApplicationRecord
 		if image.present?
 			super#.sub("/uploads", "/qwizzy/qwizzy/qwizzy/uploads").sub('qwizzy.s3','s3-us-west-1')
 		else
-			"http://whatsupyasieve.com/wp-content/uploads/2012/09/sad-panda.jpg"
+			""
 		end
 	end
 

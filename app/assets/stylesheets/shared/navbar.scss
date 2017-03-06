@@ -27,7 +27,7 @@ header {
 		div, input {
 			display: none;
 		}
-		.fun-dropdown {
+		a:not(#logo) {
 			display: none;
 		}
 		.search-input {
@@ -182,13 +182,26 @@ header {
 		}
 		#navbar-links {
 			position: relative;
+			a:not(#logo) {
+				display: block;
+				margin-left: 30px;
+				font-weight: 600;
+
+			}
+			a:hover {
+				color: $red;
+				div	{
+					color: $red;
+				}
+			}
 			div, input {
 				line-height: 60px;
-				margin-left: 40px;
 				display: block;
+
 			}
 			.search-input {
-				width: 200px;
+				width: 140px;
+				margin-left: 30px;
 			}
 			.fun-dropdown-trigger {
 				cursor: pointer;
