@@ -86,6 +86,9 @@ class QuizzesController < ApplicationController
 			redirect_to quiz_path(@quiz) and return
 		elsif params[:action_type] == "publish-quiz" #if publishing quiz
 			@quiz.update_attributes published: true, publish_date: Time.now
+			@og_title = @quiz.title
+			@og_description = @quiz.description
+			@og_image = @quiz.image_url
 			render "create" and return
 		else # if editing quiz
 			redirect_to edit_quiz_path(@quiz, saved: true)

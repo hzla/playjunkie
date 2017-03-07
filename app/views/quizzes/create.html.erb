@@ -19,7 +19,7 @@
 			</div>
 		</div>
 
-		<%= text_field_tag :link, quiz_url(@quiz), :class => "quiz-link" %>
+		<%= text_field_tag :link, quiz_url(@quiz), :class => "quiz-link", id: "link" %>
 
 		<%= link_to quiz_path(@quiz) do %>
 			<div class="quiz-btn btn">

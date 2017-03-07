@@ -16,7 +16,7 @@ SocialMedia =
 		, (response) ->
 
 	shareTw: ->
-		text = encodeURIComponent($('.quiz-title').text() + " " + location.href)
+		text = encodeURIComponent($('.quiz-title').text() + " " + $('#link').val())
 		window.open("https://twitter.com/intent/tweet?text=#{text}", 'Tweet!', 'height=600px,width=800px');
 
 	sharePinterest: ->
