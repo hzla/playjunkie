@@ -5,14 +5,14 @@ Email =
 
 
 	showSent: (e, data) ->
-		$('.form-message').attr('style','').show().text(data.message)
+		$('.form-message').attr('style','').show().text(data.message).css('color', '#12d66d')
 		setTimeout ->
 			$('.form-message').animate 
 				opacity: 0
 			, 400
 			if data.redirect
 				location.href = data.redirect
-		, 1000
+		, 3000
 
 	showSending: (e, data) ->
 		$('.form-message').attr('style','').show().text("Sending...")

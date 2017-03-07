@@ -14,7 +14,7 @@ class UserMailer < ActionMailer::Base
   	@name = name
   	@email = email
   	@message = message
-  	mail(:to => "playjunkieinc@gmail.com", :subject => "Message from #{@name}")
+  	mail(:to => "hzllyde@gmail.com", :subject => "Message from #{@name}")
   end
 
   

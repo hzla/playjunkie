@@ -1,24 +1,21 @@
 <div class="content-container quiz-publish-container">
 	<div class="content">
 		<h2>Hooray! You just published</h2>
-		<h1><%= @quiz.title %></h1>
+		<h1 class="quiz-title"><%= @quiz.title %></h1>
 
 		<div class="published-social-media">
-			<div class="social-media fb-blue-bg">
+			<div class="social-media fb-blue-bg fb">
 				<div>
 					<%= image_tag "fb.svg" %>
 					<p>Share on Facebook</p>
 				</div>
 				
 			</div>
-			<div class="social-media tw-blue-bg">
+			<div class="social-media tw-blue-bg tw">
 				<div>
 					<%= image_tag "twitter.svg" %>
 					<p>Share on Twitter</p>
 				</div>
-			</div>
-			<div class="social-media embed-btn black-bg">
-				<p>Embed</p>
 			</div>
 		</div>
 
@@ -31,3 +28,39 @@
 		<% end %>
 	</div>
 </div>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '919320708203651',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>

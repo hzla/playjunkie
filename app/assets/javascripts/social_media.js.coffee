@@ -2,6 +2,7 @@ SocialMedia =
 	init: ->
 		$('body').on 'click', '.social-media.fb', @shareFb
 		$('body').on 'click', '.social-media.tw', @shareTw
+		$('body').on 'click', '.social-media.pinterest', @sharePinterest
 		$('body').on 'click', '.link', @showLink
 
 	showLink: ->

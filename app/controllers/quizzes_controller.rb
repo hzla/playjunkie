@@ -3,6 +3,7 @@ class QuizzesController < ApplicationController
 	before_filter :get_quiz, only: [:show, :edit, :update, :destroy]
 
 	def index
+		@trending = Quiz.trending(1)[0..5]
 	end
 
 	def featured
@@ -44,7 +45,7 @@ class QuizzesController < ApplicationController
 		@page = params[:page] ? params[:page].to_i : 1
 		@editors_picks = Quiz.editors_picks(params[:quiz_type])
 		@quiz_type = params[:quiz_type] 
-		@sort = params[:sorted_by] || "new"
+		@sort = params[:sorted_by] || "trending"
 		@quizzes = Quiz.get_collection_of_type @page, @quiz_type, @sort
 		@last_page = Quiz.get_collection_of_type(@page + 1, @quiz_type, @sort).length == 0
 	end
