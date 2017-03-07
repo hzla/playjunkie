@@ -12,7 +12,7 @@ SocialMedia =
 		FB.ui
 			method: 'share'
 			display: 'popup'
-			href: location.href
+			href: $('#link').val()
 		, (response) ->
 
 	shareTw: ->
