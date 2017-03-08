@@ -15,7 +15,7 @@
 					<% end %>
 				</div>
 			<div class="quiz-subinfo">
-				<p class="quiz-date"><%= format_date_simple(@quiz.created_at) %></p>
+				<p class="quiz-date"><%= format_date_simple(@quiz.publish_date) %></p>
 				<p class="quiz-type"><%= @quiz.quiz_type.upcase %></p>
 			</div>
 			<div class="social-medias">
