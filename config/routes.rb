@@ -32,7 +32,6 @@ Rails.application.routes.draw do
   get '/searches', to: 'searches#show', as: 'search'
 
   #pages
-  get '/about', to: 'pages#about', as: 'about'
   get '/privacy', to: 'pages#privacy', as: 'privacy'
   get '/terms', to: 'pages#terms', as: 'terms'
   get '/contact', to: 'pages#contact', as: 'contact'
