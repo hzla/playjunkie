@@ -348,4 +348,4 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 ready = ->
 	QuizNew.init()
-$(document).on 'turbolinks:load', ready
+$(document).on 'ready', ready

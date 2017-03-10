@@ -206,5 +206,5 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 
 ready = ->
 	QuizValidate.init()
-# $(document).ready ready
-$(document).on 'turbolinks:load', ready
+$(document).ready ready
+# $(document).on 'turbolinks:load', ready

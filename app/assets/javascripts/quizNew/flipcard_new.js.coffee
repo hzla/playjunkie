@@ -48,5 +48,5 @@ FlipcardNew = #Flipcard specefic UI goes here
 
 ready = ->
 	FlipcardNew.init()
-# $(document).ready ready
-$(document).on 'turbolinks:load', ready
+$(document).ready ready
+# $(document).on 'turbolinks:load', ready
