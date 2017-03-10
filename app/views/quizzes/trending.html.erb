@@ -34,23 +34,13 @@
 		 			<% end %>
 		 		</div>
 		 		<div id="bottom-ad">
-		 			<script id="mNCC" language="javascript">
-		 				$(document).on('turbolinks:load', function() {
-		 					medianet_width = "728";
-						   medianet_height = "90";
-						   medianet_crid = "121681831";
-						   medianet_versionId = "111299";
-						   (function() {
-						       var isSSL = 'https:' == document.location.protocol;
-						       var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CUSWN36E' + (isSSL ? '&https=1' : '');
-						       document.write('<scr' + 'ipt type="text/javascript" id="mNSC" src="' + mnSrc + '"></scr' + 'ipt>');
-						    })();
-		 				})	   
-					</script>
+		 			<%= render partial: "ads/row" %>
 		 		</div>
 		 	</div>
 		 	<div class="side-content">
-				<div id="ad1" class="side-ad"></div>
+				<div id="ad1" class="side-ad">
+					<%= render partial: "ads/col_tall" %>
+				</div>
 			</div>
 		 </div>
 	 </div>

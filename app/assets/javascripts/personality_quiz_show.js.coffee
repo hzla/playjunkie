@@ -39,5 +39,5 @@ PQuizShow =
 
 ready = ->
 	PQuizShow.init()
-# $(document).ready ready
-$(document).on 'turbolinks:load', ready
+$(document).ready ready
+# $(document).on 'turbolinks:load', ready

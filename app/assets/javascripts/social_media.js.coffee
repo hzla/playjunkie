@@ -29,12 +29,12 @@ SocialMedia =
 
 ready = ->
 	SocialMedia.init()
-$(document).on 'turbolinks:load', ready
+$(document).on 'ready', ready
 
 Pinterest =
   load: ->
     delete window["PIN_"+~~((new Date).getTime()/864e5)]
     $.getScript("//assets.pinterest.com/js/pinit.js")
 
-$(document).on 'turbolinks:load', ->
+$(document).on 'ready', ->
   Pinterest.load()

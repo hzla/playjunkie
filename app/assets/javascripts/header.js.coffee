@@ -60,5 +60,5 @@ Header =
 
 ready = ->
 	Header.init()
-# $(document).ready ready
-$(document).on 'turbolinks:load', ready
+$(document).ready ready
+# $(document).on 'turbolinks:load', ready
