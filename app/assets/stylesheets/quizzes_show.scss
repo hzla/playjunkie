@@ -9,6 +9,7 @@
 	left: 0;
 	height: 44px;
 	border-radius: 8px;
+	display: none;
 }
 
 .content-container.quiz-take {
@@ -315,6 +316,7 @@
 		left: calc(50vw - 470px);
 		width: 940px;
 		height: 120px;
+		display: block;
 	}
 	.content-container.quiz-take, .content-container.main-container {
 		margin-top:  200px;
