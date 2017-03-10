@@ -82,16 +82,17 @@
 		 			<% end %>
 		 		</div>
 		 		<div class="bottom-ads">
-					<div class="bottom-ad"></div>
-					<div class="bottom-ad"></div>
-					<div class="bottom-ad"></div>
-					<div class="bottom-ad"></div>
-					<div class="bottom-ad"></div>
-					<div class="bottom-ad"></div>
+					<%= 6.times do %>
+						<div class="bottom-ad">
+							<%= render partial: "ads/small" %>
+						</div>
+					<% end %>
 				</div>
 		 	</div>
 		 	<div class="side-content">
-				<div id="ad1" class="side-ad"></div>
+				<div id="ad1" class="side-ad">
+					<%= render partial: "ads/col_tall" %>
+				</div>
 			</div>
 		 </div>
 	 </div>
