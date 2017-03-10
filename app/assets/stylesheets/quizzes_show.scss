@@ -14,7 +14,7 @@
 
 .content-container.quiz-take {
 	padding: 30px 10px 10px 10px;
-	margin-top: 88px;
+	margin-top: 44px;
 	.side-content {
 		display: none;
 	}
@@ -319,7 +319,7 @@
 		display: block;
 	}
 	.content-container.quiz-take, .content-container.main-container {
-		margin-top:  200px;
+		margin-top:  60px;
 		padding: 60px calc(50vw - 470px);
 		@include flexbox;
 		@include justify-content(space-between);
