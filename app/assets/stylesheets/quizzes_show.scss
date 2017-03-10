@@ -516,4 +516,10 @@
 		height: 130px;
 		border-radius: 8px;
 	}
+	.bottom-ad:nth-child(4n), .bottom-ad:nth-child(5n), .bottom-ad:nth-child(6n) {
+		transform: translateY(20px);
+		-ms-transform: translateY(20px);
+		-webkit-transform: translateY(20px);
+
+	}
 }
