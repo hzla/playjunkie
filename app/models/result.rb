@@ -59,6 +59,10 @@ class Result < ApplicationRecord
 	private
 
 	def self.result_params result_number, params
-		params.require("result_#{result_number}").permit(:image, :result_text, :image_credit, :range_min, :range_max, :remember_code)
+		if params.class == Hash
+			params["result_#{result_number}"]
+		else
+			params.require("result_#{result_number}").permit(:image, :result_text, :image_credit, :range_min, :range_max, :remember_code)
+		end
 	end
 end

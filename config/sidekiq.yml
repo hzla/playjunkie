@@ -1,4 +1,4 @@
 :schedule:
   trending_scheduler:
-    every: 1440m   # Runs once per minute
+    every: 1440m   
     class: TrendingScheduler

@@ -12,9 +12,8 @@ class QuizzesController < ApplicationController
 	end
 
 	def new
-		@footer = false
-		@quiz_type = params[:quiz_type]
-		render "new_#{@quiz_type}"
+		quiz = Quiz.create_self_and_all_items Quiz.blank_attributes(params[:quiz_type]), current_user
+		redirect_to edit_quiz_path(quiz)
 	end
 
 	def show
@@ -106,3 +105,5 @@ class QuizzesController < ApplicationController
 		@quiz = Quiz.find(params[:id])
 	end
 end
+
+

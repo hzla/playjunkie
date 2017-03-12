@@ -33,6 +33,7 @@ gem 'httparty'
 
 #Images:
 gem 'carrierwave'
+gem 'carrierwave_direct'
 gem 'rmagick'
 gem 'mini_magick'
 gem "fog-aws"

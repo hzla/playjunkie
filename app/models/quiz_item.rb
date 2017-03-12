@@ -125,11 +125,19 @@ class QuizItem < ApplicationRecord
 	private
 
 	def self.quiz_item_params quiz_item_number, params
-		params.require("quiz_item_#{quiz_item_number}".to_sym).permit(:order, :image, :image_back, :item_text, :item_text_back, :image_credit, :image_credit_back, :color, :color_back, :title, :remember_code, :answer_style)
+		if params.class == Hash
+			params["quiz_item_#{quiz_item_number}"]
+		else
+			params.require("quiz_item_#{quiz_item_number}".to_sym).permit(:order, :image, :image_back, :item_text, :item_text_back, :image_credit, :image_credit_back, :color, :color_back, :title, :remember_code, :answer_style)
+		end
 	end
 
 	def self.item_answer_params quiz_item_number, item_answer_number, params
-		params.require("quiz_item_#{quiz_item_number}_item_answer_#{item_answer_number}".to_sym).permit(:image, :answer_text, :image_credit, :correct?, :result_id, :remember_code)
+		if params.class == Hash
+			params["quiz_item_#{quiz_item_number}_item_answer_#{item_answer_number}"]
+		else
+			params.require("quiz_item_#{quiz_item_number}_item_answer_#{item_answer_number}".to_sym).permit(:image, :answer_text, :image_credit, :correct?, :result_id, :remember_code)
+		end
 	end
 
 end

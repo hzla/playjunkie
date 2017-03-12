@@ -96,6 +96,12 @@ class Quiz < ApplicationRecord
 		where('publish_date > ?', Time.now - 7.days).order('view_count desc').offset((page - 1) * 10).limit(10)
 	end
 
+	###### Misc
+
+	def self.blank_attributes quiz_type
+		  {"quiz"=>{"quiz_type"=> quiz_type, "title"=>"", "description"=>""}, "result_1"=>{"result_text"=>"", "image_credit"=>""}, "quiz_item_1"=>{"order"=>"1", "item_text"=>"", "image_credit"=>"", "answer_style"=>"image"}, "quiz_item_1_item_answer_1"=>{"answer_text"=>"", "image_credit"=>""}}
+	end
+
 	###### Seeds
 
 	def self.seed_frontpage
@@ -115,6 +121,11 @@ class Quiz < ApplicationRecord
 	private
 
 	def self.quiz_params params
-		params.require(:quiz).permit(:image, :title, :description, :quiz_type, :completion_message)
+		if params.class == Hash
+			params["quiz"]
+		else
+			params.require(:quiz).permit(:image, :title, :description, :quiz_type, :completion_message)
+		end
 	end
 end
+

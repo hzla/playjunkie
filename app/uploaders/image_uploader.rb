@@ -1,12 +1,13 @@
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  # include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
+  include CarrierWaveDirect::Uploader
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-  storage :fog
+
 
   # 10:9, 4:3, 2:1, 3:1, 3:2
 
