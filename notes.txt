@@ -36,6 +36,7 @@ QA Round 1
 
 add buttons now use ajax
 x button remove images
+disable save button
 cropper
 
 

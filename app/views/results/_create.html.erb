@@ -1,0 +1,25 @@
+<div class="form-result image-and-text-box" result_id="<%= result.id %>">
+	<%= hidden_field_tag "result_#{i + 1}[remember_code]", result.remember_code, :class => "remember-code" %>
+	<%= image_tag "close-box.svg", :class => "close-result closer" %>
+	<div class="char-countable">
+		<p class="char-count">200</p>
+		<%= text_area_tag "result_#{i + 1}[result_text]", result.result_text, :class => "result-text-input required", placeholder: "Result text...", maxlength: 200 %>		
+	</div>
+		
+	<div class="image-input">Click to add image...</div>
+	<%= image_tag "close-box.svg", :class => "close-image closer" %>
+	<%= direct_upload_form_for image_uploader(Result), html: {:class => "image-form result-image-upload", model_id: result.id, model_name: "Result"} do |f| %>
+		<%= f.file_field :image, :class => "result-image-input" %>
+	<% end %>
+	<div class="result-image-preview image-preview" style="background-image: url(<%= result.image_url(:square) %>);" alt="preview failed to load" src="<%= result.image_url || '#' %>"></div>
+	<%= text_field_tag "result_#{i + 1}[image_credit]", result.image_credit, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
+
+	<% if quiz_type == "trivia" %>
+		<div class="results-range">
+			<%= hidden_field_tag "result_#{i + 1}[range_min]", result.range_min, :class => "range-min" %>
+			<%= hidden_field_tag "result_#{i + 1}[range_max]", result.range_max, :class => "range-max" %>	
+			<p>Results Range</p>
+			<p> <span class="min"><%= result.range_min %></span><span class="hyphen">-</span><span class="max"><%= result.range_max %></span></p>
+		</div>
+	<% end %>
+</div>

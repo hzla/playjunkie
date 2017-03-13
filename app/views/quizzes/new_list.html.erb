@@ -1,12 +1,13 @@
 <div class="content-container quiz-form-container list-quiz">
 	<h1 class="super-bold">Create a New List</h1>
 
-	<%= form_for Quiz.new do |f| %>
-		<%= f.hidden_field :quiz_type, value: "list" %>
-		<%= render partial: "new", locals: {f: f} %>
+	
+	<div class="quiz-form">
+		<%= hidden_field_tag :quiz_type, "list" %>
+		<%= render partial: "new" %>
 
 		<h2 class="super-bold content-title">Add Items</h2>
-		<div class="form-box question">
+		<div class="form-box question" quiz_item_id="<%= card.id %>">
 			<%= hidden_field_tag "quiz_item_1[order]", 1, :class => "item-order" %>
 			<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
 			<%= image_tag "down-arrow.svg", :class => "move-question move-down" %>
@@ -36,9 +37,12 @@
 			Add Item
 		</div>
 
-		<%= render partial: "submit_bar", locals: {f: f} %>
+		<%= render partial: "submit_bar" %>
+	</div>
+	<%= form_for Quiz.new, html: {quiz_id: @quiz.id} do |f| %>
 	<% end %>
 </div>
+
 <div id="mobile-container">
     <p>Access this page on a larger screen to create quizzes!</p>
     <%= link_to root_path do %>

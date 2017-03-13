@@ -1,12 +1,12 @@
 <div class="content-container quiz-form-container <%= @quiz.quiz_type %>-oriented-quiz quiz-edit">
-	<h1 class="super-bold">Edit your Quiz</h1>
+	<h1 class="super-bold"><%= @action %> your Quiz</h1>
 
 
 	<div class="quiz-form">
 		<%= hidden_field_tag :quiz_type, @quiz.quiz_type %>
 		<%= render partial: "new" %>
 		<%= render partial: "quiz_items/edit", locals: {quiz_type: @quiz.quiz_type, questions: @quiz.quiz_items.order(:order)} %>
-		<%= render partial: "results/edit", locals: {result_type: @quiz.quiz_type, results: @quiz.results.order(:id)} %>
+		<%= render partial: "results/edit", locals: {quiz_type: @quiz.quiz_type, results: @quiz.results.order(:id)} %>
 		<%= render partial: "submit_bar" %>
 	</div>
 

@@ -1,4 +1,4 @@
-<div class="form-answer image-and-text-box">
+<div class="form-answer image-and-text-box" answer_id="<%= answer.id %>">
 	<%= hidden_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[remember_code]", answer.remember_code, :class => "remember-code" %>
 	<%= image_tag "close-box.svg", :class => "close-answer closer" %>
 	<div class="image-input">Click to add image...</div>
@@ -10,7 +10,7 @@
 	<%= text_area_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[answer_text]", answer.answer_text, :class => "answer-text-input required", placeholder: "Answer text..." %>
 	<%= text_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[image_credit]", answer.image_credit, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
 
-	<% if answer_type == "trivia" %>
+	<% if quiz_type == "trivia" %>
 		<div class="checkbox-container">
 			<%= check_box_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[correct?]", nil, answer.correct?, :class => "checkbox-input" %>
 			<p>Correct</p>

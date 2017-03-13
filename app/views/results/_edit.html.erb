@@ -4,7 +4,7 @@
 	
 	<div class="form-results show-add-result">
 		<% results.each_with_index do |result, i| %>
-			<div class="form-result image-and-text-box">
+			<div class="form-result image-and-text-box" result_id="<%= result.id %>">
 				<%= hidden_field_tag "result_#{i + 1}[remember_code]", result.remember_code, :class => "remember-code" %>
 				<%= image_tag "close-box.svg", :class => "close-result closer" %>
 				<div class="char-countable">
@@ -20,7 +20,7 @@
 				<div class="result-image-preview image-preview" style="background-image: url(<%= result.image_url(:square) %>);" alt="preview failed to load" src="<%= result.image_url || '#' %>"></div>
 				<%= text_field_tag "result_#{i + 1}[image_credit]", result.image_credit, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
 
-				<% if result_type == "trivia" %>
+				<% if quiz_type == "trivia" %>
 					<div class="results-range">
 						<%= hidden_field_tag "result_#{i + 1}[range_min]", result.range_min, :class => "range-min" %>
 						<%= hidden_field_tag "result_#{i + 1}[range_max]", result.range_max, :class => "range-max" %>	

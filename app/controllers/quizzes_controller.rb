@@ -13,7 +13,7 @@ class QuizzesController < ApplicationController
 
 	def new
 		quiz = Quiz.create_self_and_all_items Quiz.blank_attributes(params[:quiz_type]), current_user
-		redirect_to edit_quiz_path(quiz)
+		redirect_to edit_quiz_path(quiz, blank: true)
 	end
 
 	def show
@@ -55,7 +55,8 @@ class QuizzesController < ApplicationController
 		@quiz = Quiz.find params[:id]
 		@image = Quiz.new.image
 		@image.success_action_redirect = edit_quiz_path(@quiz)
-		
+		@action = params[:blank] == "true" ? "Create" : "Edit"
+
 		@quiz.update_attributes is_preview?: nil
 		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"
 			render "edit" and return
@@ -104,11 +105,14 @@ class QuizzesController < ApplicationController
 
 
 	def create_image_key
-		# binding.pry
-		quiz = params["data"]["model_name"].constantize.find(params["data"]["model_id"])
-		quiz.update_attributes image_key: params["data"]["image_key"]
-		# binding.pry
-		quiz.save_and_process_image
+		model = params["data"]["model_name"].constantize.find(params["data"]["model_id"])
+		
+		if params["data"]["image_key_back"] != ""
+			model.update_attributes image_key_back: params["data"]["image_key_back"]
+		else
+			model.update_attributes image_key: params["data"]["image_key"]
+		end
+		ImageProcesserWorker.perform_async model.class, model.id
 		render nothing: true
 	end
 

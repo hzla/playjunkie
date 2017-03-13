@@ -1,13 +1,13 @@
 <div class="content-container quiz-form-container quiz-edit">
-	<h1 class="super-bold">Edit your List</h1>
+	<h1 class="super-bold"><%= @action %> your List</h1>
 
-	<%= form_for @quiz do |f| %>
-		<%= f.hidden_field :quiz_type, value: @quiz.quiz_type %>
-		<%= render partial: "new", locals: {f: f} %>
+	<div class="quiz-form">
+		<%= hidden_field_tag :quiz_type, "list" %>
+		<%= render partial: "new" %>
 		<h2 class="super-bold content-title">Add Items</h2>
 
 		<% @quiz.quiz_items.order(:order).each_with_index do |item, i| %>
-			<div class="form-box question">
+			<div class="form-box question" quiz_item_id="<%= item.id %>">
 				<%= hidden_field_tag "quiz_item_#{i + 1}[order]", item.order, :class => "item-order" %>
 				<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", item.remember_code, :class => "remember-code" %>
 				<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
@@ -21,7 +21,9 @@
 				<div class="box-field ">
 					<label class="box-label">Image</label>
 					<%= image_tag "close-box.svg", :class => "close-image closer" %>		
-					<%= file_field_tag "quiz_item_#{i + 1}[image]", :class => "question-image-input" %>
+					<%= direct_upload_form_for image_uploader(QuizItem) , html: {:class => "image-form quiz-item-image-upload", model_id: item.id, model_name: "QuizItem"} do |f| %>
+					  <%= f.file_field :image, :class => "card-image-input" %>
+					<% end %>
 					<div class="question-image-preview image-preview" style="background-image: url(<%= item.image_url(:item) %>);" alt="preview failed to load" src="<%= item.image_url || '#' %>"></div>
 					<div class="box-input question-image-input">Click to add image...</div>
 				</div>
@@ -38,6 +40,8 @@
 		<div id="add-question" class="btn">
 			Add Item
 		</div>
-		<%= render partial: "submit_bar", locals: {f: f} %>
+		<%= render partial: "submit_bar" %>
+	</div>
+	<%= form_for @quiz, html: {quiz_id: @quiz.id} do |f| %>
 	<% end %>
 </div>

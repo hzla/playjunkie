@@ -29,5 +29,5 @@
 	<div class="divider"></div>
 	<h3 class="answer-header">Answers</h3>
 
-	<%= render partial: "answers/edit", locals: {answer_type: quiz_type, answers: question.item_answers, item_number: i + 1, answer_style: question.answer_style }%>
+	<%= render partial: "answers/edit", locals: {quiz_type: quiz_type, answers: question.item_answers, item_number: i + 1, answer_style: question.answer_style }%>
 </div>

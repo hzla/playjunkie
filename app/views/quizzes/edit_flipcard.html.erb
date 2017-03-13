@@ -1,12 +1,13 @@
 <div class="content-container quiz-form-container quiz-edit flipcard-quiz">
-	<h1 class="super-bold">Edit your Flip Cards</h1>
+	<h1 class="super-bold"><%= @action %> your Flip Cards</h1>
 
-	<%= form_for @quiz do |f| %>
-		<%= f.hidden_field :quiz_type, value: @quiz.quiz_type %>
-		<%= render partial: "new", locals: {f: f} %>
+
+	<div class="quiz-form">
+		<%= hidden_field_tag :quiz_type, @quiz.quiz_type %>
+		<%= render partial: "new" %>
 		<h2 class="super-bold content-title">Add A Flip Card</h2>
 		<% @quiz.quiz_items.order(:order).each_with_index do |card, i| %>
-			<div class="form-box question">
+			<div class="form-box question" quiz_item_id="<%= card.id %>">
 				<%= hidden_field_tag "quiz_item_#{i + 1}[order]", card.order, :class => "item-order" %>
 				<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", card.remember_code, :class => "remember-code" %>
 				<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
@@ -34,7 +35,9 @@
 								<div class="<%= side %>">
 									<div class="<%= side %>-side card-side shown">
 										<%= image_tag "close-box.svg", :class => "close-image closer" %>
-										<%= file_field_tag "quiz_item_#{i + 1}[image#{side == 'back' ? '_back' : nil}]", :class => "question-image-input" %>
+										<%= direct_upload_form_for image_uploader(QuizItem) , html: {:class => "image-form quiz-item-image-upload", model_id: card.id, model_name: "QuizItem"} do |f| %>
+										  <%= f.file_field "image#{side == 'back' ? '_back' : nil}", :class => "card-image-input" %>
+										<% end %>
 										<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) || '#' %>"></div>
 										<div class="box-input question-image-input" style="background-color:<%= card.send("color#{side == 'back' ? '_back' : nil}".to_sym) %>">
 											<div class="add-card-text">Edit Text</div>
@@ -76,8 +79,11 @@
 			Add Card
 		</div>
 
-		<%= f.text_area :completion_message, :class => "btn", placeholder: "Completion Message..." %>
+		<%= text_area_tag "quiz[completion_message]", nil, :class => "btn", placeholder: "Completion Message..." %>
 		
-		<%= render partial: "submit_bar", locals: {f: f} %>
+		<%= render partial: "submit_bar" %>
+	</div>
+	
+	<%= form_for @quiz, html: {quiz_id: @quiz.id}  do |f| %>
 	<% end %>
 </div>

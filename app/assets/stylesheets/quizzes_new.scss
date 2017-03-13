@@ -41,6 +41,17 @@
 	.image-form.result-image-upload {
 		top: 100px;
 	}
+	.form-box .card-side .image-form.quiz-item-image-upload  {
+		height: 30px;
+		width: 80px;
+		bottom: 20px;
+		right: 65px;
+		z-index: 3;
+		.card-image-input {
+			height: 100%;
+			width: 100%;
+		}
+	}
 
 
 

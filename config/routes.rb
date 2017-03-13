@@ -28,11 +28,17 @@ Rails.application.routes.draw do
   resources :quizzes
 
   #quiz_items
-  post '/quizzes/:quiz_id/questions', to: 'quiz_items#create_question', as: 'questions'
+  post '/quizzes/:quiz_id/quiz_items', to: 'quiz_items#create'
   delete '/quiz_items/:id', to: 'quiz_items#destroy'
 
   #item_answers
   post '/quiz_items/:quiz_item_id/answers', to: 'item_answers#create', as: 'answers'
+  delete '/item_answers/:id', to: 'item_answers#destroy'
+
+  #results 
+  post '/quizzes/:quiz_id/results', to: 'results#create', as: 'results'
+  delete '/results/:id', to: 'results#destroy'
+
 
   #searches
   post '/searches', to: 'searches#create'

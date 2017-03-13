@@ -17,6 +17,9 @@ class QuizItem < ApplicationRecord
 
 	def save_and_process_image
 		self.remote_image_url = self.image.direct_fog_url + self.image_key
+		if self.image_key_back
+			self.remote_image_back_url = self.image_back.direct_fog_url + self.image_key_back
+		end
 		save!
 	end
 

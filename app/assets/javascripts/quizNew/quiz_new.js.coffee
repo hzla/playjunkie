@@ -1,6 +1,6 @@
 QuizNew = #UI for creating/editing Quizzes goes here
 	init: ->
-		@questionCount = $('.question:visible').length
+		@questionCount = $('.question').length
 
 		#Adding and Removing Items
 		$('body').on 'click', '#add-question', @addQuestion
@@ -27,8 +27,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		@manageClosers()
 		@manageMovers()
 		@closeSaveMessage()
-		if $('.edit_quiz').length > 0
-			@setAnswerFormats()
+		@setAnswerFormats()
 
 	closeSaveMessage: ->
 		setTimeout ->
@@ -71,7 +70,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 		rangeStart = 0
 		rangeEnd = rangeWidth
-		#math stuff
+		# math stuff
 		for i in [1..resultsCount]
 			range = []
 			range.push rangeStart
@@ -127,38 +126,36 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 	addResult: ->
 		lastResult = $('.form-result:visible').last()
-		newResult = lastResult.clone()
-		resultCount = $('.form-result:visible').length
-		incrementedResult = newResult.html().replace(///result_#{resultCount}///g, "result_#{resultCount + 1}")
-		lastResult.after(lastResult.clone())
-		$('.form-result:visible').last().html(incrementedResult)
+		quizId = $('.edit_quiz').attr('quiz_id')
+		quizType = $('#quiz_type').val()
+
+		$.post "/quizzes/#{quizId}/results?i=#{$('.result').length}&quiz_type=#{quizType}", (data) ->
+			$('.form-result:visible').last().after(data)
+			$('.close-result').show()
 		
-		newResult = $('.form-result:visible').last()
-		newResult.find('input, textarea').val("")
-		newResult.find('.image-preview').attr('src', '#').hide()
-		$('.close-result').show()
-		
+		# number of results can't exceed number of questions for trivia quizzes
 		if $('.form-result:visible').length == $('.question:visible').length && $('.trivia-oriented-quiz').length > 0
 			$(@).hide()
 
-		if $('.result-oriented-quiz').length > 0
+		# add another choice for answers for quiz type quizzes
+		if $('.quiz-oriented-quiz').length > 0
 			QuizNew.addResultChoiceToAnswers()
-
 		QuizNew.syncResultsRange()
 	
 	closeResult: ->
-		form = $(@).parents('.new_quiz')
 		result = $(@).parent()
-		resultNumber = result.index()
-		result.addClass('hidden').prependTo(form)
-		QuizNew.manageClosers()
-		result.find('.result-text-input').val("skip")
-		$('.add-result').show()
+		resultNumber = result.index()	
 		
-		if $('.result-oriented-quiz').length > 0
+		$.ajax
+			method: "DELETE",
+			url: "/results/#{result.attr("result_id")}"
+			success: ->
+				result.remove()
+				$('.add-result').show()
+				QuizNew.manageClosers()
+
+		if $('.quiz-oriented-quiz').length > 0
 			QuizNew.removeResultChoice(resultNumber)
-
-
 		QuizNew.syncResultsRange()
 
 	removeResultChoice: (index) ->
@@ -167,50 +164,38 @@ QuizNew = #UI for creating/editing Quizzes goes here
 				$(@).val(-1)
 			$($(@).find('option')[index + 1]).remove()
 
-
 		$('select').each ->
 			$(@).find('option').each (i) ->
-				if i == 0
-					console.log $(@)
-				else
+				unless i == 0
 					$(@).val(i - 1)
 					$(@).text("Result #{i}")
 
 	addAnswer: ->
 		question = $(@).parents('.question')
 		lastAnswer = question.find('.form-answer:visible, .text-answer-form:visible').last()
+		quizItemId = question.attr('quiz_item_id')
+		itemNumber = question.attr('item_number')
+		quizType = $('#quiz_type').val()
+		i = question.find('.form-answer:visible, .text-answer-form:visible').length + 1
+		$.post "/quiz_items/#{quizItemId}/answers?item_number=#{itemNumber})}&i=#{i}&quiz_type=#{quizType}", (data) ->
+			lastAnswer.after(data)
 
-		$.post '/quiz_items/'
-
-
-		# newAnswer = lastAnswer.clone()
-		# newAnswer.find('.image-preview').attr('src', '#').hide() # clear image previews
-		# newAnswer.find('.close-image').hide()
-
-		# answerCount = question.find('.form-answer:visible, .text-answer-form:visible').length
-		# incrementedAnswer = newAnswer.html().replace(///item_answer_#{answerCount}///g, "item_answer_#{answerCount + 1}")
-
-		# lastAnswer.after(lastAnswer.clone())
-		# question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
-		# question.find('.form-answer').last().find('input, textarea').val("")
-		# question.find("input[type='checkbox']").last().val("on").prop('checked', false)
-
-		if answerCount == 3 && $('.trivia-oriented-quiz').length > 0
-			$(@).hide()
-
-		if $('.result-oriented-quiz').length > 0
-			if answerCount == 7
-				$(@).hide()
-
+		# hide add answer at 4 answers if trivia quiz
+		$(@).hide() if i == 4 && $('.trivia-oriented-quiz').length > 0
+		# hide add answer at 4 answers if quiz quiz
+		$(@).hide() if i == 8 && $('.quiz-oriented-quiz').length > 0 
 		QuizNew.manageClosers()
 
 	closeAnswer: ->
 		question = $(@).parents('.question')
-		answer = $(@).parent().addClass('hidden').prependTo(question)
-		answer.find('.answer-text-input').val("skip")
-		$('.form-answers:visible').find('.add-answer').show()
-		QuizNew.manageClosers()
-
+		answer = $(@).parent()
+		$.ajax
+			method: "DELETE",
+			url: "/item_answers/#{answer.attr("answer_id")}"
+			success: ->
+				answer.remove()
+				question.find('.add-answer').show()
+				QuizNew.manageClosers()
 
 	manageClosers: -> #hide element closer if only one element
 		if $('.question:visible').length < 2
@@ -238,15 +223,11 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		confirmation = confirm "Are you sure you want to delete this question?"
 		if confirmation
 			question = $(@).parent()
-			id = question.attr("quiz_item_id")
-			
 			$.ajax
 				method: "Delete",
-				url: "/quiz_items/#{id}"
+				url: "/quiz_items/#{question.attr("quiz_item_id")}"
 				success: ->
 					question.remove()
-
-			# $(@).parent().find('.box-input, .card-text-input').val("skip")
 					$('.question:visible .question-number').each (i) ->
 						$(@).find('p').text("#{i + 1}")
 					QuizNew.questionCount -= 1
@@ -255,56 +236,15 @@ QuizNew = #UI for creating/editing Quizzes goes here
 					QuizNew.syncResultsRange()
 
 	addQuestion: ->
-		lastQuestion = $('.question:visible').last()
 		quizId = $('.edit_quiz').attr('quiz_id')
 		quizType = $('#quiz_type').val()
-		$.post "/quizzes/#{quizId}/questions?i=#{$('.question').length}&quiz_type=#{quizType}",  (data) ->
-			lastQuestion.after(data)
-		# newQuestion = lastQuestion.clone()
-
-		# # increment all question numbers in field names
-		# newQuestion = newQuestion.html().replace(///quiz_item_#{QuizNew.questionCount}///g, "quiz_item_#{QuizNew.questionCount + 1}").replace("<p>#{QuizNew.questionCount}</p>", "<p>#{QuizNew.questionCount + 1}</p>") 
-		# # create a container for the next question
-		# lastQuestion.after("<div class='form-box question'></div>")
-		# # add the next question
-		# $('.question:visible').last().append(newQuestion) 
-		
-		# newQuestion = $(".question:visible").last()
-
-		# #Reset the New Question
-		# newQuestion.find('.text-box').text("") #clear flipcard text and color
-		# newQuestion.find('.question-image-input').css('background-color', '')
-		
-		# newQuestion.find('input, textarea').val("") #reset fields
-		# newQuestion.find("input[type='checkbox']").val("on").prop('checked', false)
-		# newQuestion.find('.image-preview').attr('src', '#').hide() # clear image previews	
-		
-		# newQuestion.find('.answer-format').hide()
-		# newQuestion.find('.image-format.selected, .text-format:not(.selected)').show()
-		# newQuestion.find('.form-answer.image-style').show()
-		#  # reset selected answer format
-		# newQuestion.find('.form-answers').removeClass('text-style').addClass('image-style')
-		# newQuestion.find('input.answer-format').val('image')
-		
-
-		# newQuestion.find('.side-chooser').removeClass('selected')
-		# newQuestion.find('.flip-container').removeClass('flip')
-		# newQuestion.find('.card-color-input').val("rgb(30, 94, 253)")
-		# newQuestion.find('.choose-front').addClass('selected') #reset card sides
-
-
-
-		# newAnswer = newQuestion.find('.form-answer').first().clone()
-		# newAnswer.removeClass('hidden')
-		# newQuestion.find('.form-answer').remove()
-		# newQuestion.find('.form-answers').prepend newAnswer
-		
+		#create a new quiz item and get view for it
+		$.post "/quizzes/#{quizId}/quiz_items?i=#{$('.question').length}&quiz_type=#{quizType}",  (data) ->
+			$('.question:visible').last().after(data)
 		#new Result can be created now that there is one more question
 		QuizNew.questionCount += 1 
-		console.log QuizNew.questionCount
 		# $('.question:visible').last().find('.question-number p').text QuizNew.questionCount
 		$('.add-result').css('display', 'flex') 
-		
 		#Update UI elements
 		QuizNew.manageClosers()
 		QuizNew.manageMovers()
@@ -334,9 +274,6 @@ QuizNew = #UI for creating/editing Quizzes goes here
 				$(@).parents('.question').find('.image-format').click()
 			else
 				$(@).parents('.question').find('.text-format').click()
-
-
-	
 
 ready = ->
 	QuizNew.init()
