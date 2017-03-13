@@ -1,6 +1,7 @@
 <div class="content-container quiz-form-container result-oriented-quiz">
 	<h1 class="super-bold">Create a New Quiz</h1>
 
+
 	<%= form_for Quiz.new do |f| %>
 		<%= f.hidden_field :quiz_type, value: "quiz" %>
 		<%= render partial: "new", locals: {f: f} %>

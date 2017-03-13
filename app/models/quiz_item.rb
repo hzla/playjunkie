@@ -15,6 +15,11 @@ class QuizItem < ApplicationRecord
 		item_text || ""
 	end
 
+	def save_and_process_image
+		self.remote_image_url = self.image.direct_fog_url + self.image_key
+		save!
+	end
+
 	def self.create_collection_for_quiz params, quiz, results
 		item_count = 1
 		while params["quiz_item_#{item_count}"]

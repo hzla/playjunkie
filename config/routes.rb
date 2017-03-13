@@ -27,6 +27,13 @@ Rails.application.routes.draw do
   get '/quizzes/new/:quiz_type', to: 'quizzes#new', as: 'new_quiz'
   resources :quizzes
 
+  #quiz_items
+  post '/quizzes/:quiz_id/questions', to: 'quiz_items#create_question', as: 'questions'
+  delete '/quiz_items/:id', to: 'quiz_items#destroy'
+
+  #item_answers
+  post '/quiz_items/:quiz_item_id/answers', to: 'item_answers#create', as: 'answers'
+
   #searches
   post '/searches', to: 'searches#create'
   get '/searches', to: 'searches#show', as: 'search'
@@ -40,6 +47,10 @@ Rails.application.routes.draw do
   #admin
   get '/admin/login', to: 'users#admin_login', as: 'admin_login'
   post '/admin', to: 'users#admin_authenticate'
+
+  #image keys
+  post '/image_keys', to: "quizzes#create_image_key", as: 'image_key'
+
 
   require 'sidekiq/web'
   constraints Clearance::Constraints::SignedIn.new { |user| user.is_admin? } do

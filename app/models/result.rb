@@ -9,6 +9,11 @@ class Result < ApplicationRecord
 		self.update_attributes remember_code: Code.generate
 	end
 
+	def save_and_process_image
+		self.remote_image_url = self.image.direct_fog_url + self.image_key
+		save!
+	end
+
 	def self.create_collection_for_quiz params, quiz_id
 		result_count = 1
 		created_results = []

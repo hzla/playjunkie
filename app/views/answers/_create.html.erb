@@ -1,0 +1,21 @@
+<div class="form-answer image-and-text-box">
+	<%= hidden_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[remember_code]", answer.remember_code, :class => "remember-code" %>
+	<%= image_tag "close-box.svg", :class => "close-answer closer" %>
+	<div class="image-input">Click to add image...</div>
+	<%= image_tag "close-box.svg", :class => "close-image closer" %>
+	<%= direct_upload_form_for image_uploader(ItemAnswer), html: {:class => "image-form answer-image-upload", model_id: answer.id, model_name: "ItemAnswer"} do |f| %>
+		<%= f.file_field :image, :class => "answer-image-input" %>
+	<% end %>
+	<div class="answer-image-preview image-preview" style="background-image: url(<%= answer.image_url(:square) %>);" alt="preview failed to load" src="<%= answer.image_url || '#' %>"></div>
+	<%= text_area_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[answer_text]", answer.answer_text, :class => "answer-text-input required", placeholder: "Answer text..." %>
+	<%= text_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[image_credit]", answer.image_credit, :class => "answer-image-credit-input", placeholder: "Image Credit..." %>
+
+	<% if answer_type == "trivia" %>
+		<div class="checkbox-container">
+			<%= check_box_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[correct?]", nil, answer.correct?, :class => "checkbox-input" %>
+			<p>Correct</p>
+		</div>
+	<% else %>
+		<%= select_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[result_id]", answer.html_options, required: true %>
+	<% end %>
+</div>

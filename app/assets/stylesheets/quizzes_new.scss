@@ -12,6 +12,41 @@
 		background-position: center;
 		background-size: cover;
 	}
+
+	.image-form {
+		position: absolute;
+		z-index: 2;
+		input[type='file'] {
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			cursor: pointer;
+		}
+	}
+
+	.image-form.quiz-image-upload {
+		height: 130px;
+		width: 173px;
+	}
+	.image-form.quiz-item-image-upload {
+		height: 260px;
+		width: 400px;
+		right: 0;
+	}
+	.image-form.answer-image-upload, .image-form.result-image-upload {
+		height: 76px;
+		width: 115px;
+		top: 10px;
+	}
+	.image-form.result-image-upload {
+		top: 100px;
+	}
+
+
+
+
+
+
 	div.char-countable {
 		position: relative;
 		.char-count {
@@ -74,13 +109,12 @@
 			text-align: center;
 			line-height: 130px;
 			color: $grey;
-			position: absolute;
 			left: 0;
 			top: 0;
 		}
 		#quiz-text-info {
 			margin-left: 10px;
-			width: 460px;
+			width: 437px;
 			input, textarea {
 				width: 100%;
 				padding: 12px 10px;
@@ -533,7 +567,7 @@
 				height: 100%;
 				position: relative;
 				margin-bottom: 10px;
-				input[type="file"], .result-image-preview {
+				.result-image-preview {
 					position: absolute;
 					left: 10px;
 					height: 76px;
@@ -648,19 +682,19 @@
 			#submit-actions {
 				@include flexbox;
 				position: relative;
-				#save-quiz {
+				.save-quiz {
 					background: $dark-outline;
 					color: $dark-grey;
 				}
-				#publish-quiz {
+				.publish-quiz {
 					background: $red;
 					color: white;
 					margin-left: 10px;
 				}
-				#publish-quiz:hover {
+				.publish-quiz:hover {
 					background: $hover-red;
 				}
-				#publish-quiz.grey {
+				.publish-quiz.grey {
 					background: $dark-outline;
 					color: $dark-grey;
 				}

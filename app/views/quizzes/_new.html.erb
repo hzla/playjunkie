@@ -1,5 +1,9 @@
 <div id="quiz-main-info">
-	<%= f.file_field :image, :id => "quiz-image-input" %>
+	
+	<%= direct_upload_form_for @image , html: {:class => "image-form quiz-image-upload", model_id: @quiz.id, model_name: "Quiz"} do |f| %>
+	  <%= f.file_field :image, :class => "quiz-image-input" %>
+	<% end %>
+
 	<div id="quiz-image-preview" class="image-preview" style="background-image: url(<%= @quiz.image_url(:square) if @quiz %>);" alt="preview failed to load" class="hidden" src="<%= (@quiz.image_url || '#') if @quiz %>"></div> 
 	<div class="image-input-overlay">
 		Click to Add Image
@@ -7,10 +11,10 @@
 	
 	<div id="quiz-text-info">
 		<div class="char-countable">
-			<%= f.text_field :title, :class => "btn", placeholder: "Title", maxlength: 80 %>
+			<%= text_field_tag "quiz[title]", @quiz.title, :class => "btn", placeholder: "Title", maxlength: 80 %>
 			<p class="char-count single-row">80</p>
 		</div>
 		
-		<%= f.text_area :description, :class => "btn", placeholder: "Description" %>
+		<%= text_area_tag "quiz[description]", @quiz.description, :class => "btn", placeholder: "Description" %>
 	</div>
 </div>

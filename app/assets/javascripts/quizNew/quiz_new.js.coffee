@@ -3,8 +3,6 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		@questionCount = $('.question:visible').length
 
 		#Adding and Removing Items
-		$('body').on 'change', "input[type='file']", @showImagePreview
-		$('body').on 'click', '.close-image', @closeImage
 		$('body').on 'click', '#add-question', @addQuestion
 		$('body').on 'click', '.close-question', @closeQuestion
 		$('body').on 'click', '.add-answer', @addAnswer
@@ -182,17 +180,20 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		question = $(@).parents('.question')
 		lastAnswer = question.find('.form-answer:visible, .text-answer-form:visible').last()
 
-		newAnswer = lastAnswer.clone()
-		newAnswer.find('.image-preview').attr('src', '#').hide() # clear image previews
-		newAnswer.find('.close-image').hide()
+		$.post '/quiz_items/'
 
-		answerCount = question.find('.form-answer:visible, .text-answer-form:visible').length
-		incrementedAnswer = newAnswer.html().replace(///item_answer_#{answerCount}///g, "item_answer_#{answerCount + 1}")
 
-		lastAnswer.after(lastAnswer.clone())
-		question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
-		question.find('.form-answer').last().find('input, textarea').val("")
-		question.find("input[type='checkbox']").last().val("on").prop('checked', false)
+		# newAnswer = lastAnswer.clone()
+		# newAnswer.find('.image-preview').attr('src', '#').hide() # clear image previews
+		# newAnswer.find('.close-image').hide()
+
+		# answerCount = question.find('.form-answer:visible, .text-answer-form:visible').length
+		# incrementedAnswer = newAnswer.html().replace(///item_answer_#{answerCount}///g, "item_answer_#{answerCount + 1}")
+
+		# lastAnswer.after(lastAnswer.clone())
+		# question.find('.form-answer:visible, .text-answer-form:visible').last().html(incrementedAnswer)	
+		# question.find('.form-answer').last().find('input, textarea').val("")
+		# question.find("input[type='checkbox']").last().val("on").prop('checked', false)
 
 		if answerCount == 3 && $('.trivia-oriented-quiz').length > 0
 			$(@).hide()
@@ -236,64 +237,76 @@ QuizNew = #UI for creating/editing Quizzes goes here
 	closeQuestion: ->
 		confirmation = confirm "Are you sure you want to delete this question?"
 		if confirmation
-			$(@).parent().hide()
-			$(@).parent().find('.box-input, .card-text-input').val("skip")
-			$('.question:visible .question-number').each (i) ->
-				$(@).find('p').text("#{i + 1}")
-			QuizNew.questionCount -= 1
-			QuizNew.manageMovers()
-			QuizNew.manageClosers()
-			QuizNew.syncResultsRange()
+			question = $(@).parent()
+			id = question.attr("quiz_item_id")
+			
+			$.ajax
+				method: "Delete",
+				url: "/quiz_items/#{id}"
+				success: ->
+					question.remove()
+
+			# $(@).parent().find('.box-input, .card-text-input').val("skip")
+					$('.question:visible .question-number').each (i) ->
+						$(@).find('p').text("#{i + 1}")
+					QuizNew.questionCount -= 1
+					QuizNew.manageMovers()
+					QuizNew.manageClosers()
+					QuizNew.syncResultsRange()
 
 	addQuestion: ->
 		lastQuestion = $('.question:visible').last()
+		quizId = $('.edit_quiz').attr('quiz_id')
+		quizType = $('#quiz_type').val()
+		$.post "/quizzes/#{quizId}/questions?i=#{$('.question').length}&quiz_type=#{quizType}",  (data) ->
+			lastQuestion.after(data)
+		# newQuestion = lastQuestion.clone()
 
-		newQuestion = lastQuestion.clone()
-
-		# increment all question numbers in field names
-		newQuestion = newQuestion.html().replace(///quiz_item_#{QuizNew.questionCount}///g, "quiz_item_#{QuizNew.questionCount + 1}").replace("<p>#{QuizNew.questionCount}</p>", "<p>#{QuizNew.questionCount + 1}</p>") 
-		# create a container for the next question
-		lastQuestion.after("<div class='form-box question'></div>")
-		# add the next question
-		$('.question:visible').last().append(newQuestion) 
+		# # increment all question numbers in field names
+		# newQuestion = newQuestion.html().replace(///quiz_item_#{QuizNew.questionCount}///g, "quiz_item_#{QuizNew.questionCount + 1}").replace("<p>#{QuizNew.questionCount}</p>", "<p>#{QuizNew.questionCount + 1}</p>") 
+		# # create a container for the next question
+		# lastQuestion.after("<div class='form-box question'></div>")
+		# # add the next question
+		# $('.question:visible').last().append(newQuestion) 
 		
-		newQuestion = $(".question:visible").last()
+		# newQuestion = $(".question:visible").last()
 
-		#Reset the New Question
-		newQuestion.find('.text-box').text("") #clear flipcard text and color
-		newQuestion.find('.question-image-input').css('background-color', '')
+		# #Reset the New Question
+		# newQuestion.find('.text-box').text("") #clear flipcard text and color
+		# newQuestion.find('.question-image-input').css('background-color', '')
 		
-		newQuestion.find('input, textarea').val("") #reset fields
-		newQuestion.find("input[type='checkbox']").val("on").prop('checked', false)
-		newQuestion.find('.image-preview').attr('src', '#').hide() # clear image previews	
+		# newQuestion.find('input, textarea').val("") #reset fields
+		# newQuestion.find("input[type='checkbox']").val("on").prop('checked', false)
+		# newQuestion.find('.image-preview').attr('src', '#').hide() # clear image previews	
 		
-		newQuestion.find('.answer-format').hide()
-		newQuestion.find('.image-format.selected, .text-format:not(.selected)').show()
-		newQuestion.find('.form-answer.image-style').show()
-		 # reset selected answer format
-		newQuestion.find('.form-answers').removeClass('text-style').addClass('image-style')
-		newQuestion.find('input.answer-format').val('image')
+		# newQuestion.find('.answer-format').hide()
+		# newQuestion.find('.image-format.selected, .text-format:not(.selected)').show()
+		# newQuestion.find('.form-answer.image-style').show()
+		#  # reset selected answer format
+		# newQuestion.find('.form-answers').removeClass('text-style').addClass('image-style')
+		# newQuestion.find('input.answer-format').val('image')
 		
 
-		newQuestion.find('.side-chooser').removeClass('selected')
-		newQuestion.find('.flip-container').removeClass('flip')
-		newQuestion.find('.card-color-input').val("rgb(30, 94, 253)")
-		newQuestion.find('.choose-front').addClass('selected') #reset card sides
+		# newQuestion.find('.side-chooser').removeClass('selected')
+		# newQuestion.find('.flip-container').removeClass('flip')
+		# newQuestion.find('.card-color-input').val("rgb(30, 94, 253)")
+		# newQuestion.find('.choose-front').addClass('selected') #reset card sides
 
 
 
-		newAnswer = newQuestion.find('.form-answer').first().clone()
-		newAnswer.removeClass('hidden')
-		newQuestion.find('.form-answer').remove()
-		newQuestion.find('.form-answers').prepend newAnswer
+		# newAnswer = newQuestion.find('.form-answer').first().clone()
+		# newAnswer.removeClass('hidden')
+		# newQuestion.find('.form-answer').remove()
+		# newQuestion.find('.form-answers').prepend newAnswer
 		
 		#new Result can be created now that there is one more question
 		QuizNew.questionCount += 1 
+		console.log QuizNew.questionCount
+		# $('.question:visible').last().find('.question-number p').text QuizNew.questionCount
 		$('.add-result').css('display', 'flex') 
 		
 		#Update UI elements
 		QuizNew.manageClosers()
-		newQuestion.find('.close-image').hide()
 		QuizNew.manageMovers()
 		QuizNew.syncResultsRange()
 
@@ -323,28 +336,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 				$(@).parents('.question').find('.text-format').click()
 
 
-	showImagePreview: -> 
-		input = @
-		if input.files && input.files[0]
-			reader = new FileReader()
-			reader.onload =  (e) ->
-				previewBox = $(input).next()
-				console.log previewBox
-				previewBox.show()
-				$(previewBox).css('background-image', "url(#{e.target.result})")
-				previewBox.attr 'src', e.target.result
-			
-			reader.readAsDataURL input.files[0]
-			$(@).parent().find('.close-image').show()
-			$(@).parents('.card-side').find('.card-color-input').val("")
-			$(@).parents('.card-side').find('.question-image-input').attr('style', "").css('background', 'none')
-
-
-	closeImage: ->
-		box = $(@).parent()
-		box.find('.image-preview').attr('src', '#').hide()
-		box.find("input[type='file']").val("")
-		$(@).hide()
+	
 
 ready = ->
 	QuizNew.init()

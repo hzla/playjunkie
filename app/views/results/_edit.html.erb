@@ -14,7 +14,9 @@
 					
 				<div class="image-input">Click to add image...</div>
 				<%= image_tag "close-box.svg", :class => "close-image closer" %>
-				<%= file_field_tag "result_#{i + 1}[image]", :class => "result-image-input" %>
+				<%= direct_upload_form_for image_uploader(Result), html: {:class => "image-form result-image-upload", model_id: result.id, model_name: "Result"} do |f| %>
+					<%= f.file_field :image, :class => "result-image-input" %>
+				<% end %>
 				<div class="result-image-preview image-preview" style="background-image: url(<%= result.image_url(:square) %>);" alt="preview failed to load" src="<%= result.image_url || '#' %>"></div>
 				<%= text_field_tag "result_#{i + 1}[image_credit]", result.image_credit, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
 

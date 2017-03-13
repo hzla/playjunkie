@@ -1,7 +1,7 @@
 QuizValidate = #Validation for creating/editing quizzes goes here
 	init: ->
 		$('body').on 'submit', '#new_quiz, .edit_quiz', @validateFields if $('.flipcard-oriented-quiz').length < 1
-		$('body').on 'click', '#submit-bar .btn', @submitQuiz
+		$('body').on 'click', '#submit-bar .btn, .submittable', @submitQuiz
 
 #refactor plan
 	#flag every problem field
@@ -178,8 +178,8 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		return !missingFieldError && !incorrectNumberofAnswers && !listItemError && !flipCardError	
 
 	submitQuiz: ->
-		action = $(@).attr('id')
-		$(@).parents("#submit-bar").find('.quiz-submit-action').val action
+		action = $(@).attr('action')
+		$('.quiz-submit-action').val action
 
 		$('.question:visible .item-order').each (i) -> #set item order
 			$(@).val(i + 1)
@@ -193,8 +193,11 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		if actionText != undefined
 			$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
 
+		console.log action
 		if action == 'save-quiz'
+			$('.edit_quiz').append $(".quiz-form")
 			$('#new_quiz, .edit_quiz').submit()
+			console.log "submitted"
 			return
 		
 		valid = QuizValidate.validateFields()

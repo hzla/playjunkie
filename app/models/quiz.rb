@@ -39,6 +39,11 @@ class Quiz < ApplicationRecord
 		Quiz.where(published: true).each(&:shift_daily_view_counts)
 	end
 
+	def save_and_process_image
+		self.remote_image_url = self.image.direct_fog_url + self.image_key
+		save!
+	end
+
 	##### Attribute Getters
 
 	def image_url args=nil

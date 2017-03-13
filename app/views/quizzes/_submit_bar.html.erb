@@ -21,10 +21,10 @@
 		</div>
 		<div id="submit-actions">
 			<% if @quiz && @quiz.published? %>
-				<div id="publish-quiz" class="btn grey" action-text="Saving">Save</div>
+				<div class="publish-quiz btn grey" action="publish-quiz" action-text="Saving">Save</div>
 			<% else %>
-				<div id="save-quiz" class="btn" action-text="Saving">Save</div>
-				<div id="publish-quiz" class="btn" action-text="Publishing">Publish</div>
+				<div class="save-quiz btn" action="save-quiz" action-text="Saving">Save</div>
+				<div class="publish-quiz btn" action="publish-quiz" action-text="Publishing">Publish</div>
 			<% end %>
 			<div id="flash-message" class="<%= params['saved'] == 'true' ? '' : 'hidden' %>">Save Successful</div>
 		</div>

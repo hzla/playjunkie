@@ -44,4 +44,10 @@ module ApplicationHelper
 		session[:seen_lists] << quiz.id
 		quiz
 	end
+
+	def image_uploader model
+		uploader = model.new.image
+		uploader.success_action_redirect = "/"
+		uploader
+	end
 end

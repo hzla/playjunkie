@@ -53,6 +53,9 @@ class QuizzesController < ApplicationController
 		(redirect_to root_path and return) if current_user != @quiz.user
 		@footer = false
 		@quiz = Quiz.find params[:id]
+		@image = Quiz.new.image
+		@image.success_action_redirect = edit_quiz_path(@quiz)
+		
 		@quiz.update_attributes is_preview?: nil
 		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"
 			render "edit" and return
@@ -97,6 +100,16 @@ class QuizzesController < ApplicationController
 	def destroy
 		@quiz.destroy if current_user == @quiz.user
 		redirect_to user_path(current_user)
+	end
+
+
+	def create_image_key
+		# binding.pry
+		quiz = params["data"]["model_name"].constantize.find(params["data"]["model_id"])
+		quiz.update_attributes image_key: params["data"]["image_key"]
+		# binding.pry
+		quiz.save_and_process_image
+		render nothing: true
 	end
 
 	private

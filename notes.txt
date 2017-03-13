@@ -31,34 +31,14 @@ QA Round 1
 		COMPLETE social media/email 4hr
 		COMPLETE CSS/BUGS 2hr
 		COMPLETE staging/bugs/css 2hr
+		COMPLETE 3hr figuring out how to get direct upload
 		
 
+add buttons now use ajax
+x button remove images
+cropper
 
 
-Ads/Social Media
-
-	
-
-VERSION 2
-
-Optimization
-	Background workers for uploading 4hr
-	Reducing database queries 4hr
-	Other 4hr
-
-Deployment
-	12hrs
-
-Build API
-	Setup
-	Quiz, and all quiz items
-	User
-	Search
-
-	20hrs
-
-Misc
-	20hrs
 
 
 

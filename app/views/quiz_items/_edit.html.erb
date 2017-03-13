@@ -1,6 +1,6 @@
 <h2 class="super-bold content-title">Edit Questions</h2>
 <% questions.each_with_index do |question, i| %>
-	<div class="form-box question">
+	<div class="form-box question" quiz_item_id="<%= question.id %>" item_number="<%= i + 1 %>">
 		<%= hidden_field_tag "quiz_item_#{i + 1}[order]", question.order, :class => "item-order" %>
 		<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", question.remember_code, :class => "remember-code" %>
 		<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
@@ -11,7 +11,9 @@
 		<div class="box-field">
 			<label class="box-label">Question Image</label>
 			<%= image_tag "close-box.svg", :class => "close-image closer" %>
-			<%= file_field_tag "quiz_item_#{i + 1}[image]", :class => "question-image-input required" %>
+			<%= direct_upload_form_for image_uploader(QuizItem), html: {:class => "image-form quiz-item-image-upload", model_id:question.id, model_name: "QuizItem"} do |f| %>
+			  <%= f.file_field :image, :class => "question-image-input" %>
+			<% end %>
 			<div class="question-image-preview image-preview" style="background-image: url(<%= question.image_url %>);" alt="preview failed to load" src="<%= question.image_url || '#' %>"></div>
 			<div class="box-input question-image-input">Click to add image...</div>
 		</div>

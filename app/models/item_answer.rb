@@ -22,6 +22,11 @@ class ItemAnswer < ApplicationRecord
 		options.html_safe
 	end
 
+	def save_and_process_image
+		self.remote_image_url = self.image.direct_fog_url + self.image_key
+		save!
+	end
+
 	def text
 		answer_text || ""
  	end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303083757) do
+ActiveRecord::Schema.define(version: 20170312183740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170303083757) do
     t.datetime "updated_at",    null: false
     t.string   "image"
     t.string   "remember_code"
+    t.string   "image_key"
   end
 
   create_table "quiz_items", force: :cascade do |t|
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170303083757) do
     t.string   "remember_code"
     t.integer  "order"
     t.string   "answer_style"
+    t.string   "image_key"
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -91,6 +93,7 @@ ActiveRecord::Schema.define(version: 20170303083757) do
     t.integer  "view_count_6",       default: 0
     t.integer  "view_count_7",       default: 0
     t.integer  "trending_count",     default: 0
+    t.string   "image_key"
   end
 
   create_table "results", force: :cascade do |t|
@@ -104,6 +107,7 @@ ActiveRecord::Schema.define(version: 20170303083757) do
     t.integer  "range_min"
     t.integer  "range_max"
     t.string   "remember_code"
+    t.string   "image_key"
   end
 
   create_table "users", force: :cascade do |t|
