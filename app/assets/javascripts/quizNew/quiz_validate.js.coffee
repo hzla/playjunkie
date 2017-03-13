@@ -201,6 +201,8 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			return
 		
 		valid = QuizValidate.validateFields()
+		if valid
+			$('.edit_quiz').append $(".quiz-form")
 		if !valid
 			return
 
