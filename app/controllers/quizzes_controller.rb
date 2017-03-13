@@ -94,7 +94,7 @@ class QuizzesController < ApplicationController
 			@og_image = @quiz.image_url
 			render "create" and return
 		else # if editing quiz
-			redirect_to edit_quiz_path(@quiz, saved: true)
+			redirect_to edit_quiz_path(@quiz, saved: true )
 		end
 	end
 
