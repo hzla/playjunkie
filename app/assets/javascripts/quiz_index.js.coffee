@@ -1,6 +1,11 @@
 QuizIndex =
 	init: ->
 		$('body').on 'click', '#load-more', @loadMore
+		@formatAds()
+
+	formatAds: ->
+		$('.bottom-ad').each ->
+			$(@).find('iframe').attr('width', '180').attr('height', '150')
 
 
 	loadMore: ->
