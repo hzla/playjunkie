@@ -32,6 +32,8 @@ QA Round 1
 		COMPLETE CSS/BUGS 2hr
 		COMPLETE staging/bugs/css 2hr
 		COMPLETE 3hr figuring out how to get direct upload
+		COMPLETE 6hr implementation of direct upload
+		COMPLETE 3HR bug fixes and changes for direct upload
 		
 
 add buttons now use ajax
