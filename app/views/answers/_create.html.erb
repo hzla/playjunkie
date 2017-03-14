@@ -1,7 +1,7 @@
 <div class="form-answer image-and-text-box model" model_id="<%= answer.id %>">
 	<%= hidden_field_tag "quiz_item_#{item_number}_item_answer_#{i + 1}[remember_code]", answer.remember_code, :class => "remember-code" %>
 	<%= image_tag "close-box.svg", :class => "close-answer closer" %>
-	<div class="image-input">Click to add image...</div>
+	<div class="image-input input-overlay">Click to add image...</div>
 	<%= image_tag "close-box.svg", :class => "close-image closer" %>
 	<%= direct_upload_form_for image_uploader(ItemAnswer), html: {:class => "image-form answer-image-upload", model_id: answer.id, model_name: "ItemAnswer"} do |f| %>
 		<%= f.file_field :image, :class => "answer-image-input" %>

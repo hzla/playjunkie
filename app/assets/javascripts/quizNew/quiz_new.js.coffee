@@ -181,11 +181,11 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		$.post "/quiz_items/#{quizItemId}/answers?item_number=#{itemNumber})}&i=#{i}&quiz_type=#{quizType}", (data) ->
 			lastAnswer.after(data)
 
-		# hide add answer at 4 answers if trivia quiz
-		$(@).hide() if i == 4 && $('.trivia-oriented-quiz').length > 0
-		# hide add answer at 4 answers if quiz quiz
-		$(@).hide() if i == 8 && $('.quiz-oriented-quiz').length > 0 
-		QuizNew.manageClosers()
+			# hide add answer at 4 answers if trivia quiz
+			$(@).hide() if i == 4 && $('.trivia-oriented-quiz').length > 0
+			# hide add answer at 4 answers if quiz quiz
+			$(@).hide() if i == 8 && $('.quiz-oriented-quiz').length > 0 
+			QuizNew.manageClosers()
 
 	closeAnswer: ->
 		question = $(@).parents('.question')

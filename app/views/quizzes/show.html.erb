@@ -85,6 +85,9 @@
 			<% end %>
 		<% else %>
 			<div class="result sharer">
+				<% if @quiz.completion_message %>
+					<p class="completion-message"><%= @quiz.completion_message %></p>
+				<% end %>
 				<p class="result-social-message">Share this <%= @quiz.quiz_type.capitalize %></p>
 				<div class="social-medias">
 					<div class="social-media fb-blue-bg fb"><%= image_tag "fb.svg" %></div>

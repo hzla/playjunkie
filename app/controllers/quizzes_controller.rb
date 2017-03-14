@@ -109,10 +109,13 @@ class QuizzesController < ApplicationController
 		
 		if params["data"]["image_key_back"] != ""
 			model.update_attributes image_key_back: params["data"]["image_key_back"]
+			ImageProcesserWorker.perform_async model.class, model.id, params["data"]["image_key_back"], "back"
 		else
 			model.update_attributes image_key: params["data"]["image_key"]
+			ImageProcesserWorker.perform_async model.class, model.id, params["data"]["image_key"], "front"
+
 		end
-		ImageProcesserWorker.perform_async model.class, model.id
+		
 		render nothing: true
 	end
 

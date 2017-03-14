@@ -9,8 +9,12 @@ class Result < ApplicationRecord
 		self.update_attributes remember_code: Code.generate
 	end
 
-	def save_and_process_image
-		self.remote_image_url = self.image.direct_fog_url + self.image_key
+	def save_and_process_image key, side
+		if side == "front"
+			self.remote_image_url = self.image.direct_fog_url + key
+		else
+			self.remote_image_back_url = self.image.direct_fog_url + key
+		end
 		save!
 	end
 

@@ -21,7 +21,7 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		
 		quizTitle = ($('#quiz_title').val() != "")
 		quizDescription = ($('#quiz_description').val() != "")
-		quizImage = ($('#quiz-image-input').val() != "")
+		quizImage = ($('#quiz-image-preview:visible').length > 0)
 		
 		if !quizTitle
 			$('#quiz_title').css('border', '1px solid red') 
@@ -34,11 +34,11 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			$('#quiz_description').attr('style', '')
 
 		if !quizImage
-			$('#quiz-image-input').parent().find('.image-input-overlay').css('border', '1px solid red')
+			$('.quiz-image-input').parent().parent().find('.image-input-overlay').css('border', '1px solid red')
 		else
-			$('#quiz-image-input').parent().find('.image-input-overlay').attr('style', '')
+			$('.quiz-image-input').parent().parent().find('.image-input-overlay').attr('style', '')
 		
-		quizImage = true if $('.quiz-edit').length > 0
+		# quizImage = true if $('.quiz-edit').length > 0
 
 		if !quizTitle or !quizDescription or !quizImage
 			missingFieldError = true
@@ -190,15 +190,13 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			$('#new_quiz, .edit_quiz').attr('target', '')
 		
 		actionText = $(@).attr('action-text')
-		if actionText != undefined
-			$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
 
 		if action == 'save-quiz'
+			$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
 			$('.edit_quiz').append $(".quiz-form")
 			uploadForm = $('.edit_quiz')
 			formData = new FormData uploadForm[0]	
 			# $.post uploadForm.attr('action'), ->
-			console.log uploadForm.attr('action')
 			$.ajax(
 		    type: 'PATCH',
 		    url: uploadForm.attr('action'),
@@ -215,6 +213,8 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		
 		valid = QuizValidate.validateFields()
 		if valid
+			if actionText != undefined
+				$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
 			$('.edit_quiz').append $(".quiz-form")
 		if !valid
 			return

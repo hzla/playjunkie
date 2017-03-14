@@ -39,8 +39,12 @@ class Quiz < ApplicationRecord
 		Quiz.where(published: true).each(&:shift_daily_view_counts)
 	end
 
-	def save_and_process_image
-		self.remote_image_url = self.image.direct_fog_url + self.image_key
+	def save_and_process_image key, side
+		if side == "front"
+			self.remote_image_url = self.image.direct_fog_url + key
+		else
+			self.remote_image_back_url = self.image.direct_fog_url + key
+		end
 		save!
 	end
 
@@ -104,7 +108,12 @@ class Quiz < ApplicationRecord
 	###### Misc
 
 	def self.blank_attributes quiz_type
-		  {"quiz"=>{"quiz_type"=> quiz_type, "title"=>"", "description"=>""}, "result_1"=>{"result_text"=>"", "image_credit"=>""}, "quiz_item_1"=>{"order"=>"1", "item_text"=>"", "image_credit"=>"", "answer_style"=>"image"}, "quiz_item_1_item_answer_1"=>{"answer_text"=>"", "image_credit"=>""}}
+		attrs = {"quiz"=>{"quiz_type"=> quiz_type, "title"=>"", "description"=>""}, "quiz_item_1"=>{"order"=>"1", "item_text"=>"", "image_credit"=>"", "answer_style"=>"image"}}
+		if quiz_type == "quiz" || quiz_type == "trivia"
+		  attrs["quiz_item_1_item_answer_1"] = {"answer_text"=>""}
+		  attrs["result_1"] = {"result_text"=>""}
+		end
+		attrs
 	end
 
 	###### Seeds

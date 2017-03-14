@@ -17,10 +17,11 @@ class QuizItem < ApplicationRecord
 		item_text || ""
 	end
 
-	def save_and_process_image
-		self.remote_image_url = self.image.direct_fog_url + self.image_key
-		if self.image_key_back
-			self.remote_image_back_url = self.image_back.direct_fog_url + self.image_key_back
+	def save_and_process_image key, side
+		if side == "front"
+			self.remote_image_url = self.image.direct_fog_url + key
+		else
+			self.remote_image_back_url = self.image.direct_fog_url + key
 		end
 		save!
 	end

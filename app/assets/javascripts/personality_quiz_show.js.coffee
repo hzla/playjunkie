@@ -17,6 +17,7 @@ PQuizShow =
 				prev.show().animate({opacity: 1}, 400)
 
 	startPQuiz: ->
+		console.log "starting"
 		$(@).parents('.quiz-starter').animate 
 			opacity: 0
 		, 400, ->

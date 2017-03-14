@@ -12,7 +12,7 @@
 					<%= text_area_tag "result_#{i + 1}[result_text]", result.result_text, :class => "result-text-input required", placeholder: "Result text...", maxlength: 200 %>		
 				</div>
 					
-				<div class="image-input">Click to add image...</div>
+				<div class="image-input input-overlay">Click to add image...</div>
 				<%= image_tag "close-box.svg", :class => "close-image closer" %>
 				<%= direct_upload_form_for image_uploader(Result), html: {:class => "image-form result-image-upload", model_id: result.id, model_name: "Result"} do |f| %>
 					<%= f.file_field :image, :class => "result-image-input" %>

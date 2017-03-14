@@ -7,10 +7,13 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 		input = @
 		uploadForm = $(input).parent()		
 		formData = new FormData(uploadForm[0])
-		
+	
 		previewBox = $(input).parent().next()
+		$(input).parent().parent().find('.input-overlay').text("")
 		previewBox.css('display', 'flex')
 		previewBox.find('.sk-wave').show()
+
+		console.log "1"
 
 		$.ajax(
 	    type: 'POST',
@@ -20,6 +23,7 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 	    contentType: false,
 	    data: formData
 	  ).done ->
+	  	console.log "2"
 			imageKey = uploadForm.find("input[name='key']").val()
 			imageKeyBack = null
 			fileName = uploadForm.find("input[type='file']")[0].files[0].name
@@ -27,8 +31,9 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 			modelId = uploadForm.attr 'model_id'
 			modelName = uploadForm.attr 'model_name'
 			
+			console.log "3"
 			#for flip cards
-			if $(".back-side").length > 0 && $(".back-side input[type='file']").val() != ""
+			if ($(".back-side").length > 0 && $(input).parents('.question').length > 0 && $(input).parents('.question').find(".back-side input[type='file']").val() != "")
 				imageKeyBack = imageKey
 				imageKey = null
 
@@ -57,7 +62,8 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 	
 	closeImage: ->
 		box = $(@).parent()
-		box.find('.image-preview').attr('src', 'blank').hide()
+		box.find('.input-overlay').text("Click to add image...")
+		box.find('.image-preview').attr('src', 'blank').attr('style', '').hide()
 		box.find("input[type='file']").val("")
 		modelId = $(@).parent().find('.image-form').attr('model_id')
 		modelName = $(@).parent().find('.image-form').attr('model_name')
