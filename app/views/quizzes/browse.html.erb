@@ -82,16 +82,16 @@
 		 			<% end %>
 		 		</div>
 		 		<div class="bottom-ads">
-					<% 4.times do %>
+					<% (1..6).each do |n| %>
 						<div class="bottom-ad">
-							<%= render partial: "ads/small" %>
+							<%= render partial: "ads/small_#{n}" %>
 						</div>
 					<% end %>
 				</div>
 		 	</div>
 		 	<div class="side-content">
 				<div id="ad1" class="side-ad">
-					<%= render partial: "ads/col_tall" %>
+					<%= render partial: "ads/col_tall_1" %>
 				</div>
 			</div>
 		 </div>

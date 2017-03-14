@@ -96,6 +96,10 @@ class Quiz < ApplicationRecord
 		where('publish_date > ?', Time.now - 7.days).order('view_count desc').offset((page - 1) * 10).limit(10)
 	end
 
+	def recommended
+		Quiz.where(quiz_type: quiz_type, published: true).order('trending_count desc').limit(100).sample(6)
+	end
+
 	###### Seeds
 
 	def self.seed_frontpage

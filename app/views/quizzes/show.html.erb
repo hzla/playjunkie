@@ -100,21 +100,21 @@
 			</div>
 		<% end %>
 		<div class="bottom-ads">
-			<% 4.times do %>
+			<% (1..6).each do |n| %>
 				<div class="bottom-ad">
-					<%= render partial: "ads/small" %>
+					<%= render partial: "ads/small_#{n}" %>
 				</div>
 			<% end %>
 		</div>
 	</div>
 	<div class="side-content">
 		<div id="ad-1" class="side-ad">
-			<%= render partial: "ads/col_tall" %>
+			<%= render partial: "ads/col_tall_1" %>
 		</div>
 		<div class="divider" id="divider-1"></div>
 		<div class="recommendations">
 			<h3>Recommended</h3>
-			<% Quiz.all.limit(6).each do |rec| %>
+			<% @quiz.recommended.each do |rec| %>
 				<%= link_to quiz_path(rec) do %>
 					<div class="side-quiz">
 						<div class="img" style="background-image: url(<%= image_url(rec.image_url(:square)) %>)"></div>
@@ -125,7 +125,7 @@
 		</div>
 		<div class="divider" id="divider-2"></div>
 		<div id="ad-2" class="side-ad">
-			<%= render partial: "ads/col_tall" %>
+			<%= render partial: "ads/col_tall_2" %>
 		</div>
 	</div>
 </div>
