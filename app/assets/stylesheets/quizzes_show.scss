@@ -513,9 +513,9 @@
 	@include justify-content(space-between);
 	width: 620px;
 	.bottom-ad {
-		width: calc((620px - 40px) / 3);
+		width: 300px;
 		margin-bottom: 20px;
-		height: 130px;
+		height: 250px;
 		border-radius: 8px;
 	}
 	.bottom-ad:nth-child(4n), .bottom-ad:nth-child(5n), .bottom-ad:nth-child(6n) {
