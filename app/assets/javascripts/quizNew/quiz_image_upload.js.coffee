@@ -8,6 +8,10 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 		uploadForm = $(input).parent()		
 		formData = new FormData(uploadForm[0])
 		
+		previewBox = $(input).parent().next()
+		previewBox.css('display', 'flex')
+		previewBox.find('.sk-wave').show()
+
 		$.ajax(
 	    type: 'POST',
 	    url: uploadForm.attr('action'),
@@ -34,25 +38,36 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 					image_key_back: imageKeyBack
 					model_id: modelId
 					model_name: modelName
+			, ->
 
+				previewBox.find('.sk-wave').hide()
+				if input.files && input.files[0]
+					reader = new FileReader()
+					reader.onload =  (e) ->
+						previewBox = $(input).parent().next()
+						previewBox.show()
+						$(previewBox).css('background-image', "url(#{e.target.result})")
+						previewBox.attr 'src', e.target.result
+					
+					reader.readAsDataURL input.files[0]
+					$(input).parent().parent().find('.close-image').show()
+					$(input).parents('.card-side').find('.card-color-input').val("")
+					$(input).parents('.card-side').find('.question-image-input').attr('style', "").css('background', 'none')
 
-		if input.files && input.files[0]
-			reader = new FileReader()
-			reader.onload =  (e) ->
-				previewBox = $(input).parent().next()
-				previewBox.show()
-				$(previewBox).css('background-image', "url(#{e.target.result})")
-				previewBox.attr 'src', e.target.result
-			
-			reader.readAsDataURL input.files[0]
-			$(@).parent().parent().find('.close-image').show()
-			$(@).parents('.card-side').find('.card-color-input').val("")
-			$(@).parents('.card-side').find('.question-image-input').attr('style', "").css('background', 'none')
-
+	
 	closeImage: ->
 		box = $(@).parent()
-		box.find('.image-preview').attr('src', '#').hide()
+		box.find('.image-preview').attr('src', 'blank').hide()
 		box.find("input[type='file']").val("")
+		modelId = $(@).parent().find('.image-form').attr('model_id')
+		modelName = $(@).parent().find('.image-form').attr('model_name')
+
+		$.ajax 
+			url: '/images',
+			method: "DELETE"
+			data: 
+				model_id: modelId
+				model_name: modelName
 		$(@).hide()
 
 ready = ->

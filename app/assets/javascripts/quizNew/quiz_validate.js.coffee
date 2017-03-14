@@ -54,10 +54,10 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			text = question.find('.question-text')
 
 			## for all items ######################################################
-			if text.val() == "" && image.attr('src') == "#"
+			if text.val() == "" && image.attr('src') == "blank"
 				if $(".list-quiz").length < 1
 					text.css('border', '1px solid red') if text.val() == "" 
-					question.find('div.question-image-input').css('border', '1px solid red') if image.attr('src') == "#"
+					question.find('div.question-image-input').css('border', '1px solid red') if image.attr('src') == "blank"
 					missingFieldError = true 
 			else
 				text.attr('style', '')
@@ -69,7 +69,7 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			################################# for Lists ###########################
 			if $(".list-quiz").length > 0
 				description = question.find('.item-description')
-				if text.val() == "" && image.attr('src') == "#" && description.val() == "" 
+				if text.val() == "" && image.attr('src') == "blank" && description.val() == "" 
 					text.attr('style', '')
 					question.find('div.question-image-input').attr('style', '')
 					question.css('border', '1px solid red')
@@ -87,17 +87,17 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 
 				#Both the Front card and Back card need to have text or an image.
 
-				if textFront.val() == "" && imageFront.attr('src') == "#" || textBack.val() == "" && imageBack.attr('src') == "#"
+				if textFront.val() == "" && imageFront.attr('src') == "blank" || textBack.val() == "" && imageBack.attr('src') == "blank"
 					text.attr('style', '')
 					# question.find('div.question-image-input').attr('style', '')
 					flipCardError = true
 
-					if textFront.val() == "" && imageFront.attr('src') == "#" 
+					if textFront.val() == "" && imageFront.attr('src') == "blank" 
 						$('.front-side').css('border', '1px solid red')
 					else
 						$('.front-side').css('border', 'none')
 
-					if textBack.val() == "" && imageBack.attr('src') == "#" 
+					if textBack.val() == "" && imageBack.attr('src') == "blank" 
 						$('.back-side').css('border', '1px solid red')
 					else
 						$('.back-side').css('border', 'none')
@@ -114,9 +114,9 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 				image = $(@).find('.answer-image-preview')
 				text = $(@).find('.answer-text-input')
 				if $(@).find('.image-input:visible').length > 0 #if image style
-					if image.attr('src') == "#" && text.val() == ""
+					if image.attr('src') == "blank" && text.val() == ""
 						text.css('border', '1px solid red') if text.val() == "" 
-						$(@).find('.image-input').css('border', '1px solid red') if image.attr('src') == "#" 
+						$(@).find('.image-input').css('border', '1px solid red') if image.attr('src') == "blank" 
 						missingFieldError = true
 					else 
 						text.attr('style', '')
@@ -148,9 +148,9 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		$('.form-result').each ->
 			text = $(@).find('.result-text-input')
 			image = $(@).find('.result-image-preview')
-			if text.val() == "" && image.attr('src') == "#"
+			if text.val() == "" && image.attr('src') == "blank"
 				text.css('border', '1px solid red') if text.val() == "" 
-				$(@).find('.image-input').css('border', '1px solid red') if image.attr('src') == "#"
+				$(@).find('.image-input').css('border', '1px solid red') if image.attr('src') == "blank"
 				missingFieldError = true
 			else
 				text.attr('style', '')
@@ -193,11 +193,24 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 		if actionText != undefined
 			$('#flash-message').attr('style', '').removeClass('hidden').addClass('blue').text("#{actionText}, please wait...")
 
-		console.log action
 		if action == 'save-quiz'
 			$('.edit_quiz').append $(".quiz-form")
-			$('#new_quiz, .edit_quiz').submit()
-			console.log "submitted"
+			uploadForm = $('.edit_quiz')
+			formData = new FormData uploadForm[0]	
+			# $.post uploadForm.attr('action'), ->
+			console.log uploadForm.attr('action')
+			$.ajax(
+		    type: 'PATCH',
+		    url: uploadForm.attr('action'),
+		    data: uploadForm.serialize()
+		  ).done ->
+				$('#flash-message').text("Saved!")
+				setTimeout ->
+					$('#flash-message').animate
+						opacity: 0
+					, 400
+				, 2500
+			
 			return
 		
 		valid = QuizValidate.validateFields()
@@ -205,7 +218,6 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 			$('.edit_quiz').append $(".quiz-form")
 		if !valid
 			return
-
 		
 		$('#new_quiz, .edit_quiz').submit()
 

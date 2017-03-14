@@ -1,4 +1,4 @@
-<div class="form-box question" quiz_item_id="<%= card.id %>">
+<div class="form-box question model" model_id="<%= card.id %>">
 	<%= hidden_field_tag "quiz_item_#{i + 1}[order]", card.order, :class => "item-order" %>
 	<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", card.remember_code, :class => "remember-code" %>
 	<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
@@ -29,7 +29,15 @@
 							<%= direct_upload_form_for image_uploader(QuizItem) , html: {:class => "image-form quiz-item-image-upload", model_id: card.id, model_name: "QuizItem"} do |f| %>
 							  <%= f.file_field "image#{side == 'back' ? '_back' : nil}", :class => "card-image-input" %>
 							<% end %>
-							<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) || '#' %>"></div>
+							<div class="question-image-preview image-preview" style="background-image: url(<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) %>);" alt="preview failed to load" src="<%= card.send("image#{side == 'back' ? '_back' : nil}_url".to_sym) || 'blank' %>">
+								<div class="sk-wave">
+								  <div class="sk-rect sk-rect1"></div>
+								  <div class="sk-rect sk-rect2"></div>
+								  <div class="sk-rect sk-rect3"></div>
+								  <div class="sk-rect sk-rect4"></div>
+								  <div class="sk-rect sk-rect5"></div>
+								</div>
+							</div>
 							<div class="box-input question-image-input" style="background-color:<%= card.send("color#{side == 'back' ? '_back' : nil}".to_sym) %>">
 								<div class="add-card-text">Edit Text</div>
 								<p class="char-count">120</p>

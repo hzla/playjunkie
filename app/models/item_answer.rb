@@ -4,6 +4,8 @@ class ItemAnswer < ApplicationRecord
 	belongs_to :quiz_item
 	belongs_to :result
 
+	delegate :user_id, to: :quiz_item
+
 	after_create :generate_remember_code
 
 

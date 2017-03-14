@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   include Clearance::Controller
   protect_from_forgery with: :exception
-  before_filter :show_footer
-  before_filter :set_og_tags
+  before_action :show_footer
+  before_action :set_og_tags
 
   def show_footer
   	@footer = true

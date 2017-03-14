@@ -1,10 +1,19 @@
-<div id="quiz-main-info">
-	
+<div id="quiz-main-info"> 
+
+
 	<%= direct_upload_form_for @image , html: {:class => "image-form quiz-image-upload", model_id: @quiz.id, model_name: "Quiz"} do |f| %>
 	  <%= f.file_field :image, :class => "quiz-image-input" %>
 	<% end %>
 
-	<div id="quiz-image-preview" class="image-preview" style="background-image: url(<%= @quiz.image_url(:square) if @quiz %>);" alt="preview failed to load" class="hidden" src="<%= (@quiz.image_url || '#') if @quiz %>"></div> 
+	<div id="quiz-image-preview" class="image-preview" style="background-image: url(<%= @quiz.image_url(:square) if @quiz %>);" alt="preview failed to load" class="hidden" src="<%= (@quiz.image_url || '') if @quiz %>">
+		<div class="sk-wave">
+		  <div class="sk-rect sk-rect1"></div>
+		  <div class="sk-rect sk-rect2"></div>
+		  <div class="sk-rect sk-rect3"></div>
+		  <div class="sk-rect sk-rect4"></div>
+		  <div class="sk-rect sk-rect5"></div>
+		</div>
+	</div> 
 	<div class="image-input-overlay">
 		Click to Add Image
 	</div>

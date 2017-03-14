@@ -43,7 +43,7 @@ FlipcardNew = #Flipcard specefic UI goes here
 		card.css('background-color', color)
 		card.find('input.question-image-input').val("")
 		card.find('.close-image').hide()
-		card.find('.image-preview').attr('src', '#').hide()
+		card.find('.image-preview').attr('src', 'blank').hide()
 		card.find('.card-color-input').val(color)
 
 ready = ->

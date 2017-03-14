@@ -1,4 +1,4 @@
-<div class="form-result image-and-text-box" result_id="<%= result.id %>">
+<div class="form-result image-and-text-box model" model_id="<%= result.id %>">
 	<%= hidden_field_tag "result_#{i + 1}[remember_code]", result.remember_code, :class => "remember-code" %>
 	<%= image_tag "close-box.svg", :class => "close-result closer" %>
 	<div class="char-countable">
@@ -11,7 +11,15 @@
 	<%= direct_upload_form_for image_uploader(Result), html: {:class => "image-form result-image-upload", model_id: result.id, model_name: "Result"} do |f| %>
 		<%= f.file_field :image, :class => "result-image-input" %>
 	<% end %>
-	<div class="result-image-preview image-preview" style="background-image: url(<%= result.image_url(:square) %>);" alt="preview failed to load" src="<%= result.image_url || '#' %>"></div>
+	<div class="result-image-preview image-preview" style="background-image: url(<%= result.image_url(:square) %>);" alt="preview failed to load" src="<%= result.image_url || 'blank' %>">
+		<div class="sk-wave">
+		  <div class="sk-rect sk-rect1"></div>
+		  <div class="sk-rect sk-rect2"></div>
+		  <div class="sk-rect sk-rect3"></div>
+		  <div class="sk-rect sk-rect4"></div>
+		  <div class="sk-rect sk-rect5"></div>
+		</div>
+	</div>
 	<%= text_field_tag "result_#{i + 1}[image_credit]", result.image_credit, :class => "result-image-credit-input", placeholder: "Image Credit..." %>
 
 	<% if quiz_type == "trivia" %>

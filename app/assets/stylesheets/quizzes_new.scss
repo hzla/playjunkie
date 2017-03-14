@@ -11,6 +11,9 @@
 	.image-preview {
 		background-position: center;
 		background-size: cover;
+		position: relative;
+		@include flexbox;
+		@include align-items(center);
 	}
 
 	.image-form {

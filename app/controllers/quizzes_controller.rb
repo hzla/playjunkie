@@ -1,6 +1,6 @@
 class QuizzesController < ApplicationController
-	before_filter :require_signin, except: [:index, :show, :trending, :browse, :featured]
-	before_filter :get_quiz, only: [:show, :edit, :update, :destroy]
+	before_action :require_signin, except: [:index, :show, :trending, :browse, :featured]
+	before_action :get_quiz, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@trending = Quiz.trending(1)[0..5]
@@ -77,7 +77,7 @@ class QuizzesController < ApplicationController
 				render "create" and return
 			end
 		else
-			redirect_to edit_quiz_path(@quiz, saved: true)
+			render nothing: true
 		end
 	end
 
@@ -113,6 +113,15 @@ class QuizzesController < ApplicationController
 			model.update_attributes image_key: params["data"]["image_key"]
 		end
 		ImageProcesserWorker.perform_async model.class, model.id
+		render nothing: true
+	end
+
+	def delete_image
+		model = params["model_name"].constantize.find(params["model_id"])
+		if model.image.present? && model.user_id == current_user.id
+			model.remove_image!
+			model.save!
+		end
 		render nothing: true
 	end
 

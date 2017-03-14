@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get '/quizzes/featured', to: 'quizzes#featured', as: 'featured'
   get '/quizzes/new/:quiz_type', to: 'quizzes#new', as: 'new_quiz'
   resources :quizzes
+  delete '/images', to: 'quizzes#delete_image'
+
 
   #quiz_items
   post '/quizzes/:quiz_id/quiz_items', to: 'quiz_items#create'

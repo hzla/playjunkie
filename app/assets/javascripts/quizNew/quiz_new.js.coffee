@@ -28,6 +28,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		@manageMovers()
 		@closeSaveMessage()
 		@setAnswerFormats()
+		@syncResultsRange()
 
 	closeSaveMessage: ->
 		setTimeout ->
@@ -45,7 +46,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 	showImagePreviews: ->
 		$('.image-preview').show()
-		$(".image-preview[src='#'], .image-preview[src='']").hide()
+		$(".image-preview[src='blank'], .image-preview[src='']").hide()
 
 	showCharsRemainingForTextbox: (e) ->
 		currentChars = $(@).text().trim().length
@@ -148,7 +149,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		
 		$.ajax
 			method: "DELETE",
-			url: "/results/#{result.attr("result_id")}"
+			url: "/results/#{result.attr("model_id")}"
 			success: ->
 				result.remove()
 				$('.add-result').show()
@@ -173,7 +174,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 	addAnswer: ->
 		question = $(@).parents('.question')
 		lastAnswer = question.find('.form-answer:visible, .text-answer-form:visible').last()
-		quizItemId = question.attr('quiz_item_id')
+		quizItemId = question.attr('model_id')
 		itemNumber = question.attr('item_number')
 		quizType = $('#quiz_type').val()
 		i = question.find('.form-answer:visible, .text-answer-form:visible').length + 1
@@ -191,7 +192,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		answer = $(@).parent()
 		$.ajax
 			method: "DELETE",
-			url: "/item_answers/#{answer.attr("answer_id")}"
+			url: "/item_answers/#{answer.attr("model_id")}"
 			success: ->
 				answer.remove()
 				question.find('.add-answer').show()
@@ -225,7 +226,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 			question = $(@).parent()
 			$.ajax
 				method: "Delete",
-				url: "/quiz_items/#{question.attr("quiz_item_id")}"
+				url: "/quiz_items/#{question.attr("model_id")}"
 				success: ->
 					question.remove()
 					$('.question:visible .question-number').each (i) ->
@@ -242,13 +243,13 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		$.post "/quizzes/#{quizId}/quiz_items?i=#{$('.question').length}&quiz_type=#{quizType}",  (data) ->
 			$('.question:visible').last().after(data)
 		#new Result can be created now that there is one more question
-		QuizNew.questionCount += 1 
-		# $('.question:visible').last().find('.question-number p').text QuizNew.questionCount
-		$('.add-result').css('display', 'flex') 
-		#Update UI elements
-		QuizNew.manageClosers()
-		QuizNew.manageMovers()
-		QuizNew.syncResultsRange()
+			QuizNew.questionCount += 1 
+			# $('.question:visible').last().find('.question-number p').text QuizNew.questionCount
+			$('.add-result').css('display', 'flex') 
+			#Update UI elements
+			QuizNew.manageClosers()
+			QuizNew.manageMovers()
+			QuizNew.syncResultsRange()
 
 	selectAnswerFormat: ->
 		type = $(@).attr('format_type')

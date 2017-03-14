@@ -1,6 +1,6 @@
 class UsersController < Clearance::SessionsController
-	before_filter :get_user, only: [:show, :edit, :update]
-	before_filter :require_signin, only: [:admin_login]
+	before_action :get_user, only: [:show, :edit, :update]
+	before_action :require_signin, only: [:admin_login]
 
 	def show
 		if params[:code] == "switch"

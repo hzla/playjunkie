@@ -1,6 +1,6 @@
 <h2 class="super-bold content-title">Edit Questions</h2>
 <% questions.each_with_index do |question, i| %>
-	<div class="form-box question" quiz_item_id="<%= question.id %>" item_number="<%= i + 1 %>">
+	<div class="form-box question model" model_id="<%= question.id %>" item_number="<%= i + 1 %>">
 		<%= hidden_field_tag "quiz_item_#{i + 1}[order]", question.order, :class => "item-order" %>
 		<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", question.remember_code, :class => "remember-code" %>
 		<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>
@@ -14,7 +14,15 @@
 			<%= direct_upload_form_for image_uploader(QuizItem), html: {:class => "image-form quiz-item-image-upload", model_id:question.id, model_name: "QuizItem"} do |f| %>
 			  <%= f.file_field :image, :class => "question-image-input" %>
 			<% end %>
-			<div class="question-image-preview image-preview" style="background-image: url(<%= question.image_url %>);" alt="preview failed to load" src="<%= question.image_url || '#' %>"></div>
+			<div class="question-image-preview image-preview" style="background-image: url(<%= question.image_url %>);" alt="preview failed to load" src="<%= question.image_url || 'blank' %>">
+				<div class="sk-wave">
+				  <div class="sk-rect sk-rect1"></div>
+				  <div class="sk-rect sk-rect2"></div>
+				  <div class="sk-rect sk-rect3"></div>
+				  <div class="sk-rect sk-rect4"></div>
+				  <div class="sk-rect sk-rect5"></div>
+				</div>
+			</div>
 			<div class="box-input question-image-input">Click to add image...</div>
 		</div>
 		<div class="box-field">

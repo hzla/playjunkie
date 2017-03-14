@@ -6,6 +6,8 @@ class QuizItem < ApplicationRecord
 	belongs_to :quiz
 	after_create :generate_remember_code
 
+	delegate :user_id, to: :quiz
+
 
 	def generate_remember_code
 		self.update_attributes remember_code: Code.generate
