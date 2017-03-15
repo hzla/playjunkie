@@ -1,7 +1,6 @@
 QuizIndex =
 	init: ->
 		$('body').on 'click', '#load-more', @loadMore
-		@formatAds()
 
 	loadMore: ->
 		offset = $('.quiz-list-item').length
