@@ -14,7 +14,7 @@ class Search
 			[quizzes, quiz_items, answers].map do |models|
 				search_model_for(models, terms, field)
 			end
-		end.flatten.map(&:quiz).compact.uniq
+		end.flatten.map(&:quiz).compact.select(&:published).uniq
 	end
 
 	private
