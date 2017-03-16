@@ -512,6 +512,9 @@
 	@include flex-wrap(wrap);
 	@include justify-content(space-between);
 	width: 620px;
+	iframe {
+		margin-bottom: 20px;
+	}
 	.bottom-ad {
 		width: 180px;
 		margin-bottom: 20px;

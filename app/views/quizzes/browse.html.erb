@@ -82,11 +82,7 @@
 		 			<% end %>
 		 		</div>
 		 		<div class="bottom-ads">
-					<% (1..6).each do |n| %>
-						<div class="bottom-ad">
-							<%= render partial: "ads/small_#{n}" %>
-						</div>
-					<% end %>
+					<%= render partial: "ads/small" %>
 				</div>
 		 	</div>
 		 	<div class="side-content">
