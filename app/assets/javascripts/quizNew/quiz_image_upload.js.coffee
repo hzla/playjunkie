@@ -16,10 +16,9 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 		previewBox = $(input).parent().next()
 		$(input).parent().parent().find('.input-overlay').text("")
 		
-		console.log $(@).val()
-		console.log QuizImageUpload.lastSelectedImage
-		if $(@).val() == QuizImageUpload.lastSelectedImage
-			previewBox.find('.sk-wave').hide()
+
+		if $(@).val() == ""
+			# previewBox.find('.sk-wave').hide()
 			return
 
 		previewBox.css('display', 'flex')
