@@ -32,6 +32,7 @@ QA Round 1
 		COMPLETE CSS/BUGS 2hr
 		COMPLETE staging/bugs/css 2hr
 		COMPLETE ads 30min
+		
 
 
 
