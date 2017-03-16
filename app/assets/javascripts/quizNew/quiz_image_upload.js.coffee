@@ -2,18 +2,30 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 	init: ->
 		$('body').on 'change', "input[type='file']", @showImagePreview
 		$('body').on 'click', '.close-image', @closeImage
+		$('body').on 'click', "input[type='file']", @updateLastselectedImage
+		@lastSelectedImage = null
+
+	updateLastselectedImage: ->
+		QuizImageUpload.lastSelectedImage = $(@).val()
 
 	showImagePreview: -> 
 		input = @
 		uploadForm = $(input).parent()		
 		formData = new FormData(uploadForm[0])
-	
+		
 		previewBox = $(input).parent().next()
 		$(input).parent().parent().find('.input-overlay').text("")
+		
+		console.log $(@).val()
+		console.log QuizImageUpload.lastSelectedImage
+		if $(@).val() == QuizImageUpload.lastSelectedImage
+			previewBox.find('.sk-wave').hide()
+			return
+
 		previewBox.css('display', 'flex')
 		previewBox.find('.sk-wave').show()
 
-		console.log "1"
+		
 
 		$.ajax(
 	    type: 'POST',
@@ -23,15 +35,12 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 	    contentType: false,
 	    data: formData
 	  ).done ->
-	  	console.log "2"
 			imageKey = uploadForm.find("input[name='key']").val()
 			imageKeyBack = null
 			fileName = uploadForm.find("input[type='file']")[0].files[0].name
 			imageKey = imageKey.replace("${filename}", fileName)
 			modelId = uploadForm.attr 'model_id'
 			modelName = uploadForm.attr 'model_name'
-			
-			console.log "3"
 			#for flip cards
 			if ($(".back-side").length > 0 && $(input).parents('.question').length > 0 && $(input).parents('.question').find(".back-side input[type='file']").val() != "")
 				imageKeyBack = imageKey
