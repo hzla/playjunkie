@@ -1,25 +1,4 @@
-<% if !browser.device.mobile? %>
-	<script type="text/javascript">
-		atOptions = {
-			'key' : '6d7d8d0801e5e4c5074b8b9a195d014a',
-			'format' : 'iframe',
-			'height' : 250,
-			'width' : 300,
-			'params' : {}
-		};
-		document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bnserving.com/invoke.js"></scr' + 'ipt>');
-	</script>
-	<script type="text/javascript">
-		atOptions = {
-			'key' : '6d7d8d0801e5e4c5074b8b9a195d014a',
-			'format' : 'iframe',
-			'height' : 250,
-			'width' : 300,
-			'params' : {}
-		};
-		document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bnserving.com/invoke.js"></scr' + 'ipt>');
-	</script>
-<% else %>
+
 	<script id="mNCC" language="javascript">
    medianet_width = "300";
    medianet_height = "600";
@@ -31,4 +10,3 @@
        document.write('<scr' + 'ipt type="text/javascript" id="mNSC" src="' + mnSrc + '"></scr' + 'ipt>');
    })();
 	</script>
-<% end %>
