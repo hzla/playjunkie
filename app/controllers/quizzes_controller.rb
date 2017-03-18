@@ -122,7 +122,11 @@ class QuizzesController < ApplicationController
 	def delete_image
 		model = params["model_name"].constantize.find(params["model_id"])
 		if model.image.present? && model.user_id == current_user.id
-			model.remove_image!
+			if params["side"] == "front"
+				model.remove_image!
+			else
+				model.remove_image_back!
+			end
 			model.save!
 		end
 		render nothing: true

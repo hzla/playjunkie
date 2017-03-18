@@ -23,9 +23,7 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 
 		previewBox.css('display', 'flex')
 		previewBox.find('.sk-wave').show()
-
-		
-
+	
 		$.ajax(
 	    type: 'POST',
 	    url: uploadForm.attr('action'),
@@ -41,7 +39,8 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 			modelId = uploadForm.attr 'model_id'
 			modelName = uploadForm.attr 'model_name'
 			#for flip cards
-			if ($(".back-side").length > 0 && $(input).parents('.question').length > 0 && $(input).parents('.question').find(".back-side input[type='file']").val() != "")
+
+			if ($(".back-side").length > 0 && $(input).parents('.question').length > 0 && $(input).parents('.question').find(".back-side input[type='file']").val() != "") && $(input).parents('.flip-container').hasClass('flip')
 				imageKeyBack = imageKey
 				imageKey = null
 
@@ -76,8 +75,15 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 		modelId = $(@).parent().find('.image-form').attr('model_id')
 		modelName = $(@).parent().find('.image-form').attr('model_name')
 
+		#for flipcards return blue background
+		side = "front"
+		
+		$(@).parents('.card-side').find('div.question-image-input').css('background', '#1e5efd')
+		if $(@).parents('.card-side').length > 0 && $(@).parents('.card-side').hasClass('back-side')
+			side = "back"
+
 		$.ajax 
-			url: '/images',
+			url: "/images?side=#{side}",
 			method: "DELETE"
 			data: 
 				model_id: modelId

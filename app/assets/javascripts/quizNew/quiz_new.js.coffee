@@ -63,8 +63,11 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		$(@).parent().find('.char-count').text remaining
 
 	syncResultsRange: ->
-		resultsCount = $('.form-result:visible').length
-		questionsCount = $('.question:visible').length
+		resultsCount = $('.form-result').length
+		questionsCount = $('.question').length
+
+		if resultsCount >= questionsCount
+			$('.add-result').hide()
 
 		rangeWidth = Math.floor((questionsCount / resultsCount))
 		ranges = []
@@ -130,18 +133,18 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		quizId = $('.edit_quiz').attr('quiz_id')
 		quizType = $('#quiz_type').val()
 
-		$.post "/quizzes/#{quizId}/results?i=#{$('.result').length}&quiz_type=#{quizType}", (data) ->
+		$.post "/quizzes/#{quizId}/results?i=#{$('.form-result').length}&quiz_type=#{quizType}", (data) ->
 			$('.form-result:visible').last().after(data)
 			$('.close-result').show()
 		
-		# number of results can't exceed number of questions for trivia quizzes
-		if $('.form-result:visible').length == $('.question:visible').length && $('.trivia-oriented-quiz').length > 0
-			$(@).hide()
+			# number of results can't exceed number of questions for trivia quizzes
+			if $('.form-result:visible').length == $('.question:visible').length && $('.trivia-oriented-quiz').length > 0
+				$(@).hide()
 
-		# add another choice for answers for quiz type quizzes
-		if $('.quiz-oriented-quiz').length > 0
-			QuizNew.addResultChoiceToAnswers()
-		QuizNew.syncResultsRange()
+			# add another choice for answers for quiz type quizzes
+			if $('.quiz-oriented-quiz').length > 0
+				QuizNew.addResultChoiceToAnswers()
+			QuizNew.syncResultsRange()
 	
 	closeResult: ->
 		result = $(@).parent()
@@ -155,9 +158,9 @@ QuizNew = #UI for creating/editing Quizzes goes here
 				$('.add-result').show()
 				QuizNew.manageClosers()
 
-		if $('.quiz-oriented-quiz').length > 0
-			QuizNew.removeResultChoice(resultNumber)
-		QuizNew.syncResultsRange()
+				if $('.quiz-oriented-quiz').length > 0
+					QuizNew.removeResultChoice(resultNumber)
+				QuizNew.syncResultsRange()
 
 	removeResultChoice: (index) ->
 		$('select').each ->
