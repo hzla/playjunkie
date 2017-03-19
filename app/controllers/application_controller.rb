@@ -28,9 +28,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_og_tags
+    @title = "Playjunkie"
     @og_title = "PlayJunkie"
-    @og_description = "Test test and test"
+    @og_description = "Take Quizzes, Make Your Own, Have Fun"
     @og_image = "/missing-user-photo.svg"
-    @meta_description = "do stuff"
+    @meta_description = "Take Quizzes, Make Your Own, Have Fun"
   end
 end

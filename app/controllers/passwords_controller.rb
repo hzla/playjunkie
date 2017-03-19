@@ -1,9 +1,11 @@
 class PasswordsController < ApplicationController
 
 	def new
+		@title = "Recover Password"
 	end
 
 	def edit
+		@title = "Update Password"
 		@user = User.find_by_confirmation_token params[:token]
 
 	end

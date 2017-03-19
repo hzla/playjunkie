@@ -3,15 +3,18 @@ class QuizzesController < ApplicationController
 	before_filter :get_quiz, only: [:show, :edit, :update, :destroy]
 
 	def index
+		@title = "Home"
 		@trending = Quiz.trending(1)[0..5]
 	end
 
 	def featured
+		@title = "Featured"
 		@quizzes = Quiz.featured(10, params[:offset])
 		render partial: 'list'
 	end
 
 	def new
+		@title = "New"
 		@footer = false
 		@quiz_type = params[:quiz_type]
 		render "new_#{@quiz_type}"
@@ -19,7 +22,9 @@ class QuizzesController < ApplicationController
 
 	def show
 		@og_title = @quiz.title
+		@title = @og_title
 		@og_description = @quiz.description
+		@meta_description = @og_description
 		@og_image = @quiz.image_url
 
 		@quiz = Quiz.find params[:id]
@@ -36,6 +41,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def trending
+		@title = "Trending"
 		@page = params[:page] ? params[:page].to_i : 1
 		@last_page = Quiz.trending(@page + 1).length == 0
 		@quizzes = Quiz.trending @page
@@ -46,14 +52,17 @@ class QuizzesController < ApplicationController
 		@editors_picks = Quiz.editors_picks(params[:quiz_type])
 		@quiz_type = params[:quiz_type] 
 		@sort = params[:sorted_by] || "trending"
+		@title = "Browse #{@quiz_type.pluralize.capitalize}"
 		@quizzes = Quiz.get_collection_of_type @page, @quiz_type, @sort
 		@last_page = Quiz.get_collection_of_type(@page + 1, @quiz_type, @sort).length == 0
 	end
 
-	def edit
+	def edit	
+
 		(redirect_to root_path and return) if current_user != @quiz.user
 		@footer = false
 		@quiz = Quiz.find params[:id]
+		@title = @quiz.quiz_type
 		@quiz.update_attributes is_preview?: nil
 		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"
 			render "edit" and return
@@ -79,8 +88,8 @@ class QuizzesController < ApplicationController
 	end
 
 	def create
+		@title = "Published"
 		@quiz = Quiz.create_self_and_all_items params, current_user
-
 		if params[:action_type] == "preview-quiz" #if previewing quiz
 			@quiz.update_attributes is_preview?: true 
 			redirect_to quiz_path(@quiz) and return

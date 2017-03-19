@@ -11,6 +11,7 @@ class SessionsController < Clearance::SessionsController
 	end
 
 	def create
+    @title = "Sign In"
     @user = authenticate(params)
     sign_in(@user) do |status|
       if status.success?
