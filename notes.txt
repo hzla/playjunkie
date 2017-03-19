@@ -34,7 +34,8 @@ QA Round 1
 		COMPLETE 3hr figuring out how to get direct upload
 		COMPLETE 6hr implementation of direct upload
 		COMPLETE 3HR bug fixes and changes for direct upload
-		COMPLETE 45min quiz creator bugs
+		COMPLETE 1hr quiz creator bugs
+		COMPLETE 1hr outbrain/staging setup
 		
 		
 
