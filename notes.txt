@@ -13,7 +13,6 @@ Quiz Validation Bugs
 135 + 88 future
 
 QA Round 1
-	current 48 items * ~15min = 12hrs
 		COMPLETE 9 2hrs 
 		COMPLETE 16 3hrs
 		COMPLETE 3 1hr
@@ -21,9 +20,7 @@ QA Round 1
 		COMPLETE 18 1hr
 		COMPLETE 10  3hr
 		COMPLETE 19 2hr
-		COMPLETE 14 2hr
-		11.9k
-		
+		COMPLETE 14 2hr		
 		COMPLETE quiz revisions 2hr
 		COMPLETE IE fixes 2hr
 		COMPLETE bug fixes 1hr
@@ -31,20 +28,16 @@ QA Round 1
 		COMPLETE social media/email 4hr
 		COMPLETE CSS/BUGS 2hr
 		COMPLETE staging/bugs/css 2hr
+		COMPELTE 1hr ads/bugs and misc
 		COMPLETE 3hr figuring out how to get direct upload
 		COMPLETE 6hr implementation of direct upload
 		COMPLETE 3HR bug fixes and changes for direct upload
 		COMPLETE 1hr quiz creator bugs
 		COMPLETE 1hr outbrain/staging setup
+		14.3k
+
+
 		
-		
-
-add buttons now use ajax
-x button remove images
-disable save button
-cropper
-
-
 
 
 

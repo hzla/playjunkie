@@ -26,7 +26,7 @@
 		<div class="results-range">
 			<%= hidden_field_tag "result_#{i + 1}[range_min]", result.range_min, :class => "range-min" %>
 			<%= hidden_field_tag "result_#{i + 1}[range_max]", result.range_max, :class => "range-max" %>	
-			<p>Results Range</p>
+			<p>Correct Range</p>
 			<p> <span class="min"><%= result.range_min %></span><span class="hyphen">-</span><span class="max"><%= result.range_max %></span></p>
 		</div>
 	<% end %>

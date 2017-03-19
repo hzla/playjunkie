@@ -78,6 +78,10 @@ class Quiz < ApplicationRecord
 		date.strftime("%B %-4, %Y at %I:%M%P")
 	end
 
+	def completion_message
+		super == "" ? nil : super
+	end
+
 	###### Class Methods for grabbing collections
 
 	def self.featured limit=10, offset=0

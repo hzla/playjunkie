@@ -1,4 +1,4 @@
-<div class="form-box question model" model_id="<%= item.id %>">
+<div class="form-box question model" model_id="<%= item.id %>" item_number="<%= i + 1 %>">
 	<%= hidden_field_tag "quiz_item_#{i + 1}[order]", item.order, :class => "item-order" %>
 	<%= hidden_field_tag "quiz_item_#{i + 1}[remember_code]", item.remember_code, :class => "remember-code" %>
 	<%= image_tag "up-arrow.svg", :class => "move-question move-up" %>

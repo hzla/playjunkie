@@ -66,7 +66,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		resultsCount = $('.form-result').length
 		questionsCount = $('.question').length
 
-		if resultsCount >= questionsCount
+		if resultsCount >= (questionsCount + 1) && $('.trivia-oriented-quiz').length > 0
 			$('.add-result').hide()
 
 		rangeWidth = Math.floor((questionsCount / resultsCount))
@@ -138,8 +138,8 @@ QuizNew = #UI for creating/editing Quizzes goes here
 			$('.close-result').show()
 		
 			# number of results can't exceed number of questions for trivia quizzes
-			if $('.form-result:visible').length == $('.question:visible').length && $('.trivia-oriented-quiz').length > 0
-				$(@).hide()
+			# if $('.form-result:visible').length == ($('.question:visible').length + 1) && $('.trivia-oriented-quiz').length > 0
+			# 	$(@).hide()
 
 			# add another choice for answers for quiz type quizzes
 			if $('.quiz-oriented-quiz').length > 0
@@ -181,7 +181,8 @@ QuizNew = #UI for creating/editing Quizzes goes here
 		itemNumber = question.attr('item_number')
 		quizType = $('#quiz_type').val()
 		i = question.find('.form-answer:visible, .text-answer-form:visible').length + 1
-		$.post "/quiz_items/#{quizItemId}/answers?item_number=#{itemNumber})}&i=#{i}&quiz_type=#{quizType}", (data) ->
+		
+		$.post "/quiz_items/#{quizItemId}/answers?item_number=#{itemNumber}&i=#{i}&quiz_type=#{quizType}", (data) ->
 			lastAnswer.after(data)
 
 			# hide add answer at 4 answers if trivia quiz
