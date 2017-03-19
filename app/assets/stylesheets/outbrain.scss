@@ -1,0 +1,50 @@
+@import 'shared/variables';
+@import 'shared/mixins';
+
+* {
+	font-family: 'Verlag' !important;
+}
+
+body {
+	.TS_1.ob-vertical-strip-layout .ob-widget-header,  {
+		color: $dark-grey;
+	}
+
+	.TF_6.ob-strip-layout .ob-widget-header {
+		font-size: 24px;
+	}
+
+	.TS_1.ob-widget .ob-rec-image-container .ob-image-ratio {
+		margin-bottom: 10px;
+	}
+
+	.TS_1.ob-vertical-strip-layout .ob-rec-text, .TF_6.ob-strip-layout .ob-rec-text  {
+		font-size: 16px;
+		color: $dark-grey;
+		font-weight: 600;
+	}
+
+	.TS_1.ob-vertical-strip-layout .ob-rec-source, .TF_6.ob-strip-layout .ob-rec-text {
+		color: $grey;
+		font-size: 12px;
+	}
+
+	.TS_1.ob-widget .ob-widget-items-container.ob-multi-row, .TF_6.ob-widget .ob-widget-items-container.ob-multi-row  {
+	    padding-top: 20px;
+	}
+}
+
+
+@media(max-width: 960px) {
+	body {
+		.TF_6.ob-widget .ob-rec-image-container img.ob-show {
+		  width: calc(100vw - 20px);
+		  height: calc((100vw - 20px) / 3);
+		}
+		.TF_6.ob-widget .ob-rec-image-container .ob-image-ratio {
+			padding-top: calc((100vw - 20px) / 3);
+			margin-top: 20px;
+		}
+	}
+
+}
