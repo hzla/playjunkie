@@ -31,20 +31,12 @@ class QuizItem < ApplicationRecord
 		while params["quiz_item_#{item_count}"]
 			quiz_item_fields = quiz_item_params(item_count, params)
 			
-			if quiz_item_fields["item_text"] == "skip"
-				item_count += 1
-				next
-			end
 			quiz_item = QuizItem.create quiz_item_fields
 			quiz_item.update_attributes quiz_id: quiz.id
 			answer_count = 1
 			while params["quiz_item_#{item_count}_item_answer_#{answer_count}"]
 				answer_fields = item_answer_params(item_count, answer_count, params)
 
-				if answer_fields["answer_text"] == "skip"
-					answer_count += 1
-					next
-				end
 				item_answer = ItemAnswer.create answer_fields
 				item_answer.update_attributes quiz_item_id: quiz_item.id 
 				answer_count += 1
@@ -59,73 +51,71 @@ class QuizItem < ApplicationRecord
 		end 
 	end
 
+	# the creator iterates through looking for quiz_item_x in the params
+	# it will iterate until quiz_item_100
+	# should refactor so that it iterates over the needed items
+
 	def self.edit_collection_for_quiz params, quiz, results
 		item_count = 1
-		while params["quiz_item_#{item_count}"]
-			quiz_item_fields = quiz_item_params(item_count, params)
-			
-			if quiz_item_fields["item_text"] == "skip"
+
+
+		while item_count <= 100
+			if params["quiz_item_#{item_count}"]
+				quiz_item_fields = quiz_item_params(item_count, params)
+				
 				if quiz_item_fields["remember_code"] && quiz_item_fields["remember_code"] != ""
-					QuizItem.find_by_remember_code(quiz_item_fields["remember_code"]).destroy
-				end
-				item_count += 1
-				next
-			end
+					quiz_item = QuizItem.find_by_remember_code quiz_item_fields["remember_code"]
+					quiz_item.update_attributes quiz_item_fields
+					answer_count = 1
+					while answer_count <= 100
 
-			if quiz_item_fields["remember_code"] && quiz_item_fields["remember_code"] != ""
-				quiz_item = QuizItem.find_by_remember_code quiz_item_fields["remember_code"]
-				quiz_item.update_attributes quiz_item_fields
-				answer_count = 1
-				while params["quiz_item_#{item_count}_item_answer_#{answer_count}"]
-					answer_fields = item_answer_params(item_count, answer_count, params)
+						if params["quiz_item_#{item_count}_item_answer_#{answer_count}"]
+							answer_fields = item_answer_params(item_count, answer_count, params)
 
-					if answer_fields["answer_text"] == "skip"
-						if answer_fields["remember_code"] && answer_fields["remember_code"] != ""
-							ItemAnswer.find_by_remember_code(answer_fields["remember_code"]).destroy
-						end
-						answer_count += 1
-						next
-					end
-					if answer_fields["remember_code"] && answer_fields["remember_code"] != ""
-						item_answer = ItemAnswer.find_by_remember_code answer_fields["remember_code"]
-						item_answer.update_attributes answer_fields
-						if answer_fields["correct?"] != "on"
-							item_answer.update_attributes correct?: false
-						end
-						answer_count += 1
-						if quiz.quiz_type == "quiz"
-							 item_answer.update_attributes result_id: results[item_answer.result_id].id
-							 #could be buggy
-						end
-					else
-						item_answer = ItemAnswer.create answer_fields
-						item_answer.update_attributes quiz_item_id: quiz_item.id 
-						answer_count += 1
+							if answer_fields["remember_code"] && answer_fields["remember_code"] != ""
+								item_answer = ItemAnswer.find_by_remember_code answer_fields["remember_code"]
+								item_answer.update_attributes answer_fields
+								if answer_fields["correct?"] != "on"
+									item_answer.update_attributes correct?: false
+								end
+								answer_count += 1
+								if quiz.quiz_type == "quiz"
+									 item_answer.update_attributes result_id: results[item_answer.result_id].id
+									 #could be buggy
+								end
+							else
+								item_answer = ItemAnswer.create answer_fields
+								item_answer.update_attributes quiz_item_id: quiz_item.id 
+								answer_count += 1
 
-						if quiz.quiz_type == "quiz"
-							if item_answer.result_id
-								item_answer.update_attributes result_id: results[item_answer.result_id].id
+								if quiz.quiz_type == "quiz"
+									if item_answer.result_id
+										item_answer.update_attributes result_id: results[item_answer.result_id].id
+									end
+								end
 							end
+						else
+							answer_count += 1
 						end
 					end
-				end
-			else
-				quiz_item = QuizItem.create quiz_item_fields
-				quiz_item.update_attributes quiz_id: quiz.id
-				answer_count = 1
-				while params["quiz_item_#{item_count}_item_answer_#{answer_count}"]
-					answer_fields = item_answer_params(item_count, answer_count, params)
+				else
+					quiz_item = QuizItem.create quiz_item_fields
+					quiz_item.update_attributes quiz_id: quiz.id
+					answer_count = 1
+					while answer_count <= 100
+						if params["quiz_item_#{item_count}_item_answer_#{answer_count}"]
+							answer_fields = item_answer_params(item_count, answer_count, params)
 
-					if answer_fields["answer_text"] == "skip"
-						answer_count += 1
-						next
-					end
-					item_answer = ItemAnswer.create answer_fields
-					item_answer.update_attributes quiz_item_id: quiz_item.id 
-					answer_count += 1
+							item_answer = ItemAnswer.create answer_fields
+							item_answer.update_attributes quiz_item_id: quiz_item.id 
+							answer_count += 1
 
-					if quiz.quiz_type == "quiz"
-						 item_answer.update_attributes result_id: results[item_answer.result_id].id
+							if quiz.quiz_type == "quiz"
+								 item_answer.update_attributes result_id: results[item_answer.result_id].id
+							end
+						else
+							answer_count += 1
+						end
 					end
 				end
 			end	

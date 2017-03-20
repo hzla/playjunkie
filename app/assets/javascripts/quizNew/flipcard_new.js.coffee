@@ -12,8 +12,6 @@ FlipcardNew = #Flipcard specefic UI goes here
 			offset = (260 - height) / 2
 			$(@).css('top', offset)
 
-
-
 	chooseSide: ->
 		card = $(@).parents('.question')
 		card.find('.side-chooser').removeClass('selected')

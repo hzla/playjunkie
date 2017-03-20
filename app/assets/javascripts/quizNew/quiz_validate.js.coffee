@@ -9,6 +9,25 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 	#split up validation for question/item/answer/result
 	#split of different types of validtion checks presence/error
 
+	formatFieldNames: ->
+		$('.question').each (i) ->
+			console.log "Question #{i}"
+			$(@).find('input, checkbox, textarea, select').each ->
+				formattedName = $(@).attr('name').replace(/quiz_item_\d*/, "quiz_item_#{i + 1}")
+				$(@).attr('name', formattedName)
+			$('.question .form-answers').find('.form-answer').each (j) ->
+				console.log "Answer #{j}"
+				$(@).find('input, checkbox, textarea, select').each ->
+					formattedName = $(@).attr('name').replace(/item_answer_\d*/, "item_answer_#{j + 1}")
+					$(@).attr('name', formattedName)
+
+		$('.form-result').each (i) ->
+			$(@).find('input, checkbox, textarea, select').each ->
+				formattedName = $(@).attr('name').replace(/result_\d*/, "result_#{i + 1}")
+				$(@).attr('name', formattedName)
+			
+
+
 
 	validateFields: ->
 		return true if $('.quiz-submit-action').val() == "save-quiz"
@@ -183,6 +202,8 @@ QuizValidate = #Validation for creating/editing quizzes goes here
 
 		$('.question:visible .item-order').each (i) -> #set item order
 			$(@).val(i + 1)
+
+		QuizValidate.formatFieldNames()
 			
 		if action == 'preview-quiz'
 			$('#new_quiz, .edit_quiz').attr('target', '_blank')
