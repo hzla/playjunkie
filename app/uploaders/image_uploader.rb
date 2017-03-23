@@ -18,11 +18,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
 
-  version :square do 
+  version :square, :if => :crop? do 
     process :resize_to_fill => [400, 300]
   end
 
-  version :item do
+  version :item, :if => :crop? do
     process :resize_to_fill => [1240, 828]
   end
 
@@ -70,5 +70,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  protected
+
+  def crop? new_file
+    if model.class == QuizItem && model.quiz.quiz_type == "list"
+      return false
+    else
+      return true
+    end
+    
+  end
 
 end

@@ -15,6 +15,14 @@ QuizImageUpload = #UI for creating/editing Quizzes goes here
 		
 		previewBox = $(input).parent().next()
 		$(input).parent().parent().find('.input-overlay').text("")
+
+		file = input.files[0]
+
+		img = new Image();
+		img.src = window.URL.createObjectURL(file)
+		height = img.naturalHeight;
+		console.log img
+
 		
 
 		if $(@).val() == ""

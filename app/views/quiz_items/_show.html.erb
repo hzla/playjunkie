@@ -29,7 +29,7 @@
 		</div>		
 	</div>
 	
-<% else %>
+<% elsif @quiz.quiz_type == "quiz" || @quiz.quiz_type == "trivia" %>
 	<div class="item <%= item.image.present? ? 'image-style' : 'text-style' %>">
 		<div class="question-header">
 			<div class="item-title">
@@ -38,33 +38,44 @@
 			</div>
 			<% if item.image.present? %>
 				<div class="image-container">
-					<%= image_tag item.image_url(:item), :class => "item-image" %>
+					<%= image_tag item.image_url(@quiz.quiz_type == "list" ? nil : :item), :class => "item-image" %>
 					<div class="image-credit"><%= item.image_credit %></div>
 				</div>			
 			<% end %>
 			<p class="item-text"><%= item.item_text %></p>
 		</div>
 
-		<% if @quiz.quiz_type == "list" %>
-			<p class="item-description">
-				<%= item.item_text %>
-			</p>
-		<% end %>
-
-		<% unless item.item_answers.empty? %>
-			<div class="answers">
-				<% item.item_answers.each do |answer| %>
-					<div class="answer <%= answer.image.present? ? 'image-style' : 'text-style' %> <%= answer.correct? ? 'correct' : 'incorrect' %> <%= @quiz.quiz_type %>" result-id="<%= answer.result_id %>"> 
-						<% if answer.image.present? %>
-							<div class="image-container">
-								<%= image_tag answer.image_url(:square), :class => "answer-image" %>
-								<div class="image-credit"><%= answer.image_credit %></div>
-							</div>
-						<% end %>
-						<p class="answer-text"><%= answer.answer_text %></p>
-					</div>
-				<% end %>
-			</div>
-		<% end %>
+		<div class="answers">
+			<% item.item_answers.each do |answer| %>
+				<div class="answer <%= answer.image.present? ? 'image-style' : 'text-style' %> <%= answer.correct? ? 'correct' : 'incorrect' %> <%= @quiz.quiz_type %>" result-id="<%= answer.result_id %>"> 
+					<% if answer.image.present? %>
+						<div class="image-container">
+							<%= image_tag answer.image_url(:square), :class => "answer-image" %>
+							<div class="image-credit"><%= answer.image_credit %></div>
+						</div>
+					<% end %>
+					<p class="answer-text"><%= answer.answer_text %></p>
+				</div>
+			<% end %>
+		</div>
 	</div>
+<% else %>
+	<div class="item <%= item.image.present? ? 'image-style' : 'text-style' %>">
+		<div class="question-header">
+			<div class="item-title">
+				<div class="item-number"><%= i + 1 %></div>
+				<div class="title-text"><%= item.title %></div>
+			</div>
+		</div>
+		<% if item.image.present? %>
+			<div class="image-container">
+				<%= image_tag item.image_url(@quiz.quiz_type == "list" ? nil : :item), :class => "item-image" %>
+				<div class="image-credit"><%= item.image_credit %></div>
+			</div>			
+		<% end %>
+		<p class="item-description">
+			<%= item.item_text %>
+		</p>
+	</div>
+
 <% end %>

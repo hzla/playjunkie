@@ -293,6 +293,10 @@
 
 .list.content-container.quiz-take {
 	.items .item {
+		.item-image {
+			height: auto;
+			position: static;
+		}
 		.item-title {
 			margin-top: 30px; 
 			@include flexbox;
@@ -312,6 +316,8 @@
 		}
 		.image-container {
 			margin-top: 10px;
+			height: auto;
+			padding: 0px;
 		}
 	}
 }
@@ -503,6 +509,12 @@
 			}
 			.image-container {
 				margin-top: 20px;
+				padding: 0px;
+				display: block;
+				height: auto;
+			}
+			.image-credit {
+				bottom: 30px;
 			}
 		}
 		.items .item.image-style {

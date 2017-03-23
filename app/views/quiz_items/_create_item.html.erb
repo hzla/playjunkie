@@ -15,7 +15,7 @@
 		<%= direct_upload_form_for image_uploader(QuizItem) , html: {:class => "image-form quiz-item-image-upload", model_id: item.id, model_name: "QuizItem"} do |f| %>
 		  <%= f.file_field :image, :class => "card-image-input" %>
 		<% end %>
-		<div class="question-image-preview image-preview" style="background-image: url(<%= item.image_url(:item) %>);" alt="preview failed to load" src="<%= item.image_url || 'blank' %>">
+		<div class="question-image-preview image-preview" style="background-image: url(<%= item.image_url %>);" alt="preview failed to load" src="<%= item.image_url || 'blank' %>">
 			<div class="sk-wave">
 			  <div class="sk-rect sk-rect1"></div>
 			  <div class="sk-rect sk-rect2"></div>
