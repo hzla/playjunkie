@@ -39,7 +39,9 @@
 			<% if item.image.present? %>
 				<div class="image-container">
 					<%= image_tag item.image_url(@quiz.quiz_type == "list" ? nil : :item), :class => "item-image" %>
-					<div class="image-credit"><%= item.image_credit %></div>
+					<% if item.image_credit && item.image_credit != "" %>
+						<div class="image-credit"><%= item.image_credit %></div>
+					<% end %>
 				</div>			
 			<% end %>
 			<p class="item-text"><%= item.item_text %></p>
@@ -51,7 +53,9 @@
 					<% if answer.image.present? %>
 						<div class="image-container">
 							<%= image_tag answer.image_url(:square), :class => "answer-image" %>
-							<div class="image-credit"><%= answer.image_credit %></div>
+							<% if item.image_credit && item.image_credit != "" %>
+								<div class="image-credit"><%= item.image_credit %></div>
+							<% end %>
 						</div>
 					<% end %>
 					<p class="answer-text"><%= answer.answer_text %></p>
@@ -70,7 +74,9 @@
 		<% if item.image.present? %>
 			<div class="image-container">
 				<%= image_tag item.image_url(@quiz.quiz_type == "list" ? nil : :item), :class => "item-image" %>
-				<div class="image-credit"><%= item.image_credit %></div>
+				<% if item.image_credit && item.image_credit != "" %>
+					<div class="image-credit"><%= item.image_credit %></div>
+				<% end %>
 			</div>			
 		<% end %>
 		<p class="item-description">

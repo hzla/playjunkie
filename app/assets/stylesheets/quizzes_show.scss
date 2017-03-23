@@ -296,6 +296,10 @@
 		.item-image {
 			height: auto;
 			position: static;
+			width: auto;
+			max-width: 100%;
+			margin: 0 auto;
+			max-height: calc(100vw - 20px);
 		}
 		.item-title {
 			margin-top: 30px; 
@@ -494,6 +498,9 @@
 
 	.list.content-container.quiz-take {
 		.items .item {
+			.item-image {
+				max-height: 620px;
+			}
 			.question-header {
 				margin-top: 0px !important;
 			}
@@ -510,8 +517,12 @@
 			.image-container {
 				margin-top: 20px;
 				padding: 0px;
-				display: block;
+				@include flexbox;
+				@include flex-direction(column);
+				@include align-items(center);
 				height: auto;
+				width: auto;
+				max-width: 100%;
 			}
 			.image-credit {
 				bottom: 30px;
