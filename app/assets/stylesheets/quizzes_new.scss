@@ -624,6 +624,7 @@
 				display: none;
 				@include align-items(center);
 				@include align-content(center);
+				cursor: pointer;
 				div {
 					background: $orange;
 					cursor: pointer;
