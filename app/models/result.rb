@@ -65,6 +65,16 @@ class Result < ApplicationRecord
 		created_results
 	end
 
+	def image_url options=nil
+		if image.present?
+			if created_at < Time.parse("2017-03-25 13:18:58 -0700")
+				return super().gsub("/#{id}/#{id}", "/#{id}")
+			end
+			url = super.gsub("/#{id}/#{id}", "/#{id}")
+			url
+		end
+	end
+
 	private
 
 	def self.result_params result_number, params
