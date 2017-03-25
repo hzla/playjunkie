@@ -120,6 +120,10 @@ class Quiz < ApplicationRecord
 		attrs
 	end
 
+	def recommended
+		Quiz.where(quiz_type: quiz_type, published: true).order('trending_count desc').limit(100).sample(6)
+	end
+
 	###### Seeds
 
 	def self.seed_frontpage

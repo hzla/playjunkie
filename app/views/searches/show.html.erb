@@ -11,7 +11,7 @@
 		 		<% @results.each do |quiz| %>
 		 			<%= link_to quiz_path(quiz) do %>
 			 			<div class="quiz-list-item">
-			 				<%= image_tag quiz.image_url, :class => "quiz-image" %>
+			 				<div class="quiz-image img" style="background-image: url(<%= image_url(quiz.image_url) %>)"></div>
 			 				<div class="quiz-info">
 			 					<div class="quiz-title"><%= quiz.title %></div>
 			 					<div class="quiz-sub-info">
@@ -38,13 +38,14 @@
 		 				<% end %>
 		 			<% end %>
 		 		</div>
+
 		 		<div id="bottom-ad">
 		 			<%= render partial: "ads/row" %>
 		 		</div>
 		 	</div>
 		 	<div class="side-content">
 				<div id="ad1" class="side-ad">
-					<%= render partial: "ads/col_tall" %>
+					<%= render partial: "ads/col_tall_1" %>
 				</div>
 			</div>
 		 </div>

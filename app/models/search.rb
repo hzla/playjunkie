@@ -6,7 +6,7 @@ class Search
 	# results from each field are ordered by playlist, video, and challenges
 	
 	def self.search_for terms
-		quizzes = Quiz.all
+		quizzes = Quiz.where(published: true)
 		quiz_items = QuizItem.all
 		answers = ItemAnswer.all
 		terms = terms.downcase
@@ -14,7 +14,7 @@ class Search
 			[quizzes, quiz_items, answers].map do |models|
 				search_model_for(models, terms, field)
 			end
-		end.flatten.map(&:quiz).compact.uniq
+		end.flatten.map(&:quiz).compact.select(&:published).uniq
 	end
 
 	private

@@ -96,7 +96,7 @@
 @media(min-width: 960px) {
 	.content-container.quiz-take.quiz {
 		#ad-2, #divider-2 {
-			display: none;
+			// display: none;
 		}
 		.quiz-main .items {
 			.item.text-style, .item.image-style {
@@ -110,7 +110,7 @@
 		}
 		.recommendations {
 			a {
-				display: none;
+				// display: none;
 			}
 			a:nth-child(10n - 8) {
 				display: block;

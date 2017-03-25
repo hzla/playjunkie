@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Qwizzy</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="rYF5t5Vyz7L6DTsxR63qOR8aJZNEWnOoaM0WZjJxsuAb65lethKht18kuuGwO7ROIpx3y4GSpigpfTulnMPxFw==" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" media="all" href="/assets/active_admin.self-6eea4f3ded74a8d6b06c1e1bb47514bed30d23119d3f91a5c91825e43b7045eb.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/pages.self-940094a1d8b408bb164e5e0dcddcf6b9fffb970a515e8279a86fa01e7f0b8a3e.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/quizzes_create.self-4d8175b8c6137687315b27aee562a860f3506783c69d12623517dcb0c1864fe5.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/quizzes_index.self-9dc1e72d8438f571f90bb40e8d07b90ec402e943b65fde69f60221a1deeea5a8.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/quizzes_new.self-bb9e025d4c2377e09afe019cbda4e3a7b7f2ec26f96e1114ef556df958a8b1d2.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/quizzes_show.self-6ce23e1eae09ad5ce33e5712ef6d9ec8e60b6eef4cf424473f1c3dcdcb6be2aa.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/sessions_create.self-35459475ac90d62a4bc4be511acfea957006ec3d3d478b65fff5bca17854ed0c.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/shared/_mixins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/shared/_variables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/shared/font.self-22c0e31082c387d7694335852140e6b367ef2e3e2fa581f43b7d38e527d90b99.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/shared/footer.self-0f6104653056f2c1e3d85bf4b574faec6fe4023ced22bef727122afedf3a98bb.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/shared/layouts.self-c86426232666991785f528035a72115f465ffe8942205e6c09d57345faa740b0.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/shared/master.self-378ee64768db9ad951c0b320dc22d82594416c680ddae472de83c03506c1c8b7.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/shared/navbar.self-3d3a5e7984d7ac249463e373fb7e0b999ed9e6147e086cf32dbcbacdea48679c.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/users_edit.self-4e0ccedb1674004369a282108fab731d9aa9ca92705511a79f199cf4bb51adc1.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/users_show.self-a3e070b55e6c60b3ce45b3acad6c30d5dafff659b9d806dbd0e13e742fa2dd2e.css?body=1" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/assets/application.self-af04b226fd7202dfc532ce7aedb95a0128277937e90d3b3a3d35e1cce9e16886.css?body=1" data-turbolinks-track="reload" />
+    <script src="/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/version.self-c8e3d1203da26ea7efdf83c1eabb3f0ba55cb68e463f5ccf0d77bd15ce6a8e61.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/keycode.self-ad63cd20acf49dd333bbbc537454d7d475bd610eb5b88de0dca009f0c3d314b1.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/datepicker.self-2af0dec09da99d687c31fc224e940687a4eb3694e7b38b0871bba475cad86120.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widget.self-fca20bcec06d192f97cffa6e734e24360e227237b8ae7d7e7e60754df7d5444f.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/controlgroup.self-0b7409f97114a33de116bd5429e9df199cbdea3f276d8bd725c4c2c60f244711.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/escape-selector.self-43e4d61501e4ffb1ecba387affbae1eb3e1c863ab0b0e71897851cddd246e50e.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/form.self-711978b53107be2d9ef1b7369beb151b229cefa8c1405a056d3c34262d5b477e.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/form-reset-mixin.self-3a447942586b5719fdd7f1d1a3ac0da9e757a0eb8f4a7cb145f6deb820d2dc54.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/labels.self-c0448a3cb597a9a9429be814ab0e9ed2a14d85604555b4cff897adf3f0415f38.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/checkboxradio.self-60f68cb16012ef210c931076ada2d65d54a8c74a2dc71ce383af758460f8b686.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/button.self-659b51f6fb5303f90ed8cf551509063770a50168a15795ba834b08f8bf2e0ce0.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/ie.self-163eb039dcb1e0c3471b7d91386eabb8753da6906e84824c019f9ff56bdb83a6.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/mouse.self-f0790a202dcf54fab051e71b042335d5346f9cceb0f645223c1dab93f349a04b.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/data.self-2067c82e6fe39a9cba5623206a5dc28d5c60d26b95cd100855b78cacf72865b8.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/plugin.self-d8f576c8e073ca51f095505f47bd09d306b875404cd90afcbb6338287cfb0247.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/safe-active-element.self-a1f1a1a7dae3269ce03f6fffb2dcc9b4a7490f5d546c65d54417bec3be24b668.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/safe-blur.self-2cc24c46132d51c7724f6371154241b0a81c9bae5d5681d8f62b01ce46236726.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/scroll-parent.self-38e26a71a450a29fb63425e8f589a7046862f927eb0a1dbf6a6c44da05196d2e.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/draggable.self-42c3eda0b49f105628cea7580fe38c7ed77467cee384bb2c4e095a2bd0a172e6.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/disable-selection.self-5675f71f2fbbc6857ea700ba843af748b50dbc0150cc87932a7d05ec016bb659.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/resizable.self-1a46c2f5b876918e02bf979080e56f57846590cd880721bca5058e84f7f60bae.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/focusable.self-426e99e67d1f1bd4cb444fd878ee63a6de1f5d1d61451e43022c86214b9eec64.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/position.self-1b49c8c521e67a4a88bfdad6b4d944d33686d25009a0e40a1e170acdd7b6962a.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/tabbable.self-f3f62ceed772d3a325cebd6a03221f8a8cb02c6150f4feba738c6525a2953690.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/unique-id.self-66e85ac85cd0b6b8b1bb89369fc65f608f716869dc0930862a8d421a57a9580a.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/dialog.self-2bd687f9580c0be4213c50b4bb1211c28ceedb045eba954e63d40bfbb4d1affd.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/sortable.self-6e5e1f07a29b5a89ec1d359363d2800904e3ae548a38ab2f8eded36746d1adbe.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/jquery-ui/widgets/tabs.self-b7f60535e992224ca66c3f11dc943eba9ef42a9605241e27b9dba24c7efb287e.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/jquery_ui.self-75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/lib/batch_actions.self-fbed82dc1e31cf860056cce6c02f5bc5831ad5343d68ac3ab17471c9e05e9195.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/lib/checkbox-toggler.self-ab6f686db7db58fd7f370cd6f7a6d7abe6884b8d2a144f42a744c2276587b457.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/lib/dropdown-menu.self-8ccb356121a1c40094bb429d6cfac85d9c8ad114fb93730892d9df9986730a0a.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/lib/modal_dialog.self-5dfc6e87bae26cd4a021eb86951d3691ed07e6d2bf242a8eb65dc6965e12096c.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/lib/per_page.self-94323c49402595a22bdea01b8dc3f8103e290d300238ebd49efa26d76d7ee117.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/initializers/batch_actions.self-f5c360e8640b40f00640f6e5c7cfe0addeb244ed72e1a9828c52919515d23cf1.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/initializers/datepicker.self-f8ac66c85afd35ee1555c09a2418efc7a7930e1f6dd783461379c2bb2184f80e.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/initializers/filters.self-9b9312d6bed532db668c5417a009b7fb7caf58f33299783ed02c2c72340a498a.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin/initializers/tabs.self-65de8b1688d4f8782c04bf07ba6314d3c8b33b9391a482a07214ac4df99dd904.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/addons.self-e9ff347243be5c18dedb43bf67a6c1f6cf5a324e4bf38b5bda953a21d31243c3.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/action_cable.self-17ebe4af84895fa064a951f57476799066237d7bb5dc4dc351a8b01cca19cce9.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/header.self-bc60678b2a44a93e230ba4b937d472204187360ece0dab1ff74cee5264510130.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/quiz_new.self-124c7c6d9b3176dbc48a6a55ff16b1386a47b5b14c20439d3fcd07d389848634.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/quiz_show.self-536276b724809ffa4f72ce341b66c5ad820f55e7db9d7d38f8e582196dd267c0.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/quiz_sort.self-0d06bd958f5c6c9228e9394bd4f59c4203fe2ee2ad4d6aa3773d6bd0e7a574f0.js?body=1" data-turbolinks-track="reload"></script>
+<script src="/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    <header>
+	<img id="search-icon" src="/assets/navbar/mobile-search-9bb8876f40c4cfab0f4bc20214965636ce3dcda9c2acc2f5bff18a5677780142.svg" alt="Mobile search" />
+	<div id="navbar-links">
+		<a id="logo" href="/">
+			<img src="/assets/logo-6441051c2f52a496ea5baeac98a3f3edbb9c572485e83c25d03f8f7aec50f3d3.svg" alt="Logo" />
+</a>		<a href="/trending">
+			<div>Trending</div>
+</a>		<div class="fun-dropdown-trigger">Fun <img class="dropdown-arrow" src="/assets/navbar/arrow-fun-131294845514b3ad19e9e05ba2597d917c6600ad36062507d1964607afdc37bd.svg" alt="Arrow fun" /></div>
+		<div class="fun-dropdown">
+			<a href="/browse/trivia">
+				Trivia
+</a>			<a href="/browse/quiz">
+				Quiz
+</a>			<a href="/browse/flipcard">
+				Flipcard
+</a>			<a href="/browse/list">
+				List
+</a>		</div>
+
+		<form action="/searches" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="zcDk62RzS+JCyFWXDN4IAZ7+TW2reXzbhgV8K3L3Lvl7qgQCRxMl5+fh1Ef7SFZ2o3gfNW6xqVvHtVHo3EVtDg==" />
+			<input type="text" name="terms" id="terms" class="search-input" placeholder="Search" />
+</form>	</div>
+	<img id="menu-icon" src="/assets/navbar/mobile-menu-cb92534eeb3d79733920d39a89098d4682c5553e85fc374431581149dd195cac.svg" alt="Mobile menu" />
+
+	<div id='navbar-actions'>
+			<a href="/sign_in">
+				<div class="signinup">Sign In</div>
+</a>
+			<div id="create-btn">Create <img class="dropdown-arrow" src="/assets/navbar/arrow-create-27a774187907a39209ec027ced20bacaccd2fffbf6d0fad5ac1d185d179b7d59.svg" alt="Arrow create" /></div>
+			<div id="creation-dropdown">
+				<div class="creation">
+					<p>
+						Trivia
+					</p>
+					<a href="/quizzes/new_trivia">
+						<div class="plus-btn">
+							<img class="svg" src="/assets/add-answer-plus-794595cb88beaa88e12725e55430dd20f299c323c0463605966a215c7efa6776.svg" alt="Add answer plus" />
+						</div>
+</a>				</div>
+				<div class="creation">
+					<p>
+						Quiz
+					</p>
+
+					<a href="/quizzes/new_quiz">
+						<div class="plus-btn">
+							<img class="svg" src="/assets/add-answer-plus-794595cb88beaa88e12725e55430dd20f299c323c0463605966a215c7efa6776.svg" alt="Add answer plus" />
+						</div>
+</a>				</div>
+				<div class="creation">
+					<p>
+						Flipcard
+					</p>
+					<a href="/quizzes/new_flipcard">
+						<div class="plus-btn">
+							<img class="svg" src="/assets/add-answer-plus-794595cb88beaa88e12725e55430dd20f299c323c0463605966a215c7efa6776.svg" alt="Add answer plus" />
+						</div>
+</a>				</div>
+				<div class="creation">
+					<p>
+						List
+					</p>
+					<a href="/quizzes/new_list">
+						<div class="plus-btn">
+							<img class="svg" src="/assets/add-answer-plus-794595cb88beaa88e12725e55430dd20f299c323c0463605966a215c7efa6776.svg" alt="Add answer plus" />
+						</div>
+</a>				</div>
+			</div>
+	</div>
+	
+	
+
+
+	<div id="nav-dropdown">
+		<div class="dropdown-content">
+			<img id="close-dropdown" src="/assets/close-x-6519a3f6a9486963a26bba23946c1dbae031e0adcebbca35f6c5132b51867f2a.svg" alt="Close x" />
+				<li class="bold signinup">Sign In/Up</li>
+			<a href="/">
+				<li class="bold">Home</li>
+</a>			<a href="/trending">
+				<li class="bold no-outline">Trending</li>
+</a>			<li class="list-header">Categories</li>
+			<div class="nav-categories">
+				<a href="/browse/trivia">
+					<li>Trivia</li>
+</a>				<a href="/browse/quiz">
+					<li>Quizzes</li>
+</a>				<a href="/browse/flipcard">
+					<li>Flip Cards</li>
+</a>				<a class="no-outline" href="/browse/list">
+					<li>List</li>
+</a>			</div>
+		</div>
+	</div>
+</header>
+    <div id="banner-ad"></div>
+
+<div class="content-container quiz-take trivia">
+	<div class="quiz-main">
+		<h1 class="quiz-title">Minima et quia provident quia voluptates est.142</h1>
+		<p class="quiz-description">Dolorem qui tenetur sed accusamus blanditiis. Error magnam nihil et maxime. Molestiae rerum at non corporis sed autem.</p>
+		<div class="quiz-info">
+			<div class="quiz-user">
+				<img class="quiz-user-profile_pic" src="http://graph.facebook.com/v2.6/1241059602613828/picture" alt="Picture" />
+				<p class="quiz-user-name">Andy Lee</p>
+			</div>
+			<div class="quiz-subinfo">
+				<p class="quiz-date">2017-01-26 03:50:59 UTC</p>
+				<p class="quiz-type">TRIVIA</p>
+			</div>
+			<div class="social-medias">
+				<div class="social-media fb-blue-bg"><img src="/assets/fb-287fea3ad5130bf509e044d3bebf6e1b1b4b6b61fa828c9b940b2e4d89e8a30d.svg" alt="Fb" /></div>
+				<div class="social-media tw-blue-bg"><img src="/assets/twitter-d064a44971ef5aa6a13e8c5e4f6ca706a553f9475fbc00c23f281c11e5cc58ea.svg" alt="Twitter" /></div>
+				<div class="social-media pinterest-red-bg"><img src="/assets/pinterest-f9a2a13fe68a0d058f95f09ef2affc6bd092a17424c101825f86f9a73999cb89.svg" alt="Pinterest" /></div>
+				<div class="social-media blue-bg"><p>Link</p></div>
+				<div class="social-media black-bg"><p>Embed</p></div>
+			</div>
+		</div>
+		<div class="items">
+					<div class="item text-style">
+		<div class="question-header">
+			<div class="item-number">1</div>
+			<p class="item-text">Aperiam numquam qui qui non. Aliquid adipisci sapiente. Id vel rerum facere quaerat et quasi.</p>
+		</div>
+
+			<div class="answers">
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Sit et libero et aspernatur mollitia est.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Dolorem similique necessitatibus et inventore accusantium nisi porro.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Non et molestias enim vero in sed dignissimos.</p>
+					</div>
+					<div class="answer text-style correct trivia" result-id=""> 
+						<p class="answer-text">Rerum voluptates distinctio doloremque atque nobis aut est.</p>
+					</div>
+			</div>
+	</div>
+
+					<div class="item text-style">
+		<div class="question-header">
+			<div class="item-number">2</div>
+			<p class="item-text">Qui sapiente possimus qui natus harum. Quo sequi sed rem molestiae. Dolorem nisi ex alias assumenda aut. Accusamus earum unde nulla non perspiciatis.</p>
+		</div>
+
+			<div class="answers">
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Eum odio velit molestias id aut.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Veritatis voluptatibus enim dolores possimus laboriosam est.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Eligendi ea eum ut culpa dolor animi.</p>
+					</div>
+					<div class="answer text-style correct trivia" result-id=""> 
+						<p class="answer-text">Omnis ipsum laboriosam qui voluptatum consequatur quo.</p>
+					</div>
+			</div>
+	</div>
+
+					<div class="item text-style">
+		<div class="question-header">
+			<div class="item-number">3</div>
+			<p class="item-text">Autem cum temporibus atque consequatur. Ipsa repellendus non in. Ipsa voluptatem quo et eius similique quaerat libero. Nulla assumenda molestiae rerum qui similique.</p>
+		</div>
+
+			<div class="answers">
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Consequatur qui accusantium modi.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Nihil suscipit eveniet ut vero perferendis qui et nam.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Voluptate quia in dolores molestiae autem.</p>
+					</div>
+					<div class="answer text-style correct trivia" result-id=""> 
+						<p class="answer-text">Deserunt nisi quo qui qui recusandae quam.</p>
+					</div>
+			</div>
+	</div>
+
+					<div class="item text-style">
+		<div class="question-header">
+			<div class="item-number">4</div>
+			<p class="item-text">Quis libero ad sequi. Numquam voluptas ut optio atque eos ea. Asperiores quod error dolores.</p>
+		</div>
+
+			<div class="answers">
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Omnis nostrum et dolorem a.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Aliquam voluptate magni non illum eaque.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Adipisci tempore et culpa nihil eos.</p>
+					</div>
+					<div class="answer text-style correct trivia" result-id=""> 
+						<p class="answer-text">Quos pariatur maxime aut ipsum corporis mollitia minus ut.</p>
+					</div>
+			</div>
+	</div>
+
+					<div class="item text-style">
+		<div class="question-header">
+			<div class="item-number">5</div>
+			<p class="item-text">Eius et harum dolores voluptatem quia. At distinctio odit quaerat. Eos vel vitae. Reprehenderit voluptates quaerat eos vel porro.</p>
+		</div>
+
+			<div class="answers">
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Et doloremque est dignissimos aut.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Expedita accusantium nisi ad esse.</p>
+					</div>
+					<div class="answer text-style incorrect trivia" result-id=""> 
+						<p class="answer-text">Aliquid aut quisquam qui excepturi fugit officiis.</p>
+					</div>
+					<div class="answer text-style correct trivia" result-id=""> 
+						<p class="answer-text">Suscipit quae fugit fuga culpa sunt similique dolor.</p>
+					</div>
+			</div>
+	</div>
+
+		</div>
+				<div class="result" range-min="0" range-max="1" result-id="195">
+					<p class="score trivia"><span class="score-number"></span> CORRECT</p>
+					<p>Explicabo est sed aut impedit esse.</p>
+					<p class="result-social-message">Share your Result!</p>
+					<div class="social-medias">
+						<div class="social-media fb-blue-bg"><img src="/assets/fb-287fea3ad5130bf509e044d3bebf6e1b1b4b6b61fa828c9b940b2e4d89e8a30d.svg" alt="Fb" /></div>
+						<div class="social-media tw-blue-bg"><img src="/assets/twitter-d064a44971ef5aa6a13e8c5e4f6ca706a553f9475fbc00c23f281c11e5cc58ea.svg" alt="Twitter" /></div>
+						<div class="social-media pinterest-red-bg"><img src="/assets/pinterest-f9a2a13fe68a0d058f95f09ef2affc6bd092a17424c101825f86f9a73999cb89.svg" alt="Pinterest" /></div>
+						<div class="social-media blue-bg"><p>Link</p></div>
+						<div class="social-media black-bg"><p>Embed</p></div>
+					</div>
+				</div>
+				<div class="result" range-min="2" range-max="3" result-id="196">
+					<p class="score trivia"><span class="score-number"></span> CORRECT</p>
+					<p>Voluptate veniam sed sequi esse corporis sed voluptas.</p>
+					<p class="result-social-message">Share your Result!</p>
+					<div class="social-medias">
+						<div class="social-media fb-blue-bg"><img src="/assets/fb-287fea3ad5130bf509e044d3bebf6e1b1b4b6b61fa828c9b940b2e4d89e8a30d.svg" alt="Fb" /></div>
+						<div class="social-media tw-blue-bg"><img src="/assets/twitter-d064a44971ef5aa6a13e8c5e4f6ca706a553f9475fbc00c23f281c11e5cc58ea.svg" alt="Twitter" /></div>
+						<div class="social-media pinterest-red-bg"><img src="/assets/pinterest-f9a2a13fe68a0d058f95f09ef2affc6bd092a17424c101825f86f9a73999cb89.svg" alt="Pinterest" /></div>
+						<div class="social-media blue-bg"><p>Link</p></div>
+						<div class="social-media black-bg"><p>Embed</p></div>
+					</div>
+				</div>
+				<div class="result" range-min="4" range-max="5" result-id="197">
+					<p class="score trivia"><span class="score-number"></span> CORRECT</p>
+					<p>Ad ducimus et recusandae dolore voluptatem illum odio reiciendis.</p>
+					<p class="result-social-message">Share your Result!</p>
+					<div class="social-medias">
+						<div class="social-media fb-blue-bg"><img src="/assets/fb-287fea3ad5130bf509e044d3bebf6e1b1b4b6b61fa828c9b940b2e4d89e8a30d.svg" alt="Fb" /></div>
+						<div class="social-media tw-blue-bg"><img src="/assets/twitter-d064a44971ef5aa6a13e8c5e4f6ca706a553f9475fbc00c23f281c11e5cc58ea.svg" alt="Twitter" /></div>
+						<div class="social-media pinterest-red-bg"><img src="/assets/pinterest-f9a2a13fe68a0d058f95f09ef2affc6bd092a17424c101825f86f9a73999cb89.svg" alt="Pinterest" /></div>
+						<div class="social-media blue-bg"><p>Link</p></div>
+						<div class="social-media black-bg"><p>Embed</p></div>
+					</div>
+				</div>
+
+	</div>
+	<div class="side-content">
+		<div id="ad1" class="side-ad"></div>
+		<div class="divider"></div>
+		<div class="recommendations">
+			<h3>Recommended</h3>
+				<div class="side-quiz">
+					<img src="http://whatsupyasieve.com/wp-content/uploads/2012/09/sad-panda.jpg" alt="Sad panda" />
+					<p>Velit similique tempore minima accusantium vitae repellendus ipsam.141</p>
+				</div>
+				
+				<div class="side-quiz">
+					<img src="http://whatsupyasieve.com/wp-content/uploads/2012/09/sad-panda.jpg" alt="Sad panda" />
+					<p>Laborum molestiae nisi mollitia quae magni.145</p>
+				</div>
+				
+				<div class="side-quiz">
+					<img src="http://whatsupyasieve.com/wp-content/uploads/2012/09/sad-panda.jpg" alt="Sad panda" />
+					<p>Nostrum id quos deserunt.146</p>
+				</div>
+				
+				<div class="side-quiz">
+					<img src="http://whatsupyasieve.com/wp-content/uploads/2012/09/sad-panda.jpg" alt="Sad panda" />
+					<p>Perferendis delectus et dolor ut.131</p>
+				</div>
+				
+				<div class="side-quiz">
+					<img src="http://whatsupyasieve.com/wp-content/uploads/2012/09/sad-panda.jpg" alt="Sad panda" />
+					<p>Consequatur sed rerum sit nostrum ipsam quia dolores unde.2132</p>
+				</div>
+				
+				<div class="side-quiz">
+					<img src="http://whatsupyasieve.com/wp-content/uploads/2012/09/sad-panda.jpg" alt="Sad panda" />
+					<p>Quia laborum quis sit.148</p>
+				</div>
+				
+		</div>
+		<div class="divider"></div>
+		<div id="add2" class="side-ad"></div>
+	</div>
+</div>
+
+
+
+        <footer>
+	<div class="footer-main">
+		<div class="col">
+			<a href="/about">
+				<li>About</li>
+</a>			<li>Contact</li>
+			<li>Advertise With Us</li>
+			<a href="/privacy">
+				<li>Privacy</li>
+</a>			<li>Terms and Conditions</li>
+		</div>
+		<div class="col formats">
+			<li>Our Formats</li>
+			<a href="/browse/trivia">
+				<li>Trivia</li>
+</a>			<a href="/browse/quiz">
+				<li>Quizzes</li>
+</a>			<a href="/browse/flipcard">
+				<li>Flip Cards</li>
+</a>			<a href="/browse/list">
+				<li>List</li>
+</a>		</div>
+
+
+	</div>
+	<div class="footer-bottom">
+		© 2016 Reaction Time LLC. All rights reserved.
+	</div>
+
+</footer>
+  </body>
+
+  <script>
+  $('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+    }, 'xml');
+  });
+</script>
+
+</html>

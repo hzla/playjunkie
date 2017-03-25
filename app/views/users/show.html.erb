@@ -29,8 +29,12 @@
 			<% @quizzes.each do |quiz| %>
 				<div class="quiz sort-item <%= 'no-actions' if current_user != @user %>" publish_date="<%= quiz.publish_date.to_i %>" creation_date="<%= quiz.created_at.to_i %>">
 					<div class="quiz-info">
-						<%= link_to quiz_path(quiz) do %>
-							<div class="quiz-title"><%= quiz.title %></div>
+						<% if quiz.published %>
+							<%= link_to quiz_path(quiz) do %>
+								<div class="quiz-title"><%= quiz.title %></div>
+							<% end %>
+						<% else %>
+								<div class="quiz-title"><%= quiz.title %></div>
 						<% end %>
 						<div class="quiz-user">
 							<%= image_tag profile_pic(quiz.user) %>

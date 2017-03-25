@@ -2,7 +2,6 @@ QuizIndex =
 	init: ->
 		$('body').on 'click', '#load-more', @loadMore
 
-
 	loadMore: ->
 		offset = $('.quiz-list-item').length
 		$.get "/quizzes/featured?offset=#{offset}", (data) -> 

@@ -12,6 +12,7 @@ gem 'activeadmin', github: 'activeadmin'
 #Authentication
 gem 'clearance'
 
+gem 'browser'
 #Database
 gem 'pg'
 

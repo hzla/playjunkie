@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
 
 	def create
+		@title = "Search for '#{@terms}'"
 		if @terms == ""
 			@results = []
 			render 'show' and return
@@ -25,6 +26,7 @@ class SearchesController < ApplicationController
 	end
 
 	def show
+		@title = "Search for '#{@terms}'"
 		@page = params[:page] ? params[:page].to_i : 1
 		@terms = params[:terms]
 		offset = (((@page - 1) * 10))

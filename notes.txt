@@ -35,6 +35,12 @@ QA Round 1
 		COMPLETE 1hr quiz creator bugs
 		COMPLETE 1hr outbrain/staging setup
 		14.3k
+		COMPLETE ads 30min
+		COMPLETE bug for search/misc 30min
+		COMPLETE more bugs/outbrain ad css 45min
+		COMPLETE ie/firefox fixes 1.5hr
+
+
 
 
 		

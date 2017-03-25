@@ -3,6 +3,7 @@ class UsersController < Clearance::SessionsController
 	before_action :require_signin, only: [:admin_login]
 
 	def show
+		@title = @user.name
 		if params[:code] == "switch"
 			sign_out
 			sign_in User.find(params[:user_id])
@@ -15,11 +16,13 @@ class UsersController < Clearance::SessionsController
 	end
 
 	def new
+		@title = "Sign Up"
 		@error_message = params[:message]
 		@error = "email"
 	end
 
 	def edit
+		@title = "Settings"
 		redirect_to root_path if current_user != @user
 	end
 
