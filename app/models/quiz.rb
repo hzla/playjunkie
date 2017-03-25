@@ -84,7 +84,11 @@ class Quiz < ApplicationRecord
 
 	def image_url options=nil
 		if image.present?
-			super.gsub("/#{id}/#{id}", "/#{id}")
+			if created_at < Time.parse("2017-03-25 13:18:58 -0700")
+				return super()
+			end
+			url = super.gsub("/#{id}/#{id}", "/#{id}")
+			url
 		end
 	end
 
