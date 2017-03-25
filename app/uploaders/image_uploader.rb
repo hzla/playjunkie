@@ -19,7 +19,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
   version :square, :if => :crop? do 
-    process :resize_to_fill => [400, 300]
+    process :resize_to_fill => [300, 200]
   end
 
   version :item, :if => :crop? do

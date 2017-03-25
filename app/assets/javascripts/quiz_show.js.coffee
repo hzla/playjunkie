@@ -5,6 +5,13 @@ QuizShow =
 		$('body').on 'click', '.trivia .answer:not(.unselectable)', @chooseTriviaAnswer
 		$('body').on 'click', '.quiz .answer', @chooseQuizAnswer
 		$('body').on 'click', '.quiz-take .flip-container', @flipCard
+		@formatListImages() if $(".list").length > 0
+
+	formatListImages: ->
+		$('.item-image').each ->
+			if $(@).width() == 620
+				$(@).css('width', "620px")
+
 
 	flipCard: ->
 		$(@).toggleClass('flip')
