@@ -138,6 +138,21 @@ class QuizItem < ApplicationRecord
 		end
 	end
 
+	def image_back_url options=nil
+		if image.present?
+			if created_at < Time.parse("2017-03-25 13:18:58 -0700")
+				if options
+					filename = image.filename.split("/").last
+					return super().gsub("/#{id}/#{id}", "/#{id}").gsub(filename, "#{options.to_s}_#{filename}")
+				else
+					return super().gsub("/#{id}/#{id}", "/#{id}")
+				end
+			end
+			url = super.gsub("/#{id}/#{id}", "/#{id}")
+			url
+		end
+	end
+
 	private
 
 	def self.quiz_item_params quiz_item_number, params
