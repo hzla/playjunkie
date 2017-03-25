@@ -118,7 +118,7 @@
 			<% @quiz.recommended.each do |rec| %>
 				<%= link_to quiz_path(rec) do %>
 					<div class="side-quiz">
-						<div class="img" style="background -image: url((rec.image_url(:square)) %>)"></div>
+						<div class="img" style="background-image: url(<%=(rec.image_url(:square)) %>)"></div>
 						<p><%= rec.title %></p>
 					</div>
 				<% end %>	
