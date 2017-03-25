@@ -82,6 +82,14 @@ class Quiz < ApplicationRecord
 		super == "" ? nil : super
 	end
 
+	def image_url options=nil
+		if image.present?
+			super.gsub("/#{id}/#{id}", "/#{id}")
+		end
+	end
+
+
+
 	###### Class Methods for grabbing collections
 
 	def self.featured limit=10, offset=0

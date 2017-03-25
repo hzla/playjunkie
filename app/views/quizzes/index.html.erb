@@ -50,7 +50,7 @@
 	 		<% Quiz.editors_picks.each do |quiz| %>
 	 			<%= link_to quiz_path(quiz) do %>
 		 			<div class="quiz-card">
-		 				<div class="quiz-image img" style="background-image: url(<%= image_url(quiz.image_url(:square)) %>)"></div>
+		 				<div class="quiz-image img" style="background-image: url(<%= quiz.image_url(:square) %>)"></div>
 		 				
 		 				<div class="quiz-info">
 		 					<div class="quiz-title"><%= quiz.title %></div>
@@ -77,8 +77,7 @@
 		 		<% Quiz.featured.each do |quiz| %>
 		 			<%= link_to quiz_path(quiz) do %>
 			 			<div class="quiz-list-item">
-
-			 				<div class="quiz-image img" style="background-image: url(<%= image_url(quiz.image_url(:square)) %>)"></div>
+			 				<div class="quiz-image img" style="background-image: url(<%= quiz.image_url(:square) %>)"></div>
 			 				<div class="quiz-info">
 			 					<div class="quiz-title"><%= quiz.title %></div>
 			 					<div class="quiz-sub-info">
@@ -105,7 +104,7 @@
 								<div class="quiz-number">
 									<p><%= i + 1 %></p>
 								</div>
-								<div class="img" style="background-image: url(<%= image_url(rec.image_url) %>)"></div>
+								<div class="img" style="background-image: url(<%= rec.image_url %>)"></div>
 								<p><%= rec.title %></p>
 							</div>
 						<% end %>		
