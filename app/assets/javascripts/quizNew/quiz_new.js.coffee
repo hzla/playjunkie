@@ -96,6 +96,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 			questionLimit -= 1
 
 		$('.form-result:visible .results-range').each (i) ->
+			console.log $(@)
 			$(@).find('.min').text(ranges[i][0])
 			$(@).find('.max').text(ranges[i][1])
 			$(@).find('.range-min').val(ranges[i][0])
@@ -216,7 +217,7 @@ QuizNew = #UI for creating/editing Quizzes goes here
 
 		$('.close-image').each ->
 			imgPreview = $(@).parent().children('.image-preview')
-			if imgPreview.css('background-image').includes "amazonaws"
+			if imgPreview.css('background-image').indexOf("amazonaws") >= 0
 				$(@).show()
 
 		if $('.form-result:visible').length < 2

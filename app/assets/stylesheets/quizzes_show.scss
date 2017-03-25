@@ -129,6 +129,17 @@
 				z-index: 1;
 				font-weight: 800;
 			}
+			.flip-prompt {
+				padding: 4px;
+				background: rgba(0,0,0,0.3);
+				color: $light-outline;
+				font-size: 10px;
+				text-align: center;
+				position: absolute;
+				bottom: 0;
+				width: 100px;
+				left: calc(50% - 50px);
+			}
 			.title-text {
 				display: none;
 			}
@@ -428,6 +439,9 @@
 							z-index: 2;
 							font-size: 28px;
 						}
+					}
+					.flip-prompt {
+						font-size: 12px;
 					}
 					.image-container.flippable {
 						cursor: pointer;

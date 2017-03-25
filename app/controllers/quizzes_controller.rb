@@ -56,6 +56,7 @@ class QuizzesController < ApplicationController
 		@image = Quiz.new.image
 		@image.success_action_redirect = edit_quiz_path(@quiz)
 		@action = params[:blank] == "true" ? "Create" : "Edit"
+		@quiz_item_action = params[:blank] == "true" ? "Add" : "Edit"
 
 		@quiz.update_attributes is_preview?: nil
 		if @quiz.quiz_type == "trivia" || @quiz.quiz_type == "quiz"

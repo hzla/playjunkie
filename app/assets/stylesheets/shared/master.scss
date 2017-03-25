@@ -64,6 +64,18 @@ textarea {
 	resize:vertical; 
 }
 
+body header {
+	.shown-flexed {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+
+}
+
+
 li {
 	list-style: none;
 }

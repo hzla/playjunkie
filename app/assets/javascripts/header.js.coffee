@@ -23,7 +23,7 @@ Header =
 
 	showProfileDropdown: ->
 		$('#profile-dropdown').show()
-		$('.creation-dropdown').hide()
+		$('.creation-dropdown').removeClass('shown-flexed')
 
 		check = setInterval ->
 			if $('#profile-dropdown:hover').length < 1 && $('#nav-profile-pic:hover').length < 1 && $('.bridge:hover').length < 1 && $('#get-started:hover').length < 1
@@ -35,17 +35,17 @@ Header =
 
 	showCreationDropdown: ->
 		btn = $(@)
-		btn.parent().find('.creation-dropdown').css('display', 'flex')
+		btn.parent().find('.creation-dropdown').addClass('shown-flexed')
 		$('#profile-dropdown').hide()
 
 		check = setInterval ->
 			if $('.creation-dropdown:hover').length < 1 && $('#create-btn:hover').length < 1 && $('.bridge:hover').length < 1 && $('#get-started:hover').length < 1
-				btn.parent().find('.creation-dropdown').hide()
+				btn.parent().find('.creation-dropdown').removeClass('shown-flexed')
 		, 500
 
 
 	closeCreationDropdown: ->
-		$('.creation-dropdown').hide()
+		$('.creation-dropdown').removeClass('shown-flexed')
 
 	showFunDropdown: ->
 		$('.fun-dropdown').show()

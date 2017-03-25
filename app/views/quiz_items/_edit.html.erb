@@ -1,4 +1,4 @@
-<h2 class="super-bold content-title">Edit Questions</h2>
+<h2 class="super-bold content-title"><%= @quiz_item_action %> Questions</h2>
 <% questions.each_with_index do |question, i| %>
 	<div class="form-box question model" model_id="<%= question.id %>" item_number="<%= i + 1 %>">
 		<%= hidden_field_tag "quiz_item_#{i + 1}[order]", question.order, :class => "item-order" %>
