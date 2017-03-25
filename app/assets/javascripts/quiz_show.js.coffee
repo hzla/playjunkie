@@ -11,6 +11,8 @@ QuizShow =
 		$('.item-image').each ->
 			if $(@).width() == 620
 				$(@).css('width', "620px")
+			if $(@).height() == 620
+				$(@).css('height', "620px")
 
 
 	flipCard: ->
