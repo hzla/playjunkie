@@ -30,7 +30,8 @@ time, mark, audio, video, input, textarea, select {
 	font: inherit;
 	vertical-align: baseline;
 	box-sizing: border-box;
-	font-family: 'verlag';
+	// font-family: 'Roboto', sans-serif;
+	font-family: 'verlag', 'Roboto', sans-serif !important;
 	color: $dark-grey;
 	-webkit-overflow-scrolling: touch;
 }
