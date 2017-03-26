@@ -59,6 +59,8 @@ Rails.application.routes.draw do
   #image keys
   post '/image_keys', to: "quizzes#create_image_key", as: 'image_key'
 
+  get '/jobs', to: "quizzes#jobs"
+
 
   require 'sidekiq/web'
   constraints Clearance::Constraints::SignedIn.new { |user| user.is_admin? } do

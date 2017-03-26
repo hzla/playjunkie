@@ -142,6 +142,13 @@ class QuizzesController < ApplicationController
 		render nothing: true
 	end
 
+	def jobs
+		if params[:code] == ENV["ADMIN_PASSWORD"]
+			Quiz.shift_daily_view_counts
+		end
+		render json: {ok: true}
+	end
+
 	private
 
 	def get_quiz
