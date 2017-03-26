@@ -113,7 +113,7 @@ class QuizzesController < ApplicationController
 
 	def create_image_key
 		model = params["data"]["model_name"].constantize.find(params["data"]["model_id"])
-		
+		GC.stress = false
 		if params["data"]["image_key_back"] != ""
 			model.update_attributes image_key_back: params["data"]["image_key_back"]
 			# ImageProcesserWorker.perform_async model.class, model.id, params["data"]["image_key_back"], "back"
@@ -122,8 +122,9 @@ class QuizzesController < ApplicationController
 			# model.update_attributes image_key: params["data"]["image_key"]
 			model.save_and_process_image params["data"]["image_key"], "front"
 			# ImageProcesserWorker.perform_async model.class, model.id, params["data"]["image_key"], "front"
-
 		end
+		GC.start
+		GC.stress = false
 		
 		render nothing: true
 	end
