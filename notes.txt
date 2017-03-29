@@ -1,5 +1,79 @@
-Amazon Setup
+Site Setup (installations, database setup, dev enviroment setup) - 10hrs
+User Registration Views and Implementation - 10hrs
+Quiz Creation/Quiz Taking (first draft) - 65hrs
+Edit Page - 5hrs
+Save/Preview - 1hr
+List Pages (browse, trending, landing) (first draft) - 15.5hrs
+Pagination - 1hr
+Add additional features for list pages + Search - 5hrs
+Copy - 0.5hrs
+Header/Footer - 1hr
+Admin Panel - 1hr
+Sorting - 2hr
+Mobile QA - 1hr
+Amazon Setup - 0.5hr
+Amazon Image Versions Setup - 1hr
+First Quiz Validation Bugs - 2.25hrs
+
+QA Round 1 
+	96 trello items - 15hrs
+	Quiz Revisions - 2hrs
+	Internet Explorer fixes 2hrs
+	Bugs - 1hr
+	Domain/admin panel changes - 2hrs
+	Social Media setup - 3hrs
+	Email Setup - 1hr
+	CSS Bugs - 2hrs
+	Staging setup - 2hrs
+	Ads - 1hr
+	Direct Upload setup - 3hrs
+	Direct Upload implementation - 6hrs
+	Direct Upload bug fixes - 3hrs
+	Quiz Creator bug fixes - 1hr
+	Outbrain/ Second staging site setup - 1hr
+	Ad Changes - 0.5hr
+	Bugs and more Ad Changes - 5hr
+	IE explorer and Firefox bugs - 1.5hr
+	Deployment of Direct Upload changes 3hrs
+
+Total: ~193hrs
+Price: 15460
+
+
+=====================================================================================
+
+Work Log
+
+
+20hrs on setup/user sign in
+65hrs so far on quiz create/take
+15.5hrs on browsing pages
+
+
+	COMPLETE char limits + refactoring quiz new 2hr 
+	COMPLETE result assignment validation 10min
+	COMPLETE edit page 5hr
+	COMPLETE save/preview 1hr
+
+	COMPLETE landing page 3hr
+
+	COMPLETE trending 30min
+	COMPLETE browse 30min
+	COMPLETE search 2hr
+	COMPLETE copy 30min
+	COMPLETE header hovers 20min
+	COMPLETE footer 30min
+
+	COMPLETE admin panel 1hr
+	COMPLETE load fonts 10MIN
+	COMPLETE sorting 2hr
+	COMPLETE mobile links 10min
+	COMPLETE mobile create lockout 20min
+	COMPLETE pagination 1hr
 		
+
+
+Amazon Setup
 	COMPLETE Set Up Amazon Account 15min
 	COMPLETE Set Up Carrierwave Fog 15min
 	COMPLETE Set Up Versions 1hr
@@ -39,6 +113,7 @@ QA Round 1
 		COMPLETE bug for search/misc 30min
 		COMPLETE more bugs/outbrain ad css 45min
 		COMPLETE ie/firefox fixes 1.5hr
+		COMPLETE deployment of upload system 3hr
 
 
 
