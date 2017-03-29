@@ -1,7 +1,17 @@
 @import 'shared/variables';
 @import 'shared/mixins';
 
+* {
+	font-family: 'Verlag' !important;
+}
+
 body {
+	.OUTBRAIN img {
+		border-radius: 8px !important;
+	}
+	.TF_6.ob-widget {
+		width: 620px;
+	}
 	.TS_1.ob-vertical-strip-layout .ob-widget-header,  {
 		color: $dark-grey;
 	}
@@ -32,6 +42,24 @@ body {
 	.TF_6.ob-widget .ob-rec-text, .TF_1.ob-widget .ob-rec-text {
 		max-height: 100px;
 	}
+
+	.TF_6.ob-two-columns-layout .ob-dynamic-rec-container {
+		width: 300px;
+	}
+
+	.TF_6.ob-widget .ob-dynamic-rec-container ~ .ob-dynamic-rec-container {
+		margin: 0 0 0 20px;
+	}
+	.TF_6.ob-two-columns-layout .ob-widget-items-container {
+		width: 620px;
+		@include flexbox;
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+	}
+	.TF_6.ob-widget .ob-dynamic-rec-container ~ .ob-dynamic-rec-container {
+		margin: 0 0 0 0;
+		margin-bottom: 20px;
+	}
 }
 
 
@@ -39,11 +67,31 @@ body {
 	body {
 		.TF_6.ob-widget .ob-rec-image-container img.ob-show {
 		  width: calc(100vw - 20px);
-		  height: calc((100vw - 20px) / 3);
+		  height: calc((100vw - 20px) / 2);
 		}
 		.TF_6.ob-widget .ob-rec-image-container .ob-image-ratio {
-			padding-top: calc((100vw - 20px) / 3);
+			padding-top: calc((100vw - 20px) / 2);
 			margin-top: 20px;
 		}
+		.TF_6.ob-two-columns-layout .ob-dynamic-rec-container {
+			height: auto;
+			width: 100%;
+		}
+		.TF_6.ob-two-columns-layout .ob-unit.ob-rec-image-container {
+			float: initial;
+		}
+		.TF_6.ob-two-columns-layout .ob-widget-items-container {
+			width: calc(100vw - 20px);
+			display: block;
+		}
+		.TF_6.ob-two-columns-layout .ob-unit.ob-rec-text {
+			margin-top: 10px;
+			margin-left: 0px;
+		}
+		.TF_6.ob-two-columns-layout .ob-unit.ob-rec-source, .TF_6.ob-two-columns-layout .ob-unit.ob-rec-date {
+			margin-left: 0px;
+		}
+
 	}
+
 }
