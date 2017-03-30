@@ -15,6 +15,8 @@ Amazon Setup - 0.5hr
 Amazon Image Versions Setup - 1hr
 First Quiz Validation Bugs - 2.25hrs
 
+121.75hrs for first draft
+
 QA Round 1 
 	96 trello items - 15hrs
 	Quiz Revisions - 2hrs
@@ -35,9 +37,13 @@ QA Round 1
 	Bugs and more Ad Changes - 5hr
 	IE explorer and Firefox bugs - 1.5hr
 	Deployment of Direct Upload changes 3hrs
+	Outbrain Ads adjustments 3hrs
+	Database Upgrade/Setup 1hr
 
-Total: ~193hrs
-Price: 15460
+58hrs for QA
+
+Total: 179.75hrs
+Price: 14380
 
 
 =====================================================================================
@@ -114,6 +120,7 @@ QA Round 1
 		COMPLETE more bugs/outbrain ad css 45min
 		COMPLETE ie/firefox fixes 1.5hr
 		COMPLETE deployment of upload system 3hr
+
 
 
 
