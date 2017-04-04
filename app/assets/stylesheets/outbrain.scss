@@ -79,7 +79,7 @@ body {
 		}
 		.TF_6 .ob-dynamic-rec-container {
 			height: auto;
-			width: 100%;
+			width: calc(100vw - 20px) !important;
 		}
 		.TF_6 .ob-unit.ob-rec-image-container {
 			float: initial;
