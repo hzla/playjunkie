@@ -60,6 +60,10 @@ body {
 		margin: 0 0 0 0;
 		margin-bottom: 20px;
 	}
+	.TF_6.ob-widget .ob-widget-items-container {
+		@include flexbox;
+		@include justify-content(space-between);
+	}
 }
 
 
@@ -73,22 +77,22 @@ body {
 			padding-top: calc((100vw - 20px) / 2);
 			margin-top: 20px;
 		}
-		.TF_6.ob-two-columns-layout .ob-dynamic-rec-container {
+		.TF_6 .ob-dynamic-rec-container {
 			height: auto;
 			width: 100%;
 		}
-		.TF_6.ob-two-columns-layout .ob-unit.ob-rec-image-container {
+		.TF_6 .ob-unit.ob-rec-image-container {
 			float: initial;
 		}
-		.TF_6.ob-two-columns-layout .ob-widget-items-container {
+		.TF_6 .ob-widget-items-container {
 			width: calc(100vw - 20px);
 			display: block;
 		}
-		.TF_6.ob-two-columns-layout .ob-unit.ob-rec-text {
+		.TF_6 .ob-unit.ob-rec-text {
 			margin-top: 10px;
 			margin-left: 0px;
 		}
-		.TF_6.ob-two-columns-layout .ob-unit.ob-rec-source, .TF_6.ob-two-columns-layout .ob-unit.ob-rec-date {
+		.TF_6.ob-unit.ob-rec-source, .TF_6 .ob-unit.ob-rec-date {
 			margin-left: 0px;
 		}
 
