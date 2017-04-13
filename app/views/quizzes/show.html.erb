@@ -1,8 +1,7 @@
 <div class="content-container quiz-take <%= @quiz.quiz_type %>">
 	<div class="quiz-main">
-		<h1 class="quiz-title"><%= @quiz.title %></h1>
-		
 		<%= render partial: "ads/under_title" %>
+		<h1 class="quiz-title"><%= @quiz.title %></h1>
 		<p class="quiz-description"><%= @quiz.description %></p>
 		<div class="quiz-info">
 			
@@ -104,13 +103,15 @@
 				</div>
 			</div>
 		<% end %>
+			<div class="bottom-ads">
+				<%= render partial: "ads/small" %>
+			</div>
 		<div class="bottom-ads">
 			<%= render partial: "ads/outbrain_bottom" %>
 		</div>
-		<div id="bottom-ad">
- 			<%= render partial: "ads/row" %>
- 		</div>
-
+		<div class="bottom-ads">
+			<%= render partial: "ads/row" %>
+		</div>
 	</div>
 	<div class="side-content">
 		<div id="ad2" class="side-ad">
@@ -132,11 +133,11 @@
 			<% end %>
 		</div>
 		<div class="divider" id="divider-2"></div>
-		<div id="ad-2" class="side-ad">
-			<%= render partial: "ads/col_tall_2" %>
-		</div>
 		<div id="ad-1" class="side-ad">
 			<%= render partial: "ads/outbrain_column" %>
+		</div>
+		<div id="ad-2" class="side-ad">
+			<%= render partial: "ads/col_tall_2" %>
 		</div>
 	</div>
 </div>

@@ -173,6 +173,7 @@
 	@include flexbox;
 	@include justify-content(space-between);
 	@include align-items(center);
+	margin-bottom: 30px;
 	.btn {
 		width: 80px;
 		@include flexbox;

@@ -3,7 +3,7 @@
 	<div class="quizzes-content">
 	 	<div id="main-content">
 		 	<div class="quizzes-section list-view">
-		 		<% @quizzes.each do |quiz| %>
+		 		<% @quizzes.each_with_index do |quiz, i| %>
 		 			<%= link_to quiz_path(quiz) do %>
 			 			<div class="quiz-list-item">
 			 				<div class="quiz-image img" style="background-image: url(<%=(quiz.image_url) %>)"></div>
@@ -19,6 +19,9 @@
 			 				</div>
 			 			</div>
 			 		<% end %>
+			 		<% if i == 4 %>
+		 				<%= render partial: "ads/mid_content" %>
+		 			<% end %>
 		 		<% end %>
 		 		<div id="page-controls">
 		 			<%= link_to params.permit(:page).merge(:page => @page - 1) do %>
@@ -33,15 +36,18 @@
 		 				<% end %>
 		 			<% end %>
 		 		</div>
+		 		<div class="bottom-ad">
+					<%= render partial: "ads/small" %>
+				</div>
 		 		<div class="bottom-ads">
 					<%= render partial: "ads/outbrain_bottom" %>
 				</div>
-		 		<div id="bottom-ad">
-		 			<%= render partial: "ads/row" %>
-		 		</div>
+				<div class="bottom-ads">
+					<%= render partial: "ads/row" %>
+				</div>
 		 	</div>
 		 	<div class="side-content">
-		 		<div id="ad2" class="side-ad">
+				<div id="ad2" class="side-ad">
 					<%= render partial: "ads/outbrain_column" %>
 				</div>
 				<div id="ad1" class="side-ad">
@@ -49,6 +55,9 @@
 				</div>
 				<div id="ad2" class="side-ad">
 					<%= render partial: "ads/outbrain_column" %>
+				</div>
+				<div id="ad1" class="side-ad">
+					<%= render partial: "ads/col_tall_2" %>
 				</div>
 			</div>
 		 </div>

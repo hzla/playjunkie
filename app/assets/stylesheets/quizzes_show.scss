@@ -385,6 +385,9 @@
 				width: 150px;
 				margin: 30px auto;
 			}
+			#divider-2 {
+				margin-top: 10px;
+			}
 			.recommendations {
 				h3 {
 					font-weight: 800;
@@ -573,6 +576,12 @@
 			}
 		}
 	}
+}
+
+.bottom-ad {
+	@include flexbox;
+	@include justify-content(space-between);
+	margin-bottom: 40px;
 }
 
 .bottom-ads {
