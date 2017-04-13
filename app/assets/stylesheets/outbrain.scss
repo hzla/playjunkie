@@ -98,6 +98,12 @@ body {
 		.TF_6.ob-unit.ob-rec-source, .TF_6 .ob-unit.ob-rec-date {
 			margin-left: 0px;
 		}
+		.CRMB_1.ob-vertical-strip-layout .ob-dynamic-rec-container {
+			max-width: calc(100vw - 20px);
+		}
+		.CRMB_1.ob-vertical-strip-layout .ob-rec-text {
+			margin-top: 10px;
+		}
 
 	}
 
